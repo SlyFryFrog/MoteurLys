@@ -58,4 +58,6 @@ namespace LilyPad
 		this->width = width;
 		this->height = height;
 	}
+
+	bool Window::is_done() const { return glfwWindowShouldClose(pWindow); }
 } // namespace LilyPad

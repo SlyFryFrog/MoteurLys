@@ -17,9 +17,10 @@ namespace LilyPad
 		Window();
 		Window(int width, int height);
 
-		void frame_buffer_callback(GLFWwindow *window, const int width, const int height);
+		static void frame_buffer_callback(GLFWwindow *window, const int width, const int height);
         void initiate();
 		void set_title(const std::string &title);
 		void set_dimensions(int width, int height);
+		bool is_done() const;
 	};
 } // namespace LilyPad
