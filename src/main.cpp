@@ -1,4 +1,4 @@
-#include "rendering/window.hpp"
+#include "core/rendering/window.hpp"
 
 using namespace LilyPad;
 
@@ -8,7 +8,7 @@ int main()
     window.set_title("LilyPad Engine");
     window.set_dimensions(500, 500);
     
-    window.initiate();
+    window.initialize();
 
     return 0;
 }
