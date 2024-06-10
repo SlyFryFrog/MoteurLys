@@ -1,6 +1,19 @@
 cmake_minimum_required(VERSION 3.22)
 project(LilyPadEngine)
 
+option(RUN_TESTS "" ON)
+
+function (LinkDependencies Target)
+    target_link_libraries(${Target} 
+        PRIVATE
+            glfw
+            OpenGL::GL
+            stb_image
+            GLEW::GLEW
+    )
+endfunction()
+
+
 # Add all cpp and hpp files to the library
 file(GLOB_RECURSE SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp)
 file(GLOB_RECURSE HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/src/*.hpp)
@@ -28,12 +41,7 @@ find_package(GLEW REQUIRED)
 add_library(LilyPadEngine SHARED ${SOURCES})
 
 add_library(stb_image SHARED "vendor/stb_image.cpp")
-target_link_libraries(LilyPadEngine PRIVATE
-    glfw
-    OpenGL::GL
-    stb_image
-    GLEW::GLEW
-)
+
 
 target_include_directories(
     LilyPadEngine
@@ -44,3 +52,10 @@ target_include_directories(
         ${CMAKE_CURRENT_SOURCE_DIR}/src
         ${CMAKE_CURRENT_SOURCE_DIR}/vendor 
 )
+
+LinkDependencies(LilyPadEngine)
+
+
+if (RUN_TESTS)
+    add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/tests)
+endif()
