@@ -1,0 +1,4 @@
+/home/marcus/Desktop/LilyPadEngine/cmake-build-debug/CMakeFiles/LilyPadEngine.dir
+/home/marcus/Desktop/LilyPadEngine/cmake-build-debug/CMakeFiles/stb_image.dir
+/home/marcus/Desktop/LilyPadEngine/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/marcus/Desktop/LilyPadEngine/cmake-build-debug/CMakeFiles/rebuild_cache.dir

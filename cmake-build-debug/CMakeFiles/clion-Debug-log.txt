@@ -1,0 +1,6 @@
+/snap/clion/277/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/snap/clion/277/bin/ninja/linux/x64/ninja -G Ninja -S /home/marcus/Desktop/LilyPadEngine -B /home/marcus/Desktop/LilyPadEngine/cmake-build-debug
+CMake Error at demo/CMakeLists.txt:7 (add_library):
+  add_library called with incorrect number of arguments
+
+
+-- Configuring incomplete, errors occurred!
