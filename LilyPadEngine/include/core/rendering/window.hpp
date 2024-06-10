@@ -11,32 +11,6 @@ namespace LilyPad
 	 */
 	class Window
 	{
-	private:
-		bool isPolygonMode; // Boolean to either enable or disable polygon rendering
-		int width;			// Window width
-		int height;			// Window height
-		std::string title;
-
-		/**
-		 * @brief
-		 *
-		 * @param window
-		 * @param width
-		 * @param height
-		 */
-		static void frame_buffer_callback(GLFWwindow *window, int width, int height);
-
-		/**
-		 * @brief
-		 *
-		 * @param window
-		 * @param key
-		 * @param scancode
-		 * @param action
-		 * @param mods
-		 */
-		static void process_input(GLFWwindow *window, int key, int scancode, int action, int mods);
-
 	public:
 		GLFWwindow *window;
 
@@ -51,7 +25,7 @@ namespace LilyPad
 		 * @param width Width of the window.
 		 * @param height Height of the window.
 		 */
-		Window(const int width, const int height);
+		Window(int width, int height);
 
 		/**
 		 * @brief Construct a new Window object.
@@ -60,7 +34,7 @@ namespace LilyPad
 		 * @param height Height of the window.
 		 * @param title Title of the window.
 		 */
-		Window(const int width, const int height, const std::string &title);
+		Window(int width, int height, const std::string &title);
 
 		/**
 		 * @brief Set the title of the window.
@@ -85,5 +59,30 @@ namespace LilyPad
 		[[nodiscard]] bool is_done() const;
 
 		void set_dimensions(int width, int height);
+	private:
+		bool _isPolygonMode; // Boolean to either enable or disable polygon rendering
+		int _width;			// Window width
+		int _height;			// Window height
+		std::string _title;
+
+		/**
+		 * @brief
+		 *
+		 * @param window
+		 * @param width
+		 * @param height
+		 */
+		static void frame_buffer_callback(GLFWwindow *window, int width, int height);
+
+		/**
+		 * @brief
+		 *
+		 * @param window
+		 * @param key
+		 * @param scancode
+		 * @param action
+		 * @param mods
+		 */
+		static void process_input(GLFWwindow *window, int key, int scancode, int action, int mods);
 	};
 } // namespace LilyPad

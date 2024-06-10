@@ -4,18 +4,18 @@ namespace LilyPad
 {
 	Logger *Logger::instance()
 	{
-		if (!logInstance)
+		if (!_logInstance)
 		{
-			logInstance = new Logger();
+			_logInstance = new Logger();
 		}
-		return logInstance;
+		return _logInstance;
 	}
 
-	void Logger::set_log_file(const std::string &file) { this->file = file; }
+	void Logger::set_log_file(const std::string &file) { _file = file; }
 
-	Logger::Logger() : showLogs(true), writeLogs(false), minLogLevel(LogLevel::DEBUG), file("rsc/log.txt") {}
+	Logger::Logger() : _file("rsc/log.txt"), _showLogs(true), _writeLogs(false), _minLogLevel(LogLevel::DEBUG) {}
 
-	const char *Logger::get_log_type(LogLevel level)
+	const char *Logger::get_log_type(const LogLevel &level)
 	{
 		// Retrieves the String of the appropriate level
 		switch (level)
@@ -35,7 +35,7 @@ namespace LilyPad
 		}
 	}
 
-	void Logger::set_log_level(LogLevel minLevel) { minLogLevel = minLevel; }
+	void Logger::set_log_level(const LogLevel &level) { _minLogLevel = level; }
 
-	Logger *Logger::logInstance = nullptr; // Definition with initialization
+	Logger *Logger::_logInstance = nullptr; // Definition with initialization
 } // namespace LilyPad

@@ -18,7 +18,7 @@ namespace LilyPad
 
 		Vector2 clamp(const Vector2 &min, const Vector2 &max);
 
-		Vector2 normalized() const;
+		[[nodiscard]] Vector2 normalized() const;
 
 		[[nodiscard]] bool is_normalized() const;
 
@@ -61,7 +61,7 @@ namespace LilyPad
 		 * 
 		 * @return glm::vec2
 		 */
-		operator glm::vec2() const;
+		explicit operator glm::vec2() const;
 	};
 
 	typedef Vector2 Point2;

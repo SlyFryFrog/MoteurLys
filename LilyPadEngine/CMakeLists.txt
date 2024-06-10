@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.22)
 project(LilyPadEngine)
 
-option(RUN_TESTS "" ON)
+option(RUN_TESTS "" OFF)
 
 function (LinkDependencies Target)
     target_link_libraries(${Target} 

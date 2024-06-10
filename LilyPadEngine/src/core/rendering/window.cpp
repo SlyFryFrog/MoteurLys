@@ -20,8 +20,8 @@ namespace LilyPad
 		else if (key == GLFW_KEY_F3 && action == GLFW_PRESS)
 		{
 			// Changes how models are rendered
-			windowInstance->isPolygonMode = !windowInstance->isPolygonMode;
-			if (windowInstance->isPolygonMode)
+			windowInstance->_isPolygonMode = !windowInstance->_isPolygonMode;
+			if (windowInstance->_isPolygonMode)
 			{
 				glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 			}
@@ -32,19 +32,19 @@ namespace LilyPad
 		}
 	}
 
-	Window::Window() : isPolygonMode(false), width(0), height(0), window(nullptr) {}
+	Window::Window() : _isPolygonMode(false), _width(0), _height(0), window(nullptr) {}
 
 	Window::Window(const int width, const int height) :
-		isPolygonMode(false), width(width), height(height), window(nullptr)
+		_isPolygonMode(false), _width(width), _height(height), window(nullptr)
 	{
 	}
 
 	Window::Window(const int width, const int height, const std::string &title) :
-		isPolygonMode(false), width(width), height(height), title(title), window(nullptr)
+		_isPolygonMode(false), _width(width), _height(height), _title(title), window(nullptr)
 	{
 	}
 
-	void Window::set_title(const std::string &title) { this->title = title; }
+	void Window::set_title(const std::string &title) { _title = title; }
 
 	void Window::initialize()
 	{
@@ -54,7 +54,7 @@ namespace LilyPad
 		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 		// Creates the window to be displayed
-		window = glfwCreateWindow(width, height, title.c_str(), nullptr, nullptr);
+		window = glfwCreateWindow(_width, _height, _title.c_str(), nullptr, nullptr);
 		if (window == nullptr)
 		{
 			glfwTerminate();
@@ -72,7 +72,7 @@ namespace LilyPad
 		}
 
 		// (x, y) coords of corner, (length, width) of window
-		glViewport(0, 0, width, height);
+		glViewport(0, 0, _width, _height);
 		glfwSetFramebufferSizeCallback(window, frame_buffer_callback);
 
 		// Print out the OpenGL version we are using
@@ -95,7 +95,7 @@ namespace LilyPad
 
 	void Window::set_dimensions(int width, int height)
 	{
-		this->width = width;
-		this->height = height;
+		_width = width;
+		_height = height;
 	}
 } // namespace LilyPad

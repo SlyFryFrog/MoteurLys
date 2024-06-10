@@ -40,17 +40,17 @@ namespace LilyPad
 		static Logger *instance();
 
 		/**
-		 * @brief Creates an event log if the level is at least the minimum level currentl set. Will also print the log
-		 * to the console if that option is enabled.
+		 * @brief
 		 *
-		 * @param level   Level of the log being recoded.
-		 * @param message Message to write for the log.
+		 * @tparam Args
+		 * @param level
+		 * @param args
 		 */
 		template <typename... Args>
 		void log(const LogLevel level, Args... args)
 		{
 			// Ignores any logging lower than the minimum
-			if (level < minLogLevel || (writeLogs && showLogs))
+			if (level < _minLogLevel || (_writeLogs && _showLogs))
 				return;
 
 			// Gets time
@@ -65,21 +65,21 @@ namespace LilyPad
 
 			std::string logMessage = logStream.str();
 
-			if (showLogs)
+			if (_showLogs)
 			{
 				std::cout << logMessage << std::endl;
 			}
-			if (writeLogs)
+			if (_writeLogs)
 			{
-				std::lock_guard<std::mutex> guard(logMutex);
-				std::ofstream fileStream(file, std::ios::app);
+				std::lock_guard<std::mutex> guard(_logMutex);
+				std::ofstream fileStream(_file, std::ios::app);
 				if (fileStream.is_open())
 				{
 					fileStream << logMessage << std::endl;
 				}
 				else
 				{
-					std::cerr << "Unable to open the log file at " << file << std::endl;
+					std::cerr << "Unable to open the log file at " << _file << std::endl;
 				}
 			}
 		}
@@ -96,7 +96,7 @@ namespace LilyPad
 		 *
 		 * @param level Minimum log level to be recorded.
 		 */
-		void set_log_level(LogLevel level);
+		void set_log_level(const LogLevel &level);
 
 	private:
 		/**
@@ -112,7 +112,7 @@ namespace LilyPad
 		 * @param arg The argument to be appended to the stringstream.
 		 */
 		template <typename Arg>
-		void append_to_stream(std::stringstream &stream, Arg arg)
+		static void append_to_stream(std::stringstream &stream, Arg arg)
 		{
 			stream << arg;
 		}
@@ -130,7 +130,7 @@ namespace LilyPad
 		 * @param args The remaining arguments to be appended to the stringstream.
 		 */
 		template <typename Arg, typename... Args>
-		void append_to_stream(std::stringstream &stream, Arg arg, Args... args)
+		static void append_to_stream(std::stringstream &stream, Arg arg, Args... args)
 		{
 			stream << arg;
 			append_to_stream(stream, args...);
@@ -142,13 +142,13 @@ namespace LilyPad
 		 * @param level 		LogLevel.
 		 * @return const char* 	String equivalent of the LogLevel.
 		 */
-		static const char *get_log_type(LogLevel level);
+		static const char *get_log_type(const LogLevel &level);
 
-		LogLevel minLogLevel;		// Minimum level to be logged.
-		static Logger *logInstance; // Static pointer to the current instance of Logger.
-		std::string file;			// Relative path to the log file being written to.
-		bool showLogs;				// When set to true, displays all logs to the console.
-		bool writeLogs;				// When set to true, writes all logs to the given file.
-		std::mutex logMutex;		// Locks logger from writing to file when another thread is.
+		std::string _file;			// Relative path to the log file being written to.
+		bool _showLogs;				// When set to true, displays all logs to the console.
+		bool _writeLogs;				// When set to true, writes all logs to the given file.
+		std::mutex _logMutex;		// Locks logger from writing to file when another thread is.
+		LogLevel _minLogLevel;		// Minimum level to be logged.
+		static Logger *_logInstance; // Static pointer to the current instance of Logger.
 	};
 } // namespace LilyPad
