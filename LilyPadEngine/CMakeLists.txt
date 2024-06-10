@@ -37,10 +37,10 @@ target_link_libraries(LilyPadEngine PRIVATE
 
 target_include_directories(
     LilyPadEngine
-    PUBLIC  # Can be used by other libraries
-        ${CMAKE_CURRENT_SOURCE_DIR}/rsc
+    PUBLIC  # Can be used externally from the library
         ${CMAKE_CURRENT_SOURCE_DIR}/include
-        ${CMAKE_CURRENT_SOURCE_DIR}/vendor
     PRIVATE # For internal use only
-        ${CMAKE_CURRENT_SOURCE_DIR}/src 
+        ${CMAKE_CURRENT_SOURCE_DIR}/rsc
+        ${CMAKE_CURRENT_SOURCE_DIR}/src
+        ${CMAKE_CURRENT_SOURCE_DIR}/vendor 
 )
