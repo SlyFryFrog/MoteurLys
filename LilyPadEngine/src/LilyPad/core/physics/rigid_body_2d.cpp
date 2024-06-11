@@ -2,11 +2,8 @@
 
 namespace LilyPad
 {
-    void RigidBody2D::physics_process(float delta)
-    {
-
-    }
-
+    RigidBody2D::RigidBody2D() {}
+    
     void RigidBody2D::apply_force(const Vector2 &force)
     {
         // F = ma   ->   F/m = a   ->   a = F/m

@@ -4,8 +4,9 @@
 
 namespace LilyPad
 {
-	void World::apply_gravity(RigidBody2D rigidBody)
-	{	
-		rigidBody.apply_force(Vector2(0, GRAVITY));
-	}
+	World::World() {}
+
+	World::World(Vector2 worldSize) : _worldSize(worldSize) {}
+	
+	void World::apply_gravity(RigidBody2D rigidBody) { rigidBody.apply_force(Vector2(0, GRAVITY)); }
 } // namespace LilyPad

@@ -4,5 +4,5 @@
 
 class Circle : public LilyPad::RigidBody2D
 {
-
+    void physics_process(float delta);
 };

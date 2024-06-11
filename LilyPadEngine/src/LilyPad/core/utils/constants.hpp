@@ -2,5 +2,5 @@
 
 namespace LilyPad
 {
-    const float GRAVITY = 9.80665f;
+    constexpr float GRAVITY = 9.80665f;
 }

@@ -1,14 +1,18 @@
-#include <vector>
 #include <chrono>
-#include "LilyPad/core/rendering/window.hpp"
+#include <vector>
 #include "LilyPad/core/physics/rigid_body_2d.hpp"
+#include "LilyPad/core/physics/world.hpp"
+#include "LilyPad/core/rendering/window.hpp"
 
 using namespace LilyPad;
 
-void update(const std::vector<RigidBody2D> &bodies, float delta) 
+World world;
+
+void update(const std::vector<RigidBody2D> &bodies, float delta)
 {
 	for (RigidBody2D body : bodies)
 	{
+		world.apply_gravity(body);
 		body.physics_process(delta);
 	}
 }
@@ -22,7 +26,7 @@ int main()
 	window.initialize();
 
 	std::vector<RigidBody2D> bodies;
-    auto previousTime = std::chrono::steady_clock::now();
+	auto previousTime = std::chrono::steady_clock::now();
 
 	// Render loop
 	while (!window.is_done())

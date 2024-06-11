@@ -10,9 +10,9 @@ namespace LilyPad
 	public:
 		RigidBody2D();
 
-		void apply_force(const Vector2 &force);
+		virtual void physics_process(float delta) {}
 
-		void physics_process(float delta);
+		void apply_force(const Vector2 &force);
 
 		bool is_colliding();
 

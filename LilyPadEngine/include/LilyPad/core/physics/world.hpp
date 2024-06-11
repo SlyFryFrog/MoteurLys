@@ -9,6 +9,14 @@ namespace LilyPad
 	class World
 	{
 	public:
+		World();
+		World(Vector2 worldSize);
+
+		/**
+		 * @brief Applies the constant defined in constants.hpp to the rigidBody as a force vector.
+		 *
+		 * @param rigidBody Body being affected by gravity.
+		 */
 		void apply_gravity(RigidBody2D rigidBody);
 
 	private:
