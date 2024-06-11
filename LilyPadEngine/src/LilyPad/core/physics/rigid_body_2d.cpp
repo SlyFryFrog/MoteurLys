@@ -1,4 +1,4 @@
-#include "core/physics/rigid_body_2d.hpp"
+#include "LilyPad/core/physics/rigid_body_2d.hpp"
 
 namespace LilyPad
 {
@@ -11,6 +11,4 @@ namespace LilyPad
     {
 
     }
-
-    
 }

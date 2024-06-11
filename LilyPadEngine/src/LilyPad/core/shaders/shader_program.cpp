@@ -1,11 +1,11 @@
-#include "core/shaders/shader_program.hpp"
+#include "LilyPad/core/shaders/shader_program.hpp"
 
 #include <GL/glew.h>
 #include <fstream>
 #include <glm/gtc/type_ptr.hpp>
 #include <iostream>
 #include <sstream>
-#include "debug/logging.hpp"
+#include "LilyPad/debug/logging.hpp"
 
 
 #define SHADER_PATH "engine/rsc/shaders/"

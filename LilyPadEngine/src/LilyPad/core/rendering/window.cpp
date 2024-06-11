@@ -1,6 +1,6 @@
-#include "core/rendering/window.hpp"
+#include "LilyPad/core/rendering/window.hpp"
 
-#include "debug/logging.hpp"
+#include "LilyPad/debug/logging.hpp"
 
 namespace LilyPad
 {

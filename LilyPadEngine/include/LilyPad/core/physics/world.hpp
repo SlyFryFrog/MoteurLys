@@ -1,8 +1,8 @@
 #pragma once
 
-#include "core/math/vector2.hpp"
-#include "core/physics/collision.hpp"
-#include "core/physics/rigid_body_2d.hpp"
+#include "LilyPad/core/math/vector2.hpp"
+#include "LilyPad/core/physics/collision.hpp"
+#include "LilyPad/core/physics/rigid_body_2d.hpp"
 
 namespace LilyPad
 {

@@ -1,6 +1,6 @@
-#include "core/physics/world.hpp"
-#include "core/math/vector2.hpp"
-#include "core/utils/constants.hpp"
+#include "LilyPad/core/physics/world.hpp"
+#include "LilyPad/core/math/vector2.hpp"
+#include "LilyPad/core/utils/constants.hpp"
 
 namespace LilyPad
 {

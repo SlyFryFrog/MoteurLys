@@ -1,4 +1,4 @@
-#include "debug/logging.hpp"
+#include "LilyPad/debug/logging.hpp"
 
 namespace LilyPad
 {

@@ -1,7 +1,7 @@
 #pragma once
 
-#include "core/typedef.hpp"
 #include <glm/glm.hpp>
+#include "LilyPad/core/typedef.hpp"
 
 namespace LilyPad
 {
@@ -58,7 +58,7 @@ namespace LilyPad
 
 		/**
 		 * @brief Provides conversion for all data to glm::vec2
-		 * 
+		 *
 		 * @return glm::vec2
 		 */
 		explicit operator glm::vec2() const;

@@ -1,7 +1,7 @@
 #include <vector>
 #include <chrono>
-#include "core/rendering/window.hpp"
-#include "core/physics/rigid_body_2d.hpp"
+#include "LilyPad/core/rendering/window.hpp"
+#include "LilyPad/core/physics/rigid_body_2d.hpp"
 
 using namespace LilyPad;
 

@@ -1,8 +1,8 @@
-#include "core/rendering/texture.hpp"
+#include "LilyPad/core/rendering/texture.hpp"
 
 #include <GL/glew.h>
 #include <stb_image.h>
-#include "debug/logging.hpp"
+#include "LilyPad/debug/logging.hpp"
 
 #define TEXTURE_PATH "engine/rsc/textures/"
 
