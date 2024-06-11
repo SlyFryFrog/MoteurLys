@@ -22,6 +22,7 @@ namespace LilyPad
 		Vector2 _acceleration;
 		Vector2 _velocity;
 		Point2 _position;
+		float _mass;
 		bool _freeze;
 		bool _lock_rotation;
 	};
