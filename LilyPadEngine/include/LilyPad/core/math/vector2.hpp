@@ -38,25 +38,37 @@ namespace LilyPad
 		_FORCE_INLINE_ Vector2 operator/(float scalar) const { return Vector2(x / scalar, y / scalar); }
 
 
-		void operator+(const Vector2 &other);
+		_FORCE_INLINE_ Vector2 operator+(const Vector2 &other) { return Vector2(x + other.x, y + other.y); }
 
-		void operator-(const Vector2 &other);
+		_FORCE_INLINE_ Vector2 operator-(const Vector2 &other) { return Vector2(x - other.x, y - other.y); }
 
-		void operator*(const Vector2 &other);
+		_FORCE_INLINE_ Vector2 operator*(const Vector2 &other) { return Vector2(x * other.x, y * other.y); }
 
-		void operator/(const Vector2 &other);
+		_FORCE_INLINE_ Vector2 operator/(const Vector2 &other) { return Vector2(x / other.x, y / other.y); }
 
-		void operator-=(const Vector2 &other);
+		_FORCE_INLINE_ void operator-=(const Vector2 &other)
+		{
+			x -= other.x;
+			y -= other.y;
+		}
 
-		void operator*=(const Vector2 &other);
+		_FORCE_INLINE_ void operator*=(const Vector2 &other)
+		{
+			x *= other.x;
+			y *= other.y;
+		}
 
-		void operator/=(const Vector2 &other);
+		_FORCE_INLINE_ void operator/=(const Vector2 &other)
+		{
+			x /= other.x;
+			y /= other.y;
+		}
 
-		void operator==(const Vector2 &other);
+		bool operator==(const Vector2 &other);
 
-		void operator!=(const Vector2 &other);
+		bool operator!=(const Vector2 &other);
 
-		void operator>(const Vector2 &other);
+		bool operator>(const Vector2 &other);
 
 		bool operator<(const Vector2 &other);
 

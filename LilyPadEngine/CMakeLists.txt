@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.22)
 project(LilyPadEngine)
 
-option(RUN_TESTS "" OFF)
+option(RUN_TESTS "" ON)
 
 function (LinkDependencies Target)
     target_link_libraries(${Target} 
@@ -56,6 +56,9 @@ target_include_directories(
 LinkDependencies(LilyPadEngine)
 
 
-if (RUN_TESTS)
+if (${RUN_TESTS})
+    message("RUN_TESTS enabled")
+    enable_testing()
+    include(CTest)
     add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/tests)
 endif()

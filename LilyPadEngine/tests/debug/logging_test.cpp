@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "debug/logging.hpp"
+#include "LilyPad/debug/logging.hpp"
 
 
 TEST(LoggingTest, SingleString)
