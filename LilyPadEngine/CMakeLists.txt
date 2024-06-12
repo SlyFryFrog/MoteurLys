@@ -6,6 +6,7 @@ option(RUN_TESTS "" ON)
 function (LinkDependencies Target)
     target_link_libraries(${Target} 
         PRIVATE
+            glm::glm
             glfw
             OpenGL::GL
             stb_image
@@ -35,6 +36,7 @@ else()
     find_package(glfw3 REQUIRED)
 endif()
 
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/vendor/glm)
 find_package(OpenGL REQUIRED)
 find_package(GLEW REQUIRED)
 
