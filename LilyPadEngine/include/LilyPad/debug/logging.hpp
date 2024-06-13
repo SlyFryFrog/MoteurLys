@@ -51,7 +51,7 @@ namespace LilyPad
 		static Logger *instance();
 
 		/**
-		 * @brief 
+		 * @brief
 		 */
 		template <typename... Args>
 		void log(const LogLevel &level, Args... args)
@@ -63,7 +63,7 @@ namespace LilyPad
 			}
 
 			std::stringstream logStream;
-			logStream << "[" << get_log_type(level) << "] " << get_formatted_time() << " : ";
+			logStream << "[" << get_log_type(level) << "] " << get_formatted_time(_timeFormat) << " : ";
 			append_to_stream(logStream, args...);
 
 			const std::string logMessage = logStream.str();
@@ -152,14 +152,15 @@ namespace LilyPad
 		 */
 		static const char *get_log_type(const LogLevel &level);
 
-		const std::string get_formatted_time() const;
+		const std::string get_formatted_time(const std::string &timeFormat) const;
 
-		std::string _file;			// Relative path to the log file being written to.
-		bool _showLogs;				// When set to true, displays all logs to the console.
-		bool _writeLogs;				// When set to true, writes all logs to the given file.
-		std::mutex _logMutex;		// Locks logger from writing to file when another thread is.
-		LogLevel _minLogLevel;		// Minimum level to be logged.
+		std::string _file;
+		bool _showLogs;
+		bool _writeLogs;
+		std::mutex _logMutex;  
+		LogLevel _minLogLevel;
 		TextColor _textColors;
-		static Logger *_logInstance; // Static pointer to the current instance of Logger.
+		std::string _timeFormat;
+		static Logger *_logInstance;
 	};
 } // namespace LilyPad
