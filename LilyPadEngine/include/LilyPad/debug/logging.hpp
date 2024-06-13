@@ -26,13 +26,15 @@ namespace LilyPad
 		CRITICAL
 	};
 
+	/**
+	 * @brief Contains constants of color codes for coloring text in terminal.
+	 */
 	struct TextColor
 	{
 		const std::string RED = "\033[31m";
 		const std::string GREEN = "\033[32m";
 		const std::string YELLOW = "\033[33m";
 		const std::string DEFAULT = "\033[39m";
-		
 	};
 
 	/**
@@ -49,27 +51,19 @@ namespace LilyPad
 		static Logger *instance();
 
 		/**
-		 * @brief
-		 *
-		 * @tparam Args
-		 * @param level
-		 * @param args
+		 * @brief 
 		 */
 		template <typename... Args>
 		void log(const LogLevel &level, Args... args)
 		{
 			// Ignores any logging lower than the minimum
 			if (level < _minLogLevel || (_writeLogs && _showLogs))
+			{
 				return;
-
-			// Gets time
-			std::time_t now = std::time(nullptr);
-			char time[100];
-			// Month, Day, Hour, Minute, Second
-			std::strftime(time, sizeof(time), "%b %d %H:%M:%S", std::localtime(&now));
+			}
 
 			std::stringstream logStream;
-			logStream << "[" << get_log_type(level) << "] " << time << " : ";
+			logStream << "[" << get_log_type(level) << "] " << get_formatted_time() << " : ";
 			append_to_stream(logStream, args...);
 
 			const std::string logMessage = logStream.str();
@@ -113,7 +107,10 @@ namespace LilyPad
 		 */
 		Logger();
 
-		void print_log(const LogLevel &level, std::string message);
+		/**
+		 * @brief Prints the log to the console with the appropriate color.
+		 */
+		void print_log(const LogLevel &level, const std::string &message);
 
 		/**
 		 * @brief Appends a single argument to a stringstream.
@@ -154,6 +151,8 @@ namespace LilyPad
 		 * @return const char* 	String equivalent of the LogLevel.
 		 */
 		static const char *get_log_type(const LogLevel &level);
+
+		const std::string get_formatted_time() const;
 
 		std::string _file;			// Relative path to the log file being written to.
 		bool _showLogs;				// When set to true, displays all logs to the console.
