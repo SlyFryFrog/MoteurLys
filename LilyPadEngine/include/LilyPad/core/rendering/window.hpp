@@ -49,7 +49,6 @@ namespace LilyPad
 		 */
 		void initialize();
 
-
 		/**
 		 * @brief Returns the status of the window's completion status.
 		 * 

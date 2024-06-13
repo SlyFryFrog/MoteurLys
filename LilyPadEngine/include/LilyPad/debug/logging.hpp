@@ -26,6 +26,15 @@ namespace LilyPad
 		CRITICAL
 	};
 
+	struct TextColor
+	{
+		const std::string RED = "\033[31m";
+		const std::string GREEN = "\033[32m";
+		const std::string YELLOW = "\033[33m";
+		const std::string DEFAULT = "\033[39m";
+		
+	};
+
 	/**
 	 * @brief Class for recording events to console and a file.
 	 */
@@ -47,7 +56,7 @@ namespace LilyPad
 		 * @param args
 		 */
 		template <typename... Args>
-		void log(const LogLevel level, Args... args)
+		void log(const LogLevel &level, Args... args)
 		{
 			// Ignores any logging lower than the minimum
 			if (level < _minLogLevel || (_writeLogs && _showLogs))
@@ -63,11 +72,11 @@ namespace LilyPad
 			logStream << "[" << get_log_type(level) << "] " << time << " : ";
 			append_to_stream(logStream, args...);
 
-			std::string logMessage = logStream.str();
+			const std::string logMessage = logStream.str();
 
 			if (_showLogs)
 			{
-				std::cout << logMessage << std::endl;
+				print_log(level, logMessage);
 			}
 			if (_writeLogs)
 			{
@@ -103,6 +112,8 @@ namespace LilyPad
 		 * @brief Construct a new Logger object.
 		 */
 		Logger();
+
+		void print_log(const LogLevel &level, std::string message);
 
 		/**
 		 * @brief Appends a single argument to a stringstream.
@@ -149,6 +160,7 @@ namespace LilyPad
 		bool _writeLogs;				// When set to true, writes all logs to the given file.
 		std::mutex _logMutex;		// Locks logger from writing to file when another thread is.
 		LogLevel _minLogLevel;		// Minimum level to be logged.
+		TextColor _textColors;
 		static Logger *_logInstance; // Static pointer to the current instance of Logger.
 	};
 } // namespace LilyPad

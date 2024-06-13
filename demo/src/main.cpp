@@ -3,6 +3,7 @@
 #include "LilyPad/core/physics/rigid_body_2d.hpp"
 #include "LilyPad/core/physics/world.hpp"
 #include "LilyPad/core/rendering/window.hpp"
+#include "LilyPad/debug/logging.hpp"
 
 using namespace LilyPad;
 

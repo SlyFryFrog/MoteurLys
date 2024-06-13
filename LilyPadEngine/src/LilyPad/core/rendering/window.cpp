@@ -75,7 +75,7 @@ namespace LilyPad
 		glViewport(0, 0, _width, _height);
 		glfwSetFramebufferSizeCallback(window, frame_buffer_callback);
 
-		// Print out the OpenGL version we are using
+		LILYPAD_INFO("Renderer: ", glGetString(GL_RENDERER));
 		LILYPAD_INFO("OpenGL version: ", glGetString(GL_VERSION));
 
 		int numAttributes;

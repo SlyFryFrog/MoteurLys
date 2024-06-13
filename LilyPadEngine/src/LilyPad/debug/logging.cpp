@@ -2,6 +2,35 @@
 
 namespace LilyPad
 {
+	void Logger::print_log(const LogLevel &level, std::string message)
+	{
+		std::string color;
+
+		switch (level)
+		{
+		case LogLevel::DEBUG:
+			color = _textColors.DEFAULT;
+			break;
+		case LogLevel::INFO:
+			color = _textColors.DEFAULT;
+			break;
+		case LogLevel::WARNING:
+			color = _textColors.YELLOW;
+			break;
+		case LogLevel::ERROR:
+			color = _textColors.RED;
+			break;
+		case LogLevel::CRITICAL:
+			color = _textColors.RED;
+			break;
+		default:
+			color = _textColors.DEFAULT;
+			break;
+		}
+
+		std::cout << color << message << _textColors.DEFAULT << "\n";
+	}
+
 	Logger *Logger::instance()
 	{
 		if (!_logInstance)
