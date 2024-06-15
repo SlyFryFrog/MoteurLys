@@ -2,7 +2,10 @@
 #include <vector>
 #include "LilyPad/core/physics/rigid_body_2d.hpp"
 #include "LilyPad/core/physics/world.hpp"
+#include "LilyPad/core/rendering/texture.hpp"
+#include "LilyPad/core/rendering/vertex.hpp"
 #include "LilyPad/core/rendering/window.hpp"
+#include "LilyPad/core/shaders/shader_program.hpp"
 #include "LilyPad/debug/logging.hpp"
 
 using namespace LilyPad;
@@ -26,8 +29,9 @@ int main()
 
 	window.initialize();
 
-	std::vector<RigidBody2D> bodies;
-	auto previousTime = std::chrono::steady_clock::now();
+	ShaderProgram shaders("Vertex.glsl", "Fragment.glsl");
+
+	shaders.create_shader_program();
 
 	// Render loop
 	while (!window.is_done())
@@ -36,12 +40,7 @@ int main()
 		glClear(GL_COLOR_BUFFER_BIT);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		// Calc delta
-		const auto currentTime = std::chrono::steady_clock::now();
-		std::chrono::duration<float> elapsedTime = currentTime - previousTime;
-		float delta = elapsedTime.count(); // deltaTime in seconds
 
-		update(bodies, delta);
 
 		glfwSwapBuffers(window.window);
 		glfwPollEvents();

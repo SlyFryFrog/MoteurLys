@@ -45,7 +45,11 @@ namespace LilyPad
 
 	void Logger::set_log_file(const std::string &file) { _file = file; }
 
-	Logger::Logger() : _file("rsc/log.txt"), _showLogs(true), _writeLogs(false), _minLogLevel(LogLevel::DEBUG), _timeFormat("%b %d %H:%M:%S") {}
+	Logger::Logger() :
+		_file("rsc/log.txt"), _showLogs(true), _writeLogs(false), _minLogLevel(LogLevel::DEBUG),
+		_timeFormat("%H:%M:%S")
+	{
+	}
 
 	const char *Logger::get_log_type(const LogLevel &level)
 	{
@@ -72,13 +76,13 @@ namespace LilyPad
 	const std::string Logger::get_formatted_time(const std::string &timeFormat) const
 	{
 		const auto current_time = std::chrono::system_clock::now();
-        const auto current_time_t = std::chrono::system_clock::to_time_t(current_time);
-        const std::tm* timeInfo = std::localtime(&current_time_t);
+		const auto current_time_t = std::chrono::system_clock::to_time_t(current_time);
+		const std::tm *timeInfo = std::localtime(&current_time_t);
 
-        // Get the formatted time string from the string stream
-        std::ostringstream oss;
-        oss << std::put_time(timeInfo, timeFormat.c_str());
-        const std::string formattedTime = oss.str();
+		// Get the formatted time string from the string stream
+		std::ostringstream oss;
+		oss << std::put_time(timeInfo, timeFormat.c_str());
+		const std::string formattedTime = oss.str();
 
 		return formattedTime;
 	}

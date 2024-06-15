@@ -14,9 +14,6 @@
 
 namespace LilyPad
 {
-	/**
-	 * @brief Contains the logging levels ranging from DEBUG (0) to CRITICAL (4).
-	 */
 	enum class LogLevel
 	{
 		DEBUG,
@@ -26,9 +23,6 @@ namespace LilyPad
 		CRITICAL
 	};
 
-	/**
-	 * @brief Contains constants of color codes for coloring text in terminal.
-	 */
 	struct TextColor
 	{
 		const std::string RED = "\033[31m";
