@@ -18,9 +18,9 @@ endfunction()
 
 # Set STATIC for Windows only
 if (WIN32)
-    set(LIBRARY_TYPE STATIC)
+    set(LIBRARY_TYPE "STATIC")
 else()
-    set(LIBRARY_TYPE SHARED)
+    set(LIBRARY_TYPE "SHARED")
 endif()
 
 # Add all cpp and hpp files to the library
