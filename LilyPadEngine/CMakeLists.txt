@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.22)
 project(LilyPadEngine)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED YES)
 
 option(RUN_TESTS "" ON)
 
@@ -7,13 +9,19 @@ function (LinkDependencies Target)
     target_link_libraries(${Target} 
         PRIVATE
             glm::glm
-            glfw
             OpenGL::GL
             stb_image
             GLEW::GLEW
+            glfw
     )
 endfunction()
 
+# Set STATIC for Windows only
+if (WIN32)
+    set(LIBRARY_TYPE STATIC)
+else()
+    set(LIBRARY_TYPE SHARED)
+endif()
 
 # Add all cpp and hpp files to the library
 file(GLOB_RECURSE SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp)
@@ -40,10 +48,9 @@ add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/vendor/glm)
 find_package(OpenGL REQUIRED)
 find_package(GLEW REQUIRED)
 
-add_library(LilyPadEngine SHARED ${SOURCES})
+add_library(LilyPadEngine ${LIBRARY_TYPE} ${SOURCES})
 
-add_library(stb_image SHARED "vendor/stb_image.cpp")
-
+add_library(stb_image ${LIBRARY_TYPE} "vendor/stb_image.cpp")
 
 target_include_directories(
     LilyPadEngine
@@ -51,11 +58,10 @@ target_include_directories(
         ${CMAKE_CURRENT_SOURCE_DIR}/src
     PRIVATE # For internal use only
         ${CMAKE_CURRENT_SOURCE_DIR}/rsc
-        ${CMAKE_CURRENT_SOURCE_DIR}/vendor 
+        ${CMAKE_CURRENT_SOURCE_DIR}/vendor
 )
 
 LinkDependencies(LilyPadEngine)
-
 
 if (${RUN_TESTS})
     message("RUN_TESTS enabled")
