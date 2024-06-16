@@ -14,49 +14,19 @@ namespace LilyPad
 	 */
 	class ShaderProgram
 	{
-	private:
-		std::string vShaderCode; // String containing the source code of the vertex shader.
-		std::string fShaderCode; // String containing the source code of the fragment shader.
-
-		/**
-		 * @brief Reads the file at the provided path and returns the
-		 * parsed contents as a std::string.
-		 *
-		 * @param file File name of the shader script. Needs to be added to CMakeLists in order to be correctly
-		 * included. Adds prefix "shaders/" to the path.
-		 * @return std::string Contents of the shader file; the code in the glsl file.
-		 */
-		static std::string read_file(const std::string &file);
-
-		/**
-		 * @brief Compiles a shader from the provided source code.
-		 *
-		 * @param source The source code of the shader.
-		 * @param type The type of the shader (GL_VERTEX_SHADER or GL_FRAGMENT_SHADER).
-		 * @return unsigned int The OpenGL ID of the compiled shader.
-		 */
-		static unsigned int compile_shader(const std::string &source, unsigned int type);
-
 	public:
 		unsigned int program; // The OpenGL ID of the shader program.
 
-		/**
-		 * @brief Construct a new Shader Program object.
-		 */
 		ShaderProgram();
 
-		/**
-		 * @brief Construct a new Shader Program object.
-		 *
-		 * @param vertexPath Sets the path for the vertex glsl source file.
-		 * @param fragmentPath Sets the path for the fragment glsl source file.
-		 */
-		ShaderProgram(const std::string &vertexPath, const std::string &fragmentPath);
+		ShaderProgram(const std::string &path);
 
 		/**
 		 * @brief Destroy the Shader Program object and removes the program from OpenGL.
 		 */
 		~ShaderProgram();
+
+		void set_shader_code(const std::string &vertexPath, const std::string &fragmentPath);
 
 		/**
 		 * @brief Checks the compilation status of a shader and logs any errors.
@@ -116,5 +86,29 @@ namespace LilyPad
 		 * @param value Value to set the uniform variable to.
 		 */
 		void set_uniform(const std::string &name, const glm::mat4 &trans) const;
+
+	private:
+		std::string _vShaderCode; // String containing the source code of the vertex shader.
+		std::string _fShaderCode; // String containing the source code of the fragment shader.
+		std::string _path;
+
+		/**
+		 * @brief Reads the file at the provided path and returns the
+		 * parsed contents as a std::string.
+		 *
+		 * @param file File name of the shader script. Needs to be added to CMakeLists in order to be correctly
+		 * included. Adds prefix "shaders/" to the path.
+		 * @return std::string Contents of the shader file; the code in the glsl file.
+		 */
+		std::string read_file(const std::string &file);
+
+		/**
+		 * @brief Compiles a shader from the provided source code.
+		 *
+		 * @param source The source code of the shader.
+		 * @param type The type of the shader (GL_VERTEX_SHADER or GL_FRAGMENT_SHADER).
+		 * @return unsigned int The OpenGL ID of the compiled shader.
+		 */
+		static unsigned int compile_shader(const std::string &source, unsigned int type);
 	};
 } // namespace LilyPad

@@ -8,8 +8,6 @@
 #include "LilyPad/debug/logging.hpp"
 
 
-#define SHADER_PATH "engine/rsc/shaders/"
-
 namespace LilyPad
 {
 	std::string ShaderProgram::read_file(const std::string &file)
@@ -20,7 +18,7 @@ namespace LilyPad
 
 		try
 		{
-			shaderFile.open(SHADER_PATH + file);
+			shaderFile.open(_path + file);
 			std::stringstream shaderStream;
 			shaderStream << shaderFile.rdbuf();
 			shaderFile.close();
@@ -29,10 +27,17 @@ namespace LilyPad
 		}
 		catch (std::ifstream::failure &e)
 		{
-			LILYPAD_ERROR("ERROR::SHADER::FILE_NOT_SUCCESSFULLY_READY: ", e.what());
+			const std::string path = _path + file;
+			LILYPAD_ERROR("SHADER::FILE_NOT_SUCCESSFULLY_READY: ", path, " ", e.what());
 		}
 
 		return code;
+	}
+
+	void ShaderProgram::set_shader_code(const std::string &vertexPath, const std::string &fragmentPath)
+	{
+		_vShaderCode = read_file(vertexPath);
+		_fShaderCode = read_file(fragmentPath);
 	}
 
 	unsigned int ShaderProgram::compile_shader(const std::string &source, const unsigned int type)
@@ -54,10 +59,7 @@ namespace LilyPad
 
 	ShaderProgram::ShaderProgram() = default;
 
-	ShaderProgram::ShaderProgram(const std::string &vertexPath, const std::string &fragmentPath) :
-		vShaderCode(read_file(vertexPath)), fShaderCode(read_file(fragmentPath))
-	{
-	}
+	ShaderProgram::ShaderProgram(const std::string &path) : _path(path) {}
 
 	ShaderProgram::~ShaderProgram() { glDeleteProgram(program); }
 
@@ -111,7 +113,7 @@ namespace LilyPad
 		glDeleteShader(fragment);
 	}
 
-	void ShaderProgram::create_shader_program() { create_shader_program(vShaderCode, fShaderCode); }
+	void ShaderProgram::create_shader_program() { create_shader_program(_vShaderCode, _fShaderCode); }
 
 	void ShaderProgram::use() const { glUseProgram(program); }
 

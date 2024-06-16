@@ -1,14 +1,22 @@
 #include "LilyPad/core/rendering/texture.hpp"
 
 #include <GL/glew.h>
+#include <filesystem>
 #include <stb_image.h>
 #include "LilyPad/debug/logging.hpp"
 
-#define TEXTURE_PATH "engine/rsc/textures/"
 
 namespace LilyPad
 {
-	unsigned int generate_texture(const std::string &file)
+	Texture::Texture() {}
+
+	Texture::Texture(const std::string &path) : _path(path) {}
+
+	void Texture::set_path(const std::string &path) { _path = path; }
+
+	std::string Texture::get_path() { return _path; }
+
+	unsigned int Texture::generate_texture(const std::string &file)
 	{
 		unsigned int texture;
 		glGenTextures(1, &texture);
@@ -22,7 +30,7 @@ namespace LilyPad
 
 		int width, height, numColorChannel;
 		stbi_set_flip_vertically_on_load(true); // tell stb_image.h to flip loaded texture's on the y-axis.
-		unsigned char *data = stbi_load((TEXTURE_PATH + file).c_str(), &width, &height, &numColorChannel, 0);
+		unsigned char *data = stbi_load((_path + file).c_str(), &width, &height, &numColorChannel, 0);
 
 		if (data)
 		{
@@ -50,10 +58,11 @@ namespace LilyPad
 
 			glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
 			glGenerateMipmap(GL_TEXTURE_2D);
+			LILYPAD_DEBUG("Successfully loaded texture data at the path ", _path, file, ".");
 		}
 		else
 		{
-			LILYPAD_ERROR("Failed to load texture data at the path ", TEXTURE_PATH, file,
+			LILYPAD_ERROR("Failed to load texture data at the path ", _path, file,
 						  ". Make sure the file format is supported or is in the appropriate location.");
 		}
 

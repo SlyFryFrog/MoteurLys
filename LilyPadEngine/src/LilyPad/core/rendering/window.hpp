@@ -51,17 +51,18 @@ namespace LilyPad
 
 		/**
 		 * @brief Returns the status of the window's completion status.
-		 * 
+		 *
 		 * @return true		GLFW window is done and should be closed.
 		 * @return false 	GLFW window is not done and should not be closed.
 		 */
 		[[nodiscard]] bool is_done() const;
 
 		void set_dimensions(int width, int height);
+
 	private:
 		bool _isPolygonMode; // Boolean to either enable or disable polygon rendering
-		int _width;			// Window width
-		int _height;			// Window height
+		int _width;			 // Window width
+		int _height;		 // Window height
 		std::string _title;
 
 		/**
@@ -73,15 +74,6 @@ namespace LilyPad
 		 */
 		static void frame_buffer_callback(GLFWwindow *window, int width, int height);
 
-		/**
-		 * @brief
-		 *
-		 * @param window
-		 * @param key
-		 * @param scancode
-		 * @param action
-		 * @param mods
-		 */
 		static void process_input(GLFWwindow *window, int key, int scancode, int action, int mods);
 	};
 } // namespace LilyPad

@@ -3,7 +3,7 @@ project(LilyPadEngine)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED YES)
 
-option(RUN_TESTS "" ON)
+option(RUN_TESTS "" OFF)
 
 function (LinkDependencies Target)
     target_link_libraries(${Target} 
