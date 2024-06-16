@@ -24,7 +24,7 @@ namespace LilyPad
 	{
 		char buff[PATH_MAX];
 #ifdef __linux__
-		::readlink("/proc/self/exe", buff, sizeof(buff) - 1);
+		readlink("/proc/self/exe", buff, sizeof(buff) - 1);
 #endif
 		return std::string(buff);
 	}
