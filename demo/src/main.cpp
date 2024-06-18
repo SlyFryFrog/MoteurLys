@@ -16,7 +16,6 @@ using namespace LilyPad;
 
 void processInput(GLFWwindow *window);
 
-// settings
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
@@ -30,9 +29,6 @@ int main()
 {
 	const std::string execPath = get_exec_path();
 	const std::string relativePath = strip_right_of_slash(execPath);
-
-	LILYPAD_DEBUG(execPath);
-	LILYPAD_DEBUG(relativePath);
 
 	Window window = Window(SCR_WIDTH, SCR_HEIGHT);
 	window.set_title("Demo");
@@ -100,9 +96,9 @@ int main()
 	glBindVertexArray(0);
 	glEnable(GL_DEPTH_TEST);
 
-	Texture texture(std::string(relativePath + "/rsc/textures/"));
+	Texture texture(relativePath + "/rsc/textures/");
 	texture1 = texture.generate_texture("R.png");
-	
+
 
 	ourShader.use();
 	ourShader.set_uniform("uTexture", 0);
@@ -124,10 +120,6 @@ int main()
 		// bind textures on corresponding texture units
 		glActiveTexture(GL_TEXTURE0);
 		glBindTexture(GL_TEXTURE_2D, texture1);
-
-		const float radius = 10.0f;
-		float camX = sin(glfwGetTime()) * radius;
-		float camZ = cos(glfwGetTime()) * radius;
 
 		glm::mat4 projection;
 		projection = glm::perspective(glm::radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f);

@@ -6,6 +6,8 @@ namespace LilyPad
 {
 	struct Mat4
 	{
-		operator glm::mat4() const;
+		float matrix[16];
+		
+		explicit operator glm::mat4() const;
 	};
 } // namespace LilyPad

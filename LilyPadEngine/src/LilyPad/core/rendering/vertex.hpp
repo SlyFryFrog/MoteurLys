@@ -12,37 +12,37 @@ namespace LilyPad
 		glm::vec2 textureCoord;
 	};
 
-	struct VertexC : public Vertex
+	struct VertexC : Vertex
 	{
 		glm::vec3 color;
 	};
 
-	// class Vertices
-	// {
-	// public:
-	// 	Vertices();
-	// 	virtual void set_virtices(std::vector<Vertex> vertices);
-	// 	virtual void add_vertex(Vertex vertex);
-	// 	virtual void upload_vertices(unsigned int &VAO, unsigned int &VBO);
-	// 	virtual void upload_vertices(unsigned int &VAO, unsigned int &VBO, int row_size);
+	class Vertices
+	{
+	public:
+		Vertices();
+		// virtual void set_virtices(const std::vector<Vertex> &vertices);
+		// virtual void add_vertex(const Vertex &vertex);
+		virtual void upload_vertices(unsigned int &VAO, unsigned int &VBO);
+		virtual void upload_vertices(unsigned int &VAO, unsigned int &VBO, const int &row_size);
 
-	// protected:
-	// 	int _row_size;
+	protected:
+		int _row_size;
 
-	// private:
-	// 	std::vector<Vertex> _vertices;
-	// };
+	private:
+		std::vector<Vertex> _vertices;
+	};
 
-	// class VerticesC : public Vertices
-	// {
-	// public:
-	// 	VerticesC();
-	// 	void set_vertices(std::vector<VertexC> vertices);
-	// 	void add_vertex(VertexC vertex);
-	// 	void upload_vertices(unsigned int &VAO, unsigned int &VBO, int row_size) override;
+	class VerticesC : public Vertices
+	{
+	public:
+		VerticesC();
+		// void set_vertices(const std::vector<VertexC> &vertices);
+		// void add_vertex(const VertexC &vertex);
+		// void upload_vertices(unsigned int &VAO, unsigned int &VBO, const int &row_size) override;
 
-	// private:
-	// 	std::vector<VertexC> _vertices;
-	// };
+	private:
+		std::vector<VertexC> _vertices;
+	};
 
 } // namespace LilyPad
