@@ -1,4 +1,4 @@
-#include "LilyPad/core/rendering/texture.hpp"
+#include "LilyPad/renderer/OpenGL/texture.hpp"
 
 #include <GL/glew.h>
 #include <filesystem>

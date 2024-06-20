@@ -1,4 +1,4 @@
-#include "LilyPad/core/rendering/window.hpp"
+#include "LilyPad/renderer/OpenGL/window.hpp"
 
 #include "LilyPad/debug/logging.hpp"
 

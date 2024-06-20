@@ -1,4 +1,4 @@
-#include "LilyPad/core/rendering/vertex.hpp"
+#include "LilyPad/renderer/OpenGL/vertex.hpp"
 
 #include <GL/glew.h>
 
@@ -23,8 +23,8 @@ namespace LilyPad
 		glEnableVertexAttribArray(1);
 		glBindVertexArray(0);
 	}
-	//
-	// VerticesC::VerticesC() { _row_size = 8; }
+
+	VerticesC::VerticesC() { _row_size = 8; }
 	//
 	// void VerticesC::set_vertices(const std::vector<VertexC> &vertices) { _vertices = vertices; }
 	//

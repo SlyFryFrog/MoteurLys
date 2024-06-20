@@ -2,7 +2,7 @@
 
 #include <glm/glm.hpp>
 #include <vector>
-#include "LilyPad/core/math/vector2.hpp"
+#include "LilyPad/renderer/OpenGL/vertex.hpp"
 
 namespace LilyPad
 {

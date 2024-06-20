@@ -2,15 +2,14 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
-#include <vector>
 #include "LilyPad/core/physics/rigid_body_2d.hpp"
 #include "LilyPad/core/physics/world.hpp"
-#include "LilyPad/core/rendering/texture.hpp"
-#include "LilyPad/core/rendering/vertex.hpp"
-#include "LilyPad/core/rendering/window.hpp"
-#include "LilyPad/core/shaders/shader_program.hpp"
 #include "LilyPad/core/utils/paths.hpp"
 #include "LilyPad/debug/logging.hpp"
+#include "LilyPad/renderer/OpenGL/shaders/shader_program.hpp"
+#include "LilyPad/renderer/OpenGL/texture.hpp"
+#include "LilyPad/renderer/OpenGL/vertex.hpp"
+#include "LilyPad/renderer/OpenGL/window.hpp"
 
 using namespace LilyPad;
 
@@ -27,9 +26,7 @@ unsigned int texture1;
 
 int main()
 {
-	const std::string execPath = get_exec_path();
-	const std::string relativePath = strip_right_of_slash(execPath);
-
+	const std::string relativePath = get_root_directory();
 	Window window = Window(SCR_WIDTH, SCR_HEIGHT);
 	window.set_title("Demo");
 	window.initialize();
@@ -124,14 +121,13 @@ int main()
 		glm::mat4 projection;
 		projection = glm::perspective(glm::radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f);
 
-
 		ourShader.use();
 		glm::mat4 view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
 		ourShader.set_uniform("uView", view);
 		ourShader.set_uniform("uProjection", projection);
 
 		glBindVertexArray(VAO);
-		for (unsigned int i = 0; i < 10; i++)
+		for (int i = 0; i < 10; i++)
 		{
 			glm::mat4 model = glm::mat4(1.0f);
 			model = glm::translate(model, cubePositions[i]);
