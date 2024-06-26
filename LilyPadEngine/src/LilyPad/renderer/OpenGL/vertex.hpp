@@ -21,8 +21,8 @@ namespace LilyPad
 	{
 	public:
 		Vertices();
-		// virtual void set_virtices(const std::vector<Vertex> &vertices);
-		// virtual void add_vertex(const Vertex &vertex);
+		virtual void set_virtices(const std::vector<Vertex> vertices) = 0;
+		virtual void add_vertex(const Vertex vertex) = 0;
 		virtual void upload_vertices(unsigned int &VAO, unsigned int &VBO);
 		virtual void upload_vertices(unsigned int &VAO, unsigned int &VBO, const int &row_size);
 
