@@ -3,7 +3,7 @@ project(LilyPadEngine)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED YES)
 
-option(RUN_TESTS OFF)
+option(RUN_TESTS "Build tests" ON)
 
 function (LinkDependencies Target)
     target_link_libraries(${Target} 
@@ -47,9 +47,8 @@ add_library(stb_image ${LIBRARY_TYPE} "vendor/stb_image.cpp")
 
 target_include_directories(
     LilyPadEngine
-    PUBLIC  # Can be used externally from the library
+    PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/src
-    PRIVATE # For internal use only
         ${CMAKE_CURRENT_SOURCE_DIR}/vendor
 )
 

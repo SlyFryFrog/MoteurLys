@@ -35,8 +35,8 @@ namespace LilyPad
 		}
 
 		_FORCE_INLINE_ Vector2 operator*(float scalar) const { return Vector2(x * scalar, y * scalar); }
-		_FORCE_INLINE_ Vector2 operator/(float scalar) const { return Vector2(x / scalar, y / scalar); }
 
+		_FORCE_INLINE_ Vector2 operator/(float scalar) const { return Vector2(x / scalar, y / scalar); }
 
 		_FORCE_INLINE_ Vector2 operator+(const Vector2 &other) { return Vector2(x + other.x, y + other.y); }
 
@@ -64,19 +64,17 @@ namespace LilyPad
 			y /= other.y;
 		}
 
-		bool operator==(const Vector2 &other);
+		_FORCE_INLINE_ bool operator==(const Vector2 &other) const { return (x == other.x && y == other.y); }
 
-		bool operator!=(const Vector2 &other);
+		_FORCE_INLINE_ bool operator!=(const Vector2 &other) const { return (x != other.x && y != other.y); }
 
-		bool operator>(const Vector2 &other);
+		// bool operator>(const Vector2 &other) const;
 
-		bool operator<(const Vector2 &other);
+		// bool operator<(const Vector2 &other) const;
 
-		bool operator>=(const Vector2 &other);
+		// bool operator>=(const Vector2 &other) const;
 
-		bool operator<=(const Vector2 &other);
-
-		bool operator!=(const Vector2 &p_vec2) const { return x != p_vec2.x || y != p_vec2.y; }
+		// bool operator<=(const Vector2 &other) const;
 
 		/**
 		 * @brief Provides conversion for all data to glm::vec2

@@ -1,5 +1,5 @@
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/vendor/googletest-1.14.0)
-file(GLOB_RECURSE TESTS ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
+file(GLOB_RECURSE TESTS ${CMAKE_CURRENT_SOURCE_DIR}/LilyPad/*.cpp)
 
 # Adds test or each file
 foreach(TEST_FILE ${TESTS})
