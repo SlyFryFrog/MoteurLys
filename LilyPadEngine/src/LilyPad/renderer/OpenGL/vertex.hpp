@@ -1,6 +1,5 @@
 #pragma once
 
-#include <glm/glm.hpp>
 #include <vector>
 #include "LilyPad/renderer/OpenGL/vertex.hpp"
 
@@ -8,13 +7,13 @@ namespace LilyPad
 {
 	struct Vertex
 	{
-		glm::vec3 position;
-		glm::vec2 textureCoord;
+		float position[3];
+		float textureCoord[2];
 	};
 
 	struct VertexC : Vertex
 	{
-		glm::vec3 color;
+		float color[3];
 	};
 
 	class Vertices

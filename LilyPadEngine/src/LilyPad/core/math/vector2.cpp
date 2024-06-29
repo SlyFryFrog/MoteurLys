@@ -36,6 +36,4 @@ namespace LilyPad
 	float Vector2::magnitude() const { return x * x + y * y; }
 
 	float Vector2::magnitude_squared() const { return std::sqrt(x * x + y * y); }
-
-	Vector2::operator glm::vec2() const { return {x, y}; }
 } // namespace LilyPad

@@ -1,6 +1,5 @@
 #pragma once
 
-#include <glm/glm.hpp>
 #include "LilyPad/core/utils/typedef.hpp"
 
 namespace LilyPad
@@ -26,7 +25,6 @@ namespace LilyPad
 
 		[[nodiscard]] float magnitude_squared() const;
 
-		_FORCE_INLINE_ Vector2 operator+(const Vector2 &other) const { return Vector2(x + other.x, y + other.y); }
 
 		_FORCE_INLINE_ void operator+=(const Vector2 &other)
 		{
@@ -34,11 +32,15 @@ namespace LilyPad
 			y += other.y;
 		}
 
+		_FORCE_INLINE_ Vector2 operator+(float scalar) const { return Vector2(x + scalar, y + scalar); }
+
+		_FORCE_INLINE_ Vector2 operator-(float scalar) const { return Vector2(x - scalar, y - scalar); }
+
 		_FORCE_INLINE_ Vector2 operator*(float scalar) const { return Vector2(x * scalar, y * scalar); }
 
 		_FORCE_INLINE_ Vector2 operator/(float scalar) const { return Vector2(x / scalar, y / scalar); }
 
-		_FORCE_INLINE_ Vector2 operator+(const Vector2 &other) { return Vector2(x + other.x, y + other.y); }
+		_FORCE_INLINE_ Vector2 operator+(const Vector2 &other) const { return Vector2(x + other.x, y + other.y); }
 
 		_FORCE_INLINE_ Vector2 operator-(const Vector2 &other) { return Vector2(x - other.x, y - other.y); }
 
@@ -68,20 +70,13 @@ namespace LilyPad
 
 		_FORCE_INLINE_ bool operator!=(const Vector2 &other) const { return (x != other.x && y != other.y); }
 
-		// bool operator>(const Vector2 &other) const;
+		_FORCE_INLINE_ bool operator>(const Vector2 &other) const { return x > other.x && y > other.y; }
 
-		// bool operator<(const Vector2 &other) const;
+		_FORCE_INLINE_ bool operator<(const Vector2 &other) const { return x < other.x && y < other.y; }
 
-		// bool operator>=(const Vector2 &other) const;
+		_FORCE_INLINE_ bool operator>=(const Vector2 &other) const { return x >= other.x && y >= other.y; };
 
-		// bool operator<=(const Vector2 &other) const;
-
-		/**
-		 * @brief Provides conversion for all data to glm::vec2
-		 *
-		 * @return glm::vec2
-		 */
-		explicit operator glm::vec2() const;
+		_FORCE_INLINE_ bool operator<=(const Vector2 &other) const { return x <= other.x && y <= other.y; }
 	};
 
 	typedef Vector2 Point2;

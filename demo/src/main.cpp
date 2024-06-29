@@ -10,6 +10,7 @@
 #include "LilyPad/renderer/OpenGL/texture.hpp"
 #include "LilyPad/renderer/OpenGL/vertex.hpp"
 #include "LilyPad/renderer/OpenGL/window.hpp"
+#include "LilyPad/core/math/vector3.hpp"
 
 using namespace LilyPad;
 
@@ -60,11 +61,10 @@ int main()
 						 {{0.5f, 0.5f, 0.5f}, {1.0f, 0.0f}},	{{0.5f, 0.5f, 0.5f}, {1.0f, 0.0f}},
 						 {{-0.5f, 0.5f, 0.5f}, {0.0f, 0.0f}},	{{-0.5f, 0.5f, -0.5f}, {0.0f, 1.0f}}};
 
-	glm::vec3 cubePositions[] = {glm::vec3(0.0f, 0.0f, 0.0f),	 glm::vec3(2.0f, 5.0f, -15.0f),
-								 glm::vec3(-1.5f, -2.2f, -2.5f), glm::vec3(-3.8f, -2.0f, -12.3f),
-								 glm::vec3(2.4f, -0.4f, -3.5f),	 glm::vec3(-1.7f, 3.0f, -7.5f),
-								 glm::vec3(1.3f, -2.0f, -2.5f),	 glm::vec3(1.5f, 2.0f, -2.5f),
-								 glm::vec3(1.5f, 0.2f, -1.5f),	 glm::vec3(-1.3f, 1.0f, -1.5f)};
+	std::vector<Vector3> cubePositions = {{0.0f, 0.0f, 0.0f},	 {2.0f, 5.0f, -15.0f}, {-1.5f, -2.2f, -2.5f},
+								 {-3.8f, -2.0f, -12.3f}, {2.4f, -0.4f, -3.5f}, {-1.7f, 3.0f, -7.5f},
+								 {1.3f, -2.0f, -2.5f},	 {1.5f, 2.0f, -2.5f},  {1.5f, 0.2f, -1.5f},
+								 {-1.3f, 1.0f, -1.5f}};
 	unsigned int indices[] = {
 		0, 1, 3, // first triangle
 		1, 2, 3	 // second triangle
@@ -130,7 +130,7 @@ int main()
 		for (int i = 0; i < 10; i++)
 		{
 			glm::mat4 model = glm::mat4(1.0f);
-			model = glm::translate(model, cubePositions[i]);
+			model = glm::translate(model, glm::vec3(cubePositions[i].x, cubePositions[i].y, cubePositions[i].z));
 			float angle = (float)glfwGetTime() * glm::radians(50.0f) * pow(-1, i);
 			model = glm::rotate(model, angle, glm::vec3(1.0f, 0.3f, 0.5f));
 			ourShader.set_uniform("uModel", model);
