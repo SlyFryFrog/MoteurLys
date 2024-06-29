@@ -25,13 +25,6 @@ namespace LilyPad
 
 		[[nodiscard]] float magnitude_squared() const;
 
-
-		_FORCE_INLINE_ void operator+=(const Vector2 &other)
-		{
-			x += other.x;
-			y += other.y;
-		}
-
 		_FORCE_INLINE_ Vector2 operator+(float scalar) const { return Vector2(x + scalar, y + scalar); }
 
 		_FORCE_INLINE_ Vector2 operator-(float scalar) const { return Vector2(x - scalar, y - scalar); }
@@ -47,6 +40,12 @@ namespace LilyPad
 		_FORCE_INLINE_ Vector2 operator*(const Vector2 &other) { return Vector2(x * other.x, y * other.y); }
 
 		_FORCE_INLINE_ Vector2 operator/(const Vector2 &other) { return Vector2(x / other.x, y / other.y); }
+		
+		_FORCE_INLINE_ void operator+=(const Vector2 &other)
+		{
+			x += other.x;
+			y += other.y;
+		}
 
 		_FORCE_INLINE_ void operator-=(const Vector2 &other)
 		{
