@@ -8,7 +8,6 @@ namespace LilyPad
 	template <typename T>
 	struct GLType;
 
-	// Specializations for common types
 	template <>
 	struct GLType<float>
 	{

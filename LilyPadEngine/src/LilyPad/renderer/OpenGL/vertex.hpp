@@ -20,7 +20,7 @@ namespace LilyPad
 			}
 		}
 
-		T *get_data() { return data.data(); }
+		std::vector<T> get_data(int array_index) { return data[array_index]; }
 
 		int size()
 		{
@@ -43,7 +43,7 @@ namespace LilyPad
 
 		Vertices(std::initializer_list<Vertex<T>> verts) : vertices(verts) {}
 
-		T *get_data(int index) { return vertices[index].get_data(); }
+		std::vector<T> get_data(int vertex_index, int array_index) { return vertices[vertex_index].get_data(array_index); }
 
 		T *get_data()
 		{

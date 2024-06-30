@@ -151,7 +151,7 @@ namespace LilyPad
 		std::string _file;
 		bool _showLogs;
 		bool _writeLogs;
-		std::mutex _logMutex;  
+		std::mutex _logMutex;
 		LogLevel _minLogLevel;
 		TextColor _textColors;
 		std::string _timeFormat;
