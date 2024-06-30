@@ -1,7 +1,7 @@
-#include <chrono>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include "LilyPad/core/math/vector3.hpp"
 #include "LilyPad/core/physics/rigid_body_2d.hpp"
 #include "LilyPad/core/physics/world.hpp"
 #include "LilyPad/core/utils/paths.hpp"
@@ -10,7 +10,7 @@
 #include "LilyPad/renderer/OpenGL/texture.hpp"
 #include "LilyPad/renderer/OpenGL/vertex.hpp"
 #include "LilyPad/renderer/OpenGL/window.hpp"
-#include "LilyPad/core/math/vector3.hpp"
+#include <cstddef>
 
 using namespace LilyPad;
 
@@ -37,60 +37,73 @@ int main()
 	ourShader.create_shader_program();
 
 	// set up vertex data (and buffer(s)) and configure vertex attributes
-	Vertex vertices[] = {{{-0.5f, -0.5f, -0.5f}, {0.0f, 0.0f}}, {{0.5f, -0.5f, -0.5f}, {1.0f, 0.0f}},
-						 {{0.5f, 0.5f, -0.5f}, {1.0f, 1.0f}},	{{0.5f, 0.5f, -0.5f}, {1.0f, 1.0f}},
-						 {{-0.5f, 0.5f, -0.5f}, {0.0f, 1.0f}},	{{-0.5f, -0.5f, -0.5f}, {0.0f, 0.0f}},
+	Vertices<float> vertices(
+		{{{-0.5f, -0.5f, -0.5f}, {0.0f, 0.0f}}, 
+		{{0.5f, -0.5f, -0.5f}, {1.0f, 0.0f}}, 
+		{{0.5f, 0.5f, -0.5f}, {1.0f, 1.0f}},
+	  	{{0.5f, 0.5f, -0.5f}, {1.0f, 1.0f}}, 
+		{{-0.5f, 0.5f, -0.5f}, {0.0f, 1.0f}}, 
+		{{-0.5f, -0.5f, -0.5f}, {0.0f, 0.0f}},
 
-						 {{-0.5f, -0.5f, 0.5f}, {0.0f, 0.0f}},	{{0.5f, -0.5f, 0.5f}, {1.0f, 0.0f}},
-						 {{0.5f, 0.5f, 0.5f}, {1.0f, 1.0f}},	{{0.5f, 0.5f, 0.5f}, {1.0f, 1.0f}},
-						 {{-0.5f, 0.5f, 0.5f}, {0.0f, 1.0f}},	{{-0.5f, -0.5f, 0.5f}, {0.0f, 0.0f}},
+		{{-0.5f, -0.5f, 0.5f}, {0.0f, 0.0f}}, 
+		{{0.5f, -0.5f, 0.5f}, {1.0f, 0.0f}}, 
+		{{0.5f, 0.5f, 0.5f}, {1.0f, 1.0f}},
+	  	{{0.5f, 0.5f, 0.5f}, {1.0f, 1.0f}}, 
+		{{-0.5f, 0.5f, 0.5f}, {0.0f, 1.0f}}, 
+		{{-0.5f, -0.5f, 0.5f}, {0.0f, 0.0f}},
 
-						 {{-0.5f, 0.5f, 0.5f}, {1.0f, 0.0f}},	{{-0.5f, 0.5f, -0.5f}, {1.0f, 1.0f}},
-						 {{-0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}}, {{-0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}},
-						 {{-0.5f, -0.5f, 0.5f}, {0.0f, 0.0f}},	{{-0.5f, 0.5f, 0.5f}, {1.0f, 0.0f}},
+	  	{{-0.5f, 0.5f, 0.5f}, {1.0f, 0.0f}}, 
+		{{-0.5f, 0.5f, -0.5f}, {1.0f, 1.0f}}, 
+		{{-0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}},
+	  	{{-0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}}, 
+		{{-0.5f, -0.5f, 0.5f}, {0.0f, 0.0f}}, 
+		{{-0.5f, 0.5f, 0.5f}, {1.0f, 0.0f}},
 
-						 {{0.5f, 0.5f, 0.5f}, {1.0f, 0.0f}},	{{0.5f, 0.5f, -0.5f}, {1.0f, 1.0f}},
-						 {{0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}},	{{0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}},
-						 {{0.5f, -0.5f, 0.5f}, {0.0f, 0.0f}},	{{0.5f, 0.5f, 0.5f}, {1.0f, 0.0f}},
+		{{0.5f, 0.5f, 0.5f}, {1.0f, 0.0f}}, 
+		{{0.5f, 0.5f, -0.5f}, {1.0f, 1.0f}}, 
+		{{0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}},
+		{{0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}}, 
+		{{0.5f, -0.5f, 0.5f}, {0.0f, 0.0f}}, 
+		{{0.5f, 0.5f, 0.5f}, {1.0f, 0.0f}},
 
-						 {{-0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}}, {{0.5f, -0.5f, -0.5f}, {1.0f, 1.0f}},
-						 {{0.5f, -0.5f, 0.5f}, {1.0f, 0.0f}},	{{0.5f, -0.5f, 0.5f}, {1.0f, 0.0f}},
-						 {{-0.5f, -0.5f, 0.5f}, {0.0f, 0.0f}},	{{-0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}},
+		{{-0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}}, 
+		{{0.5f, -0.5f, -0.5f}, {1.0f, 1.0f}}, 
+		{{0.5f, -0.5f, 0.5f}, {1.0f, 0.0f}},
+		{{0.5f, -0.5f, 0.5f}, {1.0f, 0.0f}}, 
+		{{-0.5f, -0.5f, 0.5f}, {0.0f, 0.0f}}, 
+		{{-0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}},
 
-						 {{-0.5f, 0.5f, -0.5f}, {0.0f, 1.0f}},	{{0.5f, 0.5f, -0.5f}, {1.0f, 1.0f}},
-						 {{0.5f, 0.5f, 0.5f}, {1.0f, 0.0f}},	{{0.5f, 0.5f, 0.5f}, {1.0f, 0.0f}},
-						 {{-0.5f, 0.5f, 0.5f}, {0.0f, 0.0f}},	{{-0.5f, 0.5f, -0.5f}, {0.0f, 1.0f}}};
+		{{-0.5f, 0.5f, -0.5f}, {0.0f, 1.0f}}, 
+		{{0.5f, 0.5f, -0.5f}, {1.0f, 1.0f}},
+		{{0.5f, 0.5f, 0.5f}, {1.0f, 0.0f}},
+	   	{{0.5f, 0.5f, 0.5f}, {1.0f, 0.0f}},
+		{{-0.5f, 0.5f, 0.5f}, {0.0f, 0.0f}},
+		{{-0.5f, 0.5f, -0.5f}, {0.0f, 1.0f}}}
+	);
 
-	std::vector<Vector3> cubePositions = {{0.0f, 0.0f, 0.0f},	 {2.0f, 5.0f, -15.0f}, {-1.5f, -2.2f, -2.5f},
-								 {-3.8f, -2.0f, -12.3f}, {2.4f, -0.4f, -3.5f}, {-1.7f, 3.0f, -7.5f},
-								 {1.3f, -2.0f, -2.5f},	 {1.5f, 2.0f, -2.5f},  {1.5f, 0.2f, -1.5f},
-								 {-1.3f, 1.0f, -1.5f}};
-	unsigned int indices[] = {
-		0, 1, 3, // first triangle
-		1, 2, 3	 // second triangle
-	};
+	Vector3 cubePositions[] = {{0.0f, 0.0f, 0.0f},	   {2.0f, 5.0f, -15.0f}, {-1.5f, -2.2f, -2.5f},
+							   {-3.8f, -2.0f, -12.3f}, {2.4f, -0.4f, -3.5f}, {-1.7f, 3.0f, -7.5f},
+							   {1.3f, -2.0f, -2.5f},   {1.5f, 2.0f, -2.5f},	 {1.5f, 0.2f, -1.5f},
+							   {-1.3f, 1.0f, -1.5f}};
 
-	unsigned int VBO, VAO, EBO;
+	unsigned int VBO, VAO;
 	glGenVertexArrays(1, &VAO);
 	glGenBuffers(1, &VBO);
-	glGenBuffers(1, &EBO);
 
 	glBindVertexArray(VAO);
+	vertices.bind_buffer(VBO);
+	vertices.set_attributes();
+	// glBindBuffer(GL_ARRAY_BUFFER, VBO);
+	// glBufferData(GL_ARRAY_BUFFER, vertices.get_vector().size() * sizeof(float), vertices.get_data(), GL_STATIC_DRAW);
 
-	glBindBuffer(GL_ARRAY_BUFFER, VBO);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+	// // position attribute
+	// glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void *)0);
+	// glEnableVertexAttribArray(0);
 
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-
-	// position attribute
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void *)0);
-	glEnableVertexAttribArray(0);
-
-	// texture coord attribute
-	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void *)(3 * sizeof(float)));
-	glEnableVertexAttribArray(1);
-	glBindVertexArray(0);
+	// // texture coord attribute
+	// glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void *)(3 * sizeof(float)));
+	// glEnableVertexAttribArray(1);
+	// glBindVertexArray(0);
 	glEnable(GL_DEPTH_TEST);
 
 	Texture texture(relativePath + "/rsc/textures/");
@@ -144,7 +157,6 @@ int main()
 
 	glDeleteVertexArrays(1, &VAO);
 	glDeleteBuffers(1, &VBO);
-	glDeleteBuffers(1, &EBO);
 
 	glfwTerminate();
 	return 0;

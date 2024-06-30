@@ -2,7 +2,7 @@
 
 #include <glm/glm.hpp>
 #include <string>
-
+#include "LilyPad/core/math/matrix4.hpp"
 namespace LilyPad
 {
 	/**
@@ -55,6 +55,8 @@ namespace LilyPad
 		 */
 		void use() const;
 
+		int get_attribute_location(const std::string &name);
+
 		/**
 		 * @brief Set the int variable.
 		 *
@@ -86,6 +88,7 @@ namespace LilyPad
 		 * @param value Value to set the uniform variable to.
 		 */
 		void set_uniform(const std::string &name, const glm::mat4 &trans) const;
+		void set_uniform(const std::string &name, const Mat4 &trans) const;
 
 	private:
 		std::string _vShaderCode; // String containing the source code of the vertex shader.

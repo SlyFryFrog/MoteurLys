@@ -117,6 +117,11 @@ namespace LilyPad
 
 	void ShaderProgram::use() const { glUseProgram(program); }
 
+	int ShaderProgram::get_attribute_location(const std::string &name)
+	{
+		return glGetAttribLocation(program, name.c_str());
+	}
+
 	void ShaderProgram::set_uniform(const std::string &name, const int value) const
 	{
 		glUniform1i(glGetUniformLocation(program, name.c_str()), value);
@@ -135,5 +140,9 @@ namespace LilyPad
 	void ShaderProgram::set_uniform(const std::string &name, const glm::mat4 &trans) const
 	{
 		glUniformMatrix4fv(glGetUniformLocation(program, name.c_str()), 1, GL_FALSE, glm::value_ptr(trans));
+	}
+	void ShaderProgram::set_uniform(const std::string &name, const Mat4 &trans) const
+	{
+		glUniformMatrix4fv(glGetUniformLocation(program, name.c_str()), 1, GL_FALSE, trans.data);
 	}
 } // namespace LilyPad

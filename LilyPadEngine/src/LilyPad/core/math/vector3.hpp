@@ -10,6 +10,8 @@ namespace LilyPad
 		float y;
 		float z;
 
+        Vector3() : x(0.0f), y(0.0f), z(0.0f) {}
+
 		Vector3(float x, float y, float z);
 
 		_FORCE_INLINE_ Vector3 operator+(float scalar) const { return Vector3(x + scalar, y + scalar, z + scalar); }
