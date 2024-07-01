@@ -43,27 +43,12 @@ namespace LilyPad
 
 		Vertices(std::initializer_list<Vertex<T>> verts) : vertices(verts) {}
 
-		std::vector<T> get_data(int vertex_index, int array_index) { return vertices[vertex_index].get_data(array_index); }
-
-		T *get_data()
+		std::vector<T> get_data(int vertex_index, int array_index)
 		{
-			std::vector<T> data;
-
-			for (Vertex<T> vertex : vertices)
-			{
-				for (std::vector list : vertex.data)
-				{
-					for (T element : list)
-					{
-						data.push_back(element);
-					}
-				}
-			}
-
-			return data.data();
+			return vertices[vertex_index].get_data(array_index);
 		}
 
-		std::vector<T> get_vector()
+		std::vector<T> get_data()
 		{
 			std::vector<T> data;
 
@@ -84,7 +69,7 @@ namespace LilyPad
 		void bind_buffer(const unsigned int &VBO)
 		{
 			glBindBuffer(GL_ARRAY_BUFFER, VBO);
-			glBufferData(GL_ARRAY_BUFFER, get_vector().size() * sizeof(float), get_data(), GL_STATIC_DRAW);
+			glBufferData(GL_ARRAY_BUFFER, get_data().size() * sizeof(float), get_data().data(), GL_STATIC_DRAW);
 		}
 
 		void set_attributes()
