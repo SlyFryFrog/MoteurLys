@@ -104,7 +104,7 @@ namespace LilyPad
 		/**
 		 * @brief Prints the log to the console with the appropriate color.
 		 */
-		void print_log(const LogLevel &level, const std::string &message);
+		void print_log(const LogLevel &level, const std::string &message) const;
 
 		/**
 		 * @brief Appends a single argument to a stringstream.
@@ -146,7 +146,7 @@ namespace LilyPad
 		 */
 		static const char *get_log_type(const LogLevel &level);
 
-		const std::string get_formatted_time(const std::string &timeFormat) const;
+		[[nodiscard]] static std::string get_formatted_time(const std::string &timeFormat) ;
 
 		std::string _file;
 		bool _showLogs;

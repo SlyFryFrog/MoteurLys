@@ -9,7 +9,7 @@ namespace LilyPad
 	public:
 		Texture();
 
-		Texture(const std::string &path);
+		explicit Texture(const std::string &path);
 
 		void set_path(const std::string &path);
 

@@ -25,21 +25,21 @@ namespace LilyPad
 
 		[[nodiscard]] float magnitude_squared() const;
 
-		_FORCE_INLINE_ Vector2 operator+(float scalar) const { return Vector2(x + scalar, y + scalar); }
+		_FORCE_INLINE_ Vector2 operator+(const float scalar) const { return {x + scalar, y + scalar}; }
 
-		_FORCE_INLINE_ Vector2 operator-(float scalar) const { return Vector2(x - scalar, y - scalar); }
+		_FORCE_INLINE_ Vector2 operator-(const float scalar) const { return {x - scalar, y - scalar}; }
 
-		_FORCE_INLINE_ Vector2 operator*(float scalar) const { return Vector2(x * scalar, y * scalar); }
+		_FORCE_INLINE_ Vector2 operator*(const float scalar) const { return {x * scalar, y * scalar}; }
 
-		_FORCE_INLINE_ Vector2 operator/(float scalar) const { return Vector2(x / scalar, y / scalar); }
+		_FORCE_INLINE_ Vector2 operator/(const float scalar) const { return {x / scalar, y / scalar}; }
 
-		_FORCE_INLINE_ Vector2 operator+(const Vector2 &other) const { return Vector2(x + other.x, y + other.y); }
+		_FORCE_INLINE_ Vector2 operator+(const Vector2 &other) const { return {x + other.x, y + other.y}; }
 
-		_FORCE_INLINE_ Vector2 operator-(const Vector2 &other) { return Vector2(x - other.x, y - other.y); }
+		_FORCE_INLINE_ Vector2 operator-(const Vector2 &other) const { return {x - other.x, y - other.y}; }
 
-		_FORCE_INLINE_ Vector2 operator*(const Vector2 &other) { return Vector2(x * other.x, y * other.y); }
+		_FORCE_INLINE_ Vector2 operator*(const Vector2 &other) const { return {x * other.x, y * other.y}; }
 
-		_FORCE_INLINE_ Vector2 operator/(const Vector2 &other) { return Vector2(x / other.x, y / other.y); }
+		_FORCE_INLINE_ Vector2 operator/(const Vector2 &other) const { return {x / other.x, y / other.y}; }
 		
 		_FORCE_INLINE_ void operator+=(const Vector2 &other)
 		{

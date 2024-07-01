@@ -1,5 +1,4 @@
 #pragma once
-#include "LilyPad/core/utils/paths.hpp"
 
 namespace LilyPad
 {

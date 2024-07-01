@@ -3,13 +3,13 @@
 #include <filesystem>
 
 #ifdef __linux__
-#include <limits.h>
+#include <climits>
 #include <unistd.h>
 #endif
 
 namespace LilyPad
 {
-	const std::string strip_right_of_slash(const std::string &path)
+	std::string strip_right_of_slash(const std::string &path)
 	{
 		std::string::size_type index;
 #ifdef _WIN32
@@ -23,16 +23,16 @@ namespace LilyPad
 	/**
 	 * @return std::string Absolute path to the executable.
 	 */
-	const std::string get_exec_path()
+	std::string get_exec_path()
 	{
 		char buff[PATH_MAX];
 #ifdef __linux__
 		readlink("/proc/self/exe", buff, sizeof(buff) - 1);
 #endif
-		return std::string(buff);
+		return buff;
 	}
 
-	const std::string get_root_directory()
+	std::string get_root_directory()
 	{
 		return strip_right_of_slash(get_exec_path());
 	}

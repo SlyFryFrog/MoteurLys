@@ -4,17 +4,17 @@ namespace LilyPad
 {
 	Mat4::Mat4()
 	{
-		for (int i = 0; i < sizeof(data) / sizeof(float); i++)
+		for (float & i : data)
 		{
-			data[i] = 0.0f;
+			i = 0.0f;
 		}
 	}
 
-	Mat4::Mat4(float value)
+	Mat4::Mat4(const float value)
 	{
-		for (int i = 0; i < sizeof(data) / sizeof(float); i++)
+		for (float & i : data)
 		{
-			data[i] = value;
+			i = value;
 		}
 	}
 } // namespace LilyPad

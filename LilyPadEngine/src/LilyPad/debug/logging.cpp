@@ -5,15 +5,13 @@
 
 namespace LilyPad
 {
-	void Logger::print_log(const LogLevel &level, const std::string &message)
+	void Logger::print_log(const LogLevel &level, const std::string &message) const
 	{
 		std::string color;
 
 		switch (level)
 		{
 		case LogLevel::DEBUG:
-			color = _textColors.DEFAULT;
-			break;
 		case LogLevel::INFO:
 			color = _textColors.DEFAULT;
 			break;
@@ -21,8 +19,6 @@ namespace LilyPad
 			color = _textColors.YELLOW;
 			break;
 		case LogLevel::ERROR:
-			color = _textColors.RED;
-			break;
 		case LogLevel::CRITICAL:
 			color = _textColors.RED;
 			break;
@@ -73,7 +69,7 @@ namespace LilyPad
 
 	void Logger::set_log_level(const LogLevel &level) { _minLogLevel = level; }
 
-	const std::string Logger::get_formatted_time(const std::string &timeFormat) const
+	std::string Logger::get_formatted_time(const std::string &timeFormat)
 	{
 		const auto current_time = std::chrono::system_clock::now();
 		const auto current_time_t = std::chrono::system_clock::to_time_t(current_time);

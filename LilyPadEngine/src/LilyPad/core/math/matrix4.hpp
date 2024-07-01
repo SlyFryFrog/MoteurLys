@@ -1,12 +1,12 @@
 #pragma once
 
-#include <iostream>
+#include <ostream>
 
 namespace LilyPad
 {
 	struct Mat4
 	{
-		float data[16];
+		float data[16]{};
 
 		/**
 		 * @brief Creates a new object with values set to 0.0f.
@@ -16,9 +16,9 @@ namespace LilyPad
 		/**
 		 * @brief Sets all data in the matrix to the input value.
 		 */
-		Mat4(float value);
+		explicit Mat4(float value);
 
-		Mat4 operator+(const Mat4 &other)
+		Mat4 operator+(const Mat4 &other) const
 		{
 			Mat4 result;
 			for (int i = 0; i < 16; ++i)
@@ -28,7 +28,7 @@ namespace LilyPad
 			return result;
 		}
 
-		Mat4 operator-(const Mat4 &other)
+		Mat4 operator-(const Mat4 &other) const
 		{
 			Mat4 result;
 			for (int i = 0; i < 16; ++i)
@@ -38,7 +38,7 @@ namespace LilyPad
 			return result;
 		}
 
-		Mat4 operator*(const Mat4 &other)
+		Mat4 operator*(const Mat4 &other) const
 		{
 			Mat4 result;
 			for (int i = 0; i < 16; ++i)
@@ -48,7 +48,7 @@ namespace LilyPad
 			return result;
 		}
 
-		Mat4 operator/(const Mat4 &other)
+		Mat4 operator/(const Mat4 &other) const
 		{
 			Mat4 result;
 			for (int i = 0; i < 16; ++i)

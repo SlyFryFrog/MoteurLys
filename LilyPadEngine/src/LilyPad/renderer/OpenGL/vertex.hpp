@@ -1,6 +1,7 @@
 #pragma once
 
 #include <GL/glew.h>
+#include <ostream>
 #include <vector>
 #include "LilyPad/renderer/OpenGL/utils/gl_types.hpp"
 
@@ -79,7 +80,7 @@ namespace LilyPad
 			{
 				GLint size = vertices[0].data[i].size();
 				glVertexAttribPointer(i, size, GLType<T>::value, GL_FALSE, vertices[0].size() * sizeof(T),
-									  (void *)(offset * sizeof(T)));
+									  static_cast<void*>(reinterpret_cast<char*>(offset * sizeof(T))));
 				glEnableVertexAttribArray(i);
 				offset += size;
 			}

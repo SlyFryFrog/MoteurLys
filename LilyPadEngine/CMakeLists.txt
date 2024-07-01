@@ -41,7 +41,9 @@ add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/vendor/glm)
 find_package(OpenGL REQUIRED)
 find_package(GLEW REQUIRED)
 
-add_library(LilyPadEngine ${LIBRARY_TYPE} ${SOURCES})
+add_library(LilyPadEngine ${LIBRARY_TYPE} ${SOURCES}
+        src/LilyPad/renderer/OpenGL/vertex.hpp
+        src/LilyPad/debug/errors.hpp)
 
 add_library(stb_image ${LIBRARY_TYPE} "vendor/stb_image.cpp")
 
