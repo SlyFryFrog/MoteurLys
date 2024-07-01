@@ -58,19 +58,21 @@ namespace LilyPad
 			return result;
 		}
 
-		/**
-		 * @brief Prints a grid view of the matrix data in rows from 0-3, 4-7, 8-11, 12-15.
-		 */
-		void print() const
+		friend std::ostream &operator<<(std::ostream &os, const Mat4 &obj)
 		{
+			os << "{";
 			for (int i = 0; i < 4; ++i)
 			{
+				os << "[";
 				for (int j = 0; j < 4; ++j)
 				{
-					std::cout << data[i * 4 + j] << ' ';
+					os << obj.data[i * 4 + j] << ' ';
 				}
-				std::cout << std::endl;
+				os << "]";
 			}
+			os << "}";
+
+			return os;
 		}
 	};
 } // namespace LilyPad

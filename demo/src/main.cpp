@@ -93,7 +93,7 @@ int main()
 	glBindVertexArray(VAO);
 	vertices.bind_buffer(VBO);
 	vertices.set_attributes();
-	
+	std::cout << vertices;
 	glEnable(GL_DEPTH_TEST);
 
 	Texture texture(relativePath + "/rsc/textures/");
