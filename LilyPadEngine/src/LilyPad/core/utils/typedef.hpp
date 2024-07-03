@@ -19,3 +19,10 @@
 #define _FORCE_INLINE_ _ALWAYS_INLINE_
 #endif
 #endif
+
+// Decide precision between float and double
+#ifdef USE_DOUBLE
+#define fp_type double
+#else
+#define fp_type float
+#endif

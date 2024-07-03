@@ -6,21 +6,21 @@ namespace LilyPad
 {
 	struct Vector3
 	{
-		float x;
-		float y;
-		float z;
+		fp_type x;
+		fp_type y;
+		fp_type z;
 
         Vector3() : x(0.0f), y(0.0f), z(0.0f) {}
 
-		Vector3(float x, float y, float z);
+		Vector3(fp_type x, fp_type y, fp_type z);
 
-		_FORCE_INLINE_ Vector3 operator+(const float scalar) const { return {x + scalar, y + scalar, z + scalar}; }
+		_FORCE_INLINE_ Vector3 operator+(const fp_type scalar) const { return {x + scalar, y + scalar, z + scalar}; }
 
-		_FORCE_INLINE_ Vector3 operator-(const float scalar) const { return {x - scalar, y - scalar, z - scalar}; }
+		_FORCE_INLINE_ Vector3 operator-(const fp_type scalar) const { return {x - scalar, y - scalar, z - scalar}; }
 
-		_FORCE_INLINE_ Vector3 operator*(const float scalar) const { return {x * scalar, y * scalar, z * scalar}; }
+		_FORCE_INLINE_ Vector3 operator*(const fp_type scalar) const { return {x * scalar, y * scalar, z * scalar}; }
 
-		_FORCE_INLINE_ Vector3 operator/(const float scalar) const { return {x / scalar, y / scalar, z / scalar}; }
+		_FORCE_INLINE_ Vector3 operator/(const fp_type scalar) const { return {x / scalar, y / scalar, z / scalar}; }
 
 		_FORCE_INLINE_ Vector3 operator+(const Vector3 &other) const
 		{

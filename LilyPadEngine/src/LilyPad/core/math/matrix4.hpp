@@ -1,6 +1,7 @@
 #pragma once
 
 #include <ostream>
+#include "LilyPad/core/math/vector3.hpp"
 
 namespace LilyPad
 {
@@ -17,6 +18,10 @@ namespace LilyPad
 		 * @brief Sets all data in the matrix to the input value.
 		 */
 		explicit Mat4(float value);
+
+		static Mat4 translate(const Mat4 &model, const Vector3 &translation);
+
+		static Mat4 rotate(const float radians);
 
 		Mat4 operator+(const Mat4 &other) const
 		{

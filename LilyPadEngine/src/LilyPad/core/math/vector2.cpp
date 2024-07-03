@@ -1,10 +1,11 @@
 #include "LilyPad/core/math/vector2.hpp"
+#include "LilyPad/core/utils/typedef.hpp"
 #include <algorithm>
 #include <cmath>
 
 namespace LilyPad
 {
-	Vector2 Vector2::clamp(float min_x, float max_x, float min_y, float max_y)
+	Vector2 Vector2::clamp(fp_type min_x, fp_type max_x, fp_type min_y, fp_type max_y)
 	{
 		x = std::clamp(x, min_x, max_x);
 		y = std::clamp(y, min_y, max_y);
@@ -27,13 +28,13 @@ namespace LilyPad
 		}
 
 		// Prevents doing sqrt on 0
-		const float mag = magnitude_squared();
+		const fp_type mag = magnitude_squared();
 
 		// Divide each component by the magnitude
 		return {x / mag, y / mag};
 	}
 
-	float Vector2::magnitude() const { return x * x + y * y; }
+	fp_type Vector2::magnitude() const { return x * x + y * y; }
 
-	float Vector2::magnitude_squared() const { return std::sqrt(x * x + y * y); }
+	fp_type Vector2::magnitude_squared() const { return std::sqrt(x * x + y * y); }
 } // namespace LilyPad
