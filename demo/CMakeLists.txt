@@ -24,11 +24,8 @@ add_executable(Demo ${SOURCES} ${HEADERS})
 find_package(OpenGL REQUIRED)
 find_package(GLEW REQUIRED)
 
-if (WIN32)
-    add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/vendor/glfw-3.4)
-else()
-    find_package(glfw3 REQUIRED)
-endif()
+
+find_package(glfw3 REQUIRED)
 
 target_link_libraries(Demo PRIVATE
     LilyPadEngine

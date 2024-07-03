@@ -2,7 +2,9 @@
 
 #include <filesystem>
 
-#ifdef __linux__
+#ifdef _WIN32
+#include <windows.h>
+#elifdef __linux__
 #include <climits>
 #include <unistd.h>
 #endif
@@ -25,15 +27,18 @@ namespace LilyPad
 	 */
 	std::string get_exec_path()
 	{
+#ifdef _WIN32
+		wchar_t path[MAX_PATH] = {0};
+		GetModuleFileNameW(NULL, path, MAX_PATH);
+		std::wstring ws(path);
+		// your new String
+		std::string buff(ws.begin(), ws.end());
+#else
 		char buff[PATH_MAX];
-#ifdef __linux__
 		readlink("/proc/self/exe", buff, sizeof(buff) - 1);
 #endif
 		return buff;
 	}
 
-	std::string get_root_directory()
-	{
-		return strip_right_of_slash(get_exec_path());
-	}
+	std::string get_root_directory() { return strip_right_of_slash(get_exec_path()); }
 } // namespace LilyPad
