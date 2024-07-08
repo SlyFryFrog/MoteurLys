@@ -10,35 +10,43 @@
 
 namespace LilyPad
 {
-	std::string ShaderProgram::read_file(const std::string &file)
+	Shader::Shader(const std::string &path, unsigned int type) : _path(path) { _shaderCode = read_file(); }
+	bool Shader::is_updated() { return std::filesystem::last_write_time(_path) != _lastTime; }
+
+	void Shader::update()
+	{
+		if (is_updated())
+		{
+			_lastTime = std::filesystem::last_write_time(_path);
+			_shaderCode = read_file(_path);
+			LILYPAD_DEBUG("Updated");
+		}
+	}
+
+	std::string Shader::read_file(const std::string &path)
 	{
 		std::ifstream shaderFile;
-		std::string code;
+		std::string fileContents;
 		shaderFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
 
 		try
 		{
-			shaderFile.open(_path + file);
+			shaderFile.open(path);
 			std::stringstream shaderStream;
 			shaderStream << shaderFile.rdbuf();
 			shaderFile.close();
 
-			code = shaderStream.str();
+			fileContents = shaderStream.str();
 		}
 		catch (std::ifstream::failure &e)
 		{
-			const std::string path = _path + file;
 			LILYPAD_ERROR("SHADER::FILE_NOT_SUCCESSFULLY_READY: ", path, " ", e.what());
 		}
 
-		return code;
+		return fileContents;
 	}
 
-	void ShaderProgram::set_shader_code(const std::string &vertexPath, const std::string &fragmentPath)
-	{
-		_vShaderCode = read_file(vertexPath);
-		_fShaderCode = read_file(fragmentPath);
-	}
+	std::string Shader::read_file() { return read_file(_path); }
 
 	unsigned int ShaderProgram::compile_shader(const std::string &source, const unsigned int type)
 	{
@@ -57,9 +65,10 @@ namespace LilyPad
 		return shaderID;
 	}
 
-	ShaderProgram::ShaderProgram() = default;
-
-	ShaderProgram::ShaderProgram(const std::string &path) : _path(path) {}
+	ShaderProgram::ShaderProgram(const std::string &path, const std::string &vertex, const std::string &fragment) :
+		_path(path), _vShader(path + vertex, GL_VERTEX_SHADER), _fShader(path + fragment, GL_FRAGMENT_SHADER)
+	{
+	}
 
 	ShaderProgram::~ShaderProgram() { glDeleteProgram(program); }
 
@@ -113,7 +122,7 @@ namespace LilyPad
 		glDeleteShader(fragment);
 	}
 
-	void ShaderProgram::create_shader_program() { create_shader_program(_vShaderCode, _fShaderCode); }
+	void ShaderProgram::create_shader_program() { create_shader_program(_vShader.read_file(), _fShader.read_file()); }
 
 	void ShaderProgram::use() const { glUseProgram(program); }
 
@@ -144,5 +153,12 @@ namespace LilyPad
 	void ShaderProgram::set_uniform(const std::string &name, const Mat4 &trans) const
 	{
 		glUniformMatrix4fv(glGetUniformLocation(program, name.c_str()), 1, GL_FALSE, trans.data);
+	}
+
+	void ShaderProgram::reload() 
+	{
+		_vShader.update();
+		_fShader.update();
+		create_shader_program();
 	}
 } // namespace LilyPad

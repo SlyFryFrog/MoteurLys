@@ -1,32 +1,34 @@
 #pragma once
 
+#include <filesystem>
 #include <glm/glm.hpp>
 #include <string>
 #include "LilyPad/core/math/matrix4.hpp"
+
 namespace LilyPad
 {
-	/**
-	 * @brief A class representing a shader program in OpenGL.
-	 *
-	 * This class encapsulates the functionality related to loading,
-	 * compiling, and managing vertex and fragment shaders in an OpenGL
-	 * shader program.
-	 */
+	class Shader
+	{
+	public:
+		Shader(const std::string &path, unsigned int type);
+		bool is_updated();
+		void update();
+		static std::string read_file(const std::string &path);
+		std::string read_file();
+
+	private:
+		std::string _shaderCode;
+		std::string _path;
+		std::filesystem::file_time_type _lastTime;
+	};
+
 	class ShaderProgram
 	{
 	public:
 		unsigned int program; // The OpenGL ID of the shader program.
 
-		ShaderProgram();
-
-		ShaderProgram(const std::string &path);
-
-		/**
-		 * @brief Destroy the Shader Program object and removes the program from OpenGL.
-		 */
+		ShaderProgram(const std::string &path, const std::string &vertex, const std::string &fragment);
 		~ShaderProgram();
-
-		void set_shader_code(const std::string &vertexPath, const std::string &fragmentPath);
 
 		/**
 		 * @brief Checks the compilation status of a shader and logs any errors.
@@ -89,10 +91,11 @@ namespace LilyPad
 		 */
 		void set_uniform(const std::string &name, const glm::mat4 &trans) const;
 		void set_uniform(const std::string &name, const Mat4 &trans) const;
+		void reload();
 
 	private:
-		std::string _vShaderCode; // String containing the source code of the vertex shader.
-		std::string _fShaderCode; // String containing the source code of the fragment shader.
+		Shader _vShader;
+		Shader _fShader;
 		std::string _path;
 
 		/**

@@ -24,6 +24,7 @@ glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
 float deltaTime = 0.0f; // Time between current frame and last frame
 float lastFrame = 0.0f; // Time of last frame
 unsigned int texture1;
+ShaderProgram ourShader("/home/marcus/dev/LilyPadEngine/demo/rsc/shaders/", "Vertex.glsl", "Fragment.glsl");
 
 int main()
 {
@@ -32,8 +33,6 @@ int main()
 	window.set_title("Demo");
 	window.initialize();
 
-	ShaderProgram ourShader(std::string(relativePath + "/rsc/shaders/"));
-	ourShader.set_shader_code("Vertex.glsl", "Fragment.glsl");
 	ourShader.create_shader_program();
 
 	// set up vertex data (and buffer(s)) and configure vertex attributes
@@ -142,4 +141,9 @@ void processInput(GLFWwindow *window)
 		cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
 	if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
 		cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+	if (glfwGetKey(window, GLFW_KEY_R) == GLFW_PRESS)
+		{
+			ourShader.reload();
+			LILYPAD_DEBUG("RELOADED");
+		}
 }
