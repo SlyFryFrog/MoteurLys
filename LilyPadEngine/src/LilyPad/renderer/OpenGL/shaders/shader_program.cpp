@@ -7,10 +7,10 @@
 #include <sstream>
 #include "LilyPad/debug/logging.hpp"
 
-
 namespace LilyPad
 {
 	Shader::Shader(const std::string &path, unsigned int type) : _path(path) { _shaderCode = read_file(); }
+
 	bool Shader::is_updated() { return std::filesystem::last_write_time(_path) != _lastTime; }
 
 	void Shader::update()
@@ -101,12 +101,13 @@ namespace LilyPad
 		return success;
 	}
 
-	void ShaderProgram::create_shader_program(const std::string &vertexShader, const std::string &fragmentShader)
+	void ShaderProgram::create_shader_program()
 	{
+		glDeleteProgram(program);
 		program = glCreateProgram();
-		unsigned int vertex = compile_shader(vertexShader, GL_VERTEX_SHADER);
+		unsigned int vertex = compile_shader(_vShader.read_file(), GL_VERTEX_SHADER);
 		LILYPAD_DEBUG("Finished compiling vertex shader.");
-		unsigned int fragment = compile_shader(fragmentShader, GL_FRAGMENT_SHADER);
+		unsigned int fragment = compile_shader(_fShader.read_file(), GL_FRAGMENT_SHADER);
 		LILYPAD_DEBUG("Finished compiling fragment shader.");
 
 		// Loads the shaders to the program
@@ -121,8 +122,6 @@ namespace LilyPad
 		glDeleteShader(vertex);
 		glDeleteShader(fragment);
 	}
-
-	void ShaderProgram::create_shader_program() { create_shader_program(_vShader.read_file(), _fShader.read_file()); }
 
 	void ShaderProgram::use() const { glUseProgram(program); }
 
@@ -155,7 +154,7 @@ namespace LilyPad
 		glUniformMatrix4fv(glGetUniformLocation(program, name.c_str()), 1, GL_FALSE, trans.data);
 	}
 
-	void ShaderProgram::reload() 
+	void ShaderProgram::reload()
 	{
 		_vShader.update();
 		_fShader.update();

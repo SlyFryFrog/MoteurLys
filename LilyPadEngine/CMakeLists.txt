@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.11)
+cmake_minimum_required(VERSION 3.20)
 project(LilyPadEngine)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED YES)
@@ -43,7 +43,8 @@ find_package(GLEW REQUIRED)
 
 add_library(LilyPadEngine ${LIBRARY_TYPE} ${SOURCES}
         src/LilyPad/renderer/OpenGL/vertex.hpp
-        src/LilyPad/debug/errors.hpp)
+        src/LilyPad/debug/errors.hpp
+        src/LilyPad/core/io/Key.hpp)
 
 add_library(stb_image ${LIBRARY_TYPE} "vendor/stb_image.cpp")
 

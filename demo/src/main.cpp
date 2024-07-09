@@ -72,7 +72,7 @@ int main()
 	glBindVertexArray(VAO);
 	vertices.bind_buffer(VBO);
 	vertices.set_attributes();
-	std::cout << vertices;
+	std::cout << vertices << "\n";
 	glEnable(GL_DEPTH_TEST);
 
 	Texture texture(relativePath + "/rsc/textures/");
@@ -142,8 +142,8 @@ void processInput(GLFWwindow *window)
 	if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
 		cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
 	if (glfwGetKey(window, GLFW_KEY_R) == GLFW_PRESS)
-		{
-			ourShader.reload();
-			LILYPAD_DEBUG("RELOADED");
-		}
+	{
+		ourShader.reload();
+		LILYPAD_DEBUG("RELOADED");
+	}
 }

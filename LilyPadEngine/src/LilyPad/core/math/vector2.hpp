@@ -40,7 +40,7 @@ namespace LilyPad
 		_FORCE_INLINE_ Vector2 operator*(const Vector2 &other) const { return {x * other.x, y * other.y}; }
 
 		_FORCE_INLINE_ Vector2 operator/(const Vector2 &other) const { return {x / other.x, y / other.y}; }
-		
+
 		_FORCE_INLINE_ void operator+=(const Vector2 &other)
 		{
 			x += other.x;

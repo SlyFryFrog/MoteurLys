@@ -7,16 +7,10 @@ namespace LilyPad
 {
 	struct Mat4
 	{
-		float data[16]{};
+		float data[16];
 
-		/**
-		 * @brief Creates a new object with values set to 0.0f.
-		 */
 		Mat4();
 
-		/**
-		 * @brief Sets all data in the matrix to the input value.
-		 */
 		explicit Mat4(float value);
 
 		static Mat4 translate(const Mat4 &model, const Vector3 &translation);
