@@ -5,8 +5,8 @@
 #ifdef _WIN32
 #include <windows.h>
 #elifdef __linux__
-#include <climits>
-#include <unistd.h>
+#include <unistd.h>  // For readlink
+#include <limits.h>  // For PATH_MAX
 #endif
 
 namespace LilyPad
