@@ -4,9 +4,9 @@
 
 #ifdef _WIN32
 #include <windows.h>
-#elifdef __linux__
-#include <unistd.h>  // For readlink
-#include <limits.h>  // For PATH_MAX
+#else
+#include <climits>
+#include <unistd.h>
 #endif
 
 namespace LilyPad
@@ -27,15 +27,25 @@ namespace LilyPad
 	 */
 	std::string get_exec_path()
 	{
+		std::string buff;
 #ifdef _WIN32
 		wchar_t path[MAX_PATH] = {0};
 		GetModuleFileNameW(NULL, path, MAX_PATH);
 		std::wstring ws(path);
 		// your new String
-		std::string buff(ws.begin(), ws.end());
+		buff = std::string(ws.begin(), ws.end());
 #else
-		char buff[PATH_MAX];
-		readlink("/proc/self/exe", buff, sizeof(buff) - 1);
+		char path[PATH_MAX];
+		ssize_t len = readlink("/proc/self/exe", path, sizeof(path) - 1);
+		if (len != -1)
+		{
+			path[len] = '\0'; // Null-terminate the buffer
+			buff = std::string(path);
+		}
+		else
+		{
+			throw std::runtime_error("Failed to read the executable path");
+		}
 #endif
 		return buff;
 	}
