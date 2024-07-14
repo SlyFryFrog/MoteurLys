@@ -1,12 +1,10 @@
-#include <cstddef>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include "LilyPad/core/math/vector3.hpp"
-#include "LilyPad/core/physics/rigid_body_2d.hpp"
-#include "LilyPad/core/physics/world.hpp"
 #include "LilyPad/core/utils/paths.hpp"
 #include "LilyPad/debug/logging.hpp"
+#include "LilyPad/renderer/OpenGL/binding/bind.hpp"
 #include "LilyPad/renderer/OpenGL/shaders/shader_program.hpp"
 #include "LilyPad/renderer/OpenGL/texture.hpp"
 #include "LilyPad/renderer/OpenGL/vertex.hpp"
@@ -14,7 +12,8 @@
 
 using namespace LilyPad;
 
-void processInput(GLFWwindow *window);
+void process_input(GLFWwindow *window);
+void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
@@ -64,32 +63,29 @@ int main()
 							   {-3.8f, -2.0f, -12.3f}, {2.4f, -0.4f, -3.5f}, {-1.7f, 3.0f, -7.5f},
 							   {1.3f, -2.0f, -2.5f},   {1.5f, 2.0f, -2.5f},	 {1.5f, 0.2f, -1.5f},
 							   {-1.3f, 1.0f, -1.5f}};
-
-	unsigned int VBO, VAO;
-	glGenVertexArrays(1, &VAO);
-	glGenBuffers(1, &VBO);
-
-	glBindVertexArray(VAO);
-	vertices.bind_buffer(VBO);
+	Bind bind;
+	bind.bind_vertices(vertices);
 	vertices.set_attributes();
 	std::cout << vertices << "\n";
 	glEnable(GL_DEPTH_TEST);
 
 	Texture texture(relativePath + "/rsc/textures/");
-	texture1 = texture.generate_texture("R.png");
+	texture1 = texture.generate_texture("frog.png");
 
 	ourShader.use();
 	ourShader.set_uniform("uTexture", 0);
 
 	glm::mat4 view;
 	view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
+	glfwSetInputMode(window.window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+	//glfwSetCursorPosCallback(window.window, mouse_callback);
 
 	while (!window.is_done())
 	{
 		float currentFrame = glfwGetTime();
 		deltaTime = currentFrame - lastFrame;
 		lastFrame = currentFrame;
-		processInput(window.window);
+		process_input(window.window);
 
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
@@ -107,7 +103,7 @@ int main()
 		ourShader.set_uniform("uView", view);
 		ourShader.set_uniform("uProjection", projection);
 
-		glBindVertexArray(VAO);
+		bind.bind_vertex_array();
 		for (int i = 0; i < 10; i++)
 		{
 			glm::mat4 model = glm::mat4(1.0f);
@@ -123,16 +119,14 @@ int main()
 		glfwPollEvents();
 	}
 
-	glDeleteVertexArrays(1, &VAO);
-	glDeleteBuffers(1, &VBO);
-
 	glfwTerminate();
 	return 0;
 }
 
-void processInput(GLFWwindow *window)
+void process_input(GLFWwindow *window)
 {
 	float cameraSpeed = 2.5f * deltaTime;
+	
 	if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
 		cameraPos += cameraSpeed * cameraFront;
 	if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
@@ -142,8 +136,5 @@ void processInput(GLFWwindow *window)
 	if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
 		cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
 	if (glfwGetKey(window, GLFW_KEY_R) == GLFW_PRESS)
-	{
 		ourShader.reload();
-		LILYPAD_DEBUG("RELOADED");
-	}
 }

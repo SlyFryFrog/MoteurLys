@@ -14,9 +14,6 @@ namespace LilyPad
 	public:
 		GLFWwindow *window;
 
-		/**
-		 * @brief Construct a new Window object with all variables set to nullptr.
-		 */
 		Window();
 
 		/**
@@ -65,15 +62,10 @@ namespace LilyPad
 		int _height;		 // Window height
 		std::string _title;
 
-		/**
-		 * @brief
-		 *
-		 * @param window
-		 * @param width
-		 * @param height
-		 */
 		static void frame_buffer_callback(GLFWwindow *window, int width, int height);
 
 		static void process_input(GLFWwindow *window, int key, int scancode, int action, int mods);
 	};
+
+	typedef GLFWwindow InputEvent;
 } // namespace LilyPad

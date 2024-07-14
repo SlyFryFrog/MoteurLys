@@ -1,4 +1,4 @@
-#include "LilyPad/renderer/OpenGL/shaders/shader_program.hpp"
+#include "shader_program.hpp"
 
 #include <GL/glew.h>
 #include <fstream>

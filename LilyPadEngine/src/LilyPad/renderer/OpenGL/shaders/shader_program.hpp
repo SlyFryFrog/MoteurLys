@@ -32,7 +32,6 @@ namespace LilyPad
 		ShaderProgram(const std::string &path, const std::string &vertex, const std::string &fragment);
 		~ShaderProgram();
 
-
 		/**
 		 * @brief Creates and links the shader program from the previously loaded vertex and fragment shaders.
 		 */
@@ -52,6 +51,9 @@ namespace LilyPad
 		void set_uniform(const std::string &name, const glm::mat4 &trans) const;
 		void set_uniform(const std::string &name, const Mat4 &trans) const;
 
+		/**
+		 * @brief If the last write time has changed, it gets and applies the new shader code to the program.
+		 */
 		void reload();
 
 	private:

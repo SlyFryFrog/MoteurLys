@@ -80,7 +80,7 @@ namespace LilyPad
 			{
 				GLint size = vertices[0].data[i].size();
 				glVertexAttribPointer(i, size, GLType<T>::value, GL_FALSE, vertices[0].size() * sizeof(T),
-									  static_cast<void*>(reinterpret_cast<char*>(offset * sizeof(T))));
+									  static_cast<void *>(reinterpret_cast<char *>(offset * sizeof(T))));
 				glEnableVertexAttribArray(i);
 				offset += size;
 			}
@@ -88,31 +88,31 @@ namespace LilyPad
 			glBindVertexArray(0);
 		}
 
-        friend std::ostream &operator<<(std::ostream &os, const Vertices<T> &obj)
-        {
-            os << "{";
-            for (size_t i = 0; i < obj.vertices.size(); ++i)
-            {
-                if (i > 0)
-                    os << ", ";
-                os << "{";
-                for (size_t j = 0; j < obj.vertices[i].data.size(); ++j)
-                {
-                    if (j > 0)
-                        os << ", ";
-                    os << "[";
-                    for (size_t k = 0; k < obj.vertices[i].data[j].size(); ++k)
-                    {
-                        if (k > 0)
-                            os << ", ";
-                        os << obj.vertices[i].data[j][k];
-                    }
-                    os << "]";
-                }
-                os << "}";
-            }
-            os << "}";
-            return os;
-        }
+		friend std::ostream &operator<<(std::ostream &os, const Vertices<T> &obj)
+		{
+			os << "{";
+			for (size_t i = 0; i < obj.vertices.size(); ++i)
+			{
+				if (i > 0)
+					os << ", ";
+				os << "{";
+				for (size_t j = 0; j < obj.vertices[i].data.size(); ++j)
+				{
+					if (j > 0)
+						os << ", ";
+					os << "[";
+					for (size_t k = 0; k < obj.vertices[i].data[j].size(); ++k)
+					{
+						if (k > 0)
+							os << ", ";
+						os << obj.vertices[i].data[j][k];
+					}
+					os << "]";
+				}
+				os << "}";
+			}
+			os << "}";
+			return os;
+		}
 	};
 } // namespace LilyPad

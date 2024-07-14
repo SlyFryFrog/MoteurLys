@@ -1,4 +1,4 @@
-#include "LilyPad/renderer/OpenGL/texture.hpp"
+#include "texture.hpp"
 
 #include <GL/glew.h>
 #include <filesystem>
@@ -8,7 +8,7 @@
 
 namespace LilyPad
 {
-	Texture::Texture() {}
+	Texture::Texture() = default;
 
 	Texture::Texture(const std::string &path) : _path(path) {}
 
