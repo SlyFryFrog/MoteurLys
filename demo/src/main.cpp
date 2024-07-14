@@ -9,24 +9,23 @@
 #include "LilyPad/renderer/OpenGL/texture.hpp"
 #include "LilyPad/renderer/OpenGL/vertex.hpp"
 #include "LilyPad/renderer/OpenGL/window.hpp"
+#include "LilyPad/scene/nodes/3d/camera_3d.hpp"
 
 using namespace LilyPad;
 
 void process_input(GLFWwindow *window);
-void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+void framebuffer_size_callback(GLFWwindow *window, int width, int height);
 
-const unsigned int SCR_WIDTH = 800;
-const unsigned int SCR_HEIGHT = 600;
-glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
-glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
-glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
-float deltaTime = 0.0f; // Time between current frame and last frame
-float lastFrame = 0.0f; // Time of last frame
-unsigned int texture1;
+fp_type deltaTime = 0.0f; // Time between current frame and last frame
+fp_type lastFrame = 0.0f; // Time of last frame
 ShaderProgram ourShader("/home/marcus/dev/LilyPadEngine/demo/rsc/shaders/", "Vertex.glsl", "Fragment.glsl");
+Camera3D camera;
 
 int main()
 {
+	const unsigned int SCR_WIDTH = 800;
+	const unsigned int SCR_HEIGHT = 600;
+	unsigned int texture1;
 	const std::string relativePath = get_root_directory();
 	Window window = Window(SCR_WIDTH, SCR_HEIGHT);
 	window.set_title("Demo");
@@ -35,34 +34,40 @@ int main()
 	ourShader.create_shader_program();
 
 	// set up vertex data (and buffer(s)) and configure vertex attributes
-	Vertices<float> vertices({{{-0.5f, -0.5f, -0.5f}, {0.0f, 0.0f}}, {{0.5f, -0.5f, -0.5f}, {1.0f, 0.0f}},
-							  {{0.5f, 0.5f, -0.5f}, {1.0f, 1.0f}},	 {{0.5f, 0.5f, -0.5f}, {1.0f, 1.0f}},
-							  {{-0.5f, 0.5f, -0.5f}, {0.0f, 1.0f}},	 {{-0.5f, -0.5f, -0.5f}, {0.0f, 0.0f}},
+	Vertices<fp_type> vertices({{{-0.5f, -0.5f, -0.5f}, {0.0f, 0.0f}}, {{0.5f, -0.5f, -0.5f}, {1.0f, 0.0f}},
+								{{0.5f, 0.5f, -0.5f}, {1.0f, 1.0f}},   {{0.5f, 0.5f, -0.5f}, {1.0f, 1.0f}},
+								{{-0.5f, 0.5f, -0.5f}, {0.0f, 1.0f}},  {{-0.5f, -0.5f, -0.5f}, {0.0f, 0.0f}},
 
-							  {{-0.5f, -0.5f, 0.5f}, {0.0f, 0.0f}},	 {{0.5f, -0.5f, 0.5f}, {1.0f, 0.0f}},
-							  {{0.5f, 0.5f, 0.5f}, {1.0f, 1.0f}},	 {{0.5f, 0.5f, 0.5f}, {1.0f, 1.0f}},
-							  {{-0.5f, 0.5f, 0.5f}, {0.0f, 1.0f}},	 {{-0.5f, -0.5f, 0.5f}, {0.0f, 0.0f}},
+								{{-0.5f, -0.5f, 0.5f}, {0.0f, 0.0f}},  {{0.5f, -0.5f, 0.5f}, {1.0f, 0.0f}},
+								{{0.5f, 0.5f, 0.5f}, {1.0f, 1.0f}},	   {{0.5f, 0.5f, 0.5f}, {1.0f, 1.0f}},
+								{{-0.5f, 0.5f, 0.5f}, {0.0f, 1.0f}},   {{-0.5f, -0.5f, 0.5f}, {0.0f, 0.0f}},
 
-							  {{-0.5f, 0.5f, 0.5f}, {1.0f, 0.0f}},	 {{-0.5f, 0.5f, -0.5f}, {1.0f, 1.0f}},
-							  {{-0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}}, {{-0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}},
-							  {{-0.5f, -0.5f, 0.5f}, {0.0f, 0.0f}},	 {{-0.5f, 0.5f, 0.5f}, {1.0f, 0.0f}},
+								{{-0.5f, 0.5f, 0.5f}, {1.0f, 0.0f}},   {{-0.5f, 0.5f, -0.5f}, {1.0f, 1.0f}},
+								{{-0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}}, {{-0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}},
+								{{-0.5f, -0.5f, 0.5f}, {0.0f, 0.0f}},  {{-0.5f, 0.5f, 0.5f}, {1.0f, 0.0f}},
 
-							  {{0.5f, 0.5f, 0.5f}, {1.0f, 0.0f}},	 {{0.5f, 0.5f, -0.5f}, {1.0f, 1.0f}},
-							  {{0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}},	 {{0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}},
-							  {{0.5f, -0.5f, 0.5f}, {0.0f, 0.0f}},	 {{0.5f, 0.5f, 0.5f}, {1.0f, 0.0f}},
+								{{0.5f, 0.5f, 0.5f}, {1.0f, 0.0f}},	   {{0.5f, 0.5f, -0.5f}, {1.0f, 1.0f}},
+								{{0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}},  {{0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}},
+								{{0.5f, -0.5f, 0.5f}, {0.0f, 0.0f}},   {{0.5f, 0.5f, 0.5f}, {1.0f, 0.0f}},
 
-							  {{-0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}}, {{0.5f, -0.5f, -0.5f}, {1.0f, 1.0f}},
-							  {{0.5f, -0.5f, 0.5f}, {1.0f, 0.0f}},	 {{0.5f, -0.5f, 0.5f}, {1.0f, 0.0f}},
-							  {{-0.5f, -0.5f, 0.5f}, {0.0f, 0.0f}},	 {{-0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}},
+								{{-0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}}, {{0.5f, -0.5f, -0.5f}, {1.0f, 1.0f}},
+								{{0.5f, -0.5f, 0.5f}, {1.0f, 0.0f}},   {{0.5f, -0.5f, 0.5f}, {1.0f, 0.0f}},
+								{{-0.5f, -0.5f, 0.5f}, {0.0f, 0.0f}},  {{-0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}},
 
-							  {{-0.5f, 0.5f, -0.5f}, {0.0f, 1.0f}},	 {{0.5f, 0.5f, -0.5f}, {1.0f, 1.0f}},
-							  {{0.5f, 0.5f, 0.5f}, {1.0f, 0.0f}},	 {{0.5f, 0.5f, 0.5f}, {1.0f, 0.0f}},
-							  {{-0.5f, 0.5f, 0.5f}, {0.0f, 0.0f}},	 {{-0.5f, 0.5f, -0.5f}, {0.0f, 1.0f}}});
+								{{-0.5f, 0.5f, -0.5f}, {0.0f, 1.0f}},  {{0.5f, 0.5f, -0.5f}, {1.0f, 1.0f}},
+								{{0.5f, 0.5f, 0.5f}, {1.0f, 0.0f}},	   {{0.5f, 0.5f, 0.5f}, {1.0f, 0.0f}},
+								{{-0.5f, 0.5f, 0.5f}, {0.0f, 0.0f}},   {{-0.5f, 0.5f, -0.5f}, {0.0f, 1.0f}}});
 
 	Vector3 cubePositions[] = {{0.0f, 0.0f, 0.0f},	   {2.0f, 5.0f, -15.0f}, {-1.5f, -2.2f, -2.5f},
 							   {-3.8f, -2.0f, -12.3f}, {2.4f, -0.4f, -3.5f}, {-1.7f, 3.0f, -7.5f},
 							   {1.3f, -2.0f, -2.5f},   {1.5f, 2.0f, -2.5f},	 {1.5f, 0.2f, -1.5f},
 							   {-1.3f, 1.0f, -1.5f}};
+
+	camera.position = {0.0f, 0.0f, 10.0f};
+	camera.up = {0.0f, 1.0f, 0.0f};
+
+	Position3 point = {-1.0f, 0.0f, -1.0f};
+	camera.look_at(point);
 	Bind bind;
 	bind.bind_vertices(vertices);
 	vertices.set_attributes();
@@ -75,14 +80,12 @@ int main()
 	ourShader.use();
 	ourShader.set_uniform("uTexture", 0);
 
-	glm::mat4 view;
-	view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
 	glfwSetInputMode(window.window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-	//glfwSetCursorPosCallback(window.window, mouse_callback);
+	// glfwSetCursorPosCallback(window.window, mouse_callback);
 
 	while (!window.is_done())
 	{
-		float currentFrame = glfwGetTime();
+		fp_type currentFrame = glfwGetTime();
 		deltaTime = currentFrame - lastFrame;
 		lastFrame = currentFrame;
 		process_input(window.window);
@@ -99,8 +102,7 @@ int main()
 		projection = glm::perspective(glm::radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f);
 
 		ourShader.use();
-		glm::mat4 view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
-		ourShader.set_uniform("uView", view);
+		ourShader.set_uniform("uView", camera.viewMatrix);
 		ourShader.set_uniform("uProjection", projection);
 
 		bind.bind_vertex_array();
@@ -108,7 +110,7 @@ int main()
 		{
 			glm::mat4 model = glm::mat4(1.0f);
 			model = glm::translate(model, glm::vec3(cubePositions[i].x, cubePositions[i].y, cubePositions[i].z));
-			float angle = (float)glfwGetTime() * glm::radians(50.0f) * pow(-1, i);
+			fp_type angle = (fp_type)glfwGetTime() * glm::radians(50.0f) * pow(-1, i);
 			model = glm::rotate(model, angle, glm::vec3(1.0f, 0.3f, 0.5f));
 			ourShader.set_uniform("uModel", model);
 
@@ -125,16 +127,16 @@ int main()
 
 void process_input(GLFWwindow *window)
 {
-	float cameraSpeed = 2.5f * deltaTime;
-	
+	fp_type cameraSpeed = 2.5f * deltaTime;
+
 	if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-		cameraPos += cameraSpeed * cameraFront;
+		camera.position += cameraSpeed * camera.forward;
 	if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-		cameraPos -= cameraSpeed * cameraFront;
+		camera.position -= cameraSpeed * camera.forward;
 	if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-		cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+		camera.position -= Vector3::normalize(Vector3::cross(camera.forward, camera.up)) * cameraSpeed;
 	if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-		cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+		camera.position += Vector3::normalize(Vector3::cross(camera.forward, camera.up)) * cameraSpeed;
 	if (glfwGetKey(window, GLFW_KEY_R) == GLFW_PRESS)
 		ourShader.reload();
 }

@@ -149,10 +149,6 @@ namespace LilyPad
 	{
 		glUniformMatrix4fv(glGetUniformLocation(program, name.c_str()), 1, GL_FALSE, glm::value_ptr(trans));
 	}
-	void ShaderProgram::set_uniform(const std::string &name, const Mat4 &trans) const
-	{
-		glUniformMatrix4fv(glGetUniformLocation(program, name.c_str()), 1, GL_FALSE, trans.data);
-	}
 
 	void ShaderProgram::reload()
 	{

@@ -5,11 +5,11 @@
 
 namespace LilyPad
 {
-	class Node3D : Node
+	class Node3D : public Node
 	{
 	public:
-		Position3 Position;
-        Position3 AbsolutePosition;
+		Position3 position;
+        Position3 absolutePosition;
 
         Node3D();
 

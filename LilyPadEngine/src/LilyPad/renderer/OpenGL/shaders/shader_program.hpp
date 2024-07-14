@@ -3,7 +3,6 @@
 #include <filesystem>
 #include <glm/glm.hpp>
 #include <string>
-#include "LilyPad/core/math/matrix4.hpp"
 
 namespace LilyPad
 {
@@ -49,7 +48,6 @@ namespace LilyPad
 		void set_uniform(const std::string &name, const float value) const;
 		void set_uniform(const std::string &name, const glm::mat3 &trans) const;
 		void set_uniform(const std::string &name, const glm::mat4 &trans) const;
-		void set_uniform(const std::string &name, const Mat4 &trans) const;
 
 		/**
 		 * @brief If the last write time has changed, it gets and applies the new shader code to the program.
