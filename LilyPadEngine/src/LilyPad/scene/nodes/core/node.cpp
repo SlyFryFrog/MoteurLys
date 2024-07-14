@@ -4,19 +4,17 @@ namespace LilyPad
 {
 	Node::Node() = default;
 	void Node::_ready() {}
-	void Node::_process() {}
+	void Node::_process(double delta) {}
 	void Node::_process_input() {}
 
-	Node *Node::get_child(const std::string &nodeName)
+	void Node::set_name(const std::string &name)
 	{
-		for (Node &child : children)
-		{
-			if (child.Name == nodeName)
-			{
-				return &child;
-			}
-		}
-
-		return nullptr;
+		_name = name;
 	}
+	void Node::add_child(std::shared_ptr<Node> child)
+	{
+		_children.push_back(child);
+	}
+
+	std::string Node::get_name() const { return _name; }
 } // namespace LilyPad
