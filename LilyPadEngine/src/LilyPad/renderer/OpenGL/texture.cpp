@@ -18,6 +18,10 @@ namespace LilyPad
 
 	unsigned int Texture::generate_texture(const std::string &file)
 	{
+		// Ignores unnecessary deletion for empty id
+		if (id)
+			glDeleteTextures(1, &id);
+
 		unsigned int texture;
 		glGenTextures(1, &texture);
 		glBindTexture(GL_TEXTURE_2D, texture);

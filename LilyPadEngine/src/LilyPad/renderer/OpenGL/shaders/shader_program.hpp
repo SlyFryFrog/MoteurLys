@@ -3,24 +3,19 @@
 #include <filesystem>
 #include <glm/glm.hpp>
 #include <string>
+#include "LilyPad/core/io/file.hpp"
 
 namespace LilyPad
 {
-	class Shader
+	class Shader : public File
 	{
 	public:
 		Shader(const std::string &path, unsigned int type);
 
-		bool is_updated();
-		void update();
-
-		static std::string read_file(const std::string &path);
-		std::string read_file();
+		void update() override;
 
 	private:
 		std::string _shaderCode;
-		std::string _path;
-		std::filesystem::file_time_type _lastTime;
 	};
 
 	class ShaderProgram
@@ -43,8 +38,8 @@ namespace LilyPad
 
 		int get_attribute_location(const std::string &name);
 
-
 		void set_uniform(const std::string &name, const int value) const;
+		void set_uniform(const std::string &name, const unsigned int value) const;
 		void set_uniform(const std::string &name, const float value) const;
 		void set_uniform(const std::string &name, const glm::mat3 &trans) const;
 		void set_uniform(const std::string &name, const glm::mat4 &trans) const;

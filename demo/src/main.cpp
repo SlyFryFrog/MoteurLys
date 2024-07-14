@@ -25,7 +25,6 @@ int main()
 {
 	const unsigned int SCR_WIDTH = 800;
 	const unsigned int SCR_HEIGHT = 600;
-	unsigned int texture1;
 	const std::string relativePath = get_root_directory();
 	Window window = Window(SCR_WIDTH, SCR_HEIGHT);
 	window.set_title("Demo");
@@ -68,6 +67,7 @@ int main()
 
 	Position3 point = {-1.0f, 0.0f, -1.0f};
 	camera.look_at(point);
+	
 	Bind bind;
 	bind.bind_vertices(vertices);
 	vertices.set_attributes();
@@ -75,10 +75,10 @@ int main()
 	glEnable(GL_DEPTH_TEST);
 
 	Texture texture(relativePath + "/rsc/textures/");
-	texture1 = texture.generate_texture("frog.png");
+	texture.id = texture.generate_texture("frog.png");
 
 	ourShader.use();
-	ourShader.set_uniform("uTexture", 0);
+	ourShader.set_uniform("uTexture", texture.id);
 
 	glfwSetInputMode(window.window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 	// glfwSetCursorPosCallback(window.window, mouse_callback);
@@ -96,7 +96,7 @@ int main()
 
 		// bind textures on corresponding texture units
 		glActiveTexture(GL_TEXTURE0);
-		glBindTexture(GL_TEXTURE_2D, texture1);
+		glBindTexture(GL_TEXTURE_2D, texture.id);
 
 		glm::mat4 projection;
 		projection = glm::perspective(glm::radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f);

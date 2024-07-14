@@ -9,9 +9,7 @@
 
 namespace LilyPad
 {
-	Shader::Shader(const std::string &path, unsigned int type) : _path(path) { _shaderCode = read_file(); }
-
-	bool Shader::is_updated() { return std::filesystem::last_write_time(_path) != _lastTime; }
+	Shader::Shader(const std::string &path, unsigned int type) : File(path) { _shaderCode = read_file(); }
 
 	void Shader::update()
 	{
@@ -22,31 +20,6 @@ namespace LilyPad
 			LILYPAD_DEBUG("Updated");
 		}
 	}
-
-	std::string Shader::read_file(const std::string &path)
-	{
-		std::ifstream shaderFile;
-		std::string fileContents;
-		shaderFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
-
-		try
-		{
-			shaderFile.open(path);
-			std::stringstream shaderStream;
-			shaderStream << shaderFile.rdbuf();
-			shaderFile.close();
-
-			fileContents = shaderStream.str();
-		}
-		catch (std::ifstream::failure &e)
-		{
-			LILYPAD_ERROR("SHADER::FILE_NOT_SUCCESSFULLY_READY: ", path, " ", e.what());
-		}
-
-		return fileContents;
-	}
-
-	std::string Shader::read_file() { return read_file(_path); }
 
 	unsigned int ShaderProgram::compile_shader(const std::string &source, const unsigned int type)
 	{
@@ -133,6 +106,11 @@ namespace LilyPad
 	void ShaderProgram::set_uniform(const std::string &name, const int value) const
 	{
 		glUniform1i(glGetUniformLocation(program, name.c_str()), value);
+	}
+
+	void ShaderProgram::set_uniform(const std::string &name, const unsigned int value) const
+	{
+		glUniform1ui(glGetUniformLocation(program, name.c_str()), value);
 	}
 
 	void ShaderProgram::set_uniform(const std::string &name, const float value) const

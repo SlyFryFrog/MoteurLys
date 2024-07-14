@@ -7,6 +7,7 @@ namespace LilyPad
 	class Texture
 	{
 	public:
+		unsigned int id;
 		Texture();
 
 		explicit Texture(const std::string &path);
