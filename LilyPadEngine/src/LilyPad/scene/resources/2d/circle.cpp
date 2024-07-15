@@ -1,4 +1,4 @@
-#include "LilyPad/scenes/resources/2d/circle.hpp"
+#include "circle.hpp"
 
 namespace LilyPad
 {

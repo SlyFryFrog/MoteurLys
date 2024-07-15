@@ -3,7 +3,7 @@ project(LilyPadEngine)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED YES)
 
-option(RUN_TESTS "Build tests" ON)
+option(RUN_TESTS "Build tests" OFF)
 
 function (LinkDependencies Target)
     target_link_libraries(${Target} 
@@ -42,9 +42,8 @@ find_package(OpenGL REQUIRED)
 find_package(GLEW REQUIRED)
 
 add_library(LilyPadEngine ${LIBRARY_TYPE} ${SOURCES}
-        src/LilyPad/renderer/OpenGL/vertex.hpp
-        src/LilyPad/debug/errors.hpp
-        src/LilyPad/core/io/Key.hpp)
+        src/LilyPad/core/io/file.cpp
+        src/LilyPad/core/utils/constants.hpp)
 
 add_library(stb_image ${LIBRARY_TYPE} "vendor/stb_image.cpp")
 

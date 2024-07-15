@@ -1,7 +1,7 @@
 #pragma once
 
 #include "LilyPad/core/math/rect2.hpp"
-#include "LilyPad/scenes/resources/2d/shape.hpp"
+#include "LilyPad/scene/resources/2d/shape.hpp"
 
 namespace LilyPad
 {

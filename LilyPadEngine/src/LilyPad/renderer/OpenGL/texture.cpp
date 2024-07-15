@@ -1,4 +1,4 @@
-#include "LilyPad/renderer/OpenGL/texture.hpp"
+#include "texture.hpp"
 
 #include <GL/glew.h>
 #include <filesystem>
@@ -8,7 +8,7 @@
 
 namespace LilyPad
 {
-	Texture::Texture() {}
+	Texture::Texture() = default;
 
 	Texture::Texture(const std::string &path) : _path(path) {}
 
@@ -16,8 +16,12 @@ namespace LilyPad
 
 	std::string Texture::get_path() { return _path; }
 
-	unsigned int Texture::generate_texture(const std::string &file)
+	unsigned int Texture::generate_texture(const std::string &file) const
 	{
+		// Ignores unnecessary deletion for empty id
+		if (id)
+			glDeleteTextures(1, &id);
+
 		unsigned int texture;
 		glGenTextures(1, &texture);
 		glBindTexture(GL_TEXTURE_2D, texture);
