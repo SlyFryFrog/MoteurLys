@@ -43,7 +43,7 @@ namespace LilyPad
 	{
 	}
 
-	ShaderProgram::~ShaderProgram() { glDeleteProgram(program); }
+	ShaderProgram::~ShaderProgram() { glDeleteProgram(id); }
 
 	int ShaderProgram::check_compile_errors(const unsigned int shader, const unsigned int type)
 	{
@@ -76,56 +76,57 @@ namespace LilyPad
 
 	void ShaderProgram::create_shader_program()
 	{
-		glDeleteProgram(program);
-		program = glCreateProgram();
-		unsigned int vertex = compile_shader(_vShader.read_file(), GL_VERTEX_SHADER);
+		if (id)
+			glDeleteProgram(id);
+		id = glCreateProgram();
+		const unsigned int vertex = compile_shader(_vShader.read_file(), GL_VERTEX_SHADER);
 		LILYPAD_DEBUG("Finished compiling vertex shader.");
-		unsigned int fragment = compile_shader(_fShader.read_file(), GL_FRAGMENT_SHADER);
+		const unsigned int fragment = compile_shader(_fShader.read_file(), GL_FRAGMENT_SHADER);
 		LILYPAD_DEBUG("Finished compiling fragment shader.");
 
 		// Loads the shaders to the program
-		glAttachShader(program, vertex);
-		glAttachShader(program, fragment);
-		glLinkProgram(program);
-		glValidateProgram(program);
+		glAttachShader(id, vertex);
+		glAttachShader(id, fragment);
+		glLinkProgram(id);
+		glValidateProgram(id);
 
 		// Checks for any errors raised during the shader compilation process
-		check_compile_errors(program, GL_PROGRAM);
+		check_compile_errors(id, GL_PROGRAM);
 
 		glDeleteShader(vertex);
 		glDeleteShader(fragment);
 	}
 
-	void ShaderProgram::use() const { glUseProgram(program); }
+	void ShaderProgram::use() const { glUseProgram(id); }
 
-	int ShaderProgram::get_attribute_location(const std::string &name)
+	int ShaderProgram::get_attribute_location(const std::string &name) const
 	{
-		return glGetAttribLocation(program, name.c_str());
+		return glGetAttribLocation(id, name.c_str());
 	}
 
 	void ShaderProgram::set_uniform(const std::string &name, const int value) const
 	{
-		glUniform1i(glGetUniformLocation(program, name.c_str()), value);
+		glUniform1i(glGetUniformLocation(id, name.c_str()), value);
 	}
 
 	void ShaderProgram::set_uniform(const std::string &name, const unsigned int value) const
 	{
-		glUniform1ui(glGetUniformLocation(program, name.c_str()), value);
+		glUniform1ui(glGetUniformLocation(id, name.c_str()), value);
 	}
 
 	void ShaderProgram::set_uniform(const std::string &name, const float value) const
 	{
-		glUniform1f(glGetUniformLocation(program, name.c_str()), value);
+		glUniform1f(glGetUniformLocation(id, name.c_str()), value);
 	}
 
 	void ShaderProgram::set_uniform(const std::string &name, const glm::mat3 &trans) const
 	{
-		glUniformMatrix3fv(glGetUniformLocation(program, name.c_str()), 1, GL_FALSE, glm::value_ptr(trans));
+		glUniformMatrix3fv(glGetUniformLocation(id, name.c_str()), 1, GL_FALSE, glm::value_ptr(trans));
 	}
 
 	void ShaderProgram::set_uniform(const std::string &name, const glm::mat4 &trans) const
 	{
-		glUniformMatrix4fv(glGetUniformLocation(program, name.c_str()), 1, GL_FALSE, glm::value_ptr(trans));
+		glUniformMatrix4fv(glGetUniformLocation(id, name.c_str()), 1, GL_FALSE, glm::value_ptr(trans));
 	}
 
 	void ShaderProgram::reload()

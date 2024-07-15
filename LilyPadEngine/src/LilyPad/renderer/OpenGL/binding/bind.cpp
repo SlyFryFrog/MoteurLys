@@ -8,5 +8,5 @@ namespace LilyPad
 		glGenBuffers(1, &VBO);
 	}
 
-	void Bind::bind_vertex_array() { glBindVertexArray(VAO); }
+	void Bind::bind_vertex_array() const { glBindVertexArray(VAO); }
 } // namespace LilyPad

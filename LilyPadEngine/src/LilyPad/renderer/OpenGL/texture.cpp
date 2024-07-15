@@ -16,7 +16,7 @@ namespace LilyPad
 
 	std::string Texture::get_path() { return _path; }
 
-	unsigned int Texture::generate_texture(const std::string &file)
+	unsigned int Texture::generate_texture(const std::string &file) const
 	{
 		// Ignores unnecessary deletion for empty id
 		if (id)

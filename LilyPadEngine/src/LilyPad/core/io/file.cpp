@@ -37,6 +37,6 @@ namespace LilyPad
 		return fileContents;
 	}
 
-	std::string File::read_file() { return read_file(_path); }
+	std::string File::read_file() const { return read_file(_path); }
 
 } // namespace LilyPad

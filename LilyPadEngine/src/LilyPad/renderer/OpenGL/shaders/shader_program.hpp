@@ -21,7 +21,7 @@ namespace LilyPad
 	class ShaderProgram
 	{
 	public:
-		unsigned int program; // The OpenGL ID of the shader program.
+		unsigned int id; // The OpenGL ID of the shader program.
 
 		ShaderProgram(const std::string &path, const std::string &vertex, const std::string &fragment);
 		~ShaderProgram();
@@ -36,11 +36,11 @@ namespace LilyPad
 		 */
 		void use() const;
 
-		int get_attribute_location(const std::string &name);
+		[[nodiscard]] int get_attribute_location(const std::string &name) const;
 
-		void set_uniform(const std::string &name, const int value) const;
-		void set_uniform(const std::string &name, const unsigned int value) const;
-		void set_uniform(const std::string &name, const float value) const;
+		void set_uniform(const std::string &name, int value) const;
+		void set_uniform(const std::string &name, unsigned int value) const;
+		void set_uniform(const std::string &name, float value) const;
 		void set_uniform(const std::string &name, const glm::mat3 &trans) const;
 		void set_uniform(const std::string &name, const glm::mat4 &trans) const;
 
@@ -50,6 +50,10 @@ namespace LilyPad
 		void reload();
 
 	private:
+		Shader _vShader;
+		Shader _fShader;
+		std::string _path;
+
 		/**
 		 * @brief Checks the compilation status of a shader and logs any errors.
 		 *
@@ -58,10 +62,6 @@ namespace LilyPad
 		 * @return int representing the sucess of the compilation.
 		 */
 		static int check_compile_errors(unsigned int shader, unsigned int type);
-
-		Shader _vShader;
-		Shader _fShader;
-		std::string _path;
 
 		/**
 		 * @brief Compiles a shader from the provided source code.

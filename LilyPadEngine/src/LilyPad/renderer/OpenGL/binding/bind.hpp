@@ -22,7 +22,7 @@ namespace LilyPad
 			vertices.bind_buffer(VBO);
 		}
 
-		void bind_vertex_array();
+		void bind_vertex_array() const;
 
 	private:
 		unsigned int VAO; // Vertex array

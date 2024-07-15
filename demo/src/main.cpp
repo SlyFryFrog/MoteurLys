@@ -10,7 +10,7 @@
 #include "LilyPad/renderer/OpenGL/texture.hpp"
 #include "LilyPad/renderer/OpenGL/vertex.hpp"
 #include "LilyPad/renderer/OpenGL/window.hpp"
-#include "LilyPad/scene/nodes/3d/camera_3d.hpp"
+#include "camera.hpp"
 
 using namespace LilyPad;
 
@@ -22,18 +22,16 @@ fp_type lastFrame = 0.0f; // Time of last frame
 ShaderProgram ourShader("/home/marcus/dev/LilyPadEngine/demo/rsc/shaders/", "Vertex.glsl", "Fragment.glsl");
 auto root = std::make_shared<Node>();
 auto player = std::make_shared<Node3D>();
-auto camera = std::make_shared<Camera3D>();
+auto camera = std::make_shared<Camera>();
 
 int main()
 {
 	root->add_child(camera);
 	root->add_child(player);
-	player->set_name("player");
-	root->get_child<Camera3D>("player");
-
+	camera->_ready();
 	camera->set_name("camera");
-	root->get_child<Camera3D>("camera")->set_name("camera");
-	LILYPAD_DEBUG(root->get_child<Camera3D>("camera")->get_name());
+	root->get_child<Camera>("camera")->set_name("camera");
+	LILYPAD_DEBUG(root->get_child<Camera>("camera")->get_name());
 
 	const unsigned int SCR_WIDTH = 800;
 	const unsigned int SCR_HEIGHT = 600;
@@ -74,11 +72,6 @@ int main()
 							   {1.3f, -2.0f, -2.5f},   {1.5f, 2.0f, -2.5f},	 {1.5f, 0.2f, -1.5f},
 							   {-1.3f, 1.0f, -1.5f}};
 
-	camera->position = {0.0f, 0.0f, 10.0f};
-	camera->up = {0.0f, 1.0f, 0.0f};
-
-	Position3 point = {-1.0f, 0.0f, -1.0f};
-	camera->look_at(point);
 
 	Bind bind;
 	bind.bind_vertices(vertices);
@@ -112,9 +105,10 @@ int main()
 
 		glm::mat4 projection;
 		projection = glm::perspective(glm::radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f);
+		Position3 point = {-1.0f, 0.0f, -1.0f};
 
 		ourShader.use();
-		ourShader.set_uniform("uView", camera->viewMatrix);
+		ourShader.set_uniform("uView", camera->get_view());
 		ourShader.set_uniform("uProjection", projection);
 
 		bind.bind_vertex_array();
@@ -139,16 +133,18 @@ int main()
 
 void process_input(GLFWwindow *window)
 {
-	fp_type cameraSpeed = 2.5f * deltaTime;
+	fp_type cameraSpeed = 5 * deltaTime;
 
 	if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-		camera->position += cameraSpeed * camera->forward;
+		camera->position += cameraSpeed * camera->front;
 	if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-		camera->position -= cameraSpeed * camera->forward;
+		camera->position -= cameraSpeed * camera->front;
 	if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-		camera->position -= Vector3::normalize(Vector3::cross(camera->forward, camera->up)) * cameraSpeed;
+		camera->position -= Vector3::normalize(Vector3::cross(camera->front, camera->up)) * cameraSpeed;
 	if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-		camera->position += Vector3::normalize(Vector3::cross(camera->forward, camera->up)) * cameraSpeed;
+		camera->position += Vector3::normalize(Vector3::cross(camera->front, camera->up)) * cameraSpeed;
 	if (glfwGetKey(window, GLFW_KEY_R) == GLFW_PRESS)
 		ourShader.reload();
+	camera->update_vectors();
+	LILYPAD_DEBUG(camera->position.x, camera->position.z);
 }

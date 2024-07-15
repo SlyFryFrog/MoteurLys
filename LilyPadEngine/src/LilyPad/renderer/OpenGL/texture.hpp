@@ -16,7 +16,7 @@ namespace LilyPad
 
 		std::string get_path();
 
-		unsigned int generate_texture(const std::string &file);
+		unsigned int generate_texture(const std::string &file) const;
 
 	private:
 		std::string _path;

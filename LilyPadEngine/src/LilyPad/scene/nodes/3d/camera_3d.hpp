@@ -8,15 +8,21 @@ namespace LilyPad
 	class Camera3D : public Node3D
 	{
 	public:
-		fp_type yaw;
-		fp_type pitch;
+		float yaw;
+		float pitch;
 		Vector3 up;
-		Vector3 forward;
+		Vector3 front;
+		Vector3 right;
 		glm::mat4 viewMatrix;
 
-		void look_at(Position3 point);
+		void look_at(const Position3 &point);
 
-		Camera3D() = default;
-	private:
+		glm::mat4 get_view();
+
+		void update_view();
+
+		Camera3D();
+		
+		void update_vectors();
 	};
 } // namespace LilyPad
