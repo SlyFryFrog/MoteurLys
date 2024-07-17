@@ -1,17 +1,18 @@
 #pragma once
 
-#include "LilyPad/scene/nodes/core/node.hpp"
 #include "LilyPad/core/math/vector3.hpp"
+#include "LilyPad/scene/nodes/core/node.hpp"
+#include <glm/glm.hpp>
 
 namespace LilyPad
 {
 	class Node3D : public Node
 	{
 	public:
-		Position3 position;
-        Position3 absolutePosition;
+		glm::vec3 position;
+		glm::vec3 absolutePosition;
 
-        Node3D();
+		Node3D();
 
 	private:
 	};

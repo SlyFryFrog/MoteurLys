@@ -44,7 +44,7 @@ namespace LilyPad
 			return nullptr;
 		}
 
-		virtual ~Node() = default;
+		~Node();
 
 	private:
 		std::string _name;
