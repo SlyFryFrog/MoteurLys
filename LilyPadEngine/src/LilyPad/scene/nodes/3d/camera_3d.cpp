@@ -5,12 +5,16 @@
 
 namespace LilyPad
 {
-	Camera3D::Camera3D() {}
+	Camera3D::Camera3D() 
+		: yaw(-90.0f), pitch(0.0f), mouseSensitivity(0.1f), constrainPitch(true), 
+		  front(glm::vec3(0.0f, 0.0f, -1.0f)), worldUp(glm::vec3(0.0f, 1.0f, 0.0f)), zoom(45.0f)
+	{
+		update_vectors();
+	}
 
 	void Camera3D::look_at(const Position3 &point)
 	{
-		viewMatrix =
-			glm::lookAt(static_cast<glm::vec3>(position), static_cast<glm::vec3>(point), static_cast<glm::vec3>(up));
+		viewMatrix = glm::lookAt(static_cast<glm::vec3>(position), static_cast<glm::vec3>(point), worldUp);
 	}
 
 	glm::mat4 Camera3D::get_view()
@@ -22,21 +26,10 @@ namespace LilyPad
 
 	void Camera3D::update_view()
 	{
-		viewMatrix =
-			glm::lookAt(static_cast<glm::vec3>(position),
-						static_cast<glm::vec3>(position) + static_cast<glm::vec3>(front), static_cast<glm::vec3>(up));
+		viewMatrix = glm::lookAt(static_cast<glm::vec3>(position),
+								 static_cast<glm::vec3>(position) + static_cast<glm::vec3>(front), 
+								 static_cast<glm::vec3>(up));
 	}
-
-	// void Camera3D::update_vectors()
-	// {
-	// 	Vector3 tempFront;
-	// 	tempFront.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
-	// 	tempFront.y = sin(glm::radians(pitch));
-	// 	tempFront.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
-	// 	front = Vector3::normalize(tempFront);
-	// 	right = Vector3::normalize(Vector3::cross(front, up));
-	// 	up = Vector3::normalize(Vector3::cross(right, front));
-	// }
 
 	void Camera3D::update_vectors()
 	{
@@ -46,9 +39,7 @@ namespace LilyPad
 		t_front.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
 		front = glm::normalize(t_front);
 		// also re-calculate the Right and Up vector
-		right = glm::normalize(
-			glm::cross(front, up)); // normalize the vectors, because their length gets closer to 0 the more you
-										 // look up or down which results in slower movement.
+		right = glm::normalize(glm::cross(front, worldUp)); 
 		up = glm::normalize(glm::cross(right, front));
 	}
 

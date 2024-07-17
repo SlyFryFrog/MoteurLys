@@ -13,12 +13,10 @@ namespace LilyPad
 		float pitch;
 	    float mouseSensitivity;
     	bool constrainPitch;
-		// Vector3 up;
-		// Vector3 front;
-		// Vector3 right;
 		glm::vec3 up;
 		glm::vec3 front;
 		glm::vec3 right;
+		glm::vec3 worldUp;
 		glm::mat4 viewMatrix;
 		float zoom;
 
