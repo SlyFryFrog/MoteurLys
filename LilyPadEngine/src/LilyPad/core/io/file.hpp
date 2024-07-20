@@ -9,6 +9,7 @@ namespace LilyPad
 	{
 	public:
 		File();
+		virtual ~File();
 		explicit File(const std::string &path);
 
 		[[nodiscard]] bool is_updated() const;

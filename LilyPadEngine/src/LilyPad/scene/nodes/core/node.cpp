@@ -4,6 +4,7 @@ namespace LilyPad
 {
 	Node::Node() = default;
 	Node::~Node() = default;
+	Node::Node(const std::string &name) : _name(name) {}
 
 	void Node::_ready() {}
 	void Node::_process(double delta) {}

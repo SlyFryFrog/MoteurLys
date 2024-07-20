@@ -8,6 +8,9 @@ namespace LilyPad
 {
 	File::File() = default;
 
+	 File::~File() = default;
+
+
 	File::File(const std::string &path) : _path(path) {}
 
 	bool File::is_updated() const { return std::filesystem::last_write_time(_path) != _lastTime; }

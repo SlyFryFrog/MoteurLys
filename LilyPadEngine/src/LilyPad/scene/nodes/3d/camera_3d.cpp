@@ -17,7 +17,7 @@ namespace LilyPad
 		viewMatrix = glm::lookAt(static_cast<glm::vec3>(position), static_cast<glm::vec3>(point), worldUp);
 	}
 
-	glm::mat4 Camera3D::get_view()
+	glm::mat4 Camera3D::get_view() const
 	{
 		return glm::lookAt(static_cast<glm::vec3>(position),
 						   static_cast<glm::vec3>(position) + static_cast<glm::vec3>(front),
@@ -34,9 +34,9 @@ namespace LilyPad
 	void Camera3D::update_vectors()
 	{
 		glm::vec3 t_front;
-		t_front.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
-		t_front.y = sin(glm::radians(pitch));
-		t_front.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
+		t_front.x = static_cast<fp_type>(cos(glm::radians(yaw)) * cos(glm::radians(pitch)));
+		t_front.y = static_cast<fp_type>(sin(glm::radians(pitch)));
+		t_front.z = static_cast<fp_type>(sin(glm::radians(yaw)) * cos(glm::radians(pitch)));
 		front = glm::normalize(t_front);
 		// also re-calculate the Right and Up vector
 		right = glm::normalize(glm::cross(front, worldUp)); 

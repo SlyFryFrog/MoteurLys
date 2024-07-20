@@ -2,6 +2,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include <memory>
+#include "LilyPad/core/math/vector3.hpp"
 #include "LilyPad/core/utils/paths.hpp"
 #include "LilyPad/debug/logging.hpp"
 #include "LilyPad/renderer/OpenGL/binding/bind.hpp"
@@ -9,7 +10,6 @@
 #include "LilyPad/renderer/OpenGL/texture.hpp"
 #include "LilyPad/renderer/OpenGL/vertex.hpp"
 #include "LilyPad/renderer/OpenGL/window.hpp"
-#include "LilyPad/core/math/vector3.hpp"
 #include "camera.hpp"
 
 using namespace LilyPad;
@@ -27,7 +27,7 @@ bool firstMouse = true;
 
 float deltaTime = 0.0f; // Time between current frame and last frame
 float lastFrame = 0.0f; // Time of last frame
-ShaderProgram ourShader("C:/dev/LilyPadEngine/demo/rsc/shaders/", "Vertex.glsl", "Fragment.glsl");
+ShaderProgram ourShader("/home/marcus/dev/LilyPadEngine/demo/rsc/shaders/", "Vertex.glsl", "Fragment.glsl");
 auto camera = std::make_shared<Camera>();
 
 int main()
@@ -85,7 +85,6 @@ int main()
 
 	ourShader.use();
 	ourShader.set_uniform("uTexture", texture.id);
-
 
 	while (!window.is_done())
 	{
@@ -158,9 +157,9 @@ void process_input(GLFWwindow *window)
 	if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
 		camera->position -= cameraSpeed * camera->front;
 	if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-		camera->position -= cameraSpeed *camera->right;
+		camera->position -= cameraSpeed * camera->right;
 	if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-		camera->position +=  cameraSpeed * camera->right;
+		camera->position += cameraSpeed * camera->right;
 	if (glfwGetKey(window, GLFW_KEY_R) == GLFW_PRESS)
 		ourShader.reload();
 	camera->update_vectors();

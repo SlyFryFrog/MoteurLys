@@ -3,7 +3,6 @@
 #include <memory>
 #include <string>
 #include <vector>
-#include "LilyPad/core/utils/typedef.hpp"
 #include "LilyPad/debug/logging.hpp"
 namespace LilyPad
 {
@@ -11,12 +10,14 @@ namespace LilyPad
 	{
 	public:
 		Node();
+		explicit Node(const std::string &name);
+		virtual  ~Node();
 
 		virtual void _ready();
 		virtual void _process(double delta);
 		virtual void _process_input();
 
-		std::string get_name() const;
+		[[nodiscard]] std::string get_name() const;
 		void set_name(const std::string &name);
 
 		void add_child(std::shared_ptr<Node> child);
@@ -24,7 +25,7 @@ namespace LilyPad
 		template <typename T>
 		std::shared_ptr<T> get_child(const std::string &nodeName)
 		{
-			for (auto &child : _children)
+			for (const auto &child : _children)
 			{
 				if (child->get_name() == nodeName)
 				{
@@ -43,8 +44,6 @@ namespace LilyPad
 			LILYPAD_ERROR("Child with name '", nodeName, "' not found.");
 			return nullptr;
 		}
-
-		~Node();
 
 	private:
 		std::string _name;
