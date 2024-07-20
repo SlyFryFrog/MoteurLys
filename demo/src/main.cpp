@@ -10,6 +10,7 @@
 #include "LilyPad/renderer/OpenGL/texture.hpp"
 #include "LilyPad/renderer/OpenGL/vertex.hpp"
 #include "LilyPad/renderer/OpenGL/window.hpp"
+#include "LilyPad/core/io/input.hpp"
 #include "camera.hpp"
 
 using namespace LilyPad;

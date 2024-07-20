@@ -5,6 +5,20 @@
 
 namespace LilyPad
 {
+	Logger *Logger::_singleton = nullptr; // Definition with initialization
+
+	Logger::Logger() :
+		_file("rsc/log.txt"), _showLogs(true), _writeLogs(false), _minLogLevel(LogLevel::DEBUG), _timeFormat("%H:%M:%S")
+	{
+		_singleton = this;
+	}
+
+	Logger::~Logger()
+	{
+		delete _singleton;
+		_singleton = nullptr;
+	}
+
 	void Logger::print_log(const LogLevel &level, const std::string &message) const
 	{
 		std::string color;
@@ -30,22 +44,16 @@ namespace LilyPad
 		std::cout << color << message << _textColors.DEFAULT << "\n";
 	}
 
-	Logger *Logger::instance()
+	Logger *Logger::get_singleton()
 	{
-		if (!_logInstance)
+		if (!_singleton)
 		{
-			_logInstance = new Logger();
+			_singleton = new Logger();
 		}
-		return _logInstance;
+		return _singleton;
 	}
 
 	void Logger::set_log_file(const std::string &file) { _file = file; }
-
-	Logger::Logger() :
-		_file("rsc/log.txt"), _showLogs(true), _writeLogs(false), _minLogLevel(LogLevel::DEBUG),
-		_timeFormat("%H:%M:%S")
-	{
-	}
 
 	const char *Logger::get_log_type(const LogLevel &level)
 	{
@@ -83,5 +91,4 @@ namespace LilyPad
 		return formattedTime;
 	}
 
-	Logger *Logger::_logInstance = nullptr; // Definition with initialization
 } // namespace LilyPad

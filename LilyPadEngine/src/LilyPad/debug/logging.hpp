@@ -6,11 +6,11 @@
 #include <sstream>
 #include <string>
 
-#define LILYPAD_DEBUG(...) LilyPad::Logger::instance()->log(LilyPad::LogLevel::DEBUG, __VA_ARGS__)
-#define LILYPAD_INFO(...) LilyPad::Logger::instance()->log(LilyPad::LogLevel::INFO, __VA_ARGS__)
-#define LILYPAD_WARNING(...) LilyPad::Logger::instance()->log(LilyPad::LogLevel::WARNING, __VA_ARGS__)
-#define LILYPAD_ERROR(...) LilyPad::Logger::instance()->log(LilyPad::LogLevel::ERROR, __VA_ARGS__)
-#define LILYPAD_CRITICAL(...) LilyPad::Logger::instance()->log(LilyPad::LogLevel::CRITICAL, __VA_ARGS__)
+#define LILYPAD_DEBUG(...) LilyPad::Logger::get_singleton()->log(LilyPad::LogLevel::DEBUG, __VA_ARGS__)
+#define LILYPAD_INFO(...) LilyPad::Logger::get_singleton()->log(LilyPad::LogLevel::INFO, __VA_ARGS__)
+#define LILYPAD_WARNING(...) LilyPad::Logger::get_singleton()->log(LilyPad::LogLevel::WARNING, __VA_ARGS__)
+#define LILYPAD_ERROR(...) LilyPad::Logger::get_singleton()->log(LilyPad::LogLevel::ERROR, __VA_ARGS__)
+#define LILYPAD_CRITICAL(...) LilyPad::Logger::get_singleton()->log(LilyPad::LogLevel::CRITICAL, __VA_ARGS__)
 
 namespace LilyPad
 {
@@ -36,13 +36,15 @@ namespace LilyPad
 	 */
 	class Logger
 	{
+		static Logger *_singleton;
+
 	public:
 		/**
 		 * @brief Gets the current instance of the Logger.
 		 *
 		 * @return Logger* Pointer to the Logger instance.
 		 */
-		static Logger *instance();
+		static Logger *get_singleton();
 
 		/**
 		 * @brief
@@ -101,6 +103,8 @@ namespace LilyPad
 		 */
 		Logger();
 
+		~Logger();
+
 		/**
 		 * @brief Prints the log to the console with the appropriate color.
 		 */
@@ -146,7 +150,7 @@ namespace LilyPad
 		 */
 		static const char *get_log_type(const LogLevel &level);
 
-		[[nodiscard]] static std::string get_formatted_time(const std::string &timeFormat) ;
+		[[nodiscard]] static std::string get_formatted_time(const std::string &timeFormat);
 
 		std::string _file;
 		bool _showLogs;
@@ -155,6 +159,5 @@ namespace LilyPad
 		LogLevel _minLogLevel;
 		TextColor _textColors;
 		std::string _timeFormat;
-		static Logger *_logInstance;
 	};
 } // namespace LilyPad

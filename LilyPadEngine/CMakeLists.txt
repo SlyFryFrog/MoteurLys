@@ -43,7 +43,11 @@ find_package(GLEW REQUIRED)
 
 add_library(LilyPadEngine ${LIBRARY_TYPE} ${SOURCES}
         src/LilyPad/core/io/file.cpp
-        src/LilyPad/core/utils/constants.hpp)
+        src/LilyPad/core/utils/constants.hpp
+        src/LilyPad/core/io/input.hpp
+        src/LilyPad/core/io/input.cpp
+        src/LilyPad/core/io/key.cpp
+        src/LilyPad/core/io/key.hpp)
 
 add_library(stb_image ${LIBRARY_TYPE} "vendor/stb_image.cpp")
 
