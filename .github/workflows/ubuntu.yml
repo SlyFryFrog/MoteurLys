@@ -25,10 +25,12 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt update
-
-        sudo apt install gcc-14 && g++-14
+        
+        sudo apt install -y gcc-14 g++-14
         export CC=/usr/bin/gcc-14
         export CXX=/usr/bin/g++-14
+        echo "CC=${CC}" >> $GITHUB_ENV
+        echo "CXX=${CXX}" >> $GITHUB_ENV
       
         sudo apt-get install -y libgl1-mesa-dev libglew-dev libglfw3-dev
 
