@@ -16,16 +16,35 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Add GCC 14 PPA and Install Dependencies
+    - name: Add GCC PPA and Install Dependencies
       run: |
         sudo apt update
         sudo apt install -y software-properties-common
         sudo add-apt-repository ppa:ubuntu-toolchain-r/test
         sudo apt update
-        sudo apt install -y gcc-14 g++-14
-        echo "CC=/usr/bin/gcc-14" >> $GITHUB_ENV
-        echo "CXX=/usr/bin/g++-14" >> $GITHUB_ENV
-        sudo apt-get install -y libgl1-mesa-dev libglew-dev libglfw3-dev
+        sudo apt list -a gcc-14 g++-14 || echo "gcc-14 or g++-14 not found in PPA"
+
+    - name: Install GCC from Source
+      if: failure() # Only run if previous step failed
+      run: |
+        sudo apt update
+        sudo apt install -y wget build-essential
+        wget https://ftp.gnu.org/gnu/gcc/gcc-14.0.0/gcc-14.0.0.tar.gz
+        tar -xzf gcc-14.0.0.tar.gz
+        cd gcc-14.0.0
+        ./contrib/download_prerequisites
+        mkdir build
+        cd build
+        ../configure --enable-languages=c,c++ --disable-multilib
+        make -j$(nproc)
+        sudo make install
+
+    - name: Set GCC 14 Environment Variables
+      run: |
+        export CC=/usr/local/bin/gcc
+        export CXX=/usr/local/bin/g++
+        echo "CC=${CC}" >> $GITHUB_ENV
+        echo "CXX=${CXX}" >> $GITHUB_ENV
 
     - name: Configure CMake
       run: cmake -B ${{ github.workspace }}/build -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} -DCMAKE_C_COMPILER=${{ env.CC }} -DCMAKE_CXX_COMPILER=${{ env.CXX }}
