@@ -1,7 +1,7 @@
 #pragma once
 
 #include <fstream>
-#include <iostream>
+#include <print>
 #include <mutex>
 #include <sstream>
 #include <string>
@@ -80,7 +80,7 @@ namespace LilyPad
 				if (fileStream.is_open())
 					fileStream << logMessage << std::endl;
 				else
-					std::cerr << "Unable to open the log file at " << _file << std::endl;
+					std::println("Unable to open the log file at ", _file);
 			}
 		}
 

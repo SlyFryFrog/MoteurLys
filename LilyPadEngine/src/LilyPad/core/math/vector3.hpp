@@ -69,29 +69,7 @@ namespace LilyPad
 			y /= other.y;
 		}
 
-		_FORCE_INLINE_ bool operator==(const Vector3 &other) const
-		{
-			return (x == other.x && y == other.y && z == other.z);
-		}
-
-		_FORCE_INLINE_ bool operator!=(const Vector3 &other) const
-		{
-			return (x != other.x && y != other.y && z != other.z);
-		}
-
-		_FORCE_INLINE_ bool operator>(const Vector3 &other) const { return x > other.x && y > other.y && z > other.z; }
-
-		_FORCE_INLINE_ bool operator<(const Vector3 &other) const { return x < other.x && y < other.y && z < other.z; }
-
-		_FORCE_INLINE_ bool operator>=(const Vector3 &other) const
-		{
-			return x >= other.x && y >= other.y && z >= other.z;
-		};
-
-		_FORCE_INLINE_ bool operator<=(const Vector3 &other) const
-		{
-			return x <= other.x && y <= other.y && z <= other.z;
-		}
+		_FORCE_INLINE_ bool operator<=>(const Vector3 &other) const = default;
 
 		_FORCE_INLINE_ explicit operator glm::vec3() const { return {x, y, z}; }
 

@@ -52,7 +52,7 @@ namespace LilyPad
 			break;
 		}
 
-		std::cout << color << message << LogColors::DEFAULT << "\n";
+		std::println("{0} {1} {2}", color, message, LogColors::DEFAULT);
 	}
 
 	Logger *Logger::get_singleton()

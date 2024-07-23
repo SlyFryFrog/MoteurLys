@@ -1,6 +1,6 @@
 # Project Description
 
-The LilyPad engine is developed using C++17 with support for both Clang and GCC. Additionally, the project only supports OpenGL 3.3 or higher.
+The LilyPad engine is developed using C++23 with support for both Clang and GCC. Additionally, the project only supports OpenGL 3.3 or higher.
 
 # Setup
 
@@ -15,8 +15,8 @@ sudo apt-get install libgl1-mesa-dev libglew-dev libglfw3-dev
 
 # Development
 
-- CMake versions 3.20 or higher
-- GCC or Clang
+- CMake versions 3.28.3 or higher
+- GCC-14 or Clang-18
 - OpenGL 3.3 or higher
 
 # Third-party dependencies

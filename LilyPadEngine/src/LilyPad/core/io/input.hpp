@@ -1,8 +1,8 @@
 #pragma once
 
-#include <vector>
+#include <GL/glew.h>
 #include <GLFW/glfw3.h>
-#include "LilyPad/core/io/key.hpp"
+#include <vector>
 #include "LilyPad/core/io/input_handler.hpp"
 
 namespace LilyPad
@@ -12,10 +12,10 @@ namespace LilyPad
 		static Input *_singleton;
 
 	public:
-		std::vector<Key> keys_pressed;
-		
+		std::vector<InputHandler> keys_pressed;
+
 		static Input *get_singleton();
-		void add_key_event(const Key &key, const InputHandler &event);
+		void add_key_event(const InputHandler &event);
 
 	private:
 		Input();

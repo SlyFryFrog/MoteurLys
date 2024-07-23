@@ -65,18 +65,6 @@ namespace LilyPad
 			y /= other.y;
 		}
 
-		_FORCE_INLINE_ bool operator==(const Vector2 &other) const { return (x == other.x && y == other.y); }
-
-		_FORCE_INLINE_ bool operator!=(const Vector2 &other) const { return (x != other.x && y != other.y); }
-
-		_FORCE_INLINE_ bool operator>(const Vector2 &other) const { return x > other.x && y > other.y; }
-
-		_FORCE_INLINE_ bool operator<(const Vector2 &other) const { return x < other.x && y < other.y; }
-
-		_FORCE_INLINE_ bool operator>=(const Vector2 &other) const { return x >= other.x && y >= other.y; };
-
-		_FORCE_INLINE_ bool operator<=(const Vector2 &other) const { return x <= other.x && y <= other.y; }
-	};
-
-	typedef Vector2 Point2;
+		_FORCE_INLINE_ bool operator<=>(const Vector2 &other) const = default;
+	}; typedef Vector2 Point2;
 } // namespace LilyPad

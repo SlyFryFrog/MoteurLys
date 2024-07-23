@@ -1,6 +1,6 @@
-cmake_minimum_required(VERSION 3.20)
+cmake_minimum_required(VERSION 3.28.3)
 project(LilyPadEngine)
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED YES)
 
 option(RUN_TESTS "Build tests" OFF)
@@ -41,14 +41,7 @@ add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/vendor/glm)
 find_package(OpenGL REQUIRED)
 find_package(GLEW REQUIRED)
 
-add_library(LilyPadEngine ${LIBRARY_TYPE} ${SOURCES}
-        src/LilyPad/core/io/file.cpp
-        src/LilyPad/core/utils/constants.hpp
-        src/LilyPad/core/io/input.hpp
-        src/LilyPad/core/io/input.cpp
-        src/LilyPad/core/io/key.cpp
-        src/LilyPad/core/io/key.hpp)
-
+add_library(LilyPadEngine ${LIBRARY_TYPE} ${SOURCES} )
 add_library(stb_image ${LIBRARY_TYPE} "vendor/stb_image.cpp")
 
 target_include_directories(

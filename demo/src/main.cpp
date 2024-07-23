@@ -2,6 +2,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include <memory>
+#include "LilyPad/core/io/input.hpp"
 #include "LilyPad/core/math/vector3.hpp"
 #include "LilyPad/core/utils/paths.hpp"
 #include "LilyPad/debug/logging.hpp"
@@ -10,7 +11,6 @@
 #include "LilyPad/renderer/OpenGL/texture.hpp"
 #include "LilyPad/renderer/OpenGL/vertex.hpp"
 #include "LilyPad/renderer/OpenGL/window.hpp"
-#include "LilyPad/core/io/input.hpp"
 #include "camera.hpp"
 
 using namespace LilyPad;
@@ -18,7 +18,6 @@ using namespace LilyPad;
 void mouse_callback(GLFWwindow *window, double xpos, double ypos);
 void process_input(GLFWwindow *window);
 void framebuffer_size_callback(GLFWwindow *window, int width, int height);
-
 
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
@@ -39,7 +38,7 @@ int main()
 	Window window = Window(SCR_WIDTH, SCR_HEIGHT);
 	window.set_title("Demo");
 	window.initialize();
-	LILYPAD_ERROR("EQWE");
+
 	glfwSetInputMode(window.window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 	glfwSetCursorPosCallback(window.window, mouse_callback);
 	glEnable(GL_DEPTH_TEST);
