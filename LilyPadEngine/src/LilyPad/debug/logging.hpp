@@ -23,12 +23,14 @@ namespace LilyPad
 		CRITICAL
 	};
 
-	struct TextColor
+	struct LogColors
 	{
-		const std::string RED = "\033[31m";
-		const std::string GREEN = "\033[32m";
-		const std::string YELLOW = "\033[33m";
-		const std::string DEFAULT = "\033[39m";
+		static std::string DEFAULT;
+		static std::string DEBUG;
+		static std::string INFO;
+		static std::string WARNING;
+		static std::string ERROR;
+		static std::string CRITICAL;
 	};
 
 	/**
@@ -54,32 +56,31 @@ namespace LilyPad
 		{
 			// Ignores any logging lower than the minimum
 			if (level < _minLogLevel || (_writeLogs && _showLogs))
-			{
 				return;
-			}
 
-			std::stringstream logStream;
-			logStream << "[" << get_log_type(level) << "] " << get_formatted_time(_timeFormat) << " : ";
+			std::stringstream logStream; // Writes all logs to stream before outputting to console/file
+
+			// Adds timestamp next to the log type and message if enabled
+			if (_timeFormat && _showTimestamp)
+				logStream << "[" << get_log_type(level) << "] " << get_formatted_time(_timeFormat) << " : ";
+			else
+				logStream << "[" << get_log_type(level) << "] : ";
+
 			append_to_stream(logStream, args...);
 
 			const std::string logMessage = logStream.str();
 
 			if (_showLogs)
-			{
 				print_log(level, logMessage);
-			}
 			if (_writeLogs)
 			{
 				std::lock_guard<std::mutex> guard(_logMutex);
-				std::ofstream fileStream(_file, std::ios::app);
+				std::ofstream fileStream(_file, std::ios::app); // Sets mode to append
+
 				if (fileStream.is_open())
-				{
 					fileStream << logMessage << std::endl;
-				}
 				else
-				{
 					std::cerr << "Unable to open the log file at " << _file << std::endl;
-				}
 			}
 		}
 
@@ -150,14 +151,14 @@ namespace LilyPad
 		 */
 		static const char *get_log_type(const LogLevel &level);
 
-		[[nodiscard]] static std::string get_formatted_time(const std::string &timeFormat);
+		[[nodiscard]] static std::string get_formatted_time(const std::string *timeFormat);
 
-		std::string _file;
 		bool _showLogs;
 		bool _writeLogs;
+		bool _showTimestamp;
 		std::mutex _logMutex;
+		std::string _file;
+		std::string *_timeFormat;
 		LogLevel _minLogLevel;
-		TextColor _textColors;
-		std::string _timeFormat;
 	};
 } // namespace LilyPad

@@ -5,10 +5,17 @@
 
 namespace LilyPad
 {
+	std::string LogColors::DEFAULT = "\033[39m";		// Default
+	std::string LogColors::DEBUG = "\033[30m";			// Gray
+	std::string LogColors::INFO = "\033[39m";			// Default
+	std::string LogColors::WARNING = "\033[33m";		// Yellow
+	std::string LogColors::ERROR = "\033[38;5;208m";	// Orange
+	std::string LogColors::CRITICAL = "\033[31m";		// Red
 	Logger *Logger::_singleton = nullptr; // Definition with initialization
 
 	Logger::Logger() :
-		_file("rsc/log.txt"), _showLogs(true), _writeLogs(false), _minLogLevel(LogLevel::DEBUG), _timeFormat("%H:%M:%S")
+		_file("rsc/log.txt"), _showLogs(true), _writeLogs(false), _showTimestamp(true), _minLogLevel(LogLevel::DEBUG),
+		_timeFormat(new std::string("%H:%M:%S"))
 	{
 		_singleton = this;
 	}
@@ -16,7 +23,7 @@ namespace LilyPad
 	Logger::~Logger()
 	{
 		delete _singleton;
-		_singleton = nullptr;
+		delete _timeFormat;
 	}
 
 	void Logger::print_log(const LogLevel &level, const std::string &message) const
@@ -26,22 +33,26 @@ namespace LilyPad
 		switch (level)
 		{
 		case LogLevel::DEBUG:
+			color = LogColors::DEBUG;
+			break;
 		case LogLevel::INFO:
-			color = _textColors.DEFAULT;
+			color = LogColors::DEFAULT;
 			break;
 		case LogLevel::WARNING:
-			color = _textColors.YELLOW;
+			color = LogColors::WARNING;
 			break;
 		case LogLevel::ERROR:
+			color = LogColors::ERROR;
+			break;
 		case LogLevel::CRITICAL:
-			color = _textColors.RED;
+			color = LogColors::CRITICAL;
 			break;
 		default:
-			color = _textColors.DEFAULT;
+			color = LogColors::DEFAULT;
 			break;
 		}
 
-		std::cout << color << message << _textColors.DEFAULT << "\n";
+		std::cout << color << message << LogColors::DEFAULT << "\n";
 	}
 
 	Logger *Logger::get_singleton()
@@ -77,7 +88,7 @@ namespace LilyPad
 
 	void Logger::set_log_level(const LogLevel &level) { _minLogLevel = level; }
 
-	std::string Logger::get_formatted_time(const std::string &timeFormat)
+	std::string Logger::get_formatted_time(const std::string *timeFormat)
 	{
 		const auto current_time = std::chrono::system_clock::now();
 		const auto current_time_t = std::chrono::system_clock::to_time_t(current_time);
@@ -85,7 +96,7 @@ namespace LilyPad
 
 		// Get the formatted time string from the string stream
 		std::ostringstream oss;
-		oss << std::put_time(timeInfo, timeFormat.c_str());
+		oss << std::put_time(timeInfo, timeFormat->c_str());
 		const std::string formattedTime = oss.str();
 
 		return formattedTime;

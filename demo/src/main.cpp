@@ -35,12 +35,11 @@ int main()
 {
 	camera->_ready();
 	camera->set_name("camera");
-
 	const std::string relativePath = get_root_directory();
 	Window window = Window(SCR_WIDTH, SCR_HEIGHT);
 	window.set_title("Demo");
 	window.initialize();
-
+	LILYPAD_ERROR("EQWE");
 	glfwSetInputMode(window.window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 	glfwSetCursorPosCallback(window.window, mouse_callback);
 	glEnable(GL_DEPTH_TEST);
