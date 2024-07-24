@@ -12,6 +12,8 @@
 #include "LilyPad/renderer/OpenGL/vertex.hpp"
 #include "LilyPad/renderer/OpenGL/window.hpp"
 #include "camera.hpp"
+#include "LilyPad/debug/fps.hpp"
+#include "LilyPad/scene/nodes/ui/label.hpp"
 
 using namespace LilyPad;
 
@@ -29,9 +31,10 @@ float deltaTime = 0.0f; // Time between current frame and last frame
 float lastFrame = 0.0f; // Time of last frame
 ShaderProgram ourShader("/home/marcus/dev/LilyPadEngine/demo/rsc/shaders/", "Vertex.glsl", "Fragment.glsl");
 auto camera = std::make_shared<Camera>();
-
+Label label;
 int main()
 {
+	FPS fps;
 	camera->_ready();
 	camera->set_name("camera");
 	const std::string relativePath = get_root_directory();
@@ -120,6 +123,8 @@ int main()
 
 		glfwSwapBuffers(window.window);
 		glfwPollEvents();
+		fps.update();
+		LILYPAD_DEBUG(fps.frameRate);
 	}
 
 	glfwTerminate();

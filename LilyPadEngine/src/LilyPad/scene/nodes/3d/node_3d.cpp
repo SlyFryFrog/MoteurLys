@@ -2,5 +2,5 @@
 
 namespace LilyPad
 {
-    Node3D::Node3D() {}
+    Node3D::Node3D() = default;
 } // namespace LilyPad

@@ -1,8 +1,8 @@
 #pragma once
 
 #include <fstream>
-#include <print>
 #include <mutex>
+#include <print>
 #include <sstream>
 #include <string>
 
@@ -23,6 +23,10 @@ namespace LilyPad
 		CRITICAL
 	};
 
+	/**
+	 * @brief Arbitrary colors for displaying different levels of logs. Can be changed to any other color in the form of
+	 * ANSI Color Escape.
+	 */
 	struct LogColors
 	{
 		static std::string DEFAULT;

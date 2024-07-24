@@ -13,6 +13,7 @@ function (LinkDependencies Target)
             stb_image
             GLEW::GLEW
             glfw
+            ${FREETYPE_LIBRARIES}
     )
 endfunction()
 
@@ -38,8 +39,11 @@ else()
 endif()
 
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/vendor/glm)
+find_package(Freetype REQUIRED)
 find_package(OpenGL REQUIRED)
 find_package(GLEW REQUIRED)
+message(STATUS "FreeType Include Dirs: ${FREETYPE_INCLUDE_DIRS}")
+message(STATUS "FreeType Libraries: ${FREETYPE_LIBRARIES}")
 
 add_library(LilyPadEngine ${LIBRARY_TYPE} ${SOURCES} )
 add_library(stb_image ${LIBRARY_TYPE} "vendor/stb_image.cpp")
@@ -49,6 +53,7 @@ target_include_directories(
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/src
         ${CMAKE_CURRENT_SOURCE_DIR}/vendor
+        ${FREETYPE_INCLUDE_DIRS}
 )
 
 LinkDependencies(LilyPadEngine)
