@@ -30,5 +30,6 @@ target_link_libraries(Demo PRIVATE
     glfw
     OpenGL::GL
     GLEW::GLEW
+    glm::glm
 )
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src ${CMAKE_CURRENT_SOURCE_DIR}/rsc)
