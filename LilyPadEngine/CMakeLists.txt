@@ -13,6 +13,7 @@ function (LinkDependencies Target)
             stb_image
             GLEW::GLEW
             glfw
+            Jolt
             ${FREETYPE_LIBRARIES}
     )
 endfunction()
@@ -24,6 +25,10 @@ else()
     set(LIBRARY_TYPE "SHARED")
 endif()
 
+if(CMAKE_COMPILER_IS_GNUCXX)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-inline -O1")
+endif()
+
 # Add all cpp and hpp files to the library
 file(GLOB_RECURSE SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp)
 file(GLOB_RECURSE HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/src/*.hpp)
@@ -33,17 +38,21 @@ foreach(TEXTURE_FILE ${TEXTURE_FILES})
 endforeach()
 
 if (WIN32)
-    add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/vendor/glfw-3.4)
+    add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/vendor/glfw)
 else()
     find_package(glfw3 REQUIRED)
 endif()
 
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/vendor/glm)
 find_package(Freetype REQUIRED)
 find_package(OpenGL REQUIRED)
 find_package(GLEW REQUIRED)
-message(STATUS "FreeType Include Dirs: ${FREETYPE_INCLUDE_DIRS}")
-message(STATUS "FreeType Libraries: ${FREETYPE_LIBRARIES}")
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/vendor/glm)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/vendor/JoltPhysics/Build)
+
+# Include directories for Jolt
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/vendor/JoltPhysics/Jolt)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/vendor/JoltPhysics/Jolt/Core)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/vendor/JoltPhysics/ThirdParty)
 
 add_library(LilyPadEngine ${LIBRARY_TYPE} ${SOURCES} )
 add_library(stb_image ${LIBRARY_TYPE} "vendor/stb_image.cpp")

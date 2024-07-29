@@ -1,0 +1,6 @@
+[submodule "LilyPadEngine/vendor/JoltPhysics"]
+	path = LilyPadEngine/vendor/JoltPhysics
+	url = https://github.com/jrouwe/JoltPhysics
+[submodule "LilyPadEngine/vendor/glfw"]
+	path = LilyPadEngine/vendor/glfw
+	url = https://github.com/glfw/glfw

@@ -11,11 +11,14 @@ namespace LilyPad
 
 		Vector2() = default;
 
-		Vector2(fp_type x, fp_type y) : x(x), y(y) {}
+		Vector2(const fp_type x, const fp_type y) : x(x), y(y) {}
 
 		Vector2 clamp(fp_type min_x, fp_type max_x, fp_type min_y, fp_type max_y);
 
 		Vector2 clamp(const Vector2 &min, const Vector2 &max);
+
+		static fp_type dot_product(const Vector2 &p_vec1, const Vector2 &p_vec2);
+		static fp_type dot_product(const Vector2 &p_vec1, const Vector2 &p_vec2, const fp_type &theta);
 
 		[[nodiscard]] Vector2 normalized() const;
 

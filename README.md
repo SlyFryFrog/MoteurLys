@@ -2,6 +2,14 @@
 
 The LilyPad engine is developed using C++23 with support for both Clang and GCC. Additionally, the project only supports OpenGL 3.3 or higher.
 
+# CMake Flags and Options
+
+- -DUSE_DOUBLE
+
+- -D_ALWAYS_INLINE_
+
+- -D_FORCE_INLINE_
+
 # Setup
 
 ## Linux
@@ -28,4 +36,4 @@ sudo apt-get install libfreetype6-dev
 |       OpenGL loader       | [GLEW](https://github.com/nigels-com/glew/tree/master) (Modified BSD License) |
 |       Image loading       |              [stb_image](https://github.com/nothings/stb) (MIT)               |
 |        Mathematics        |                  [GLM](https://github.com/g-truc/glm) (MIT)                   |
-|          Fonts            |     [FreeType](https://download.savannah.gnu.org/releases/freetype/) (FTL)    |
+|           Fonts           |    [FreeType](https://download.savannah.gnu.org/releases/freetype/) (FTL)     |

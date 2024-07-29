@@ -15,7 +15,7 @@ namespace LilyPad
 
 	Input::Input() { _singleton = this; }
 
-	Input::~Input() { _singleton = nullptr; }
+	Input::~Input() { delete _singleton; }
 
 
 } // namespace LilyPad
