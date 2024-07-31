@@ -7,16 +7,17 @@ namespace LilyPad
 	class FPS
 	{
 	public:
-		float frameRate;
 
 		FPS();
 
 		// Update the frame rate
 		void update();
 
+		float get_delta();
 	private:
 		// Time points to manage timing
-		std::chrono::steady_clock::time_point lastFrameTime;
-		std::chrono::steady_clock::time_point currentFrameTime;
+		float lastFrameTime;
+		float currentFrameTime;
+		float frameRate;
 	};
 } // namespace LilyPad

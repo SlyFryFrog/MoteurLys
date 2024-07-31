@@ -1,4 +1,4 @@
-#include "vector2i.hpp"
+#include "color.hpp"
 
 namespace LilyPad
 {

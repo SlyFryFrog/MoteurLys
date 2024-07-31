@@ -29,7 +29,9 @@ Vector2 random_gradient(const int xCoord, const int yCoord)
 
 float dot_grid_gradient(const int gridX, const int gridY, const float pointX, const float pointY)
 {
-	return Vector2::dot_product({static_cast<float>(gridX), static_cast<float>(gridY)}, {pointX, pointY});
+	Vector2 gradient = random_gradient(gridX, gridY);
+	Vector2 distance = {pointX - static_cast<float>(gridX), pointY - static_cast<float>(gridY)};
+	return gradient.x * distance.x + gradient.y * distance.y;
 }
 
 float interpolate(const float startValue, const float endValue, const float weight)

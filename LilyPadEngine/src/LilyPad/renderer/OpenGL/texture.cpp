@@ -74,4 +74,57 @@ namespace LilyPad
 
 		return texture;
 	}
+
+	unsigned int Texture::load_data(const Image &image)
+	{
+		// Ignores unnecessary deletion for empty id
+		if (id)
+			glDeleteTextures(1, &id);
+
+		unsigned int texture;
+		glGenTextures(1, &texture);
+		glBindTexture(GL_TEXTURE_2D, texture);
+
+		// Set texture wrapping/filtering options (on currently bound texture object)
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+		const uint8_t *data = image.get_data();
+		if (data != nullptr)
+		{
+			// Checks which type of color channel is being used by the file.
+			GLint format;
+			switch (image.get_format())
+			{
+			case ImageFormat::FORMAT_R8:
+				format = GL_RED;
+				break;
+			case ImageFormat::FORMAT_RG8:
+				format = GL_RG;
+				break;
+			case ImageFormat::FORMAT_RGB8:
+				format = GL_RGB;
+				break;
+			case ImageFormat::FORMAT_RGBA8:
+				format = GL_RGBA;
+				break;
+			default:
+				LILYPAD_ERROR("Unsupported file type. Could not determine correct number of channels.");
+				format = 0;
+				break;
+			}
+
+			glTexImage2D(GL_TEXTURE_2D, 0, format, image.get_width(), image.get_height(), 0, format, GL_UNSIGNED_BYTE, image.get_data());
+			glGenerateMipmap(GL_TEXTURE_2D);
+			LILYPAD_DEBUG("Successfully loaded texture data at the path.");
+		}
+		else
+		{
+			LILYPAD_ERROR("Failed to load texture data.");
+		}
+
+		return texture;
+	}
 } // namespace LilyPad

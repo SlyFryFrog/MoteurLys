@@ -1,18 +1,24 @@
 #include "fps.hpp"
 
+#include <GL/glew.h>
+#include <GLFW/glfw3.h>
+
 namespace LilyPad
 {
 	FPS::FPS() : frameRate(0.0f)
 	{
-		lastFrameTime = std::chrono::steady_clock::now();
+		lastFrameTime = glfwGetTime();
 		currentFrameTime = lastFrameTime;
 	}
 
 	void FPS::update()
 	{
-		currentFrameTime = std::chrono::steady_clock::now();
-		std::chrono::duration<float> elapsed = currentFrameTime - lastFrameTime;
-		frameRate = 1.0f / elapsed.count();
+		currentFrameTime = glfwGetTime();
 		lastFrameTime = currentFrameTime;
+	}
+
+	float FPS::get_delta()
+	{
+		return glfwGetTime() - lastFrameTime;
 	}
 } // namespace LilyPad

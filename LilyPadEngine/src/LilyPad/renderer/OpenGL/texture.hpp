@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include "LilyPad/core/io/image.hpp"
 
 namespace LilyPad
 {
@@ -18,6 +19,7 @@ namespace LilyPad
 
 		[[nodiscard]] unsigned int generate_texture(const std::string &file) const;
 
+		unsigned int load_data(const Image &image);
 	private:
 		std::string _path;
 	};

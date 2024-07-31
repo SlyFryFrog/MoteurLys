@@ -1,7 +1,9 @@
+#define STB_IMAGE_WRITE_IMPLEMENTATION
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include <memory>
+#include "LilyPad/core/io/image.hpp"
 #include "LilyPad/core/io/input.hpp"
 #include "LilyPad/core/math/vector3.hpp"
 #include "LilyPad/core/utils/paths.hpp"
@@ -14,6 +16,7 @@
 #include "LilyPad/renderer/OpenGL/window.hpp"
 #include "LilyPad/scene/nodes/ui/label.hpp"
 #include "camera.hpp"
+#include "stb_image_write.h"
 #include "generation.hpp"
 
 using namespace LilyPad;
@@ -33,9 +36,50 @@ float lastFrame = 0.0f; // Time of last frame
 ShaderProgram ourShader("/home/marcus/dev/LilyPadEngine/demo/rsc/shaders/", "Vertex.glsl", "Fragment.glsl");
 auto camera = std::make_shared<Camera>();
 Label label;
+
 int main()
 {
 	FPS fps;
+	Image image;
+
+	std::vector<uint8_t> pixels(500 * 500 * 4);
+	const float GRID_SIZE = 400;
+
+	for (int i = 0; i < 500; i++)
+	{
+		for (int j = 0; j < 500; j++)
+		{
+			int index = (j * 500 + i) * 4;
+			float val = 0.0f;
+
+			float freq = 1.0f;
+			float amp = 1.0f;
+
+			for (int k = 0; k < 12; k++)
+			{
+				val += perlin(i * freq / GRID_SIZE, j * freq / GRID_SIZE) * amp;
+				freq *= 2.0f;
+				amp /= 2.0f;
+			}
+
+			// Adds contrast
+			val *= 1.2f;
+
+			if (val > 1.0f)
+				val = 1.0f;
+			else if (val < -1.0f)
+				val = -1.0f;
+
+			uint8_t color = (uint8_t)((val + 1.0f) * 0.5f * 255);
+			pixels[index] = color;
+			pixels[index + 1] = color;
+			pixels[index + 2] = color;
+			pixels[index + 3] = 255;
+		}
+	}
+
+	image.set_data(500, 500, false, ImageFormat::FORMAT_RGBA8, pixels);
+	stbi_write_png("output.png", 500, 500, 4, pixels.data(), 500 * 4);
 	camera->_ready();
 	camera->set_name("camera");
 	const std::string relativePath = get_root_directory();
@@ -43,54 +87,63 @@ int main()
 	window.set_title("Demo");
 	window.initialize();
 
-	// glfwSetInputMode(window.window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+	glfwSetInputMode(window.window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 	glfwSetCursorPosCallback(window.window, mouse_callback);
 	glEnable(GL_DEPTH_TEST);
 
 	ourShader.create_shader_program();
 
-	
+	// set up vertex data (and buffer(s)) and configure vertex attributes
+	Vertices<float> vertices({{{-0.5f, -0.5f, -0.5f}, {0.0f, 0.0f}}, {{0.5f, -0.5f, -0.5f}, {1.0f, 0.0f}},
+							  {{0.5f, 0.5f, -0.5f}, {1.0f, 1.0f}},	 {{0.5f, 0.5f, -0.5f}, {1.0f, 1.0f}},
+							  {{-0.5f, 0.5f, -0.5f}, {0.0f, 1.0f}},	 {{-0.5f, -0.5f, -0.5f}, {0.0f, 0.0f}},
 
-	// // set up vertex data (and buffer(s)) and configure vertex attributes
-	// Vertices<float> vertices({{{-0.5f, -0.5f, -0.5f}, {0.0f, 0.0f}}, {{0.5f, -0.5f, -0.5f}, {1.0f, 0.0f}},
-	// 						  {{0.5f, 0.5f, -0.5f}, {1.0f, 1.0f}},	 {{0.5f, 0.5f, -0.5f}, {1.0f, 1.0f}},
-	// 						  {{-0.5f, 0.5f, -0.5f}, {0.0f, 1.0f}},	 {{-0.5f, -0.5f, -0.5f}, {0.0f, 0.0f}},
+							  {{-0.5f, -0.5f, 0.5f}, {0.0f, 0.0f}},	 {{0.5f, -0.5f, 0.5f}, {1.0f, 0.0f}},
+							  {{0.5f, 0.5f, 0.5f}, {1.0f, 1.0f}},	 {{0.5f, 0.5f, 0.5f}, {1.0f, 1.0f}},
+							  {{-0.5f, 0.5f, 0.5f}, {0.0f, 1.0f}},	 {{-0.5f, -0.5f, 0.5f}, {0.0f, 0.0f}},
 
-	// 						  {{-0.5f, -0.5f, 0.5f}, {0.0f, 0.0f}},	 {{0.5f, -0.5f, 0.5f}, {1.0f, 0.0f}},
-	// 						  {{0.5f, 0.5f, 0.5f}, {1.0f, 1.0f}},	 {{0.5f, 0.5f, 0.5f}, {1.0f, 1.0f}},
-	// 						  {{-0.5f, 0.5f, 0.5f}, {0.0f, 1.0f}},	 {{-0.5f, -0.5f, 0.5f}, {0.0f, 0.0f}},
+							  {{-0.5f, 0.5f, 0.5f}, {1.0f, 0.0f}},	 {{-0.5f, 0.5f, -0.5f}, {1.0f, 1.0f}},
+							  {{-0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}}, {{-0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}},
+							  {{-0.5f, -0.5f, 0.5f}, {0.0f, 0.0f}},	 {{-0.5f, 0.5f, 0.5f}, {1.0f, 0.0f}},
 
-	// 						  {{-0.5f, 0.5f, 0.5f}, {1.0f, 0.0f}},	 {{-0.5f, 0.5f, -0.5f}, {1.0f, 1.0f}},
-	// 						  {{-0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}}, {{-0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}},
-	// 						  {{-0.5f, -0.5f, 0.5f}, {0.0f, 0.0f}},	 {{-0.5f, 0.5f, 0.5f}, {1.0f, 0.0f}},
+							  {{0.5f, 0.5f, 0.5f}, {1.0f, 0.0f}},	 {{0.5f, 0.5f, -0.5f}, {1.0f, 1.0f}},
+							  {{0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}},	 {{0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}},
+							  {{0.5f, -0.5f, 0.5f}, {0.0f, 0.0f}},	 {{0.5f, 0.5f, 0.5f}, {1.0f, 0.0f}},
 
-	// 						  {{0.5f, 0.5f, 0.5f}, {1.0f, 0.0f}},	 {{0.5f, 0.5f, -0.5f}, {1.0f, 1.0f}},
-	// 						  {{0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}},	 {{0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}},
-	// 						  {{0.5f, -0.5f, 0.5f}, {0.0f, 0.0f}},	 {{0.5f, 0.5f, 0.5f}, {1.0f, 0.0f}},
+							  {{-0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}}, {{0.5f, -0.5f, -0.5f}, {1.0f, 1.0f}},
+							  {{0.5f, -0.5f, 0.5f}, {1.0f, 0.0f}},	 {{0.5f, -0.5f, 0.5f}, {1.0f, 0.0f}},
+							  {{-0.5f, -0.5f, 0.5f}, {0.0f, 0.0f}},	 {{-0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}},
 
-	// 						  {{-0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}}, {{0.5f, -0.5f, -0.5f}, {1.0f, 1.0f}},
-	// 						  {{0.5f, -0.5f, 0.5f}, {1.0f, 0.0f}},	 {{0.5f, -0.5f, 0.5f}, {1.0f, 0.0f}},
-	// 						  {{-0.5f, -0.5f, 0.5f}, {0.0f, 0.0f}},	 {{-0.5f, -0.5f, -0.5f}, {0.0f, 1.0f}},
+							  {{-0.5f, 0.5f, -0.5f}, {0.0f, 1.0f}},	 {{0.5f, 0.5f, -0.5f}, {1.0f, 1.0f}},
+							  {{0.5f, 0.5f, 0.5f}, {1.0f, 0.0f}},	 {{0.5f, 0.5f, 0.5f}, {1.0f, 0.0f}},
+							  {{-0.5f, 0.5f, 0.5f}, {0.0f, 0.0f}},	 {{-0.5f, 0.5f, -0.5f}, {0.0f, 1.0f}}});
 
-	// 						  {{-0.5f, 0.5f, -0.5f}, {0.0f, 1.0f}},	 {{0.5f, 0.5f, -0.5f}, {1.0f, 1.0f}},
-	// 						  {{0.5f, 0.5f, 0.5f}, {1.0f, 0.0f}},	 {{0.5f, 0.5f, 0.5f}, {1.0f, 0.0f}},
-	// 						  {{-0.5f, 0.5f, 0.5f}, {0.0f, 0.0f}},	 {{-0.5f, 0.5f, -0.5f}, {0.0f, 1.0f}}});
-
-	// Vector3 cubePositions[] = {{0.0f, 0.0f, 0.0f},	   {2.0f, 5.0f, -15.0f}, {-1.5f, -2.2f, -2.5f},
-	// 						   {-3.8f, -2.0f, -12.3f}, {2.4f, -0.4f, -3.5f}, {-1.7f, 3.0f, -7.5f},
-	// 						   {1.3f, -2.0f, -2.5f},   {1.5f, 2.0f, -2.5f},	 {1.5f, 0.2f, -1.5f},
-	// 						   {-1.3f, 1.0f, -1.5f}};
+	Vector3 cubePositions[] = {{0.0f, 0.0f, 0.0f},	   {2.0f, 5.0f, -15.0f}, {-1.5f, -2.2f, -2.5f},
+							   {-3.8f, -2.0f, -12.3f}, {2.4f, -0.4f, -3.5f}, {-1.7f, 3.0f, -7.5f},
+							   {1.3f, -2.0f, -2.5f},   {1.5f, 2.0f, -2.5f},	 {1.5f, 0.2f, -1.5f},
+							   {-1.3f, 1.0f, -1.5f}};
 
 
-	// Bind bind;
+	Bind bind;
 	// bind.bind_vertices(vertices);
 	// vertices.set_attributes();
 
-	// Texture texture(relativePath + "/rsc/textures/");
-	// texture.id = texture.generate_texture("frog.png");
+	Texture texture(relativePath + "/rsc/textures/");
+	texture.id = texture.generate_texture("frog.png");
+	texture.id = texture.load_data(image);
 
-	// ourShader.use();
-	// ourShader.set_uniform("uTexture", texture.id);
+	ourShader.use();
+	ourShader.set_uniform("uTexture", texture.id);
+
+	Vertices<float> vertices2({{{-1.0f,  1.0f, 0.0f}, {0.0f, 1.0f}},
+							   {{-1.0f, -1.0f, 0.0f}, {0.0f, 0.0f}},
+							   {{1.0f, -1.0f, 0.0f}, {1.0f, 0.0f}},
+							   {{-1.0f,  1.0f, 0.0f}, {0.0f, 1.0f}},
+							   {{1.0f, -1.0f, 0.0f}, {1.0f, 0.0f}},
+							   {{1.0f,  1.0f, 0.0f}, {1.0f, 1.0f}}} // top left
+	);
+	bind.bind_vertices(vertices2);
+	vertices.set_attributes();
 
 	while (!window.is_done())
 	{
@@ -100,32 +153,31 @@ int main()
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		// bind textures on corresponding texture units
-		// glActiveTexture(GL_TEXTURE0);
-		// glBindTexture(GL_TEXTURE_2D, texture.id);
+		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_2D, texture.id);
 
 		glm::mat4 projection =
 			glm::perspective(glm::radians(camera->zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
 
 		ourShader.use();
-		ourShader.set_uniform("uView", camera->get_view());
+		camera->look_at({0,0,0});
+		ourShader.set_uniform("uView", {camera->viewMatrix});
 		ourShader.set_uniform("uProjection", projection);
 
-		// bind.bind_vertex_array();
-		// for (int i = 0; i < 10; i++)
-		// {
-		// 	glm::mat4 model = glm::mat4(1.0f);
-		// 	model = glm::translate(model, glm::vec3(cubePositions[i].x, cubePositions[i].y, cubePositions[i].z));
-		// 	float angle = (float)glfwGetTime() * glm::radians(50.0f) * pow(-1, i);
-		// 	model = glm::rotate(model, angle, glm::vec3(1.0f, 0.3f, 0.5f));
-		// 	ourShader.set_uniform("uModel", model);
+		bind.bind_vertex_array();
+		for (int i = 0; i < 1; i++)
+		{
+			glm::mat4 model = glm::mat4(1.0f);
+			model = glm::translate(model, glm::vec3(cubePositions[i].x, cubePositions[i].y, cubePositions[i].z));
+			ourShader.set_uniform("uModel", model);
 
-		// 	glDrawArrays(GL_TRIANGLES, 0, 36);
-		// }
+			glDrawArrays(GL_TRIANGLES, 0, 6);
+		}
+
+		deltaTime = fps.get_delta();
 
 		glfwSwapBuffers(window.window);
 		glfwPollEvents();
-		// fps.update();
-		// LILYPAD_DEBUG(fps.frameRate);
 	}
 
 	glfwTerminate();
@@ -155,7 +207,7 @@ void mouse_callback(GLFWwindow *window, double xposIn, double yposIn)
 
 void process_input(GLFWwindow *window)
 {
-	float cameraSpeed = 2.5f * deltaTime;
+	float cameraSpeed = 0.1f * (float) deltaTime;
 
 	if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
 		camera->position += cameraSpeed * camera->front;
