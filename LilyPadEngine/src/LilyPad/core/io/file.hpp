@@ -15,6 +15,12 @@ namespace LilyPad
 		[[nodiscard]] bool is_updated() const;
 		virtual void update();
 		
+		/**
+		 * @brief 
+		 * 
+		 * @param path Path to the file being read. Should be absolute.
+		 * @return std::string Contents of the file being read. If unable to read the requested file, will return an empty string.
+		 */
         static std::string read_file(const std::string &path);
 		[[nodiscard]] std::string read_file() const;
 

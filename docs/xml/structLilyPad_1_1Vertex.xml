@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structLilyPad_1_1Vertex" kind="struct" language="C++" prot="public">
+    <compoundname>LilyPad::Vertex</compoundname>
+    <templateparamlist>
+      <param>
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">typename</ref> <ref refid="classLilyPad_1_1Vertices" kindref="compound">T</ref></type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structLilyPad_1_1Vertex_1ae6b11093bfaea8134fcdaed17b591289" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::vector&lt; <ref refid="classLilyPad_1_1Vertices" kindref="compound">T</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::vector&lt;T&gt; &gt; LilyPad::Vertex&lt; T &gt;::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <qualifiedname>LilyPad::Vertex::data</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/renderer/OpenGL/vertex.hpp" line="13" column="13" bodyfile="LilyPadEngine/src/LilyPad/renderer/OpenGL/vertex.hpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structLilyPad_1_1Vertex_1ad857abd2a448fa6d3fa1bc772299d414" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>LilyPad::Vertex&lt; T &gt;::Vertex</definition>
+        <argsstring>(std::initializer_list&lt; std::initializer_list&lt; T &gt; &gt; dataPoints)</argsstring>
+        <name>Vertex</name>
+        <qualifiedname>LilyPad::Vertex::Vertex</qualifiedname>
+        <param>
+          <type>std::initializer_list&lt; std::initializer_list&lt; <ref refid="classLilyPad_1_1Vertices" kindref="compound">T</ref> &gt; &gt;</type>
+          <declname>dataPoints</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/renderer/OpenGL/vertex.hpp" line="16" column="1" bodyfile="LilyPadEngine/src/LilyPad/renderer/OpenGL/vertex.hpp" bodystart="16" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="structLilyPad_1_1Vertex_1acaba30ac00b688650867a2890bde4654" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="classLilyPad_1_1Vertices" kindref="compound">T</ref> &gt;</type>
+        <definition>std::vector&lt; T &gt; LilyPad::Vertex&lt; T &gt;::get_data</definition>
+        <argsstring>(int array_index)</argsstring>
+        <name>get_data</name>
+        <qualifiedname>LilyPad::Vertex::get_data</qualifiedname>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">int</ref></type>
+          <declname>array_index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/renderer/OpenGL/vertex.hpp" line="24" column="13" bodyfile="LilyPadEngine/src/LilyPad/renderer/OpenGL/vertex.hpp" bodystart="24" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="structLilyPad_1_1Vertex_1a58db2fb58c48987d173eab6682c02154" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">int</ref></type>
+        <definition>int LilyPad::Vertex&lt; T &gt;::size</definition>
+        <argsstring>()</argsstring>
+        <name>size</name>
+        <qualifiedname>LilyPad::Vertex::size</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/renderer/OpenGL/vertex.hpp" line="26" column="5" bodyfile="LilyPadEngine/src/LilyPad/renderer/OpenGL/vertex.hpp" bodystart="26" bodyend="36"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="LilyPadEngine/src/LilyPad/renderer/OpenGL/vertex.hpp" line="11" column="1" bodyfile="LilyPadEngine/src/LilyPad/renderer/OpenGL/vertex.hpp" bodystart="12" bodyend="37"/>
+    <listofallmembers>
+      <member refid="structLilyPad_1_1Vertex_1ae6b11093bfaea8134fcdaed17b591289" prot="public" virt="non-virtual"><scope>LilyPad::Vertex</scope><name>data</name></member>
+      <member refid="structLilyPad_1_1Vertex_1acaba30ac00b688650867a2890bde4654" prot="public" virt="non-virtual"><scope>LilyPad::Vertex</scope><name>get_data</name></member>
+      <member refid="structLilyPad_1_1Vertex_1a58db2fb58c48987d173eab6682c02154" prot="public" virt="non-virtual"><scope>LilyPad::Vertex</scope><name>size</name></member>
+      <member refid="structLilyPad_1_1Vertex_1ad857abd2a448fa6d3fa1bc772299d414" prot="public" virt="non-virtual"><scope>LilyPad::Vertex</scope><name>Vertex</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

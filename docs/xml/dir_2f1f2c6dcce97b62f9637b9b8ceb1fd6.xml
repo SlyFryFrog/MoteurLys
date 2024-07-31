@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_2f1f2c6dcce97b62f9637b9b8ceb1fd6" kind="dir">
+    <compoundname>LilyPadEngine/src/LilyPad/core/math</compoundname>
+    <innerfile refid="color_8cpp">color.cpp</innerfile>
+    <innerfile refid="color_8hpp">color.hpp</innerfile>
+    <innerfile refid="rect2_8cpp">rect2.cpp</innerfile>
+    <innerfile refid="rect2_8hpp">rect2.hpp</innerfile>
+    <innerfile refid="transform_8hpp">transform.hpp</innerfile>
+    <innerfile refid="vector2_8cpp">vector2.cpp</innerfile>
+    <innerfile refid="vector2_8hpp">vector2.hpp</innerfile>
+    <innerfile refid="vector2i_8cpp">vector2i.cpp</innerfile>
+    <innerfile refid="vector2i_8hpp">vector2i.hpp</innerfile>
+    <innerfile refid="vector3_8cpp">vector3.cpp</innerfile>
+    <innerfile refid="vector3_8hpp">vector3.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="LilyPadEngine/src/LilyPad/core/math/"/>
+  </compounddef>
+</doxygen>

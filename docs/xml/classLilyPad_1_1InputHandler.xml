@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classLilyPad_1_1InputHandler" kind="class" language="C++" prot="public">
+    <compoundname>LilyPad::InputHandler</compoundname>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classLilyPad_1_1InputHandler_1ad059c6324b5df3f09279d8acbf9f5233" prot="protected" static="no" mutable="no">
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">bool</ref></type>
+        <definition>bool LilyPad::InputHandler::_pressed</definition>
+        <argsstring></argsstring>
+        <name>_pressed</name>
+        <qualifiedname>LilyPad::InputHandler::_pressed</qualifiedname>
+        <initializer>= <ref refid="classLilyPad_1_1Vertices" kindref="compound">false</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/io/input_handler.hpp" line="11" column="6" bodyfile="LilyPadEngine/src/LilyPad/core/io/input_handler.hpp" bodystart="11" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classLilyPad_1_1InputHandler_1ae427c2498e318ab0c4751fc09eeb9652" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">bool</ref></type>
+        <definition>bool LilyPad::InputHandler::is_pressed</definition>
+        <argsstring>() const</argsstring>
+        <name>is_pressed</name>
+        <qualifiedname>LilyPad::InputHandler::is_pressed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/io/input_handler.hpp" line="8" column="6" bodyfile="LilyPadEngine/src/LilyPad/core/io/input_handler.cpp" bodystart="5" bodyend="5"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="LilyPadEngine/src/LilyPad/core/io/input_handler.hpp" line="5" column="1" bodyfile="LilyPadEngine/src/LilyPad/core/io/input_handler.hpp" bodystart="6" bodyend="14"/>
+    <listofallmembers>
+      <member refid="classLilyPad_1_1InputHandler_1ad059c6324b5df3f09279d8acbf9f5233" prot="protected" virt="non-virtual"><scope>LilyPad::InputHandler</scope><name>_pressed</name></member>
+      <member refid="classLilyPad_1_1InputHandler_1ae427c2498e318ab0c4751fc09eeb9652" prot="public" virt="non-virtual"><scope>LilyPad::InputHandler</scope><name>is_pressed</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

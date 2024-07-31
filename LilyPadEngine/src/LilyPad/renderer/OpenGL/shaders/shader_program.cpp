@@ -17,7 +17,6 @@ namespace LilyPad
 		{
 			_lastTime = std::filesystem::last_write_time(_path);
 			_shaderCode = read_file(_path);
-			LILYPAD_DEBUG("Updated");
 		}
 	}
 

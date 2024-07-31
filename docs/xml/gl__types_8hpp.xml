@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="gl__types_8hpp" kind="file" language="C++">
+    <compoundname>gl_types.hpp</compoundname>
+    <includes local="no">GL/glew.h</includes>
+    <includedby refid="vertex_8hpp" local="yes">LilyPadEngine/src/LilyPad/renderer/OpenGL/vertex.hpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>LilyPadEngine/src/LilyPad/renderer/OpenGL/utils/gl_types.hpp</label>
+        <link refid="gl__types_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>GL/glew.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>LilyPadEngine/src/LilyPad/renderer/OpenGL/binding/bind.hpp</label>
+        <link refid="bind_8hpp_source"/>
+      </node>
+      <node id="1">
+        <label>LilyPadEngine/src/LilyPad/renderer/OpenGL/utils/gl_types.hpp</label>
+        <link refid="gl__types_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>LilyPadEngine/src/LilyPad/renderer/OpenGL/vertex.hpp</label>
+        <link refid="vertex_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structLilyPad_1_1GLType_3_01float_01_4" prot="public">LilyPad::GLType&lt; float &gt;</innerclass>
+    <innerclass refid="structLilyPad_1_1GLType_3_01double_01_4" prot="public">LilyPad::GLType&lt; double &gt;</innerclass>
+    <innerclass refid="structLilyPad_1_1GLType_3_01int_01_4" prot="public">LilyPad::GLType&lt; int &gt;</innerclass>
+    <innerclass refid="structLilyPad_1_1GLType_3_01unsigned_01int_01_4" prot="public">LilyPad::GLType&lt; unsigned int &gt;</innerclass>
+    <innerclass refid="structLilyPad_1_1GLType_3_01short_01_4" prot="public">LilyPad::GLType&lt; short &gt;</innerclass>
+    <innerclass refid="structLilyPad_1_1GLType_3_01unsigned_01short_01_4" prot="public">LilyPad::GLType&lt; unsigned short &gt;</innerclass>
+    <innerclass refid="structLilyPad_1_1GLType_3_01char_01_4" prot="public">LilyPad::GLType&lt; char &gt;</innerclass>
+    <innerclass refid="structLilyPad_1_1GLType_3_01unsigned_01char_01_4" prot="public">LilyPad::GLType&lt; unsigned char &gt;</innerclass>
+    <innernamespace refid="namespaceLilyPad">LilyPad</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;GL/glew.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">LilyPad</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Default<sp/>template,<sp/>will<sp/>generate<sp/>a<sp/>compile-time<sp/>error<sp/>if<sp/>used</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="9" refid="structLilyPad_1_1GLType" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structLilyPad_1_1GLType" kindref="compound">GLType</ref>;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;&gt;</highlight></codeline>
+<codeline lineno="12" refid="structLilyPad_1_1GLType_3_01float_01_4" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structLilyPad_1_1GLType" kindref="compound">GLType</ref>&lt;<ref refid="classLilyPad_1_1Vertices" kindref="compound">float</ref>&gt;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/><ref refid="classLilyPad_1_1Vertices" kindref="compound">GLenum</ref><sp/>value<sp/>=<sp/><ref refid="classLilyPad_1_1Vertices" kindref="compound">GL_FLOAT</ref>;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;&gt;</highlight></codeline>
+<codeline lineno="18" refid="structLilyPad_1_1GLType_3_01double_01_4" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structLilyPad_1_1GLType" kindref="compound">GLType</ref>&lt;<ref refid="classLilyPad_1_1Vertices" kindref="compound">double</ref>&gt;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/><ref refid="classLilyPad_1_1Vertices" kindref="compound">GLenum</ref><sp/>value<sp/>=<sp/><ref refid="classLilyPad_1_1Vertices" kindref="compound">GL_DOUBLE</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;&gt;</highlight></codeline>
+<codeline lineno="24" refid="structLilyPad_1_1GLType_3_01int_01_4" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structLilyPad_1_1GLType" kindref="compound">GLType</ref>&lt;<ref refid="classLilyPad_1_1Vertices" kindref="compound">int</ref>&gt;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/><ref refid="classLilyPad_1_1Vertices" kindref="compound">GLenum</ref><sp/>value<sp/>=<sp/><ref refid="classLilyPad_1_1Vertices" kindref="compound">GL_INT</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;&gt;</highlight></codeline>
+<codeline lineno="30" refid="structLilyPad_1_1GLType_3_01unsigned_01int_01_4" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structLilyPad_1_1GLType" kindref="compound">GLType</ref>&lt;<ref refid="classLilyPad_1_1Vertices" kindref="compound">unsigned</ref><sp/><ref refid="classLilyPad_1_1Vertices" kindref="compound">int</ref>&gt;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/><ref refid="classLilyPad_1_1Vertices" kindref="compound">GLenum</ref><sp/>value<sp/>=<sp/><ref refid="classLilyPad_1_1Vertices" kindref="compound">GL_UNSIGNED_INT</ref>;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;&gt;</highlight></codeline>
+<codeline lineno="36" refid="structLilyPad_1_1GLType_3_01short_01_4" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structLilyPad_1_1GLType" kindref="compound">GLType</ref>&lt;<ref refid="classLilyPad_1_1Vertices" kindref="compound">short</ref>&gt;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/><ref refid="classLilyPad_1_1Vertices" kindref="compound">GLenum</ref><sp/>value<sp/>=<sp/><ref refid="classLilyPad_1_1Vertices" kindref="compound">GL_SHORT</ref>;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;&gt;</highlight></codeline>
+<codeline lineno="42" refid="structLilyPad_1_1GLType_3_01unsigned_01short_01_4" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structLilyPad_1_1GLType" kindref="compound">GLType</ref>&lt;<ref refid="classLilyPad_1_1Vertices" kindref="compound">unsigned</ref><sp/><ref refid="classLilyPad_1_1Vertices" kindref="compound">short</ref>&gt;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/><ref refid="classLilyPad_1_1Vertices" kindref="compound">GLenum</ref><sp/>value<sp/>=<sp/><ref refid="classLilyPad_1_1Vertices" kindref="compound">GL_UNSIGNED_SHORT</ref>;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;&gt;</highlight></codeline>
+<codeline lineno="48" refid="structLilyPad_1_1GLType_3_01char_01_4" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structLilyPad_1_1GLType" kindref="compound">GLType</ref>&lt;<ref refid="classLilyPad_1_1Vertices" kindref="compound">char</ref>&gt;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/><ref refid="classLilyPad_1_1Vertices" kindref="compound">GLenum</ref><sp/>value<sp/>=<sp/><ref refid="classLilyPad_1_1Vertices" kindref="compound">GL_BYTE</ref>;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;&gt;</highlight></codeline>
+<codeline lineno="54" refid="structLilyPad_1_1GLType_3_01unsigned_01char_01_4" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structLilyPad_1_1GLType" kindref="compound">GLType</ref>&lt;<ref refid="classLilyPad_1_1Vertices" kindref="compound">unsigned</ref><sp/><ref refid="classLilyPad_1_1Vertices" kindref="compound">char</ref>&gt;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/><ref refid="classLilyPad_1_1Vertices" kindref="compound">GLenum</ref><sp/>value<sp/>=<sp/><ref refid="classLilyPad_1_1Vertices" kindref="compound">GL_UNSIGNED_BYTE</ref>;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>LilyPad</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="LilyPadEngine/src/LilyPad/renderer/OpenGL/utils/gl_types.hpp"/>
+  </compounddef>
+</doxygen>

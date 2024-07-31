@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_3c5389748b25a6b7c9362f5601110205" kind="dir">
+    <compoundname>LilyPadEngine</compoundname>
+    <innerdir refid="dir_10cfea2e0be28772c92dcb6e13e8f80f">LilyPadEngine/src</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="LilyPadEngine/"/>
+  </compounddef>
+</doxygen>

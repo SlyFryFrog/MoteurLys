@@ -1,0 +1,93 @@
+\doxysection{Lily\+Pad\+::Camera3D Class Reference}
+\hypertarget{classLilyPad_1_1Camera3D}{}\label{classLilyPad_1_1Camera3D}\index{LilyPad::Camera3D@{LilyPad::Camera3D}}
+
+
+Inheritance diagram for Lily\+Pad\+::Camera3D\+:
+% FIG 0
+
+
+Collaboration diagram for Lily\+Pad\+::Camera3D\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classLilyPad_1_1Camera3D_a754e8eb2bb3a43e1565ac85b63aed483}\label{classLilyPad_1_1Camera3D_a754e8eb2bb3a43e1565ac85b63aed483} 
+void {\bfseries look\+\_\+at} (const \mbox{\hyperlink{structLilyPad_1_1Vector3}{Position3}} \&point)
+\item 
+\Hypertarget{classLilyPad_1_1Camera3D_aa5fc4db78262afb0160f0193fd77ac44}\label{classLilyPad_1_1Camera3D_aa5fc4db78262afb0160f0193fd77ac44} 
+glm\+::mat4 {\bfseries get\+\_\+view} () const
+\item 
+\Hypertarget{classLilyPad_1_1Camera3D_ae66458e5153ed1571dc90276aad0e850}\label{classLilyPad_1_1Camera3D_ae66458e5153ed1571dc90276aad0e850} 
+void {\bfseries update\+\_\+view} ()
+\item 
+\Hypertarget{classLilyPad_1_1Camera3D_ae16b195b4029af6ef209a05541044b08}\label{classLilyPad_1_1Camera3D_ae16b195b4029af6ef209a05541044b08} 
+void {\bfseries update\+\_\+vectors} ()
+\item 
+\Hypertarget{classLilyPad_1_1Camera3D_a71c72b0e60f7a94193ebd5792e151c81}\label{classLilyPad_1_1Camera3D_a71c72b0e60f7a94193ebd5792e151c81} 
+void {\bfseries process\+\_\+mouse\+\_\+movement} (float x\+Offset, float y\+Offset)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classLilyPad_1_1Node}{Lily\+Pad\+::\+Node}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Node} (const std\+::string \&name)
+\item 
+virtual void {\bfseries \+\_\+ready} ()
+\item 
+virtual void {\bfseries \+\_\+process} (double delta)
+\item 
+virtual void {\bfseries \+\_\+process\+\_\+input} ()
+\item 
+std\+::string {\bfseries get\+\_\+name} () const
+\item 
+void {\bfseries set\+\_\+name} (const std\+::string \&name)
+\item 
+void {\bfseries add\+\_\+child} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classLilyPad_1_1Node}{Node}} $>$ child)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::shared\+\_\+ptr$<$ T $>$ {\bfseries get\+\_\+child} (const std\+::string \&node\+Name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classLilyPad_1_1Camera3D_a47e3d9cc091ac93895c9e51fe97b219b}\label{classLilyPad_1_1Camera3D_a47e3d9cc091ac93895c9e51fe97b219b} 
+float {\bfseries yaw}
+\item 
+\Hypertarget{classLilyPad_1_1Camera3D_a8650c12fee90043f75c66da631529a7b}\label{classLilyPad_1_1Camera3D_a8650c12fee90043f75c66da631529a7b} 
+float {\bfseries pitch}
+\item 
+\Hypertarget{classLilyPad_1_1Camera3D_a73b7c2a7f444f26213b1460d18a1c2b3}\label{classLilyPad_1_1Camera3D_a73b7c2a7f444f26213b1460d18a1c2b3} 
+float {\bfseries mouse\+Sensitivity}
+\item 
+\Hypertarget{classLilyPad_1_1Camera3D_ae70ab5a1ec259fce1ace57a41049659b}\label{classLilyPad_1_1Camera3D_ae70ab5a1ec259fce1ace57a41049659b} 
+bool {\bfseries constrain\+Pitch}
+\item 
+\Hypertarget{classLilyPad_1_1Camera3D_a7c5e9b070d73a8adf55ecc44406cf3d8}\label{classLilyPad_1_1Camera3D_a7c5e9b070d73a8adf55ecc44406cf3d8} 
+glm\+::vec3 {\bfseries up} \{\}
+\item 
+\Hypertarget{classLilyPad_1_1Camera3D_af81e5ae30e986b03f3c4928e7a489145}\label{classLilyPad_1_1Camera3D_af81e5ae30e986b03f3c4928e7a489145} 
+glm\+::vec3 {\bfseries front}
+\item 
+\Hypertarget{classLilyPad_1_1Camera3D_aa487b50ea2fe7eeba67df7719ba1c333}\label{classLilyPad_1_1Camera3D_aa487b50ea2fe7eeba67df7719ba1c333} 
+glm\+::vec3 {\bfseries right} \{\}
+\item 
+\Hypertarget{classLilyPad_1_1Camera3D_a66b0c8583f86e91264bbde66590c6ae5}\label{classLilyPad_1_1Camera3D_a66b0c8583f86e91264bbde66590c6ae5} 
+glm\+::vec3 {\bfseries world\+Up}
+\item 
+\Hypertarget{classLilyPad_1_1Camera3D_ab53c388d2d7d31852b8d37506aa61d6e}\label{classLilyPad_1_1Camera3D_ab53c388d2d7d31852b8d37506aa61d6e} 
+glm\+::mat4 {\bfseries view\+Matrix} \{\}
+\item 
+\Hypertarget{classLilyPad_1_1Camera3D_a079424e5f1386a4c12457e1961690191}\label{classLilyPad_1_1Camera3D_a079424e5f1386a4c12457e1961690191} 
+float {\bfseries zoom}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classLilyPad_1_1Node3D}{Lily\+Pad\+::\+Node3D}}}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::vec3 {\bfseries position}
+\item 
+glm\+::vec3 {\bfseries absolute\+Position}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Lily\+Pad\+Engine/src/\+Lily\+Pad/scene/nodes/3d/camera\+\_\+3d.\+hpp\item 
+Lily\+Pad\+Engine/src/\+Lily\+Pad/scene/nodes/3d/camera\+\_\+3d.\+cpp\end{DoxyCompactItemize}

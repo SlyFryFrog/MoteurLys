@@ -55,7 +55,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/vendor/JoltPhysics/Jolt/Core)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/vendor/JoltPhysics/ThirdParty)
 
 add_library(LilyPadEngine ${LIBRARY_TYPE} ${SOURCES} )
-add_library(stb_image ${LIBRARY_TYPE} "vendor/stb_image.cpp")
+add_library(stb_image ${LIBRARY_TYPE} "vendor/stb_image.cpp" "vendor/stb_image.cpp")
 
 target_include_directories(
     LilyPadEngine

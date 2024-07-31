@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structLilyPad_1_1LogColors" kind="struct" language="C++" prot="public">
+    <compoundname>LilyPad::LogColors</compoundname>
+    <includes refid="logging_8hpp" local="no">logging.hpp</includes>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="structLilyPad_1_1LogColors_1aa279c462f5cd669869401dcba231d29c" prot="public" static="yes" mutable="no">
+        <type>std::string</type>
+        <definition>std::string LilyPad::LogColors::DEFAULT</definition>
+        <argsstring></argsstring>
+        <name>DEFAULT</name>
+        <qualifiedname>LilyPad::LogColors::DEFAULT</qualifiedname>
+        <initializer>= &quot;\033[39m&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/debug/logging.hpp" line="32" column="20" bodyfile="LilyPadEngine/src/LilyPad/debug/logging.hpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLilyPad_1_1LogColors_1a07689c2a906bf8e43b4439923559b6e9" prot="public" static="yes" mutable="no">
+        <type>std::string</type>
+        <definition>std::string LilyPad::LogColors::DEBUG</definition>
+        <argsstring></argsstring>
+        <name>DEBUG</name>
+        <qualifiedname>LilyPad::LogColors::DEBUG</qualifiedname>
+        <initializer>= &quot;\033[30m&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/debug/logging.hpp" line="33" column="20" bodyfile="LilyPadEngine/src/LilyPad/debug/logging.hpp" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLilyPad_1_1LogColors_1a90e16af1f78e032c9688822bf6feeeb9" prot="public" static="yes" mutable="no">
+        <type>std::string</type>
+        <definition>std::string LilyPad::LogColors::INFO</definition>
+        <argsstring></argsstring>
+        <name>INFO</name>
+        <qualifiedname>LilyPad::LogColors::INFO</qualifiedname>
+        <initializer>= &quot;\033[39m&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/debug/logging.hpp" line="34" column="20" bodyfile="LilyPadEngine/src/LilyPad/debug/logging.hpp" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLilyPad_1_1LogColors_1a02c58525f487d5ffd7079c8224f5bb37" prot="public" static="yes" mutable="no">
+        <type>std::string</type>
+        <definition>std::string LilyPad::LogColors::WARNING</definition>
+        <argsstring></argsstring>
+        <name>WARNING</name>
+        <qualifiedname>LilyPad::LogColors::WARNING</qualifiedname>
+        <initializer>= &quot;\033[33m&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/debug/logging.hpp" line="35" column="20" bodyfile="LilyPadEngine/src/LilyPad/debug/logging.hpp" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLilyPad_1_1LogColors_1adaaef54dd95f61e7765c538f9a42fc43" prot="public" static="yes" mutable="no">
+        <type>std::string</type>
+        <definition>std::string LilyPad::LogColors::ERROR</definition>
+        <argsstring></argsstring>
+        <name>ERROR</name>
+        <qualifiedname>LilyPad::LogColors::ERROR</qualifiedname>
+        <initializer>= &quot;\033[38;5;208m&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/debug/logging.hpp" line="36" column="20" bodyfile="LilyPadEngine/src/LilyPad/debug/logging.hpp" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLilyPad_1_1LogColors_1a5da3e560ddb36613a85969b4b3bc0371" prot="public" static="yes" mutable="no">
+        <type>std::string</type>
+        <definition>std::string LilyPad::LogColors::CRITICAL</definition>
+        <argsstring></argsstring>
+        <name>CRITICAL</name>
+        <qualifiedname>LilyPad::LogColors::CRITICAL</qualifiedname>
+        <initializer>= &quot;\033[31m&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/debug/logging.hpp" line="37" column="20" bodyfile="LilyPadEngine/src/LilyPad/debug/logging.hpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Arbitrary colors for displaying different levels of logs. Can be changed to any other color in the form of ANSI <ref refid="structLilyPad_1_1Color" kindref="compound">Color</ref> Escape. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="LilyPadEngine/src/LilyPad/debug/logging.hpp" line="30" column="1" bodyfile="LilyPadEngine/src/LilyPad/debug/logging.hpp" bodystart="31" bodyend="38"/>
+    <listofallmembers>
+      <member refid="structLilyPad_1_1LogColors_1a5da3e560ddb36613a85969b4b3bc0371" prot="public" virt="non-virtual"><scope>LilyPad::LogColors</scope><name>CRITICAL</name></member>
+      <member refid="structLilyPad_1_1LogColors_1a07689c2a906bf8e43b4439923559b6e9" prot="public" virt="non-virtual"><scope>LilyPad::LogColors</scope><name>DEBUG</name></member>
+      <member refid="structLilyPad_1_1LogColors_1aa279c462f5cd669869401dcba231d29c" prot="public" virt="non-virtual"><scope>LilyPad::LogColors</scope><name>DEFAULT</name></member>
+      <member refid="structLilyPad_1_1LogColors_1adaaef54dd95f61e7765c538f9a42fc43" prot="public" virt="non-virtual"><scope>LilyPad::LogColors</scope><name>ERROR</name></member>
+      <member refid="structLilyPad_1_1LogColors_1a90e16af1f78e032c9688822bf6feeeb9" prot="public" virt="non-virtual"><scope>LilyPad::LogColors</scope><name>INFO</name></member>
+      <member refid="structLilyPad_1_1LogColors_1a02c58525f487d5ffd7079c8224f5bb37" prot="public" virt="non-virtual"><scope>LilyPad::LogColors</scope><name>WARNING</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

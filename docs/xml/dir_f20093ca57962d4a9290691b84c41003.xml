@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_f20093ca57962d4a9290691b84c41003" kind="dir">
+    <compoundname>LilyPadEngine/src/LilyPad/core/utils</compoundname>
+    <innerfile refid="constants_8hpp">constants.hpp</innerfile>
+    <innerfile refid="paths_8cpp">paths.cpp</innerfile>
+    <innerfile refid="paths_8hpp">paths.hpp</innerfile>
+    <innerfile refid="typedef_8hpp">typedef.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="LilyPadEngine/src/LilyPad/core/utils/"/>
+  </compounddef>
+</doxygen>

@@ -68,6 +68,7 @@ namespace LilyPad
 		default:
 			break;
 		}
+		return 0;
 	}
 
 	int Image::get_index(int x, int y) const { return (y * _width + x) * get_channel_count(); }

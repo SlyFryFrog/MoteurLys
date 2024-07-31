@@ -1,0 +1,81 @@
+\doxysection{Lily\+Pad\+::Logger Class Reference}
+\hypertarget{classLilyPad_1_1Logger}{}\label{classLilyPad_1_1Logger}\index{LilyPad::Logger@{LilyPad::Logger}}
+
+
+Class for recording events to console and a file.  
+
+
+
+
+{\ttfamily \#include $<$logging.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classLilyPad_1_1Logger_adc93cef21d7ad4e9d54eba2982ebdf05}\label{classLilyPad_1_1Logger_adc93cef21d7ad4e9d54eba2982ebdf05} 
+{\footnotesize template$<$typename... Args$>$ }\\void {\bfseries log} (const Log\+Level \&level, Args... args)
+\item 
+void \mbox{\hyperlink{classLilyPad_1_1Logger_ab53a3ed1219690f2a9370f8304858aef}{set\+\_\+log\+\_\+file}} (const std\+::string \&file)
+\begin{DoxyCompactList}\small\item\em Set the log file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLilyPad_1_1Logger_a62135d1966e7b4040d24db6db2df3752}{set\+\_\+log\+\_\+level}} (const Log\+Level \&level)
+\begin{DoxyCompactList}\small\item\em Set the minimum log level to be recorded; defaults to DEBUG. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classLilyPad_1_1Logger}{Logger}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classLilyPad_1_1Logger_a47a1f01494530476536fd701ca32bc71}{get\+\_\+singleton}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current instance of the \doxylink{classLilyPad_1_1Logger}{Logger}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for recording events to console and a file. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classLilyPad_1_1Logger_a47a1f01494530476536fd701ca32bc71}\label{classLilyPad_1_1Logger_a47a1f01494530476536fd701ca32bc71} 
+\index{LilyPad::Logger@{LilyPad::Logger}!get\_singleton@{get\_singleton}}
+\index{get\_singleton@{get\_singleton}!LilyPad::Logger@{LilyPad::Logger}}
+\doxysubsubsection{\texorpdfstring{get\_singleton()}{get\_singleton()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLilyPad_1_1Logger}{Logger}} \texorpdfstring{$\ast$}{*} Lily\+Pad\+::\+Logger\+::get\+\_\+singleton (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the current instance of the \doxylink{classLilyPad_1_1Logger}{Logger}. 
+
+\begin{DoxyReturn}{Returns}
+Logger\texorpdfstring{$\ast$}{*} Pointer to the \doxylink{classLilyPad_1_1Logger}{Logger} instance. 
+\end{DoxyReturn}
+\Hypertarget{classLilyPad_1_1Logger_ab53a3ed1219690f2a9370f8304858aef}\label{classLilyPad_1_1Logger_ab53a3ed1219690f2a9370f8304858aef} 
+\index{LilyPad::Logger@{LilyPad::Logger}!set\_log\_file@{set\_log\_file}}
+\index{set\_log\_file@{set\_log\_file}!LilyPad::Logger@{LilyPad::Logger}}
+\doxysubsubsection{\texorpdfstring{set\_log\_file()}{set\_log\_file()}}
+{\footnotesize\ttfamily void Lily\+Pad\+::\+Logger\+::set\+\_\+log\+\_\+file (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file }\end{DoxyParamCaption})}
+
+
+
+Set the log file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & Relative path to the file. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classLilyPad_1_1Logger_a62135d1966e7b4040d24db6db2df3752}\label{classLilyPad_1_1Logger_a62135d1966e7b4040d24db6db2df3752} 
+\index{LilyPad::Logger@{LilyPad::Logger}!set\_log\_level@{set\_log\_level}}
+\index{set\_log\_level@{set\_log\_level}!LilyPad::Logger@{LilyPad::Logger}}
+\doxysubsubsection{\texorpdfstring{set\_log\_level()}{set\_log\_level()}}
+{\footnotesize\ttfamily void Lily\+Pad\+::\+Logger\+::set\+\_\+log\+\_\+level (\begin{DoxyParamCaption}\item[{const Log\+Level \&}]{level }\end{DoxyParamCaption})}
+
+
+
+Set the minimum log level to be recorded; defaults to DEBUG. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & Minimum log level to be recorded. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Lily\+Pad\+Engine/src/\+Lily\+Pad/debug/logging.\+hpp\item 
+Lily\+Pad\+Engine/src/\+Lily\+Pad/debug/logging.\+cpp\end{DoxyCompactItemize}

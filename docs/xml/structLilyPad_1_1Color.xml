@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structLilyPad_1_1Color" kind="struct" language="C++" prot="public">
+    <compoundname>LilyPad::Color</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structLilyPad_1_1Color_1a02df914b0a8aad68e65e2f4d119237be" prot="public" static="no" mutable="no">
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">float</ref></type>
+        <definition>float LilyPad::Color::r</definition>
+        <argsstring></argsstring>
+        <name>r</name>
+        <qualifiedname>LilyPad::Color::r</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/math/color.hpp" line="7" column="15" bodyfile="LilyPadEngine/src/LilyPad/core/math/color.hpp" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLilyPad_1_1Color_1ada70b9250620c0e4b4ba5cfb75ae995a" prot="public" static="no" mutable="no">
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">float</ref></type>
+        <definition>float LilyPad::Color::g</definition>
+        <argsstring></argsstring>
+        <name>g</name>
+        <qualifiedname>LilyPad::Color::g</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/math/color.hpp" line="8" column="15" bodyfile="LilyPadEngine/src/LilyPad/core/math/color.hpp" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLilyPad_1_1Color_1afbc0f5a87ea2c528ef38da81ceee6e80" prot="public" static="no" mutable="no">
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">float</ref></type>
+        <definition>float LilyPad::Color::b</definition>
+        <argsstring></argsstring>
+        <name>b</name>
+        <qualifiedname>LilyPad::Color::b</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/math/color.hpp" line="9" column="15" bodyfile="LilyPadEngine/src/LilyPad/core/math/color.hpp" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLilyPad_1_1Color_1af43c99eec92ef0b15c7470edc01e5f51" prot="public" static="no" mutable="no">
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">float</ref></type>
+        <definition>float LilyPad::Color::a</definition>
+        <argsstring></argsstring>
+        <name>a</name>
+        <qualifiedname>LilyPad::Color::a</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/math/color.hpp" line="10" column="15" bodyfile="LilyPadEngine/src/LilyPad/core/math/color.hpp" bodystart="10" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="LilyPadEngine/src/LilyPad/core/math/color.hpp" line="5" column="5" bodyfile="LilyPadEngine/src/LilyPad/core/math/color.hpp" bodystart="6" bodyend="11"/>
+    <listofallmembers>
+      <member refid="structLilyPad_1_1Color_1af43c99eec92ef0b15c7470edc01e5f51" prot="public" virt="non-virtual"><scope>LilyPad::Color</scope><name>a</name></member>
+      <member refid="structLilyPad_1_1Color_1afbc0f5a87ea2c528ef38da81ceee6e80" prot="public" virt="non-virtual"><scope>LilyPad::Color</scope><name>b</name></member>
+      <member refid="structLilyPad_1_1Color_1ada70b9250620c0e4b4ba5cfb75ae995a" prot="public" virt="non-virtual"><scope>LilyPad::Color</scope><name>g</name></member>
+      <member refid="structLilyPad_1_1Color_1a02df914b0a8aad68e65e2f4d119237be" prot="public" virt="non-virtual"><scope>LilyPad::Color</scope><name>r</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

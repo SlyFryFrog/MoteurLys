@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_9bf0c8ec8151d6d2aecdb83fca041046" kind="dir">
+    <compoundname>LilyPadEngine/src/LilyPad/renderer/OpenGL/shaders</compoundname>
+    <innerfile refid="shader__program_8cpp">shader_program.cpp</innerfile>
+    <innerfile refid="shader__program_8hpp">shader_program.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="LilyPadEngine/src/LilyPad/renderer/OpenGL/shaders/"/>
+  </compounddef>
+</doxygen>

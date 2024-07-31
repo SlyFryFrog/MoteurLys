@@ -34,7 +34,7 @@ namespace LilyPad
 		}
 		catch (std::ifstream::failure &e)
 		{
-			LILYPAD_ERROR("SHADER::FILE_NOT_SUCCESSFULLY_READY: ", path, " ", e.what());
+			LILYPAD_ERROR("File could not be read at ", path, ". Error code: ", e.what());
 		}
 
 		return fileContents;

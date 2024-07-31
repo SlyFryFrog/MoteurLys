@@ -1,0 +1,71 @@
+\doxysection{Lily\+Pad\+::Image Class Reference}
+\hypertarget{classLilyPad_1_1Image}{}\label{classLilyPad_1_1Image}\index{LilyPad::Image@{LilyPad::Image}}
+Inheritance diagram for Lily\+Pad\+::Image\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classLilyPad_1_1Image}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classLilyPad_1_1Image_a610b51f2008f9bae5095b7ce1b4853a1}\label{classLilyPad_1_1Image_a610b51f2008f9bae5095b7ce1b4853a1} 
+void {\bfseries set\+\_\+data} (int width, int height, bool use\+Mipmaps, Image\+Format format, const std\+::vector$<$ uint8\+\_\+t $>$ \&data)
+\item 
+\Hypertarget{classLilyPad_1_1Image_ab0997e0b6194727157542e3bd60c5eb8}\label{classLilyPad_1_1Image_ab0997e0b6194727157542e3bd60c5eb8} 
+void {\bfseries set\+\_\+pixel} (int x\+\_\+index, int y\+\_\+index, const \mbox{\hyperlink{structLilyPad_1_1Color}{Color}} \&data)
+\item 
+\Hypertarget{classLilyPad_1_1Image_a834a406d3871132579c7b81063e2e91e}\label{classLilyPad_1_1Image_a834a406d3871132579c7b81063e2e91e} 
+void {\bfseries load} (const std\+::string \&path)
+\item 
+\Hypertarget{classLilyPad_1_1Image_aa709e0b3231b8fedd8f3d2a7d300b229}\label{classLilyPad_1_1Image_aa709e0b3231b8fedd8f3d2a7d300b229} 
+int {\bfseries get\+\_\+width} () const
+\item 
+\Hypertarget{classLilyPad_1_1Image_ada1ac383bca74fd272a9ddc84b7e5322}\label{classLilyPad_1_1Image_ada1ac383bca74fd272a9ddc84b7e5322} 
+int {\bfseries get\+\_\+height} () const
+\item 
+\Hypertarget{classLilyPad_1_1Image_a35328406d50a7e77d9fe0c66188cae53}\label{classLilyPad_1_1Image_a35328406d50a7e77d9fe0c66188cae53} 
+\mbox{\hyperlink{structLilyPad_1_1Vector2i}{Vector2i}} {\bfseries get\+\_\+size} () const
+\item 
+\Hypertarget{classLilyPad_1_1Image_ae1079a8ba21840a16bc3bce08968e784}\label{classLilyPad_1_1Image_ae1079a8ba21840a16bc3bce08968e784} 
+Image\+Format {\bfseries get\+\_\+format} () const
+\item 
+\Hypertarget{classLilyPad_1_1Image_a069e899cad2a4aabb6d1ca9cd23ad56c}\label{classLilyPad_1_1Image_a069e899cad2a4aabb6d1ca9cd23ad56c} 
+void {\bfseries set\+\_\+format} (const Image\+Format \&format)
+\item 
+\Hypertarget{classLilyPad_1_1Image_a1b147a5a6e2f6c4dadb5a771b1b0be07}\label{classLilyPad_1_1Image_a1b147a5a6e2f6c4dadb5a771b1b0be07} 
+std\+::vector$<$ uint8\+\_\+t $>$ {\bfseries get\+\_\+raw\+\_\+data} () const
+\item 
+\Hypertarget{classLilyPad_1_1Image_a3d2a2246f3ee1705be9582a467f0fecb}\label{classLilyPad_1_1Image_a3d2a2246f3ee1705be9582a467f0fecb} 
+const uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries get\+\_\+data} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classLilyPad_1_1File}{Lily\+Pad\+::\+File}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries File} (const std\+::string \&path)
+\item 
+bool {\bfseries is\+\_\+updated} () const
+\item 
+virtual void {\bfseries update} ()
+\item 
+std\+::string {\bfseries read\+\_\+file} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classLilyPad_1_1File}{Lily\+Pad\+::\+File}}}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classLilyPad_1_1File_abdf6730144ed402662c0df7850dadf8c}{read\+\_\+file}} (const std\+::string \&path)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classLilyPad_1_1File}{Lily\+Pad\+::\+File}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::filesystem\+::file\+\_\+time\+\_\+type {\bfseries \+\_\+last\+Time}
+\item 
+std\+::string {\bfseries \+\_\+path}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Lily\+Pad\+Engine/src/\+Lily\+Pad/core/io/image.\+hpp\item 
+Lily\+Pad\+Engine/src/\+Lily\+Pad/core/io/image.\+cpp\end{DoxyCompactItemize}

@@ -8,13 +8,22 @@ namespace LilyPad
 	class Bind
 	{
 	public:
+		/**
+		 * @brief Calls `glGenVertexArrays` and `glGenBuffers.
+		 */
 		Bind();
-		~Bind()
-		{
-			glDeleteVertexArrays(1, &VAO);
-			glDeleteBuffers(1, &VBO);
-		}
 
+		/**
+		 * @brief Calls `glDeleteVertexArrays` and `glDeleteBuffers` on binded data.
+		 */
+		~Bind();
+
+		/**
+		 * @brief Binds the VAO (Vertex Array Object) and then binds the VBO (Vertex Buffer Object).
+		 *
+		 * @tparam T Data being stored in the vertices.
+		 * @param vertices The data to be binded.
+		 */
 		template <typename T>
 		void bind_vertices(Vertices<T> vertices)
 		{
@@ -22,6 +31,9 @@ namespace LilyPad
 			vertices.bind_buffer(VBO);
 		}
 
+		/**
+		 * @brief Binds the Vertex Array Object (VAO).
+		 */
 		void bind_vertex_array() const;
 
 	private:

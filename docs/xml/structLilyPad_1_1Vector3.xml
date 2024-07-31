@@ -1,0 +1,507 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structLilyPad_1_1Vector3" kind="struct" language="C++" prot="public">
+    <compoundname>LilyPad::Vector3</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structLilyPad_1_1Vector3_1af2f5a861195268749118dc6562c348f0" prot="public" static="no" mutable="no">
+        <type>fp_type</type>
+        <definition>fp_type LilyPad::Vector3::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <qualifiedname>LilyPad::Vector3::x</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" line="10" column="9" bodyfile="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLilyPad_1_1Vector3_1a5cacf8bde9e3e5140b010506fd681747" prot="public" static="no" mutable="no">
+        <type>fp_type</type>
+        <definition>fp_type LilyPad::Vector3::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <qualifiedname>LilyPad::Vector3::y</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" line="11" column="9" bodyfile="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLilyPad_1_1Vector3_1a8892b794d77498c67da0ae9d93cce280" prot="public" static="no" mutable="no">
+        <type>fp_type</type>
+        <definition>fp_type LilyPad::Vector3::z</definition>
+        <argsstring></argsstring>
+        <name>z</name>
+        <qualifiedname>LilyPad::Vector3::z</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" line="12" column="9" bodyfile="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" bodystart="12" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structLilyPad_1_1Vector3_1ab6bc9c985ec917936ee6e96f47c08539" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>LilyPad::Vector3::Vector3</definition>
+        <argsstring>()=default</argsstring>
+        <name>Vector3</name>
+        <qualifiedname>LilyPad::Vector3::Vector3</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" line="14" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structLilyPad_1_1Vector3_1a022f952453ae9a840616422570bc0794" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>LilyPad::Vector3::Vector3</definition>
+        <argsstring>(fp_type x, fp_type y, fp_type z)</argsstring>
+        <name>Vector3</name>
+        <qualifiedname>LilyPad::Vector3::Vector3</qualifiedname>
+        <param>
+          <type>fp_type</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>fp_type</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>fp_type</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" line="16" column="1" bodyfile="LilyPadEngine/src/LilyPad/core/math/vector3.cpp" bodystart="5" bodyend="5"/>
+      </memberdef>
+      <memberdef kind="function" id="structLilyPad_1_1Vector3_1ad6acf40a349609f97f76a6bb97305507" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structLilyPad_1_1Vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 LilyPad::Vector3::cross</definition>
+        <argsstring>(const Vector3 &amp;other) const</argsstring>
+        <name>cross</name>
+        <qualifiedname>LilyPad::Vector3::cross</qualifiedname>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">const</ref> <ref refid="structLilyPad_1_1Vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" line="18" column="10" bodyfile="LilyPadEngine/src/LilyPad/core/math/vector3.cpp" bodystart="7" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="structLilyPad_1_1Vector3_1a0e4db7368e34e4d74f78ef4d16bef20f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>fp_type</type>
+        <definition>fp_type LilyPad::Vector3::dot</definition>
+        <argsstring>(const Vector3 &amp;other) const</argsstring>
+        <name>dot</name>
+        <qualifiedname>LilyPad::Vector3::dot</qualifiedname>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">const</ref> <ref refid="structLilyPad_1_1Vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" line="22" column="10" bodyfile="LilyPadEngine/src/LilyPad/core/math/vector3.cpp" bodystart="18" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="structLilyPad_1_1Vector3_1a61bc8750565bb4528af6a81bbd2a7a27" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>_FORCE_INLINE_ <ref refid="structLilyPad_1_1Vector3" kindref="compound">Vector3</ref></type>
+        <definition>_FORCE_INLINE_ Vector3 LilyPad::Vector3::operator+</definition>
+        <argsstring>(const fp_type scalar) const</argsstring>
+        <name>operator+</name>
+        <qualifiedname>LilyPad::Vector3::operator+</qualifiedname>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">const</ref> fp_type</type>
+          <declname>scalar</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" line="24" column="24" bodyfile="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" bodystart="24" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="structLilyPad_1_1Vector3_1a84f07b809fe2439a93c0a9080348e44c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>_FORCE_INLINE_ <ref refid="structLilyPad_1_1Vector3" kindref="compound">Vector3</ref></type>
+        <definition>_FORCE_INLINE_ Vector3 LilyPad::Vector3::operator-</definition>
+        <argsstring>(const fp_type scalar) const</argsstring>
+        <name>operator-</name>
+        <qualifiedname>LilyPad::Vector3::operator-</qualifiedname>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">const</ref> fp_type</type>
+          <declname>scalar</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" line="26" column="24" bodyfile="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" bodystart="26" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="structLilyPad_1_1Vector3_1a320bc81127b2dd587d3fb14a71ce9461" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>_FORCE_INLINE_ <ref refid="structLilyPad_1_1Vector3" kindref="compound">Vector3</ref></type>
+        <definition>_FORCE_INLINE_ Vector3 LilyPad::Vector3::operator*</definition>
+        <argsstring>(const fp_type scalar) const</argsstring>
+        <name>operator*</name>
+        <qualifiedname>LilyPad::Vector3::operator*</qualifiedname>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">const</ref> fp_type</type>
+          <declname>scalar</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" line="28" column="24" bodyfile="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" bodystart="28" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="structLilyPad_1_1Vector3_1ada0a707a9abd78a3b45b742a232354f3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>_FORCE_INLINE_ <ref refid="structLilyPad_1_1Vector3" kindref="compound">Vector3</ref></type>
+        <definition>_FORCE_INLINE_ Vector3 LilyPad::Vector3::operator/</definition>
+        <argsstring>(const fp_type scalar) const</argsstring>
+        <name>operator/</name>
+        <qualifiedname>LilyPad::Vector3::operator/</qualifiedname>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">const</ref> fp_type</type>
+          <declname>scalar</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" line="30" column="24" bodyfile="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" bodystart="30" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="structLilyPad_1_1Vector3_1a914ab40f99a3aad21fb1f01083d55c77" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>_FORCE_INLINE_ <ref refid="structLilyPad_1_1Vector3" kindref="compound">Vector3</ref></type>
+        <definition>_FORCE_INLINE_ Vector3 LilyPad::Vector3::operator+=</definition>
+        <argsstring>(const fp_type scalar) const</argsstring>
+        <name>operator+=</name>
+        <qualifiedname>LilyPad::Vector3::operator+=</qualifiedname>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">const</ref> fp_type</type>
+          <declname>scalar</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" line="32" column="24" bodyfile="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" bodystart="32" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="structLilyPad_1_1Vector3_1aac2dc29725d42091c2249720d309c194" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>_FORCE_INLINE_ <ref refid="structLilyPad_1_1Vector3" kindref="compound">Vector3</ref></type>
+        <definition>_FORCE_INLINE_ Vector3 LilyPad::Vector3::operator+</definition>
+        <argsstring>(const Vector3 &amp;other) const</argsstring>
+        <name>operator+</name>
+        <qualifiedname>LilyPad::Vector3::operator+</qualifiedname>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">const</ref> <ref refid="structLilyPad_1_1Vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" line="37" column="24" bodyfile="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" bodystart="37" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="structLilyPad_1_1Vector3_1a22d40852f77ed2b50362be09af92d1ac" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>_FORCE_INLINE_ <ref refid="structLilyPad_1_1Vector3" kindref="compound">Vector3</ref></type>
+        <definition>_FORCE_INLINE_ Vector3 LilyPad::Vector3::operator-</definition>
+        <argsstring>(const Vector3 &amp;other) const</argsstring>
+        <name>operator-</name>
+        <qualifiedname>LilyPad::Vector3::operator-</qualifiedname>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">const</ref> <ref refid="structLilyPad_1_1Vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" line="39" column="24" bodyfile="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" bodystart="39" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="structLilyPad_1_1Vector3_1a309790612ac559864380bd138ea3701d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>_FORCE_INLINE_ <ref refid="structLilyPad_1_1Vector3" kindref="compound">Vector3</ref></type>
+        <definition>_FORCE_INLINE_ Vector3 LilyPad::Vector3::operator*</definition>
+        <argsstring>(const Vector3 &amp;other) const</argsstring>
+        <name>operator*</name>
+        <qualifiedname>LilyPad::Vector3::operator*</qualifiedname>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">const</ref> <ref refid="structLilyPad_1_1Vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" line="41" column="24" bodyfile="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" bodystart="41" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="structLilyPad_1_1Vector3_1ae56f8daf5de350affb0f9fbd4a8a970a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>_FORCE_INLINE_ <ref refid="structLilyPad_1_1Vector3" kindref="compound">Vector3</ref></type>
+        <definition>_FORCE_INLINE_ Vector3 LilyPad::Vector3::operator/</definition>
+        <argsstring>(const Vector3 &amp;other) const</argsstring>
+        <name>operator/</name>
+        <qualifiedname>LilyPad::Vector3::operator/</qualifiedname>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">const</ref> <ref refid="structLilyPad_1_1Vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" line="43" column="24" bodyfile="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" bodystart="43" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="structLilyPad_1_1Vector3_1aa11bad0b6b1983deaac1d4811dcd6b2a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>_FORCE_INLINE_ <ref refid="classLilyPad_1_1Vertices" kindref="compound">void</ref></type>
+        <definition>_FORCE_INLINE_ void LilyPad::Vector3::operator+=</definition>
+        <argsstring>(const Vector3 &amp;other)</argsstring>
+        <name>operator+=</name>
+        <qualifiedname>LilyPad::Vector3::operator+=</qualifiedname>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">const</ref> <ref refid="structLilyPad_1_1Vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" line="45" column="21" bodyfile="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" bodystart="45" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="structLilyPad_1_1Vector3_1a374924d3c381d5be579d6cef04d0bc35" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>_FORCE_INLINE_ <ref refid="classLilyPad_1_1Vertices" kindref="compound">void</ref></type>
+        <definition>_FORCE_INLINE_ void LilyPad::Vector3::operator-=</definition>
+        <argsstring>(const Vector3 &amp;other)</argsstring>
+        <name>operator-=</name>
+        <qualifiedname>LilyPad::Vector3::operator-=</qualifiedname>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">const</ref> <ref refid="structLilyPad_1_1Vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" line="52" column="21" bodyfile="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" bodystart="52" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="structLilyPad_1_1Vector3_1a0fcb17cf0c20708b93a0e90a3fa26b7c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>_FORCE_INLINE_ <ref refid="classLilyPad_1_1Vertices" kindref="compound">void</ref></type>
+        <definition>_FORCE_INLINE_ void LilyPad::Vector3::operator*=</definition>
+        <argsstring>(const Vector3 &amp;other)</argsstring>
+        <name>operator*=</name>
+        <qualifiedname>LilyPad::Vector3::operator*=</qualifiedname>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">const</ref> <ref refid="structLilyPad_1_1Vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" line="59" column="21" bodyfile="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" bodystart="59" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="structLilyPad_1_1Vector3_1a4ccbc1a54c0b18c7184eaf11b64e764f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>_FORCE_INLINE_ <ref refid="classLilyPad_1_1Vertices" kindref="compound">void</ref></type>
+        <definition>_FORCE_INLINE_ void LilyPad::Vector3::operator/=</definition>
+        <argsstring>(const Vector3 &amp;other)</argsstring>
+        <name>operator/=</name>
+        <qualifiedname>LilyPad::Vector3::operator/=</qualifiedname>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">const</ref> <ref refid="structLilyPad_1_1Vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" line="66" column="21" bodyfile="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" bodystart="66" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="structLilyPad_1_1Vector3_1ab4a8e098ae3b863ba415c1041ee0084a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>_FORCE_INLINE_ <ref refid="classLilyPad_1_1Vertices" kindref="compound">bool</ref></type>
+        <definition>_FORCE_INLINE_ bool LilyPad::Vector3::operator&lt;=&gt;</definition>
+        <argsstring>(const Vector3 &amp;other) const =default</argsstring>
+        <name>operator&lt;=&gt;</name>
+        <qualifiedname>LilyPad::Vector3::operator&lt;=&gt;</qualifiedname>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">const</ref> <ref refid="structLilyPad_1_1Vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" line="72" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="structLilyPad_1_1Vector3_1a05b64498c1c7122eb80448d682d723fe" prot="public" static="no" const="yes" explicit="yes" inline="yes" virt="non-virtual">
+        <type>_FORCE_INLINE_</type>
+        <definition>_FORCE_INLINE_ LilyPad::Vector3::operator glm::vec3</definition>
+        <argsstring>() const</argsstring>
+        <name>operator glm::vec3</name>
+        <qualifiedname>LilyPad::Vector3::vec3</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" line="74" column="25" bodyfile="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" bodystart="74" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="structLilyPad_1_1Vector3_1aaeb9c269a5fe0c881f633800f737fe32" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structLilyPad_1_1Vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 LilyPad::Vector3::normalize</definition>
+        <argsstring>() const</argsstring>
+        <name>normalize</name>
+        <qualifiedname>LilyPad::Vector3::normalize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" line="81" column="10" bodyfile="LilyPadEngine/src/LilyPad/core/math/vector3.cpp" bodystart="20" bodyend="24"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structLilyPad_1_1Vector3_1a582f54725ff873b5843fd969df6b5330" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structLilyPad_1_1Vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 LilyPad::Vector3::cross</definition>
+        <argsstring>(const Vector3 &amp;vector_a, const Vector3 &amp;vector_b)</argsstring>
+        <name>cross</name>
+        <qualifiedname>LilyPad::Vector3::cross</qualifiedname>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">const</ref> <ref refid="structLilyPad_1_1Vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>vector_a</declname>
+        </param>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">const</ref> <ref refid="structLilyPad_1_1Vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>vector_b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" line="19" column="16" bodyfile="LilyPadEngine/src/LilyPad/core/math/vector3.cpp" bodystart="12" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="structLilyPad_1_1Vector3_1a3e969654a78dd773b8c6eb348757fa64" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structLilyPad_1_1Vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 LilyPad::Vector3::normalize</definition>
+        <argsstring>(const Vector3 &amp;vector)</argsstring>
+        <name>normalize</name>
+        <qualifiedname>LilyPad::Vector3::normalize</qualifiedname>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">const</ref> <ref refid="structLilyPad_1_1Vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>vector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" line="20" column="16" bodyfile="LilyPadEngine/src/LilyPad/core/math/vector3.cpp" bodystart="26" bodyend="30"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="structLilyPad_1_1Vector3_1af00c55ce31fb0f4a6b907d12449251d0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structLilyPad_1_1Vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 operator*</definition>
+        <argsstring>(const float scalar, const Vector3 &amp;vec)</argsstring>
+        <name>operator*</name>
+        <qualifiedname>LilyPad::Vector3::operator*</qualifiedname>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">const</ref> <ref refid="classLilyPad_1_1Vertices" kindref="compound">float</ref></type>
+          <declname>scalar</declname>
+        </param>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">const</ref> <ref refid="structLilyPad_1_1Vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>vec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" line="76" column="16" bodyfile="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" bodystart="76" bodyend="79"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" line="8" column="1" bodyfile="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" bodystart="9" bodyend="82"/>
+    <listofallmembers>
+      <member refid="structLilyPad_1_1Vector3_1ad6acf40a349609f97f76a6bb97305507" prot="public" virt="non-virtual"><scope>LilyPad::Vector3</scope><name>cross</name></member>
+      <member refid="structLilyPad_1_1Vector3_1a582f54725ff873b5843fd969df6b5330" prot="public" virt="non-virtual"><scope>LilyPad::Vector3</scope><name>cross</name></member>
+      <member refid="structLilyPad_1_1Vector3_1a0e4db7368e34e4d74f78ef4d16bef20f" prot="public" virt="non-virtual"><scope>LilyPad::Vector3</scope><name>dot</name></member>
+      <member refid="structLilyPad_1_1Vector3_1a3e969654a78dd773b8c6eb348757fa64" prot="public" virt="non-virtual"><scope>LilyPad::Vector3</scope><name>normalize</name></member>
+      <member refid="structLilyPad_1_1Vector3_1aaeb9c269a5fe0c881f633800f737fe32" prot="public" virt="non-virtual"><scope>LilyPad::Vector3</scope><name>normalize</name></member>
+      <member refid="structLilyPad_1_1Vector3_1a05b64498c1c7122eb80448d682d723fe" prot="public" virt="non-virtual"><scope>LilyPad::Vector3</scope><name>operator glm::vec3</name></member>
+      <member refid="structLilyPad_1_1Vector3_1a320bc81127b2dd587d3fb14a71ce9461" prot="public" virt="non-virtual"><scope>LilyPad::Vector3</scope><name>operator*</name></member>
+      <member refid="structLilyPad_1_1Vector3_1a309790612ac559864380bd138ea3701d" prot="public" virt="non-virtual"><scope>LilyPad::Vector3</scope><name>operator*</name></member>
+      <member refid="structLilyPad_1_1Vector3_1af00c55ce31fb0f4a6b907d12449251d0" prot="public" virt="non-virtual"><scope>LilyPad::Vector3</scope><name>operator*</name></member>
+      <member refid="structLilyPad_1_1Vector3_1a0fcb17cf0c20708b93a0e90a3fa26b7c" prot="public" virt="non-virtual"><scope>LilyPad::Vector3</scope><name>operator*=</name></member>
+      <member refid="structLilyPad_1_1Vector3_1a61bc8750565bb4528af6a81bbd2a7a27" prot="public" virt="non-virtual"><scope>LilyPad::Vector3</scope><name>operator+</name></member>
+      <member refid="structLilyPad_1_1Vector3_1aac2dc29725d42091c2249720d309c194" prot="public" virt="non-virtual"><scope>LilyPad::Vector3</scope><name>operator+</name></member>
+      <member refid="structLilyPad_1_1Vector3_1a914ab40f99a3aad21fb1f01083d55c77" prot="public" virt="non-virtual"><scope>LilyPad::Vector3</scope><name>operator+=</name></member>
+      <member refid="structLilyPad_1_1Vector3_1aa11bad0b6b1983deaac1d4811dcd6b2a" prot="public" virt="non-virtual"><scope>LilyPad::Vector3</scope><name>operator+=</name></member>
+      <member refid="structLilyPad_1_1Vector3_1a84f07b809fe2439a93c0a9080348e44c" prot="public" virt="non-virtual"><scope>LilyPad::Vector3</scope><name>operator-</name></member>
+      <member refid="structLilyPad_1_1Vector3_1a22d40852f77ed2b50362be09af92d1ac" prot="public" virt="non-virtual"><scope>LilyPad::Vector3</scope><name>operator-</name></member>
+      <member refid="structLilyPad_1_1Vector3_1a374924d3c381d5be579d6cef04d0bc35" prot="public" virt="non-virtual"><scope>LilyPad::Vector3</scope><name>operator-=</name></member>
+      <member refid="structLilyPad_1_1Vector3_1ada0a707a9abd78a3b45b742a232354f3" prot="public" virt="non-virtual"><scope>LilyPad::Vector3</scope><name>operator/</name></member>
+      <member refid="structLilyPad_1_1Vector3_1ae56f8daf5de350affb0f9fbd4a8a970a" prot="public" virt="non-virtual"><scope>LilyPad::Vector3</scope><name>operator/</name></member>
+      <member refid="structLilyPad_1_1Vector3_1a4ccbc1a54c0b18c7184eaf11b64e764f" prot="public" virt="non-virtual"><scope>LilyPad::Vector3</scope><name>operator/=</name></member>
+      <member refid="structLilyPad_1_1Vector3_1ab4a8e098ae3b863ba415c1041ee0084a" prot="public" virt="non-virtual"><scope>LilyPad::Vector3</scope><name>operator&lt;=&gt;</name></member>
+      <member refid="structLilyPad_1_1Vector3_1ab6bc9c985ec917936ee6e96f47c08539" prot="public" virt="non-virtual"><scope>LilyPad::Vector3</scope><name>Vector3</name></member>
+      <member refid="structLilyPad_1_1Vector3_1a022f952453ae9a840616422570bc0794" prot="public" virt="non-virtual"><scope>LilyPad::Vector3</scope><name>Vector3</name></member>
+      <member refid="structLilyPad_1_1Vector3_1af2f5a861195268749118dc6562c348f0" prot="public" virt="non-virtual"><scope>LilyPad::Vector3</scope><name>x</name></member>
+      <member refid="structLilyPad_1_1Vector3_1a5cacf8bde9e3e5140b010506fd681747" prot="public" virt="non-virtual"><scope>LilyPad::Vector3</scope><name>y</name></member>
+      <member refid="structLilyPad_1_1Vector3_1a8892b794d77498c67da0ae9d93cce280" prot="public" virt="non-virtual"><scope>LilyPad::Vector3</scope><name>z</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

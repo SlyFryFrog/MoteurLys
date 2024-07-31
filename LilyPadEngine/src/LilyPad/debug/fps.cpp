@@ -5,7 +5,7 @@
 
 namespace LilyPad
 {
-	FPS::FPS() : frameRate(0.0f)
+	FPS::FPS() : frameRate(0.0)
 	{
 		lastFrameTime = glfwGetTime();
 		currentFrameTime = lastFrameTime;
@@ -17,8 +17,8 @@ namespace LilyPad
 		lastFrameTime = currentFrameTime;
 	}
 
-	float FPS::get_delta()
+	double FPS::get_delta()
 	{
-		return glfwGetTime() - lastFrameTime;
+		return (glfwGetTime() - lastFrameTime);
 	}
 } // namespace LilyPad

@@ -1,0 +1,386 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classLilyPad_1_1Image" kind="class" language="C++" prot="public">
+    <compoundname>LilyPad::Image</compoundname>
+    <basecompoundref refid="classLilyPad_1_1File" prot="public" virt="non-virtual">LilyPad::File</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classLilyPad_1_1Image_1a8b80c46a130c7678ecdc443e05e45b52" prot="private" static="no" mutable="no">
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">int</ref></type>
+        <definition>int LilyPad::Image::_width</definition>
+        <argsstring></argsstring>
+        <name>_width</name>
+        <qualifiedname>LilyPad::Image::_width</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/io/image.hpp" line="40" column="5" bodyfile="LilyPadEngine/src/LilyPad/core/io/image.hpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLilyPad_1_1Image_1a51d0da91ccb877f7eb290807d51f9eeb" prot="private" static="no" mutable="no">
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">int</ref></type>
+        <definition>int LilyPad::Image::_height</definition>
+        <argsstring></argsstring>
+        <name>_height</name>
+        <qualifiedname>LilyPad::Image::_height</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/io/image.hpp" line="41" column="5" bodyfile="LilyPadEngine/src/LilyPad/core/io/image.hpp" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLilyPad_1_1Image_1af89de6064fad97e109826d63d65f7268" prot="private" static="no" mutable="no">
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">bool</ref></type>
+        <definition>bool LilyPad::Image::_useMipmaps</definition>
+        <argsstring></argsstring>
+        <name>_useMipmaps</name>
+        <qualifiedname>LilyPad::Image::_useMipmaps</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/io/image.hpp" line="42" column="6" bodyfile="LilyPadEngine/src/LilyPad/core/io/image.hpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLilyPad_1_1Image_1a3c9bf0806f9964ee10289677f76e9a0e" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classLilyPad_1_1Vertices" kindref="compound">uint8_t</ref> &gt;</type>
+        <definition>std::vector&lt;uint8_t&gt; LilyPad::Image::_data</definition>
+        <argsstring></argsstring>
+        <name>_data</name>
+        <qualifiedname>LilyPad::Image::_data</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/io/image.hpp" line="43" column="13" bodyfile="LilyPadEngine/src/LilyPad/core/io/image.hpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLilyPad_1_1Image_1a1e69479db5c0b53bc98894050343af1d" prot="private" static="no" mutable="no">
+        <type>ImageFormat</type>
+        <definition>ImageFormat LilyPad::Image::_format</definition>
+        <argsstring></argsstring>
+        <name>_format</name>
+        <qualifiedname>LilyPad::Image::_format</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/io/image.hpp" line="44" column="13" bodyfile="LilyPadEngine/src/LilyPad/core/io/image.hpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classLilyPad_1_1Image_1ae414c765d7157d04ec201787db1d8fb2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>LilyPad::Image::Image</definition>
+        <argsstring>()</argsstring>
+        <name>Image</name>
+        <qualifiedname>LilyPad::Image::Image</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/io/image.hpp" line="22" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classLilyPad_1_1Image_1a606db07ebccc557d58373b736d41089f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>LilyPad::Image::~Image</definition>
+        <argsstring>()</argsstring>
+        <name>~Image</name>
+        <qualifiedname>LilyPad::Image::~Image</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/io/image.hpp" line="23" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classLilyPad_1_1Image_1a610b51f2008f9bae5095b7ce1b4853a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">void</ref></type>
+        <definition>void LilyPad::Image::set_data</definition>
+        <argsstring>(int width, int height, bool useMipmaps, ImageFormat format, const std::vector&lt; uint8_t &gt; &amp;data)</argsstring>
+        <name>set_data</name>
+        <qualifiedname>LilyPad::Image::set_data</qualifiedname>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">int</ref></type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">int</ref></type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">bool</ref></type>
+          <declname>useMipmaps</declname>
+        </param>
+        <param>
+          <type>ImageFormat</type>
+          <declname>format</declname>
+        </param>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">const</ref> std::vector&lt; <ref refid="classLilyPad_1_1Vertices" kindref="compound">uint8_t</ref> &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/io/image.hpp" line="25" column="6" bodyfile="LilyPadEngine/src/LilyPad/core/io/image.cpp" bodystart="40" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classLilyPad_1_1Image_1ab0997e0b6194727157542e3bd60c5eb8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">void</ref></type>
+        <definition>void LilyPad::Image::set_pixel</definition>
+        <argsstring>(int x_index, int y_index, const Color &amp;data)</argsstring>
+        <name>set_pixel</name>
+        <qualifiedname>LilyPad::Image::set_pixel</qualifiedname>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">int</ref></type>
+          <declname>x_index</declname>
+        </param>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">int</ref></type>
+          <declname>y_index</declname>
+        </param>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">const</ref> <ref refid="structLilyPad_1_1Color" kindref="compound">Color</ref> &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/io/image.hpp" line="26" column="6" bodyfile="LilyPadEngine/src/LilyPad/core/io/image.cpp" bodystart="10" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classLilyPad_1_1Image_1a834a406d3871132579c7b81063e2e91e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">void</ref></type>
+        <definition>void LilyPad::Image::load</definition>
+        <argsstring>(const std::string &amp;path)</argsstring>
+        <name>load</name>
+        <qualifiedname>LilyPad::Image::load</qualifiedname>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">const</ref> std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/io/image.hpp" line="27" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classLilyPad_1_1Image_1aa709e0b3231b8fedd8f3d2a7d300b229" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">int</ref></type>
+        <definition>int LilyPad::Image::get_width</definition>
+        <argsstring>() const</argsstring>
+        <name>get_width</name>
+        <qualifiedname>LilyPad::Image::get_width</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/io/image.hpp" line="29" column="5" bodyfile="LilyPadEngine/src/LilyPad/core/io/image.cpp" bodystart="76" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classLilyPad_1_1Image_1ada1ac383bca74fd272a9ddc84b7e5322" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">int</ref></type>
+        <definition>int LilyPad::Image::get_height</definition>
+        <argsstring>() const</argsstring>
+        <name>get_height</name>
+        <qualifiedname>LilyPad::Image::get_height</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/io/image.hpp" line="30" column="5" bodyfile="LilyPadEngine/src/LilyPad/core/io/image.cpp" bodystart="78" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="classLilyPad_1_1Image_1a35328406d50a7e77d9fe0c66188cae53" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structLilyPad_1_1Vector2i" kindref="compound">Vector2i</ref></type>
+        <definition>Vector2i LilyPad::Image::get_size</definition>
+        <argsstring>() const</argsstring>
+        <name>get_size</name>
+        <qualifiedname>LilyPad::Image::get_size</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/io/image.hpp" line="31" column="10" bodyfile="LilyPadEngine/src/LilyPad/core/io/image.cpp" bodystart="80" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="classLilyPad_1_1Image_1ae1079a8ba21840a16bc3bce08968e784" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>ImageFormat</type>
+        <definition>ImageFormat LilyPad::Image::get_format</definition>
+        <argsstring>() const</argsstring>
+        <name>get_format</name>
+        <qualifiedname>LilyPad::Image::get_format</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/io/image.hpp" line="33" column="13" bodyfile="LilyPadEngine/src/LilyPad/core/io/image.cpp" bodystart="82" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classLilyPad_1_1Image_1a069e899cad2a4aabb6d1ca9cd23ad56c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">void</ref></type>
+        <definition>void LilyPad::Image::set_format</definition>
+        <argsstring>(const ImageFormat &amp;format)</argsstring>
+        <name>set_format</name>
+        <qualifiedname>LilyPad::Image::set_format</qualifiedname>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">const</ref> ImageFormat &amp;</type>
+          <declname>format</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/io/image.hpp" line="34" column="6" bodyfile="LilyPadEngine/src/LilyPad/core/io/image.cpp" bodystart="88" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classLilyPad_1_1Image_1a1b147a5a6e2f6c4dadb5a771b1b0be07" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="classLilyPad_1_1Vertices" kindref="compound">uint8_t</ref> &gt;</type>
+        <definition>std::vector&lt; uint8_t &gt; LilyPad::Image::get_raw_data</definition>
+        <argsstring>() const</argsstring>
+        <name>get_raw_data</name>
+        <qualifiedname>LilyPad::Image::get_raw_data</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/io/image.hpp" line="36" column="13" bodyfile="LilyPadEngine/src/LilyPad/core/io/image.cpp" bodystart="84" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="classLilyPad_1_1Image_1a3d2a2246f3ee1705be9582a467f0fecb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">const</ref> <ref refid="classLilyPad_1_1Vertices" kindref="compound">uint8_t</ref> *</type>
+        <definition>const uint8_t * LilyPad::Image::get_data</definition>
+        <argsstring>() const</argsstring>
+        <name>get_data</name>
+        <qualifiedname>LilyPad::Image::get_data</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/io/image.hpp" line="37" column="15" bodyfile="LilyPadEngine/src/LilyPad/core/io/image.cpp" bodystart="86" bodyend="86"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classLilyPad_1_1Image_1a5bead5da1847f88bfca356f63b8d4de0" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">int</ref></type>
+        <definition>int LilyPad::Image::get_channel_count</definition>
+        <argsstring>() const</argsstring>
+        <name>get_channel_count</name>
+        <qualifiedname>LilyPad::Image::get_channel_count</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/io/image.hpp" line="46" column="5" bodyfile="LilyPadEngine/src/LilyPad/core/io/image.cpp" bodystart="56" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="classLilyPad_1_1Image_1ad163c1dd07596f95a8d9d39a3cfe4acf" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">int</ref></type>
+        <definition>int LilyPad::Image::get_index</definition>
+        <argsstring>(int x, int y) const</argsstring>
+        <name>get_index</name>
+        <qualifiedname>LilyPad::Image::get_index</qualifiedname>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">int</ref></type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">int</ref></type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/io/image.hpp" line="47" column="5" bodyfile="LilyPadEngine/src/LilyPad/core/io/image.cpp" bodystart="74" bodyend="74"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>LilyPad::File</label>
+        <link refid="classLilyPad_1_1File"/>
+      </node>
+      <node id="1">
+        <label>LilyPad::Image</label>
+        <link refid="classLilyPad_1_1Image"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>LilyPad::File</label>
+        <link refid="classLilyPad_1_1File"/>
+      </node>
+      <node id="1">
+        <label>LilyPad::Image</label>
+        <link refid="classLilyPad_1_1Image"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="LilyPadEngine/src/LilyPad/core/io/image.hpp" line="19" column="1" bodyfile="LilyPadEngine/src/LilyPad/core/io/image.hpp" bodystart="20" bodyend="48"/>
+    <listofallmembers>
+      <member refid="classLilyPad_1_1Image_1a3c9bf0806f9964ee10289677f76e9a0e" prot="private" virt="non-virtual"><scope>LilyPad::Image</scope><name>_data</name></member>
+      <member refid="classLilyPad_1_1Image_1a1e69479db5c0b53bc98894050343af1d" prot="private" virt="non-virtual"><scope>LilyPad::Image</scope><name>_format</name></member>
+      <member refid="classLilyPad_1_1Image_1a51d0da91ccb877f7eb290807d51f9eeb" prot="private" virt="non-virtual"><scope>LilyPad::Image</scope><name>_height</name></member>
+      <member refid="classLilyPad_1_1File_1a103e053e7ff68c4a428f1761c680ac4f" prot="protected" virt="non-virtual"><scope>LilyPad::Image</scope><name>_lastTime</name></member>
+      <member refid="classLilyPad_1_1File_1ac365c81e0acd89198bb0615ab15b1ead" prot="protected" virt="non-virtual"><scope>LilyPad::Image</scope><name>_path</name></member>
+      <member refid="classLilyPad_1_1Image_1af89de6064fad97e109826d63d65f7268" prot="private" virt="non-virtual"><scope>LilyPad::Image</scope><name>_useMipmaps</name></member>
+      <member refid="classLilyPad_1_1Image_1a8b80c46a130c7678ecdc443e05e45b52" prot="private" virt="non-virtual"><scope>LilyPad::Image</scope><name>_width</name></member>
+      <member refid="classLilyPad_1_1File_1a8997b9ce1df4b107777989b7152ae509" prot="public" virt="non-virtual"><scope>LilyPad::Image</scope><name>File</name></member>
+      <member refid="classLilyPad_1_1File_1ae5c0158748268bb6f313701ef7fa44c1" prot="public" virt="non-virtual"><scope>LilyPad::Image</scope><name>File</name></member>
+      <member refid="classLilyPad_1_1Image_1a5bead5da1847f88bfca356f63b8d4de0" prot="private" virt="non-virtual"><scope>LilyPad::Image</scope><name>get_channel_count</name></member>
+      <member refid="classLilyPad_1_1Image_1a3d2a2246f3ee1705be9582a467f0fecb" prot="public" virt="non-virtual"><scope>LilyPad::Image</scope><name>get_data</name></member>
+      <member refid="classLilyPad_1_1Image_1ae1079a8ba21840a16bc3bce08968e784" prot="public" virt="non-virtual"><scope>LilyPad::Image</scope><name>get_format</name></member>
+      <member refid="classLilyPad_1_1Image_1ada1ac383bca74fd272a9ddc84b7e5322" prot="public" virt="non-virtual"><scope>LilyPad::Image</scope><name>get_height</name></member>
+      <member refid="classLilyPad_1_1Image_1ad163c1dd07596f95a8d9d39a3cfe4acf" prot="private" virt="non-virtual"><scope>LilyPad::Image</scope><name>get_index</name></member>
+      <member refid="classLilyPad_1_1Image_1a1b147a5a6e2f6c4dadb5a771b1b0be07" prot="public" virt="non-virtual"><scope>LilyPad::Image</scope><name>get_raw_data</name></member>
+      <member refid="classLilyPad_1_1Image_1a35328406d50a7e77d9fe0c66188cae53" prot="public" virt="non-virtual"><scope>LilyPad::Image</scope><name>get_size</name></member>
+      <member refid="classLilyPad_1_1Image_1aa709e0b3231b8fedd8f3d2a7d300b229" prot="public" virt="non-virtual"><scope>LilyPad::Image</scope><name>get_width</name></member>
+      <member refid="classLilyPad_1_1Image_1ae414c765d7157d04ec201787db1d8fb2" prot="public" virt="non-virtual"><scope>LilyPad::Image</scope><name>Image</name></member>
+      <member refid="classLilyPad_1_1File_1aa0997ba11340541fadc11a98cc923996" prot="public" virt="non-virtual"><scope>LilyPad::Image</scope><name>is_updated</name></member>
+      <member refid="classLilyPad_1_1Image_1a834a406d3871132579c7b81063e2e91e" prot="public" virt="non-virtual"><scope>LilyPad::Image</scope><name>load</name></member>
+      <member refid="classLilyPad_1_1File_1abdf6730144ed402662c0df7850dadf8c" prot="public" virt="non-virtual"><scope>LilyPad::Image</scope><name>read_file</name></member>
+      <member refid="classLilyPad_1_1File_1a3b927c752c37d0002b2dbba02e035bbf" prot="public" virt="non-virtual"><scope>LilyPad::Image</scope><name>read_file</name></member>
+      <member refid="classLilyPad_1_1Image_1a610b51f2008f9bae5095b7ce1b4853a1" prot="public" virt="non-virtual"><scope>LilyPad::Image</scope><name>set_data</name></member>
+      <member refid="classLilyPad_1_1Image_1a069e899cad2a4aabb6d1ca9cd23ad56c" prot="public" virt="non-virtual"><scope>LilyPad::Image</scope><name>set_format</name></member>
+      <member refid="classLilyPad_1_1Image_1ab0997e0b6194727157542e3bd60c5eb8" prot="public" virt="non-virtual"><scope>LilyPad::Image</scope><name>set_pixel</name></member>
+      <member refid="classLilyPad_1_1File_1a3c2ff3d1eec0947306a5ac5e68181eeb" prot="public" virt="virtual"><scope>LilyPad::Image</scope><name>update</name></member>
+      <member refid="classLilyPad_1_1File_1af81d2fb8efadff1c58f6158e02f94494" prot="public" virt="virtual"><scope>LilyPad::Image</scope><name>~File</name></member>
+      <member refid="classLilyPad_1_1Image_1a606db07ebccc557d58373b736d41089f" prot="public" virt="non-virtual"><scope>LilyPad::Image</scope><name>~Image</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,294 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceLilyPad" kind="namespace" language="C++">
+    <compoundname>LilyPad</compoundname>
+    <innerclass refid="classLilyPad_1_1Bind" prot="public">LilyPad::Bind</innerclass>
+    <innerclass refid="classLilyPad_1_1Camera3D" prot="public">LilyPad::Camera3D</innerclass>
+    <innerclass refid="classLilyPad_1_1Circle2D" prot="public">LilyPad::Circle2D</innerclass>
+    <innerclass refid="structLilyPad_1_1Color" prot="public">LilyPad::Color</innerclass>
+    <innerclass refid="classLilyPad_1_1File" prot="public">LilyPad::File</innerclass>
+    <innerclass refid="classLilyPad_1_1FPS" prot="public">LilyPad::FPS</innerclass>
+    <innerclass refid="structLilyPad_1_1GLType" prot="public">LilyPad::GLType</innerclass>
+    <innerclass refid="structLilyPad_1_1GLType_3_01char_01_4" prot="public">LilyPad::GLType&lt; char &gt;</innerclass>
+    <innerclass refid="structLilyPad_1_1GLType_3_01double_01_4" prot="public">LilyPad::GLType&lt; double &gt;</innerclass>
+    <innerclass refid="structLilyPad_1_1GLType_3_01float_01_4" prot="public">LilyPad::GLType&lt; float &gt;</innerclass>
+    <innerclass refid="structLilyPad_1_1GLType_3_01int_01_4" prot="public">LilyPad::GLType&lt; int &gt;</innerclass>
+    <innerclass refid="structLilyPad_1_1GLType_3_01short_01_4" prot="public">LilyPad::GLType&lt; short &gt;</innerclass>
+    <innerclass refid="structLilyPad_1_1GLType_3_01unsigned_01char_01_4" prot="public">LilyPad::GLType&lt; unsigned char &gt;</innerclass>
+    <innerclass refid="structLilyPad_1_1GLType_3_01unsigned_01int_01_4" prot="public">LilyPad::GLType&lt; unsigned int &gt;</innerclass>
+    <innerclass refid="structLilyPad_1_1GLType_3_01unsigned_01short_01_4" prot="public">LilyPad::GLType&lt; unsigned short &gt;</innerclass>
+    <innerclass refid="classLilyPad_1_1Image" prot="public">LilyPad::Image</innerclass>
+    <innerclass refid="classLilyPad_1_1Input" prot="public">LilyPad::Input</innerclass>
+    <innerclass refid="classLilyPad_1_1InputHandler" prot="public">LilyPad::InputHandler</innerclass>
+    <innerclass refid="classLilyPad_1_1Label" prot="public">LilyPad::Label</innerclass>
+    <innerclass refid="structLilyPad_1_1LogColors" prot="public">LilyPad::LogColors</innerclass>
+    <innerclass refid="classLilyPad_1_1Logger" prot="public">LilyPad::Logger</innerclass>
+    <innerclass refid="classLilyPad_1_1Node" prot="public">LilyPad::Node</innerclass>
+    <innerclass refid="classLilyPad_1_1Node3D" prot="public">LilyPad::Node3D</innerclass>
+    <innerclass refid="structLilyPad_1_1Rect2" prot="public">LilyPad::Rect2</innerclass>
+    <innerclass refid="classLilyPad_1_1Shader" prot="public">LilyPad::Shader</innerclass>
+    <innerclass refid="classLilyPad_1_1ShaderProgram" prot="public">LilyPad::ShaderProgram</innerclass>
+    <innerclass refid="classLilyPad_1_1Shape2D" prot="public">LilyPad::Shape2D</innerclass>
+    <innerclass refid="classLilyPad_1_1Texture" prot="public">LilyPad::Texture</innerclass>
+    <innerclass refid="structLilyPad_1_1Vector2" prot="public">LilyPad::Vector2</innerclass>
+    <innerclass refid="structLilyPad_1_1Vector2i" prot="public">LilyPad::Vector2i</innerclass>
+    <innerclass refid="structLilyPad_1_1Vector3" prot="public">LilyPad::Vector3</innerclass>
+    <innerclass refid="structLilyPad_1_1Vertex" prot="public">LilyPad::Vertex</innerclass>
+    <innerclass refid="classLilyPad_1_1Vertices" prot="public">LilyPad::Vertices</innerclass>
+    <innerclass refid="classLilyPad_1_1Widget" prot="public">LilyPad::Widget</innerclass>
+    <innerclass refid="classLilyPad_1_1Window" prot="public">LilyPad::Window</innerclass>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="image_8hpp_1a4e0067fcb4d89d9c6f6bbc8d8564ec64" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>ImageFormat</name>
+        <qualifiedname>LilyPad::ImageFormat</qualifiedname>
+        <enumvalue id="image_8hpp_1a4e0067fcb4d89d9c6f6bbc8d8564ec64ace93592a8cd34392d239fdfb33d2e4cc" prot="public">
+          <name>FORMAT_R8</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="image_8hpp_1a4e0067fcb4d89d9c6f6bbc8d8564ec64a9f1c90085de9e2cbf9589bdb9e949931" prot="public">
+          <name>FORMAT_RG8</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="image_8hpp_1a4e0067fcb4d89d9c6f6bbc8d8564ec64aba9e6601f127564cace2c531e3097ba0" prot="public">
+          <name>FORMAT_RGB8</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="image_8hpp_1a4e0067fcb4d89d9c6f6bbc8d8564ec64a7f50a3d807aae19f05a15ad974a752b1" prot="public">
+          <name>FORMAT_RGBA8</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/io/image.hpp" line="11" column="1" bodyfile="LilyPadEngine/src/LilyPad/core/io/image.hpp" bodystart="12" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="enum" id="errors_8hpp_1ae5deb41004e7e3fb171899aca982977d" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Error</name>
+        <qualifiedname>LilyPad::Error</qualifiedname>
+        <enumvalue id="errors_8hpp_1ae5deb41004e7e3fb171899aca982977da4edd6887b698de6644edbb97f87aa586" prot="public">
+          <name>OK</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="errors_8hpp_1ae5deb41004e7e3fb171899aca982977da9d0334af6223fdb194c5e44a1707524b" prot="public">
+          <name>FAILURE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="errors_8hpp_1ae5deb41004e7e3fb171899aca982977da20891ba71ff2fd35bfde6b51469ae17c" prot="public">
+          <name>ERR_LOAD_TEXTURE_FAILURE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="errors_8hpp_1ae5deb41004e7e3fb171899aca982977da10a2cb518e346f3d38437a22d48b4b1c" prot="public">
+          <name>ERR_LOAD_SHADER_FAILURE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="errors_8hpp_1ae5deb41004e7e3fb171899aca982977da50e79778e3990dd51a42182e49b7b1c8" prot="public">
+          <name>ERR_FILE_NOT_FOUND</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/debug/errors.hpp" line="5" column="1" bodyfile="LilyPadEngine/src/LilyPad/debug/errors.hpp" bodystart="6" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="enum" id="logging_8hpp_1a81c071e2053f830cb058eb1abbc0c2ff" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>LogLevel</name>
+        <qualifiedname>LilyPad::LogLevel</qualifiedname>
+        <enumvalue id="logging_8hpp_1a81c071e2053f830cb058eb1abbc0c2ffadc30ec20708ef7b0f641ef78b7880a15" prot="public">
+          <name>DEBUG</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="logging_8hpp_1a81c071e2053f830cb058eb1abbc0c2ffa551b723eafd6a31d444fcb2f5920fbd3" prot="public">
+          <name>INFO</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="logging_8hpp_1a81c071e2053f830cb058eb1abbc0c2ffa059e9861e0400dfbe05c98a841f3f96b" prot="public">
+          <name>WARNING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="logging_8hpp_1a81c071e2053f830cb058eb1abbc0c2ffabb1ca97ec761fc37101737ba0aa2e7c5" prot="public">
+          <name>ERROR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="logging_8hpp_1a81c071e2053f830cb058eb1abbc0c2ffa99cd1c61610c76a57cb8d10d6df6b870" prot="public">
+          <name>CRITICAL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/debug/logging.hpp" line="17" column="1" bodyfile="LilyPadEngine/src/LilyPad/debug/logging.hpp" bodystart="18" bodyend="24"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="vector2_8hpp_1a033fd84e4b623697aa9aea85b3eaead6" prot="public" static="no">
+        <type><ref refid="structLilyPad_1_1Vector2" kindref="compound">Vector2</ref></type>
+        <definition>typedef Vector2 LilyPad::Point2</definition>
+        <argsstring></argsstring>
+        <name>Point2</name>
+        <qualifiedname>LilyPad::Point2</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/math/vector2.hpp" line="72" column="18" bodyfile="LilyPadEngine/src/LilyPad/core/math/vector2.hpp" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="vector3_8hpp_1a392b8b6c4a1f1b722d3ce517837d329c" prot="public" static="no">
+        <type><ref refid="structLilyPad_1_1Vector3" kindref="compound">Vector3</ref></type>
+        <definition>typedef Vector3 LilyPad::Position3</definition>
+        <argsstring></argsstring>
+        <name>Position3</name>
+        <qualifiedname>LilyPad::Position3</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" line="84" column="17" bodyfile="LilyPadEngine/src/LilyPad/core/math/vector3.hpp" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="window_8hpp_1a94da2b849b87f85ee7c536684913129d" prot="public" static="no">
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">GLFWwindow</ref></type>
+        <definition>typedef GLFWwindow LilyPad::InputEvent</definition>
+        <argsstring></argsstring>
+        <name>InputEvent</name>
+        <qualifiedname>LilyPad::InputEvent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/renderer/OpenGL/window.hpp" line="70" column="20" bodyfile="LilyPadEngine/src/LilyPad/renderer/OpenGL/window.hpp" bodystart="70" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="constants_8hpp_1ac46d0ecc5e15fd8f21f1882099e25551" prot="public" static="no" constexpr="yes" mutable="no">
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">constexpr</ref> <ref refid="classLilyPad_1_1Vertices" kindref="compound">float</ref></type>
+        <definition>constexpr float LilyPad::GRAVITY</definition>
+        <argsstring></argsstring>
+        <name>GRAVITY</name>
+        <qualifiedname>LilyPad::GRAVITY</qualifiedname>
+        <initializer>= 9.80665<ref refid="classLilyPad_1_1Vertices" kindref="compound">f</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/utils/constants.hpp" line="5" column="21" bodyfile="LilyPadEngine/src/LilyPad/core/utils/constants.hpp" bodystart="5" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="paths_8cpp_1aca90e197565ef3d9f0feedf8b0bad677" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string LilyPad::strip_right_of_slash</definition>
+        <argsstring>(const std::string &amp;path)</argsstring>
+        <name>strip_right_of_slash</name>
+        <qualifiedname>LilyPad::strip_right_of_slash</qualifiedname>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">const</ref> std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/utils/paths.cpp" line="14" column="13" bodyfile="LilyPadEngine/src/LilyPad/core/utils/paths.cpp" bodystart="14" bodyend="23" declfile="LilyPadEngine/src/LilyPad/core/utils/paths.hpp" declline="7" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="paths_8cpp_1a53227255f485455184242f9656a4dca0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string LilyPad::get_exec_path</definition>
+        <argsstring>()</argsstring>
+        <name>get_exec_path</name>
+        <qualifiedname>LilyPad::get_exec_path</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>std::string Absolute path to the executable. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/utils/paths.cpp" line="28" column="13" bodyfile="LilyPadEngine/src/LilyPad/core/utils/paths.cpp" bodystart="28" bodyend="51" declfile="LilyPadEngine/src/LilyPad/core/utils/paths.hpp" declline="9" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="paths_8cpp_1a1a45ac7f60cb57a7d4622550f3a9772f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string LilyPad::get_root_directory</definition>
+        <argsstring>()</argsstring>
+        <name>get_root_directory</name>
+        <qualifiedname>LilyPad::get_root_directory</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/utils/paths.cpp" line="53" column="13" bodyfile="LilyPadEngine/src/LilyPad/core/utils/paths.cpp" bodystart="53" bodyend="53" declfile="LilyPadEngine/src/LilyPad/core/utils/paths.hpp" declline="11" declcolumn="13"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="LilyPadEngine/src/LilyPad/core/io/file.cpp" line="7" column="1"/>
+  </compounddef>
+</doxygen>

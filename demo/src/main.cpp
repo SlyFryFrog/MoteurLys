@@ -1,8 +1,8 @@
-#define STB_IMAGE_WRITE_IMPLEMENTATION
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include <memory>
+#include <stb_image_write.h>
 #include "LilyPad/core/io/image.hpp"
 #include "LilyPad/core/io/input.hpp"
 #include "LilyPad/core/math/vector3.hpp"
@@ -16,7 +16,6 @@
 #include "LilyPad/renderer/OpenGL/window.hpp"
 #include "LilyPad/scene/nodes/ui/label.hpp"
 #include "camera.hpp"
-#include "stb_image_write.h"
 #include "generation.hpp"
 
 using namespace LilyPad;
@@ -31,7 +30,7 @@ float lastX = SCR_WIDTH / 2.0f;
 float lastY = SCR_HEIGHT / 2.0f;
 bool firstMouse = true;
 
-float deltaTime = 0.0f; // Time between current frame and last frame
+double delta = 0.0; // Time between current frame and last frame
 float lastFrame = 0.0f; // Time of last frame
 ShaderProgram ourShader("/home/marcus/dev/LilyPadEngine/demo/rsc/shaders/", "Vertex.glsl", "Fragment.glsl");
 auto camera = std::make_shared<Camera>();
@@ -79,7 +78,7 @@ int main()
 	}
 
 	image.set_data(500, 500, false, ImageFormat::FORMAT_RGBA8, pixels);
-	stbi_write_png("output.png", 500, 500, 4, pixels.data(), 500 * 4);
+	// stbi_write_png("output.png", 500, 500, 4, pixels.data(), 500 * 4);
 	camera->_ready();
 	camera->set_name("camera");
 	const std::string relativePath = get_root_directory();
@@ -123,10 +122,7 @@ int main()
 							   {1.3f, -2.0f, -2.5f},   {1.5f, 2.0f, -2.5f},	 {1.5f, 0.2f, -1.5f},
 							   {-1.3f, 1.0f, -1.5f}};
 
-
 	Bind bind;
-	// bind.bind_vertices(vertices);
-	// vertices.set_attributes();
 
 	Texture texture(relativePath + "/rsc/textures/");
 	texture.id = texture.generate_texture("frog.png");
@@ -135,13 +131,14 @@ int main()
 	ourShader.use();
 	ourShader.set_uniform("uTexture", texture.id);
 
-	Vertices<float> vertices2({{{-1.0f,  1.0f, 0.0f}, {0.0f, 1.0f}},
+	Vertices<float> vertices2({{{-1.0f, 1.0f, 0.0f}, {0.0f, 1.0f}},
 							   {{-1.0f, -1.0f, 0.0f}, {0.0f, 0.0f}},
 							   {{1.0f, -1.0f, 0.0f}, {1.0f, 0.0f}},
-							   {{-1.0f,  1.0f, 0.0f}, {0.0f, 1.0f}},
+							   {{-1.0f, 1.0f, 0.0f}, {0.0f, 1.0f}},
 							   {{1.0f, -1.0f, 0.0f}, {1.0f, 0.0f}},
-							   {{1.0f,  1.0f, 0.0f}, {1.0f, 1.0f}}} // top left
+							   {{1.0f, 1.0f, 0.0f}, {1.0f, 1.0f}}} // top left
 	);
+
 	bind.bind_vertices(vertices2);
 	vertices.set_attributes();
 
@@ -160,7 +157,7 @@ int main()
 			glm::perspective(glm::radians(camera->zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
 
 		ourShader.use();
-		camera->look_at({0,0,0});
+		camera->look_at({0, 0, 0});
 		ourShader.set_uniform("uView", {camera->viewMatrix});
 		ourShader.set_uniform("uProjection", projection);
 
@@ -174,7 +171,8 @@ int main()
 			glDrawArrays(GL_TRIANGLES, 0, 6);
 		}
 
-		deltaTime = fps.get_delta();
+		delta = fps.get_delta();
+		fps.update();
 
 		glfwSwapBuffers(window.window);
 		glfwPollEvents();
@@ -207,7 +205,7 @@ void mouse_callback(GLFWwindow *window, double xposIn, double yposIn)
 
 void process_input(GLFWwindow *window)
 {
-	float cameraSpeed = 0.1f * (float) deltaTime;
+	float cameraSpeed = 10.0f * (float)delta;
 
 	if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
 		camera->position += cameraSpeed * camera->front;

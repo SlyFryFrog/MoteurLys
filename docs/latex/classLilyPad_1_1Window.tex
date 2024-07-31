@@ -1,0 +1,115 @@
+\doxysection{Lily\+Pad\+::Window Class Reference}
+\hypertarget{classLilyPad_1_1Window}{}\label{classLilyPad_1_1Window}\index{LilyPad::Window@{LilyPad::Window}}
+
+
+Main window for rendering.  
+
+
+
+
+{\ttfamily \#include $<$window.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLilyPad_1_1Window_aca11a8a995c59b8a6a6f65b3105fb397}{Window}} (\mbox{\hyperlink{classLilyPad_1_1Vertices}{int}} \mbox{\hyperlink{classLilyPad_1_1Vertices}{width}}, \mbox{\hyperlink{classLilyPad_1_1Vertices}{int}} \mbox{\hyperlink{classLilyPad_1_1Vertices}{height}})
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classLilyPad_1_1Window}{Window} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLilyPad_1_1Window_af74eb6a7fad2ccb20b1b667b565169d5}{Window}} (\mbox{\hyperlink{classLilyPad_1_1Vertices}{int}} \mbox{\hyperlink{classLilyPad_1_1Vertices}{width}}, \mbox{\hyperlink{classLilyPad_1_1Vertices}{int}} \mbox{\hyperlink{classLilyPad_1_1Vertices}{height}}, \mbox{\hyperlink{classLilyPad_1_1Vertices}{const}} std\+::string \&\mbox{\hyperlink{classLilyPad_1_1Vertices}{title}})
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classLilyPad_1_1Window}{Window} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLilyPad_1_1Vertices}{void}} \mbox{\hyperlink{classLilyPad_1_1Window_a7ce0b73751a0cff970141cb52f0602dd}{set\+\_\+title}} (\mbox{\hyperlink{classLilyPad_1_1Vertices}{const}} std\+::string \&\mbox{\hyperlink{classLilyPad_1_1Vertices}{title}})
+\begin{DoxyCompactList}\small\item\em Set the title of the window. \end{DoxyCompactList}\item 
+\Hypertarget{classLilyPad_1_1Window_a5d49068522bf4da0c65bcb6be0072298}\label{classLilyPad_1_1Window_a5d49068522bf4da0c65bcb6be0072298} 
+\mbox{\hyperlink{classLilyPad_1_1Vertices}{void}} {\bfseries initialize} ()
+\begin{DoxyCompactList}\small\item\em Sets up GLFW, creates a window, sets Open\+GL context parameters, initializes GLEW, sets viewport, and registers callback functions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLilyPad_1_1Vertices}{bool}} \mbox{\hyperlink{classLilyPad_1_1Window_ae46262dda0f394d8ce5bfae94c190b86}{is\+\_\+done}} () \mbox{\hyperlink{classLilyPad_1_1Vertices}{const}}
+\begin{DoxyCompactList}\small\item\em Returns the status of the window\textquotesingle{}s completion status. \end{DoxyCompactList}\item 
+\Hypertarget{classLilyPad_1_1Window_a3b7332cf0ee5388b6458f2c9019bf76c}\label{classLilyPad_1_1Window_a3b7332cf0ee5388b6458f2c9019bf76c} 
+\mbox{\hyperlink{classLilyPad_1_1Vertices}{void}} {\bfseries set\+\_\+dimensions} (\mbox{\hyperlink{classLilyPad_1_1Vertices}{int}} \mbox{\hyperlink{classLilyPad_1_1Vertices}{width}}, \mbox{\hyperlink{classLilyPad_1_1Vertices}{int}} \mbox{\hyperlink{classLilyPad_1_1Vertices}{height}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classLilyPad_1_1Window_a44e4eae925e46dd37bfcbb80d6c8c095}\label{classLilyPad_1_1Window_a44e4eae925e46dd37bfcbb80d6c8c095} 
+\mbox{\hyperlink{classLilyPad_1_1Vertices}{GLFWwindow}} \texorpdfstring{$\ast$}{*} {\bfseries window}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main window for rendering. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classLilyPad_1_1Window_aca11a8a995c59b8a6a6f65b3105fb397}\label{classLilyPad_1_1Window_aca11a8a995c59b8a6a6f65b3105fb397} 
+\index{LilyPad::Window@{LilyPad::Window}!Window@{Window}}
+\index{Window@{Window}!LilyPad::Window@{LilyPad::Window}}
+\doxysubsubsection{\texorpdfstring{Window()}{Window()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Lily\+Pad\+::\+Window\+::\+Window (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classLilyPad_1_1Vertices}{int}}}]{width,  }\item[{\mbox{\hyperlink{classLilyPad_1_1Vertices}{int}}}]{height }\end{DoxyParamCaption})}
+
+
+
+Construct a new \doxylink{classLilyPad_1_1Window}{Window} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & Width of the window. \\
+\hline
+{\em height} & Height of the window. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classLilyPad_1_1Window_af74eb6a7fad2ccb20b1b667b565169d5}\label{classLilyPad_1_1Window_af74eb6a7fad2ccb20b1b667b565169d5} 
+\index{LilyPad::Window@{LilyPad::Window}!Window@{Window}}
+\index{Window@{Window}!LilyPad::Window@{LilyPad::Window}}
+\doxysubsubsection{\texorpdfstring{Window()}{Window()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Lily\+Pad\+::\+Window\+::\+Window (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classLilyPad_1_1Vertices}{int}}}]{width,  }\item[{\mbox{\hyperlink{classLilyPad_1_1Vertices}{int}}}]{height,  }\item[{\mbox{\hyperlink{classLilyPad_1_1Vertices}{const}} std\+::string \&}]{title }\end{DoxyParamCaption})}
+
+
+
+Construct a new \doxylink{classLilyPad_1_1Window}{Window} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & Width of the window. \\
+\hline
+{\em height} & Height of the window. \\
+\hline
+{\em title} & Title of the window. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classLilyPad_1_1Window_ae46262dda0f394d8ce5bfae94c190b86}\label{classLilyPad_1_1Window_ae46262dda0f394d8ce5bfae94c190b86} 
+\index{LilyPad::Window@{LilyPad::Window}!is\_done@{is\_done}}
+\index{is\_done@{is\_done}!LilyPad::Window@{LilyPad::Window}}
+\doxysubsubsection{\texorpdfstring{is\_done()}{is\_done()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLilyPad_1_1Vertices}{bool}} Lily\+Pad\+::\+Window\+::is\+\_\+done (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the status of the window\textquotesingle{}s completion status. 
+
+\begin{DoxyReturn}{Returns}
+true GLFW window is done and should be closed. 
+
+false GLFW window is not done and should not be closed. 
+\end{DoxyReturn}
+\Hypertarget{classLilyPad_1_1Window_a7ce0b73751a0cff970141cb52f0602dd}\label{classLilyPad_1_1Window_a7ce0b73751a0cff970141cb52f0602dd} 
+\index{LilyPad::Window@{LilyPad::Window}!set\_title@{set\_title}}
+\index{set\_title@{set\_title}!LilyPad::Window@{LilyPad::Window}}
+\doxysubsubsection{\texorpdfstring{set\_title()}{set\_title()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLilyPad_1_1Vertices}{void}} Lily\+Pad\+::\+Window\+::set\+\_\+title (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classLilyPad_1_1Vertices}{const}} std\+::string \&}]{title }\end{DoxyParamCaption})}
+
+
+
+Set the title of the window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & New title. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Lily\+Pad\+Engine/src/\+Lily\+Pad/renderer/\+Open\+GL/window.\+hpp\item 
+Lily\+Pad\+Engine/src/\+Lily\+Pad/renderer/\+Open\+GL/window.\+cpp\end{DoxyCompactItemize}

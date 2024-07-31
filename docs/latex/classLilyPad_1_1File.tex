@@ -1,0 +1,60 @@
+\doxysection{Lily\+Pad\+::File Class Reference}
+\hypertarget{classLilyPad_1_1File}{}\label{classLilyPad_1_1File}\index{LilyPad::File@{LilyPad::File}}
+Inheritance diagram for Lily\+Pad\+::File\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classLilyPad_1_1File}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classLilyPad_1_1File_ae5c0158748268bb6f313701ef7fa44c1}\label{classLilyPad_1_1File_ae5c0158748268bb6f313701ef7fa44c1} 
+{\bfseries File} (const std\+::string \&path)
+\item 
+\Hypertarget{classLilyPad_1_1File_aa0997ba11340541fadc11a98cc923996}\label{classLilyPad_1_1File_aa0997ba11340541fadc11a98cc923996} 
+bool {\bfseries is\+\_\+updated} () const
+\item 
+\Hypertarget{classLilyPad_1_1File_a3c2ff3d1eec0947306a5ac5e68181eeb}\label{classLilyPad_1_1File_a3c2ff3d1eec0947306a5ac5e68181eeb} 
+virtual void {\bfseries update} ()
+\item 
+\Hypertarget{classLilyPad_1_1File_a3b927c752c37d0002b2dbba02e035bbf}\label{classLilyPad_1_1File_a3b927c752c37d0002b2dbba02e035bbf} 
+std\+::string {\bfseries read\+\_\+file} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classLilyPad_1_1File_abdf6730144ed402662c0df7850dadf8c}{read\+\_\+file}} (const std\+::string \&path)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classLilyPad_1_1File_a103e053e7ff68c4a428f1761c680ac4f}\label{classLilyPad_1_1File_a103e053e7ff68c4a428f1761c680ac4f} 
+std\+::filesystem\+::file\+\_\+time\+\_\+type {\bfseries \+\_\+last\+Time}
+\item 
+\Hypertarget{classLilyPad_1_1File_ac365c81e0acd89198bb0615ab15b1ead}\label{classLilyPad_1_1File_ac365c81e0acd89198bb0615ab15b1ead} 
+std\+::string {\bfseries \+\_\+path}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classLilyPad_1_1File_abdf6730144ed402662c0df7850dadf8c}\label{classLilyPad_1_1File_abdf6730144ed402662c0df7850dadf8c} 
+\index{LilyPad::File@{LilyPad::File}!read\_file@{read\_file}}
+\index{read\_file@{read\_file}!LilyPad::File@{LilyPad::File}}
+\doxysubsubsection{\texorpdfstring{read\_file()}{read\_file()}}
+{\footnotesize\ttfamily std\+::string Lily\+Pad\+::\+File\+::read\+\_\+file (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to the file being read. Should be absolute. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string Contents of the file being read. If unable to read the requested file, will return an empty string. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Lily\+Pad\+Engine/src/\+Lily\+Pad/core/io/file.\+hpp\item 
+Lily\+Pad\+Engine/src/\+Lily\+Pad/core/io/file.\+cpp\end{DoxyCompactItemize}

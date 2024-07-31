@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_4fea9f06a422cb78352270ea2efb669b" kind="dir">
+    <compoundname>LilyPadEngine/src/LilyPad/core/io</compoundname>
+    <innerfile refid="file_8cpp">file.cpp</innerfile>
+    <innerfile refid="file_8hpp">file.hpp</innerfile>
+    <innerfile refid="image_8cpp">image.cpp</innerfile>
+    <innerfile refid="image_8hpp">image.hpp</innerfile>
+    <innerfile refid="input_8cpp">input.cpp</innerfile>
+    <innerfile refid="input_8hpp">input.hpp</innerfile>
+    <innerfile refid="input__handler_8cpp">input_handler.cpp</innerfile>
+    <innerfile refid="input__handler_8hpp">input_handler.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="LilyPadEngine/src/LilyPad/core/io/"/>
+  </compounddef>
+</doxygen>

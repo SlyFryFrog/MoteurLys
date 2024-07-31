@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classLilyPad_1_1Label" kind="class" language="C++" prot="public">
+    <compoundname>LilyPad::Label</compoundname>
+    <basecompoundref refid="classLilyPad_1_1Widget" prot="public" virt="non-virtual">LilyPad::Widget</basecompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classLilyPad_1_1Label_1a3d5544a2d1a16f5f1f7c1fd644aaf680" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>LilyPad::Label::Label</definition>
+        <argsstring>()</argsstring>
+        <name>Label</name>
+        <qualifiedname>LilyPad::Label::Label</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/scene/nodes/ui/label.hpp" line="12" column="1" bodyfile="LilyPadEngine/src/LilyPad/scene/nodes/ui/label.hpp" bodystart="12" bodyend="23"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>LilyPad::Label</label>
+        <link refid="classLilyPad_1_1Label"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>LilyPad::Node</label>
+        <link refid="classLilyPad_1_1Node"/>
+      </node>
+      <node id="2">
+        <label>LilyPad::Widget</label>
+        <link refid="classLilyPad_1_1Widget"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>LilyPad::Label</label>
+        <link refid="classLilyPad_1_1Label"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>LilyPad::Node</label>
+        <link refid="classLilyPad_1_1Node"/>
+      </node>
+      <node id="2">
+        <label>LilyPad::Widget</label>
+        <link refid="classLilyPad_1_1Widget"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="LilyPadEngine/src/LilyPad/scene/nodes/ui/label.hpp" line="9" column="1" bodyfile="LilyPadEngine/src/LilyPad/scene/nodes/ui/label.hpp" bodystart="10" bodyend="26"/>
+    <listofallmembers>
+      <member refid="classLilyPad_1_1Node_1ac71087268b8958590d7ab98771ea51f5" prot="public" virt="virtual"><scope>LilyPad::Label</scope><name>_process</name></member>
+      <member refid="classLilyPad_1_1Node_1a5cc04f6cc66b09ddae5be85386675c2e" prot="public" virt="virtual"><scope>LilyPad::Label</scope><name>_process_input</name></member>
+      <member refid="classLilyPad_1_1Node_1a64f9012a2c91cba6643c72ac27ba447b" prot="public" virt="virtual"><scope>LilyPad::Label</scope><name>_ready</name></member>
+      <member refid="classLilyPad_1_1Node_1a709dfc4216cbe32bb0feb4fd6f950c6c" prot="public" virt="non-virtual"><scope>LilyPad::Label</scope><name>add_child</name></member>
+      <member refid="classLilyPad_1_1Node_1aa0237b4a8b9f6a7f8afd50f624308bca" prot="public" virt="non-virtual"><scope>LilyPad::Label</scope><name>get_child</name></member>
+      <member refid="classLilyPad_1_1Node_1a11001bec861954fe4a84106cf3b4319d" prot="public" virt="non-virtual"><scope>LilyPad::Label</scope><name>get_name</name></member>
+      <member refid="classLilyPad_1_1Label_1a3d5544a2d1a16f5f1f7c1fd644aaf680" prot="public" virt="non-virtual"><scope>LilyPad::Label</scope><name>Label</name></member>
+      <member refid="classLilyPad_1_1Node_1acdbf12ac48c1910f2d545780cf95c9a9" prot="public" virt="non-virtual"><scope>LilyPad::Label</scope><name>Node</name></member>
+      <member refid="classLilyPad_1_1Node_1a83a572baed92178d725e9e3d7f03f4f7" prot="public" virt="non-virtual"><scope>LilyPad::Label</scope><name>Node</name></member>
+      <member refid="classLilyPad_1_1Node_1ad5bf6b546875f2bf7765a49ad3913ef3" prot="public" virt="non-virtual"><scope>LilyPad::Label</scope><name>set_name</name></member>
+      <member refid="classLilyPad_1_1Node_1aedfc9699879aff34a53a33828cfa2957" prot="public" virt="virtual"><scope>LilyPad::Label</scope><name>~Node</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

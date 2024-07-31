@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classLilyPad_1_1Circle2D" kind="class" language="C++" prot="public">
+    <compoundname>LilyPad::Circle2D</compoundname>
+    <basecompoundref refid="classLilyPad_1_1Shape2D" prot="private" virt="non-virtual">LilyPad::Shape2D</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classLilyPad_1_1Circle2D_1ad8e9bca3cf4c52abce6f6e0543265dab" prot="private" static="no" mutable="no">
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">float</ref></type>
+        <definition>float LilyPad::Circle2D::_radius</definition>
+        <argsstring></argsstring>
+        <name>_radius</name>
+        <qualifiedname>LilyPad::Circle2D::_radius</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/scene/resources/2d/circle.hpp" line="14" column="7" bodyfile="LilyPadEngine/src/LilyPad/scene/resources/2d/circle.hpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classLilyPad_1_1Circle2D_1a6ae55720d13de22366bf9b8e3ed7c997" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>LilyPad::Circle2D::Circle2D</definition>
+        <argsstring>(float radius)</argsstring>
+        <name>Circle2D</name>
+        <qualifiedname>LilyPad::Circle2D::Circle2D</qualifiedname>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">float</ref></type>
+          <declname>radius</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/scene/resources/2d/circle.hpp" line="11" column="1" bodyfile="LilyPadEngine/src/LilyPad/scene/resources/2d/circle.cpp" bodystart="5" bodyend="5"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classLilyPad_1_1Circle2D_1afdc8d4d7d72173c83d071f503f7a3b67" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">float</ref></type>
+        <definition>float LilyPad::Circle2D::get_radius</definition>
+        <argsstring>()</argsstring>
+        <name>get_radius</name>
+        <qualifiedname>LilyPad::Circle2D::get_radius</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/scene/resources/2d/circle.hpp" line="16" column="7" bodyfile="LilyPadEngine/src/LilyPad/scene/resources/2d/circle.cpp" bodystart="7" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="classLilyPad_1_1Circle2D_1af1bcecfafa639c13f114b7f30fdc8d3f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">void</ref></type>
+        <definition>void LilyPad::Circle2D::set_radius</definition>
+        <argsstring>(float radius)</argsstring>
+        <name>set_radius</name>
+        <qualifiedname>LilyPad::Circle2D::set_radius</qualifiedname>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">float</ref></type>
+          <declname>radius</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/scene/resources/2d/circle.hpp" line="18" column="6" bodyfile="LilyPadEngine/src/LilyPad/scene/resources/2d/circle.cpp" bodystart="9" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classLilyPad_1_1Circle2D_1a24b0d6883a143d0fffc788a9cf4101d4" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="structLilyPad_1_1Rect2" kindref="compound">Rect2</ref></type>
+        <definition>Rect2 LilyPad::Circle2D::get_rect</definition>
+        <argsstring>() override</argsstring>
+        <name>get_rect</name>
+        <qualifiedname>LilyPad::Circle2D::get_rect</qualifiedname>
+        <reimplements refid="classLilyPad_1_1Shape2D_1a803906b01c88bcc19828efd469a81a19">get_rect</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/scene/resources/2d/circle.hpp" line="20" column="15" bodyfile="LilyPadEngine/src/LilyPad/scene/resources/2d/circle.cpp" bodystart="11" bodyend="11"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>LilyPad::Circle2D</label>
+        <link refid="classLilyPad_1_1Circle2D"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>LilyPad::Shape2D</label>
+        <link refid="classLilyPad_1_1Shape2D"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>LilyPad::Circle2D</label>
+        <link refid="classLilyPad_1_1Circle2D"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>LilyPad::Shape2D</label>
+        <link refid="classLilyPad_1_1Shape2D"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>position</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>LilyPad::Vector2</label>
+        <link refid="structLilyPad_1_1Vector2"/>
+      </node>
+    </collaborationgraph>
+    <location file="LilyPadEngine/src/LilyPad/scene/resources/2d/circle.hpp" line="8" column="1" bodyfile="LilyPadEngine/src/LilyPad/scene/resources/2d/circle.hpp" bodystart="9" bodyend="21"/>
+    <listofallmembers>
+      <member refid="classLilyPad_1_1Circle2D_1ad8e9bca3cf4c52abce6f6e0543265dab" prot="private" virt="non-virtual"><scope>LilyPad::Circle2D</scope><name>_radius</name></member>
+      <member refid="classLilyPad_1_1Circle2D_1a6ae55720d13de22366bf9b8e3ed7c997" prot="public" virt="non-virtual"><scope>LilyPad::Circle2D</scope><name>Circle2D</name></member>
+      <member refid="classLilyPad_1_1Circle2D_1afdc8d4d7d72173c83d071f503f7a3b67" prot="private" virt="non-virtual"><scope>LilyPad::Circle2D</scope><name>get_radius</name></member>
+      <member refid="classLilyPad_1_1Circle2D_1a24b0d6883a143d0fffc788a9cf4101d4" prot="private" virt="virtual"><scope>LilyPad::Circle2D</scope><name>get_rect</name></member>
+      <member refid="classLilyPad_1_1Circle2D_1af1bcecfafa639c13f114b7f30fdc8d3f" prot="private" virt="non-virtual"><scope>LilyPad::Circle2D</scope><name>set_radius</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

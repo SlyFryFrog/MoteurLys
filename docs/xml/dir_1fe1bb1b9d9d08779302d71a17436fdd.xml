@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_1fe1bb1b9d9d08779302d71a17436fdd" kind="dir">
+    <compoundname>LilyPadEngine/src/LilyPad/core</compoundname>
+    <innerdir refid="dir_4fea9f06a422cb78352270ea2efb669b">LilyPadEngine/src/LilyPad/core/io</innerdir>
+    <innerdir refid="dir_2f1f2c6dcce97b62f9637b9b8ceb1fd6">LilyPadEngine/src/LilyPad/core/math</innerdir>
+    <innerdir refid="dir_f20093ca57962d4a9290691b84c41003">LilyPadEngine/src/LilyPad/core/utils</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="LilyPadEngine/src/LilyPad/core/"/>
+  </compounddef>
+</doxygen>

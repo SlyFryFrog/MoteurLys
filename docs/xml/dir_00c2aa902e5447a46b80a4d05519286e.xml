@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_00c2aa902e5447a46b80a4d05519286e" kind="dir">
+    <compoundname>LilyPadEngine/src/LilyPad/scene/nodes/core</compoundname>
+    <innerfile refid="node_8cpp">node.cpp</innerfile>
+    <innerfile refid="node_8hpp">node.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="LilyPadEngine/src/LilyPad/scene/nodes/core/"/>
+  </compounddef>
+</doxygen>

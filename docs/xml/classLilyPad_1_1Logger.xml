@@ -1,0 +1,501 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classLilyPad_1_1Logger" kind="class" language="C++" prot="public">
+    <compoundname>LilyPad::Logger</compoundname>
+    <includes refid="logging_8hpp" local="no">logging.hpp</includes>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classLilyPad_1_1Logger_1a941fd8922b32b856e7460e5d8e21a9e8" prot="private" static="yes" mutable="no">
+        <type><ref refid="classLilyPad_1_1Logger" kindref="compound">Logger</ref> *</type>
+        <definition>Logger * LilyPad::Logger::_singleton</definition>
+        <argsstring></argsstring>
+        <name>_singleton</name>
+        <qualifiedname>LilyPad::Logger::_singleton</qualifiedname>
+        <initializer>= <ref refid="classLilyPad_1_1Vertices" kindref="compound">nullptr</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/debug/logging.hpp" line="45" column="15" bodyfile="LilyPadEngine/src/LilyPad/debug/logging.hpp" bodystart="45" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classLilyPad_1_1Logger_1a594a9b9cb016f77fd572829f406f8ffa" prot="private" static="no" mutable="no">
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">bool</ref></type>
+        <definition>bool LilyPad::Logger::_showLogs</definition>
+        <argsstring></argsstring>
+        <name>_showLogs</name>
+        <qualifiedname>LilyPad::Logger::_showLogs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/debug/logging.hpp" line="160" column="6" bodyfile="LilyPadEngine/src/LilyPad/debug/logging.hpp" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLilyPad_1_1Logger_1a6b52856c0cc170a286088709da9e0663" prot="private" static="no" mutable="no">
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">bool</ref></type>
+        <definition>bool LilyPad::Logger::_writeLogs</definition>
+        <argsstring></argsstring>
+        <name>_writeLogs</name>
+        <qualifiedname>LilyPad::Logger::_writeLogs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/debug/logging.hpp" line="161" column="6" bodyfile="LilyPadEngine/src/LilyPad/debug/logging.hpp" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLilyPad_1_1Logger_1a8d980c966222083dfeae5111ff663d16" prot="private" static="no" mutable="no">
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">bool</ref></type>
+        <definition>bool LilyPad::Logger::_showTimestamp</definition>
+        <argsstring></argsstring>
+        <name>_showTimestamp</name>
+        <qualifiedname>LilyPad::Logger::_showTimestamp</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/debug/logging.hpp" line="162" column="6" bodyfile="LilyPadEngine/src/LilyPad/debug/logging.hpp" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLilyPad_1_1Logger_1a53dbc46ae3d268859b24a201d775f930" prot="private" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex LilyPad::Logger::_logMutex</definition>
+        <argsstring></argsstring>
+        <name>_logMutex</name>
+        <qualifiedname>LilyPad::Logger::_logMutex</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/debug/logging.hpp" line="163" column="12" bodyfile="LilyPadEngine/src/LilyPad/debug/logging.hpp" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLilyPad_1_1Logger_1ab9214e1319ab856c941bb5a09bd03577" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string LilyPad::Logger::_file</definition>
+        <argsstring></argsstring>
+        <name>_file</name>
+        <qualifiedname>LilyPad::Logger::_file</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/debug/logging.hpp" line="164" column="13" bodyfile="LilyPadEngine/src/LilyPad/debug/logging.hpp" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLilyPad_1_1Logger_1a474a9164d772b093895892a3a7c5bb1b" prot="private" static="no" mutable="no">
+        <type>std::string *</type>
+        <definition>std::string* LilyPad::Logger::_timeFormat</definition>
+        <argsstring></argsstring>
+        <name>_timeFormat</name>
+        <qualifiedname>LilyPad::Logger::_timeFormat</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/debug/logging.hpp" line="165" column="13" bodyfile="LilyPadEngine/src/LilyPad/debug/logging.hpp" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLilyPad_1_1Logger_1a290c7a5ee1ddb0ad06ea16461646f4ca" prot="private" static="no" mutable="no">
+        <type>LogLevel</type>
+        <definition>LogLevel LilyPad::Logger::_minLogLevel</definition>
+        <argsstring></argsstring>
+        <name>_minLogLevel</name>
+        <qualifiedname>LilyPad::Logger::_minLogLevel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/debug/logging.hpp" line="166" column="10" bodyfile="LilyPadEngine/src/LilyPad/debug/logging.hpp" bodystart="166" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classLilyPad_1_1Logger_1a47a1f01494530476536fd701ca32bc71" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classLilyPad_1_1Logger" kindref="compound">Logger</ref> *</type>
+        <definition>Logger * LilyPad::Logger::get_singleton</definition>
+        <argsstring>()</argsstring>
+        <name>get_singleton</name>
+        <qualifiedname>LilyPad::Logger::get_singleton</qualifiedname>
+        <briefdescription>
+<para>Gets the current instance of the <ref refid="classLilyPad_1_1Logger" kindref="compound">Logger</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Logger* Pointer to the <ref refid="classLilyPad_1_1Logger" kindref="compound">Logger</ref> instance. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/debug/logging.hpp" line="53" column="15" bodyfile="LilyPadEngine/src/LilyPad/debug/logging.cpp" bodystart="58" bodyend="65"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classLilyPad_1_1Logger_1adc93cef21d7ad4e9d54eba2982ebdf05" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">void</ref></type>
+        <definition>void LilyPad::Logger::log</definition>
+        <argsstring>(const LogLevel &amp;level, Args... args)</argsstring>
+        <name>log</name>
+        <qualifiedname>LilyPad::Logger::log</qualifiedname>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">const</ref> LogLevel &amp;</type>
+          <declname>level</declname>
+        </param>
+        <param>
+          <type>Args...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/debug/logging.hpp" line="59" column="6" bodyfile="LilyPadEngine/src/LilyPad/debug/logging.hpp" bodystart="59" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="classLilyPad_1_1Logger_1ab53a3ed1219690f2a9370f8304858aef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">void</ref></type>
+        <definition>void LilyPad::Logger::set_log_file</definition>
+        <argsstring>(const std::string &amp;file)</argsstring>
+        <name>set_log_file</name>
+        <qualifiedname>LilyPad::Logger::set_log_file</qualifiedname>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">const</ref> std::string &amp;</type>
+          <declname>file</declname>
+        </param>
+        <briefdescription>
+<para>Set the log file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Relative path to the file. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/debug/logging.hpp" line="96" column="6" bodyfile="LilyPadEngine/src/LilyPad/debug/logging.cpp" bodystart="67" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classLilyPad_1_1Logger_1a62135d1966e7b4040d24db6db2df3752" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">void</ref></type>
+        <definition>void LilyPad::Logger::set_log_level</definition>
+        <argsstring>(const LogLevel &amp;level)</argsstring>
+        <name>set_log_level</name>
+        <qualifiedname>LilyPad::Logger::set_log_level</qualifiedname>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">const</ref> LogLevel &amp;</type>
+          <declname>level</declname>
+        </param>
+        <briefdescription>
+<para>Set the minimum log level to be recorded; defaults to DEBUG. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Minimum log level to be recorded. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/debug/logging.hpp" line="103" column="6" bodyfile="LilyPadEngine/src/LilyPad/debug/logging.cpp" bodystart="89" bodyend="89"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classLilyPad_1_1Logger_1a44f41a859095487d52791e2c85e37fe1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>LilyPad::Logger::Logger</definition>
+        <argsstring>()</argsstring>
+        <name>Logger</name>
+        <qualifiedname>LilyPad::Logger::Logger</qualifiedname>
+        <briefdescription>
+<para>Construct a new <ref refid="classLilyPad_1_1Logger" kindref="compound">Logger</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/debug/logging.hpp" line="109" column="1" bodyfile="LilyPadEngine/src/LilyPad/debug/logging.cpp" bodystart="16" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classLilyPad_1_1Logger_1a69e6f4c6bee82f1f4c806a834b121d2e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>LilyPad::Logger::~Logger</definition>
+        <argsstring>()</argsstring>
+        <name>~Logger</name>
+        <qualifiedname>LilyPad::Logger::~Logger</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/debug/logging.hpp" line="111" column="1" bodyfile="LilyPadEngine/src/LilyPad/debug/logging.cpp" bodystart="23" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classLilyPad_1_1Logger_1a4ee9ca66d6b6e2d1a57adc5b72ff4459" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">void</ref></type>
+        <definition>void LilyPad::Logger::print_log</definition>
+        <argsstring>(const LogLevel &amp;level, const std::string &amp;message) const</argsstring>
+        <name>print_log</name>
+        <qualifiedname>LilyPad::Logger::print_log</qualifiedname>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">const</ref> LogLevel &amp;</type>
+          <declname>level</declname>
+        </param>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">const</ref> std::string &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+<para>Prints the log to the console with the appropriate color. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/debug/logging.hpp" line="116" column="6" bodyfile="LilyPadEngine/src/LilyPad/debug/logging.cpp" bodystart="29" bodyend="56"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classLilyPad_1_1Logger_1a3f3c2e4dbfa24fb6d58e930959f50b26" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">typename</ref> <ref refid="classLilyPad_1_1Vertices" kindref="compound">Arg</ref></type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">void</ref></type>
+        <definition>static void LilyPad::Logger::append_to_stream</definition>
+        <argsstring>(std::stringstream &amp;stream, Arg arg)</argsstring>
+        <name>append_to_stream</name>
+        <qualifiedname>LilyPad::Logger::append_to_stream</qualifiedname>
+        <param>
+          <type>std::stringstream &amp;</type>
+          <declname>stream</declname>
+        </param>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">Arg</ref></type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+<para>Appends a single argument to a stringstream. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Arg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the argument to be appended. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>stream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The stringstream to which the argument will be appended. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>arg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The argument to be appended to the stringstream. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/debug/logging.hpp" line="126" column="13" bodyfile="LilyPadEngine/src/LilyPad/debug/logging.hpp" bodystart="126" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="classLilyPad_1_1Logger_1abd39bb57b0d76f3c49c36af9201e2ba8" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">typename</ref> <ref refid="classLilyPad_1_1Vertices" kindref="compound">Arg</ref></type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">void</ref></type>
+        <definition>static void LilyPad::Logger::append_to_stream</definition>
+        <argsstring>(std::stringstream &amp;stream, Arg arg, Args... args)</argsstring>
+        <name>append_to_stream</name>
+        <qualifiedname>LilyPad::Logger::append_to_stream</qualifiedname>
+        <param>
+          <type>std::stringstream &amp;</type>
+          <declname>stream</declname>
+        </param>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">Arg</ref></type>
+          <declname>arg</declname>
+        </param>
+        <param>
+          <type>Args...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>Recursively appends multiple arguments to a stringstream. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function appends multiple arguments to the provided stringstream by recursively appending each argument in the parameter pack.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Arg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the argument to be appended. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The types of remaining arguments. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>stream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The stringstream to which the argument will be appended. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>arg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first argument to be appended to the stringstream. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The remaining arguments to be appended to the stringstream. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/debug/logging.hpp" line="144" column="13" bodyfile="LilyPadEngine/src/LilyPad/debug/logging.hpp" bodystart="144" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="classLilyPad_1_1Logger_1aa678f2332d6a2b5ecf0400d53cf81ec8" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">const</ref> <ref refid="classLilyPad_1_1Vertices" kindref="compound">char</ref> *</type>
+        <definition>const char * LilyPad::Logger::get_log_type</definition>
+        <argsstring>(const LogLevel &amp;level)</argsstring>
+        <name>get_log_type</name>
+        <qualifiedname>LilyPad::Logger::get_log_type</qualifiedname>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">const</ref> LogLevel &amp;</type>
+          <declname>level</declname>
+        </param>
+        <briefdescription>
+<para>Get the log level as a const char *. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>LogLevel. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>const char* String equivalent of the LogLevel. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/debug/logging.hpp" line="156" column="19" bodyfile="LilyPadEngine/src/LilyPad/debug/logging.cpp" bodystart="69" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="classLilyPad_1_1Logger_1ab2fb0d9d4a46dc872ecffef40e440e87" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string LilyPad::Logger::get_formatted_time</definition>
+        <argsstring>(const std::string *timeFormat)</argsstring>
+        <name>get_formatted_time</name>
+        <qualifiedname>LilyPad::Logger::get_formatted_time</qualifiedname>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">const</ref> std::string *</type>
+          <declname>timeFormat</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/debug/logging.hpp" line="158" column="21" bodyfile="LilyPadEngine/src/LilyPad/debug/logging.cpp" bodystart="91" bodyend="103"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Class for recording events to console and a file. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="LilyPadEngine/src/LilyPad/debug/logging.hpp" line="43" column="1" bodyfile="LilyPadEngine/src/LilyPad/debug/logging.hpp" bodystart="44" bodyend="167"/>
+    <listofallmembers>
+      <member refid="classLilyPad_1_1Logger_1ab9214e1319ab856c941bb5a09bd03577" prot="private" virt="non-virtual"><scope>LilyPad::Logger</scope><name>_file</name></member>
+      <member refid="classLilyPad_1_1Logger_1a53dbc46ae3d268859b24a201d775f930" prot="private" virt="non-virtual"><scope>LilyPad::Logger</scope><name>_logMutex</name></member>
+      <member refid="classLilyPad_1_1Logger_1a290c7a5ee1ddb0ad06ea16461646f4ca" prot="private" virt="non-virtual"><scope>LilyPad::Logger</scope><name>_minLogLevel</name></member>
+      <member refid="classLilyPad_1_1Logger_1a594a9b9cb016f77fd572829f406f8ffa" prot="private" virt="non-virtual"><scope>LilyPad::Logger</scope><name>_showLogs</name></member>
+      <member refid="classLilyPad_1_1Logger_1a8d980c966222083dfeae5111ff663d16" prot="private" virt="non-virtual"><scope>LilyPad::Logger</scope><name>_showTimestamp</name></member>
+      <member refid="classLilyPad_1_1Logger_1a941fd8922b32b856e7460e5d8e21a9e8" prot="private" virt="non-virtual"><scope>LilyPad::Logger</scope><name>_singleton</name></member>
+      <member refid="classLilyPad_1_1Logger_1a474a9164d772b093895892a3a7c5bb1b" prot="private" virt="non-virtual"><scope>LilyPad::Logger</scope><name>_timeFormat</name></member>
+      <member refid="classLilyPad_1_1Logger_1a6b52856c0cc170a286088709da9e0663" prot="private" virt="non-virtual"><scope>LilyPad::Logger</scope><name>_writeLogs</name></member>
+      <member refid="classLilyPad_1_1Logger_1a3f3c2e4dbfa24fb6d58e930959f50b26" prot="private" virt="non-virtual"><scope>LilyPad::Logger</scope><name>append_to_stream</name></member>
+      <member refid="classLilyPad_1_1Logger_1abd39bb57b0d76f3c49c36af9201e2ba8" prot="private" virt="non-virtual"><scope>LilyPad::Logger</scope><name>append_to_stream</name></member>
+      <member refid="classLilyPad_1_1Logger_1ab2fb0d9d4a46dc872ecffef40e440e87" prot="private" virt="non-virtual"><scope>LilyPad::Logger</scope><name>get_formatted_time</name></member>
+      <member refid="classLilyPad_1_1Logger_1aa678f2332d6a2b5ecf0400d53cf81ec8" prot="private" virt="non-virtual"><scope>LilyPad::Logger</scope><name>get_log_type</name></member>
+      <member refid="classLilyPad_1_1Logger_1a47a1f01494530476536fd701ca32bc71" prot="public" virt="non-virtual"><scope>LilyPad::Logger</scope><name>get_singleton</name></member>
+      <member refid="classLilyPad_1_1Logger_1adc93cef21d7ad4e9d54eba2982ebdf05" prot="public" virt="non-virtual"><scope>LilyPad::Logger</scope><name>log</name></member>
+      <member refid="classLilyPad_1_1Logger_1a44f41a859095487d52791e2c85e37fe1" prot="private" virt="non-virtual"><scope>LilyPad::Logger</scope><name>Logger</name></member>
+      <member refid="classLilyPad_1_1Logger_1a4ee9ca66d6b6e2d1a57adc5b72ff4459" prot="private" virt="non-virtual"><scope>LilyPad::Logger</scope><name>print_log</name></member>
+      <member refid="classLilyPad_1_1Logger_1ab53a3ed1219690f2a9370f8304858aef" prot="public" virt="non-virtual"><scope>LilyPad::Logger</scope><name>set_log_file</name></member>
+      <member refid="classLilyPad_1_1Logger_1a62135d1966e7b4040d24db6db2df3752" prot="public" virt="non-virtual"><scope>LilyPad::Logger</scope><name>set_log_level</name></member>
+      <member refid="classLilyPad_1_1Logger_1a69e6f4c6bee82f1f4c806a834b121d2e" prot="private" virt="non-virtual"><scope>LilyPad::Logger</scope><name>~Logger</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

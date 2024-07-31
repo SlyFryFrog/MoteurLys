@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classLilyPad_1_1Input" kind="class" language="C++" prot="public">
+    <compoundname>LilyPad::Input</compoundname>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classLilyPad_1_1Input_1a1fb08f37849136712a2eecb689f70006" prot="private" static="yes" mutable="no">
+        <type><ref refid="classLilyPad_1_1Input" kindref="compound">Input</ref> *</type>
+        <definition>Input * LilyPad::Input::_singleton</definition>
+        <argsstring></argsstring>
+        <name>_singleton</name>
+        <qualifiedname>LilyPad::Input::_singleton</qualifiedname>
+        <initializer>= <ref refid="classLilyPad_1_1Vertices" kindref="compound">nullptr</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/io/input.hpp" line="12" column="14" bodyfile="LilyPadEngine/src/LilyPad/core/io/input.hpp" bodystart="12" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classLilyPad_1_1Input_1a80411e7ef3c18b30a6577aeada4834ea" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classLilyPad_1_1InputHandler" kindref="compound">InputHandler</ref> &gt;</type>
+        <definition>std::vector&lt;InputHandler&gt; LilyPad::Input::keys_pressed</definition>
+        <argsstring></argsstring>
+        <name>keys_pressed</name>
+        <qualifiedname>LilyPad::Input::keys_pressed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/io/input.hpp" line="15" column="13" bodyfile="LilyPadEngine/src/LilyPad/core/io/input.hpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classLilyPad_1_1Input_1a9d0393187255d3a82b1ca7daaf80ed8e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classLilyPad_1_1Input" kindref="compound">Input</ref> *</type>
+        <definition>Input * LilyPad::Input::get_singleton</definition>
+        <argsstring>()</argsstring>
+        <name>get_singleton</name>
+        <qualifiedname>LilyPad::Input::get_singleton</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/io/input.hpp" line="17" column="14" bodyfile="LilyPadEngine/src/LilyPad/core/io/input.cpp" bodystart="8" bodyend="14"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classLilyPad_1_1Input_1a3aed62cda2ca9ee25ac0f92ec0fffa36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">void</ref></type>
+        <definition>void LilyPad::Input::add_key_event</definition>
+        <argsstring>(const InputHandler &amp;event)</argsstring>
+        <name>add_key_event</name>
+        <qualifiedname>LilyPad::Input::add_key_event</qualifiedname>
+        <param>
+          <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">const</ref> <ref refid="classLilyPad_1_1InputHandler" kindref="compound">InputHandler</ref> &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/io/input.hpp" line="18" column="6"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classLilyPad_1_1Input_1ae40d030faf193e274f29986344430551" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>LilyPad::Input::Input</definition>
+        <argsstring>()</argsstring>
+        <name>Input</name>
+        <qualifiedname>LilyPad::Input::Input</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/io/input.hpp" line="21" column="1" bodyfile="LilyPadEngine/src/LilyPad/core/io/input.cpp" bodystart="16" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classLilyPad_1_1Input_1aaff952f712fbab267d578470a1d09533" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>LilyPad::Input::~Input</definition>
+        <argsstring>()</argsstring>
+        <name>~Input</name>
+        <qualifiedname>LilyPad::Input::~Input</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/core/io/input.hpp" line="22" column="1" bodyfile="LilyPadEngine/src/LilyPad/core/io/input.cpp" bodystart="18" bodyend="18"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="LilyPadEngine/src/LilyPad/core/io/input.hpp" line="10" column="1" bodyfile="LilyPadEngine/src/LilyPad/core/io/input.hpp" bodystart="11" bodyend="23"/>
+    <listofallmembers>
+      <member refid="classLilyPad_1_1Input_1a1fb08f37849136712a2eecb689f70006" prot="private" virt="non-virtual"><scope>LilyPad::Input</scope><name>_singleton</name></member>
+      <member refid="classLilyPad_1_1Input_1a3aed62cda2ca9ee25ac0f92ec0fffa36" prot="public" virt="non-virtual"><scope>LilyPad::Input</scope><name>add_key_event</name></member>
+      <member refid="classLilyPad_1_1Input_1a9d0393187255d3a82b1ca7daaf80ed8e" prot="public" virt="non-virtual"><scope>LilyPad::Input</scope><name>get_singleton</name></member>
+      <member refid="classLilyPad_1_1Input_1ae40d030faf193e274f29986344430551" prot="private" virt="non-virtual"><scope>LilyPad::Input</scope><name>Input</name></member>
+      <member refid="classLilyPad_1_1Input_1a80411e7ef3c18b30a6577aeada4834ea" prot="public" virt="non-virtual"><scope>LilyPad::Input</scope><name>keys_pressed</name></member>
+      <member refid="classLilyPad_1_1Input_1aaff952f712fbab267d578470a1d09533" prot="private" virt="non-virtual"><scope>LilyPad::Input</scope><name>~Input</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

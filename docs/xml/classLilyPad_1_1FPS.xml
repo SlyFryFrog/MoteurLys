@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classLilyPad_1_1FPS" kind="class" language="C++" prot="public">
+    <compoundname>LilyPad::FPS</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classLilyPad_1_1FPS_1aa3db4edf0daba8980933fee5128eda45" prot="private" static="no" mutable="no">
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">double</ref></type>
+        <definition>double LilyPad::FPS::lastFrameTime</definition>
+        <argsstring></argsstring>
+        <name>lastFrameTime</name>
+        <qualifiedname>LilyPad::FPS::lastFrameTime</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/debug/fps.hpp" line="24" column="8" bodyfile="LilyPadEngine/src/LilyPad/debug/fps.hpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLilyPad_1_1FPS_1a828af1338445f276e8b98f3c724452ac" prot="private" static="no" mutable="no">
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">double</ref></type>
+        <definition>double LilyPad::FPS::currentFrameTime</definition>
+        <argsstring></argsstring>
+        <name>currentFrameTime</name>
+        <qualifiedname>LilyPad::FPS::currentFrameTime</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/debug/fps.hpp" line="25" column="8" bodyfile="LilyPadEngine/src/LilyPad/debug/fps.hpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classLilyPad_1_1FPS_1a90c6b2619877f4c8909cd450378be14d" prot="private" static="no" mutable="no">
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">double</ref></type>
+        <definition>double LilyPad::FPS::frameRate</definition>
+        <argsstring></argsstring>
+        <name>frameRate</name>
+        <qualifiedname>LilyPad::FPS::frameRate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/debug/fps.hpp" line="26" column="8" bodyfile="LilyPadEngine/src/LilyPad/debug/fps.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classLilyPad_1_1FPS_1ada3f6a0e56f2b4beab2468006b783cea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>LilyPad::FPS::FPS</definition>
+        <argsstring>()</argsstring>
+        <name>FPS</name>
+        <qualifiedname>LilyPad::FPS::FPS</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/debug/fps.hpp" line="10" column="1" bodyfile="LilyPadEngine/src/LilyPad/debug/fps.cpp" bodystart="8" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classLilyPad_1_1FPS_1a22eb7a9d1c98127c3ab522b43d61b5d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">void</ref></type>
+        <definition>void LilyPad::FPS::update</definition>
+        <argsstring>()</argsstring>
+        <name>update</name>
+        <qualifiedname>LilyPad::FPS::update</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/debug/fps.hpp" line="13" column="6" bodyfile="LilyPadEngine/src/LilyPad/debug/fps.cpp" bodystart="14" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classLilyPad_1_1FPS_1ac6d3795d2b8ae28c4fba747fcd87eaa4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classLilyPad_1_1Vertices" kindref="compound">double</ref></type>
+        <definition>double LilyPad::FPS::get_delta</definition>
+        <argsstring>()</argsstring>
+        <name>get_delta</name>
+        <qualifiedname>LilyPad::FPS::get_delta</qualifiedname>
+        <briefdescription>
+<para>Gets the delta between frames. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>double Time between frames in terms of seconds. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/debug/fps.hpp" line="20" column="8" bodyfile="LilyPadEngine/src/LilyPad/debug/fps.cpp" bodystart="20" bodyend="23"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="LilyPadEngine/src/LilyPad/debug/fps.hpp" line="7" column="1" bodyfile="LilyPadEngine/src/LilyPad/debug/fps.hpp" bodystart="8" bodyend="27"/>
+    <listofallmembers>
+      <member refid="classLilyPad_1_1FPS_1a828af1338445f276e8b98f3c724452ac" prot="private" virt="non-virtual"><scope>LilyPad::FPS</scope><name>currentFrameTime</name></member>
+      <member refid="classLilyPad_1_1FPS_1ada3f6a0e56f2b4beab2468006b783cea" prot="public" virt="non-virtual"><scope>LilyPad::FPS</scope><name>FPS</name></member>
+      <member refid="classLilyPad_1_1FPS_1a90c6b2619877f4c8909cd450378be14d" prot="private" virt="non-virtual"><scope>LilyPad::FPS</scope><name>frameRate</name></member>
+      <member refid="classLilyPad_1_1FPS_1ac6d3795d2b8ae28c4fba747fcd87eaa4" prot="public" virt="non-virtual"><scope>LilyPad::FPS</scope><name>get_delta</name></member>
+      <member refid="classLilyPad_1_1FPS_1aa3db4edf0daba8980933fee5128eda45" prot="private" virt="non-virtual"><scope>LilyPad::FPS</scope><name>lastFrameTime</name></member>
+      <member refid="classLilyPad_1_1FPS_1a22eb7a9d1c98127c3ab522b43d61b5d4" prot="public" virt="non-virtual"><scope>LilyPad::FPS</scope><name>update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,79 @@
+\doxysection{vector2.\+hpp}
+\hypertarget{vector2_8hpp_source}{}\label{vector2_8hpp_source}\index{LilyPadEngine/src/LilyPad/core/math/vector2.hpp@{LilyPadEngine/src/LilyPad/core/math/vector2.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}LilyPad/core/utils/typedef.hpp"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }LilyPad}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLilyPad_1_1Vector2}{Vector2}}}
+\DoxyCodeLine{00008\ \ \ \ \ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ fp\_type\ x;}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ fp\_type\ y;}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structLilyPad_1_1Vector2}{Vector2}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structLilyPad_1_1Vector2}{Vector2}}(\textcolor{keyword}{const}\ fp\_type\ x,\ \textcolor{keyword}{const}\ fp\_type\ y)\ :\ x(x),\ y(y)\ \{\}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structLilyPad_1_1Vector2}{Vector2}}\ clamp(fp\_type\ min\_x,\ fp\_type\ max\_x,\ fp\_type\ min\_y,\ fp\_type\ max\_y);}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structLilyPad_1_1Vector2}{Vector2}}\ clamp(\textcolor{keyword}{const}\ \mbox{\hyperlink{structLilyPad_1_1Vector2}{Vector2}}\ \&min,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structLilyPad_1_1Vector2}{Vector2}}\ \&max);}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ fp\_type\ dot\_product(\textcolor{keyword}{const}\ \mbox{\hyperlink{structLilyPad_1_1Vector2}{Vector2}}\ \&p\_vec1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structLilyPad_1_1Vector2}{Vector2}}\ \&p\_vec2);}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ fp\_type\ dot\_product(\textcolor{keyword}{const}\ \mbox{\hyperlink{structLilyPad_1_1Vector2}{Vector2}}\ \&p\_vec1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structLilyPad_1_1Vector2}{Vector2}}\ \&p\_vec2,\ \textcolor{keyword}{const}\ fp\_type\ \&theta);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \mbox{\hyperlink{structLilyPad_1_1Vector2}{Vector2}}\ normalized()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ is\_normalized()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ [[nodiscard]]\ fp\_type\ magnitude()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ [[nodiscard]]\ fp\_type\ magnitude\_squared()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \_FORCE\_INLINE\_\ \mbox{\hyperlink{structLilyPad_1_1Vector2}{Vector2}}\ operator+(\textcolor{keyword}{const}\ fp\_type\ scalar)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \{x\ +\ scalar,\ y\ +\ scalar\};\ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \_FORCE\_INLINE\_\ \mbox{\hyperlink{structLilyPad_1_1Vector2}{Vector2}}\ operator-\/(\textcolor{keyword}{const}\ fp\_type\ scalar)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \{x\ -\/\ scalar,\ y\ -\/\ scalar\};\ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \_FORCE\_INLINE\_\ \mbox{\hyperlink{structLilyPad_1_1Vector2}{Vector2}}\ operator*(\textcolor{keyword}{const}\ fp\_type\ scalar)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \{x\ *\ scalar,\ y\ *\ scalar\};\ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \_FORCE\_INLINE\_\ \mbox{\hyperlink{structLilyPad_1_1Vector2}{Vector2}}\ operator/(\textcolor{keyword}{const}\ fp\_type\ scalar)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \{x\ /\ scalar,\ y\ /\ scalar\};\ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \_FORCE\_INLINE\_\ \mbox{\hyperlink{structLilyPad_1_1Vector2}{Vector2}}\ operator+(\textcolor{keyword}{const}\ \mbox{\hyperlink{structLilyPad_1_1Vector2}{Vector2}}\ \&other)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \{x\ +\ other.x,\ y\ +\ other.y\};\ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \_FORCE\_INLINE\_\ \mbox{\hyperlink{structLilyPad_1_1Vector2}{Vector2}}\ operator-\/(\textcolor{keyword}{const}\ \mbox{\hyperlink{structLilyPad_1_1Vector2}{Vector2}}\ \&other)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \{x\ -\/\ other.x,\ y\ -\/\ other.y\};\ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \_FORCE\_INLINE\_\ \mbox{\hyperlink{structLilyPad_1_1Vector2}{Vector2}}\ operator*(\textcolor{keyword}{const}\ \mbox{\hyperlink{structLilyPad_1_1Vector2}{Vector2}}\ \&other)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \{x\ *\ other.x,\ y\ *\ other.y\};\ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \_FORCE\_INLINE\_\ \mbox{\hyperlink{structLilyPad_1_1Vector2}{Vector2}}\ operator/(\textcolor{keyword}{const}\ \mbox{\hyperlink{structLilyPad_1_1Vector2}{Vector2}}\ \&other)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \{x\ /\ other.x,\ y\ /\ other.y\};\ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \_FORCE\_INLINE\_\ \textcolor{keywordtype}{void}\ operator+=(\textcolor{keyword}{const}\ \mbox{\hyperlink{structLilyPad_1_1Vector2}{Vector2}}\ \&other)}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ x\ +=\ other.x;}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ y\ +=\ other.y;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \_FORCE\_INLINE\_\ \textcolor{keywordtype}{void}\ operator-\/=(\textcolor{keyword}{const}\ \mbox{\hyperlink{structLilyPad_1_1Vector2}{Vector2}}\ \&other)}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ x\ -\/=\ other.x;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ y\ -\/=\ other.y;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \_FORCE\_INLINE\_\ \textcolor{keywordtype}{void}\ operator*=(\textcolor{keyword}{const}\ \mbox{\hyperlink{structLilyPad_1_1Vector2}{Vector2}}\ \&other)}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ x\ *=\ other.x;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ y\ *=\ other.y;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \_FORCE\_INLINE\_\ \textcolor{keywordtype}{void}\ operator/=(\textcolor{keyword}{const}\ \mbox{\hyperlink{structLilyPad_1_1Vector2}{Vector2}}\ \&other)}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ x\ /=\ other.x;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ y\ /=\ other.y;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \_FORCE\_INLINE\_\ \textcolor{keywordtype}{bool}\ operator<=>(\textcolor{keyword}{const}\ \mbox{\hyperlink{structLilyPad_1_1Vector2}{Vector2}}\ \&other)\ \textcolor{keyword}{const}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00072\ \ \ \ \ \};\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structLilyPad_1_1Vector2}{Vector2}}\ \mbox{\hyperlink{structLilyPad_1_1Vector2}{Point2}};}
+\DoxyCodeLine{00073\ \}\ \textcolor{comment}{//\ namespace\ LilyPad}}
+
+\end{DoxyCode}

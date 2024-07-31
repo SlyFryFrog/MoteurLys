@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="vector3_8cpp" kind="file" language="C++">
+    <compoundname>vector3.cpp</compoundname>
+    <includes refid="vector3_8hpp" local="yes">LilyPad/core/math/vector3.hpp</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>LilyPadEngine/src/LilyPad/core/math/vector3.cpp</label>
+        <link refid="vector3_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>LilyPad/core/math/vector3.hpp</label>
+        <link refid="vector3_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>LilyPad/core/utils/typedef.hpp</label>
+        <link refid="typedef_8hpp_source"/>
+      </node>
+      <node id="3">
+        <label>glm/glm.hpp</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceLilyPad">LilyPad</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;LilyPad/core/math/vector3.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">LilyPad</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector3::Vector3(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>fp_type<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>fp_type<sp/>y,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>fp_type<sp/>z)<sp/>:<sp/>x(x),<sp/>y(y),<sp/>z(z)<sp/>{}</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector3<sp/>Vector3::cross(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector3<sp/>&amp;other)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="8"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{y<sp/>*<sp/>other.z<sp/>-<sp/>z<sp/>*<sp/>other.y,<sp/>z<sp/>*<sp/>other.x<sp/>-<sp/>x<sp/>*<sp/>other.z,<sp/>x<sp/>*<sp/>other.y<sp/>-<sp/>y<sp/>*<sp/>other.x};</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector3<sp/>Vector3::cross(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector3<sp/>&amp;vector_a,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector3<sp/>&amp;vector_b)</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{vector_a.z<sp/>*<sp/>vector_b.z<sp/>-<sp/>vector_a.z<sp/>*<sp/>vector_b.y,<sp/>vector_a.z<sp/>*<sp/>vector_a.x<sp/>-<sp/>vector_a.x<sp/>*<sp/>vector_b.z,</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vector_a.x<sp/>*<sp/>vector_b.y<sp/>-<sp/>vector_a.y<sp/>*<sp/>vector_b.x};</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>fp_type<sp/>Vector3::dot(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector3<sp/>&amp;other)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>x<sp/>*<sp/>other.x<sp/>+<sp/>y<sp/>*<sp/>other.y<sp/>+<sp/>z<sp/>*<sp/>other.z;<sp/>}</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector3<sp/>Vector3::normalize()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="21"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fp_type<sp/>length<sp/>=<sp/>std::sqrt(x<sp/>*<sp/>x<sp/>+<sp/>y<sp/>*<sp/>y<sp/>+<sp/>z<sp/>*<sp/>z);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{x<sp/>/<sp/>length,<sp/>y<sp/>/<sp/>length,<sp/>z<sp/>/<sp/>length};</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector3<sp/>Vector3::normalize(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector3<sp/>&amp;vector)</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fp_type<sp/>length<sp/>=<sp/>std::sqrt(vector.x<sp/>*<sp/>vector.x<sp/>+<sp/>vector.y<sp/>*<sp/>vector.y<sp/>+<sp/>vector.z<sp/>*<sp/>vector.z);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{vector.x<sp/>/<sp/>length,<sp/>vector.y<sp/>/<sp/>length,<sp/>vector.z<sp/>/<sp/>length};</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>LilyPad</highlight></codeline>
+    </programlisting>
+    <location file="LilyPadEngine/src/LilyPad/core/math/vector3.cpp"/>
+  </compounddef>
+</doxygen>

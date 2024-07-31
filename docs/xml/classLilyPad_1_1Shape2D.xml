@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classLilyPad_1_1Shape2D" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>LilyPad::Shape2D</compoundname>
+    <derivedcompoundref refid="classLilyPad_1_1Circle2D" prot="private" virt="non-virtual">LilyPad::Circle2D</derivedcompoundref>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classLilyPad_1_1Shape2D_1aa5ecfc4f9f4bac5525022ada7cd12c33" prot="protected" static="no" mutable="no">
+        <type><ref refid="structLilyPad_1_1Vector2" kindref="compound">Point2</ref></type>
+        <definition>Point2 LilyPad::Shape2D::position</definition>
+        <argsstring></argsstring>
+        <name>position</name>
+        <qualifiedname>LilyPad::Shape2D::position</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/scene/resources/2d/shape.hpp" line="11" column="8" bodyfile="LilyPadEngine/src/LilyPad/scene/resources/2d/shape.hpp" bodystart="11" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classLilyPad_1_1Shape2D_1a803906b01c88bcc19828efd469a81a19" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="structLilyPad_1_1Rect2" kindref="compound">Rect2</ref></type>
+        <definition>virtual Rect2 LilyPad::Shape2D::get_rect</definition>
+        <argsstring>()=0</argsstring>
+        <name>get_rect</name>
+        <qualifiedname>LilyPad::Shape2D::get_rect</qualifiedname>
+        <reimplementedby refid="classLilyPad_1_1Circle2D_1a24b0d6883a143d0fffc788a9cf4101d4">get_rect</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LilyPadEngine/src/LilyPad/scene/resources/2d/shape.hpp" line="14" column="15"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>LilyPad::Circle2D</label>
+        <link refid="classLilyPad_1_1Circle2D"/>
+        <childnode refid="1" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>LilyPad::Shape2D</label>
+        <link refid="classLilyPad_1_1Shape2D"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>LilyPad::Shape2D</label>
+        <link refid="classLilyPad_1_1Shape2D"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>position</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>LilyPad::Vector2</label>
+        <link refid="structLilyPad_1_1Vector2"/>
+      </node>
+    </collaborationgraph>
+    <location file="LilyPadEngine/src/LilyPad/scene/resources/2d/shape.hpp" line="8" column="1" bodyfile="LilyPadEngine/src/LilyPad/scene/resources/2d/shape.hpp" bodystart="9" bodyend="15"/>
+    <listofallmembers>
+      <member refid="classLilyPad_1_1Shape2D_1a803906b01c88bcc19828efd469a81a19" prot="public" virt="pure-virtual"><scope>LilyPad::Shape2D</scope><name>get_rect</name></member>
+      <member refid="classLilyPad_1_1Shape2D_1aa5ecfc4f9f4bac5525022ada7cd12c33" prot="protected" virt="non-virtual"><scope>LilyPad::Shape2D</scope><name>position</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
