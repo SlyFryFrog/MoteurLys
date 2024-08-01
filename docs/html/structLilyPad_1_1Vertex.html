@@ -86,11 +86,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad857abd2a448fa6d3fa1bc772299d414" id="r_ad857abd2a448fa6d3fa1bc772299d414"><td class="memItemLeft" align="right" valign="top"><a id="ad857abd2a448fa6d3fa1bc772299d414" name="ad857abd2a448fa6d3fa1bc772299d414"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Vertex</b> (std::initializer_list&lt; std::initializer_list&lt; T &gt; &gt; dataPoints)</td></tr>
 <tr class="separator:ad857abd2a448fa6d3fa1bc772299d414"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acaba30ac00b688650867a2890bde4654" id="r_acaba30ac00b688650867a2890bde4654"><td class="memItemLeft" align="right" valign="top"><a id="acaba30ac00b688650867a2890bde4654" name="acaba30ac00b688650867a2890bde4654"></a>
-std::vector&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>get_data</b> (int array_index)</td></tr>
-<tr class="separator:acaba30ac00b688650867a2890bde4654"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58db2fb58c48987d173eab6682c02154" id="r_a58db2fb58c48987d173eab6682c02154"><td class="memItemLeft" align="right" valign="top"><a id="a58db2fb58c48987d173eab6682c02154" name="a58db2fb58c48987d173eab6682c02154"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>size</b> ()</td></tr>
+<tr class="memitem:a42c1316ef25e36eb9bbff83b1676e53c" id="r_a42c1316ef25e36eb9bbff83b1676e53c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLilyPad_1_1Vertex.html#a42c1316ef25e36eb9bbff83b1676e53c">get_data</a> (int index)</td></tr>
+<tr class="memdesc:a42c1316ef25e36eb9bbff83b1676e53c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the 1D sub array at the given index.  <br /></td></tr>
+<tr class="separator:a42c1316ef25e36eb9bbff83b1676e53c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58db2fb58c48987d173eab6682c02154" id="r_a58db2fb58c48987d173eab6682c02154"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLilyPad_1_1Vertex.html#a58db2fb58c48987d173eab6682c02154">size</a> ()</td></tr>
+<tr class="memdesc:a58db2fb58c48987d173eab6682c02154"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the size of the 2D array.  <br /></td></tr>
 <tr class="separator:a58db2fb58c48987d173eab6682c02154"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -99,6 +99,74 @@ Public Attributes</h2></td></tr>
 std::vector&lt; std::vector&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>data</b></td></tr>
 <tr class="separator:ae6b11093bfaea8134fcdaed17b591289"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a42c1316ef25e36eb9bbff83b1676e53c" name="a42c1316ef25e36eb9bbff83b1676e53c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42c1316ef25e36eb9bbff83b1676e53c">&#9670;&#160;</a></span>get_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; T &gt; <a class="el" href="structLilyPad_1_1Vertex.html">LilyPad::Vertex</a>&lt; T &gt;::get_data </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the 1D sub array at the given index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Index of the requested array. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;T&gt; Data of the array. </dd></dl>
+
+</div>
+</div>
+<a id="a58db2fb58c48987d173eab6682c02154" name="a58db2fb58c48987d173eab6682c02154"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58db2fb58c48987d173eab6682c02154">&#9670;&#160;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="structLilyPad_1_1Vertex.html">LilyPad::Vertex</a>&lt; T &gt;::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the size of the 2D array. </p>
+<dl class="section return"><dt>Returns</dt><dd>int Total number of elements. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>LilyPadEngine/src/LilyPad/renderer/OpenGL/<a class="el" href="vertex_8hpp_source.html">vertex.hpp</a></li>
 </ul>

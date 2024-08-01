@@ -82,14 +82,66 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:abc16552abd19d3ca2c875ff0b9fab2aa" id="r_abc16552abd19d3ca2c875ff0b9fab2aa"><td class="memTemplParams" colspan="2"><a id="abc16552abd19d3ca2c875ff0b9fab2aa" name="abc16552abd19d3ca2c875ff0b9fab2aa"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:abc16552abd19d3ca2c875ff0b9fab2aa"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>bind_vertices</b> (<a class="el" href="classLilyPad_1_1Vertices.html">Vertices</a>&lt; T &gt; vertices)</td></tr>
+<tr class="memitem:ab576e2eb542bc9e5639048151c78c128" id="r_ab576e2eb542bc9e5639048151c78c128"><td class="memItemLeft" align="right" valign="top"><a id="ab576e2eb542bc9e5639048151c78c128" name="ab576e2eb542bc9e5639048151c78c128"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Bind</b> ()</td></tr>
+<tr class="memdesc:ab576e2eb542bc9e5639048151c78c128"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <code>glGenVertexArrays</code> and `glGenBuffers. <br /></td></tr>
+<tr class="separator:ab576e2eb542bc9e5639048151c78c128"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dbc3a45ed6e058e8ce4e88fd31b4ed5" id="r_a1dbc3a45ed6e058e8ce4e88fd31b4ed5"><td class="memItemLeft" align="right" valign="top"><a id="a1dbc3a45ed6e058e8ce4e88fd31b4ed5" name="a1dbc3a45ed6e058e8ce4e88fd31b4ed5"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~Bind</b> ()</td></tr>
+<tr class="memdesc:a1dbc3a45ed6e058e8ce4e88fd31b4ed5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <code>glDeleteVertexArrays</code> and <code>glDeleteBuffers</code> on binded data. <br /></td></tr>
+<tr class="separator:a1dbc3a45ed6e058e8ce4e88fd31b4ed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc16552abd19d3ca2c875ff0b9fab2aa" id="r_abc16552abd19d3ca2c875ff0b9fab2aa"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:abc16552abd19d3ca2c875ff0b9fab2aa"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classLilyPad_1_1Bind.html#abc16552abd19d3ca2c875ff0b9fab2aa">bind_vertices</a> (<a class="el" href="classLilyPad_1_1Vertices.html">Vertices</a>&lt; T &gt; vertices)</td></tr>
+<tr class="memdesc:abc16552abd19d3ca2c875ff0b9fab2aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds the VAO (<a class="el" href="structLilyPad_1_1Vertex.html">Vertex</a> Array Object) and then binds the VBO (<a class="el" href="structLilyPad_1_1Vertex.html">Vertex</a> Buffer Object).  <br /></td></tr>
 <tr class="separator:abc16552abd19d3ca2c875ff0b9fab2aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46cb6686336834605b6a79a3b360fb26" id="r_a46cb6686336834605b6a79a3b360fb26"><td class="memItemLeft" align="right" valign="top"><a id="a46cb6686336834605b6a79a3b360fb26" name="a46cb6686336834605b6a79a3b360fb26"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>bind_vertex_array</b> () const</td></tr>
+<tr class="memdesc:a46cb6686336834605b6a79a3b360fb26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds the <a class="el" href="structLilyPad_1_1Vertex.html">Vertex</a> Array Object (VAO). <br /></td></tr>
 <tr class="separator:a46cb6686336834605b6a79a3b360fb26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="abc16552abd19d3ca2c875ff0b9fab2aa" name="abc16552abd19d3ca2c875ff0b9fab2aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc16552abd19d3ca2c875ff0b9fab2aa">&#9670;&#160;</a></span>bind_vertices()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LilyPad::Bind::bind_vertices </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classLilyPad_1_1Vertices.html">Vertices</a>&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>vertices</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Binds the VAO (<a class="el" href="structLilyPad_1_1Vertex.html">Vertex</a> Array Object) and then binds the VBO (<a class="el" href="structLilyPad_1_1Vertex.html">Vertex</a> Buffer Object). </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Data being stored in the vertices. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vertices</td><td>The data to be binded. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>LilyPadEngine/src/LilyPad/renderer/OpenGL/binding/<a class="el" href="bind_8hpp_source.html">bind.hpp</a></li>
 <li>LilyPadEngine/src/LilyPad/renderer/OpenGL/binding/<b>bind.cpp</b></li>

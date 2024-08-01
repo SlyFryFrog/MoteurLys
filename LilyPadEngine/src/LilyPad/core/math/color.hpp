@@ -9,5 +9,4 @@ namespace LilyPad
         float b;
         float a;
     };
-    
 } // namespace LilyPad

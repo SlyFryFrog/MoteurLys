@@ -8,8 +8,7 @@ namespace LilyPad
 {
 	File::File() = default;
 
-	 File::~File() = default;
-
+	File::~File() = default;
 
 	File::File(const std::string &path) : _path(path) {}
 
@@ -42,4 +41,7 @@ namespace LilyPad
 
 	std::string File::read_file() const { return read_file(_path); }
 
+	void File::set_path(const std::string &path) { _path = path; }
+
+	std::string File::get_path() const { return _path; }
 } // namespace LilyPad

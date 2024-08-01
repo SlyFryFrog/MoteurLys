@@ -16,16 +16,22 @@
 \DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classLilyPad_1_1File}{\string~File}}();}
 \DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classLilyPad_1_1File}{File}}(\textcolor{keyword}{const}\ std::string\ \&path);}
 \DoxyCodeLine{00014\ }
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ is\_updated()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ update();}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \mbox{\hyperlink{classLilyPad_1_1File_abdf6730144ed402662c0df7850dadf8c}{read\_file}}(\textcolor{keyword}{const}\ std::string\ \&path);}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ [[nodiscard]]\ std::string\ read\_file()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ std::filesystem::file\_time\_type\ \_lastTime;}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ std::string\ \_path;}
-\DoxyCodeLine{00030\ \ \ \ \ \};}
-\DoxyCodeLine{00031\ \}\ \textcolor{comment}{//\ namespace\ LilyPad}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classLilyPad_1_1File_aa0997ba11340541fadc11a98cc923996}{is\_updated}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLilyPad_1_1File_a3c2ff3d1eec0947306a5ac5e68181eeb}{update}}();}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \mbox{\hyperlink{classLilyPad_1_1File_a3b927c752c37d0002b2dbba02e035bbf}{read\_file}}(\textcolor{keyword}{const}\ std::string\ \&path);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ [[nodiscard]]\ std::string\ \mbox{\hyperlink{classLilyPad_1_1File_a3b927c752c37d0002b2dbba02e035bbf}{read\_file}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_path(\textcolor{keyword}{const}\ std::string\ \&path);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ std::string\ get\_path()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ std::filesystem::file\_time\_type\ \_lastTime;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ std::string\ \_path;}
+\DoxyCodeLine{00052\ \ \ \ \ \};}
+\DoxyCodeLine{00053\ \}\ \textcolor{comment}{//\ namespace\ LilyPad}}
 
 \end{DoxyCode}

@@ -12,20 +12,23 @@ Inheritance diagram for Lily\+Pad\+::File\+:\begin{figure}[H]
 \Hypertarget{classLilyPad_1_1File_ae5c0158748268bb6f313701ef7fa44c1}\label{classLilyPad_1_1File_ae5c0158748268bb6f313701ef7fa44c1} 
 {\bfseries File} (const std\+::string \&path)
 \item 
-\Hypertarget{classLilyPad_1_1File_aa0997ba11340541fadc11a98cc923996}\label{classLilyPad_1_1File_aa0997ba11340541fadc11a98cc923996} 
-bool {\bfseries is\+\_\+updated} () const
+bool \mbox{\hyperlink{classLilyPad_1_1File_aa0997ba11340541fadc11a98cc923996}{is\+\_\+updated}} () const
+\begin{DoxyCompactList}\small\item\em Checks if that last write time has changed since the last check. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classLilyPad_1_1File_a3c2ff3d1eec0947306a5ac5e68181eeb}{update}} ()
+\begin{DoxyCompactList}\small\item\em Empty implementation that should be overrided to add functionality. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classLilyPad_1_1File_a3b927c752c37d0002b2dbba02e035bbf}{read\+\_\+file}} () const
+\begin{DoxyCompactList}\small\item\em Returns the contents of the previously set file path. Will always catch errors. \end{DoxyCompactList}\item 
+\Hypertarget{classLilyPad_1_1File_a23b2eec25f9fffa112b5dcf0bac98987}\label{classLilyPad_1_1File_a23b2eec25f9fffa112b5dcf0bac98987} 
+void {\bfseries set\+\_\+path} (const std\+::string \&path)
 \item 
-\Hypertarget{classLilyPad_1_1File_a3c2ff3d1eec0947306a5ac5e68181eeb}\label{classLilyPad_1_1File_a3c2ff3d1eec0947306a5ac5e68181eeb} 
-virtual void {\bfseries update} ()
-\item 
-\Hypertarget{classLilyPad_1_1File_a3b927c752c37d0002b2dbba02e035bbf}\label{classLilyPad_1_1File_a3b927c752c37d0002b2dbba02e035bbf} 
-std\+::string {\bfseries read\+\_\+file} () const
+\Hypertarget{classLilyPad_1_1File_a239fc2d81b19eb5abe2bdaf85887e37e}\label{classLilyPad_1_1File_a239fc2d81b19eb5abe2bdaf85887e37e} 
+std\+::string {\bfseries get\+\_\+path} () const
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static std\+::string \mbox{\hyperlink{classLilyPad_1_1File_abdf6730144ed402662c0df7850dadf8c}{read\+\_\+file}} (const std\+::string \&path)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns the contents of the given file. Will always catch errors. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -38,11 +41,43 @@ std\+::string {\bfseries \+\_\+path}
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{classLilyPad_1_1File_aa0997ba11340541fadc11a98cc923996}\label{classLilyPad_1_1File_aa0997ba11340541fadc11a98cc923996} 
+\index{LilyPad::File@{LilyPad::File}!is\_updated@{is\_updated}}
+\index{is\_updated@{is\_updated}!LilyPad::File@{LilyPad::File}}
+\doxysubsubsection{\texorpdfstring{is\_updated()}{is\_updated()}}
+{\footnotesize\ttfamily bool Lily\+Pad\+::\+File\+::is\+\_\+updated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks if that last write time has changed since the last check. 
+
+\begin{DoxyReturn}{Returns}
+true if the file has been updated since \+\_\+last\+Time. 
+
+false if the file has not been updated since \+\_\+last\+Time. 
+\end{DoxyReturn}
+\Hypertarget{classLilyPad_1_1File_a3b927c752c37d0002b2dbba02e035bbf}\label{classLilyPad_1_1File_a3b927c752c37d0002b2dbba02e035bbf} 
+\index{LilyPad::File@{LilyPad::File}!read\_file@{read\_file}}
+\index{read\_file@{read\_file}!LilyPad::File@{LilyPad::File}}
+\doxysubsubsection{\texorpdfstring{read\_file()}{read\_file()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string Lily\+Pad\+::\+File\+::read\+\_\+file (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the contents of the previously set file path. Will always catch errors. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string Contents of the file being read. If unable to read the requested file, will return an empty string. 
+\end{DoxyReturn}
 \Hypertarget{classLilyPad_1_1File_abdf6730144ed402662c0df7850dadf8c}\label{classLilyPad_1_1File_abdf6730144ed402662c0df7850dadf8c} 
 \index{LilyPad::File@{LilyPad::File}!read\_file@{read\_file}}
 \index{read\_file@{read\_file}!LilyPad::File@{LilyPad::File}}
-\doxysubsubsection{\texorpdfstring{read\_file()}{read\_file()}}
+\doxysubsubsection{\texorpdfstring{read\_file()}{read\_file()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily std\+::string Lily\+Pad\+::\+File\+::read\+\_\+file (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the contents of the given file. Will always catch errors. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -52,6 +87,20 @@ std\+::string {\bfseries \+\_\+path}
 \begin{DoxyReturn}{Returns}
 std\+::string Contents of the file being read. If unable to read the requested file, will return an empty string. 
 \end{DoxyReturn}
+\Hypertarget{classLilyPad_1_1File_a3c2ff3d1eec0947306a5ac5e68181eeb}\label{classLilyPad_1_1File_a3c2ff3d1eec0947306a5ac5e68181eeb} 
+\index{LilyPad::File@{LilyPad::File}!update@{update}}
+\index{update@{update}!LilyPad::File@{LilyPad::File}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Lily\+Pad\+::\+File\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Empty implementation that should be overrided to add functionality. 
+
+
+
+Reimplemented in \mbox{\hyperlink{classLilyPad_1_1Shader_a6ef7e06e2141a1f722fc7e0b6fffdb6d}{Lily\+Pad\+::\+Shader}}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

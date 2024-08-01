@@ -91,7 +91,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span>LilyPad</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">enum class</span> ImageFormat</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">enum</span> ImageFormat</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    {</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        FORMAT_R8,</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        FORMAT_RG8,</div>
@@ -107,33 +107,40 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <a class="code hl_class" href="classLilyPad_1_1Image.html">~Image</a>();</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordtype">void</span> set_data(<span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height, <span class="keywordtype">bool</span> useMipmaps, ImageFormat format, <span class="keyword">const</span> std::vector&lt;uint8_t&gt; &amp;data);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordtype">void</span> set_pixel(<span class="keywordtype">int</span> x_index, <span class="keywordtype">int</span> y_index, <span class="keyword">const</span> <a class="code hl_struct" href="structLilyPad_1_1Color.html">Color</a> &amp;data);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordtype">void</span> load(<span class="keyword">const</span> std::string &amp;path);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordtype">int</span> get_width() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordtype">int</span> get_height() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <a class="code hl_struct" href="structLilyPad_1_1Vector2i.html">Vector2i</a> get_size() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        ImageFormat get_format() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordtype">void</span> set_format(<span class="keyword">const</span> ImageFormat &amp;format);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        std::vector&lt;uint8_t&gt; get_raw_data() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keyword">const</span> uint8_t *get_data() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classLilyPad_1_1Image.html#ab0997e0b6194727157542e3bd60c5eb8">set_pixel</a>(<span class="keywordtype">int</span> x_index, <span class="keywordtype">int</span> y_index, <span class="keyword">const</span> <a class="code hl_struct" href="structLilyPad_1_1Color.html">Color</a> &amp;data);</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordtype">int</span> _width;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordtype">int</span> _height;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordtype">bool</span> _useMipmaps;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        std::vector&lt;uint8_t&gt; _data;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        ImageFormat _format;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordtype">int</span> get_channel_count() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordtype">int</span> get_index(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    };</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordtype">int</span> <a class="code hl_function" href="classLilyPad_1_1Image.html#aa709e0b3231b8fedd8f3d2a7d300b229">get_width</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordtype">int</span> <a class="code hl_function" href="classLilyPad_1_1Image.html#ada1ac383bca74fd272a9ddc84b7e5322">get_height</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <a class="code hl_struct" href="structLilyPad_1_1Vector2i.html">Vector2i</a> <a class="code hl_function" href="classLilyPad_1_1Image.html#a35328406d50a7e77d9fe0c66188cae53">get_size</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        ImageFormat get_format() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keywordtype">void</span> set_format(<span class="keyword">const</span> ImageFormat &amp;format);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        std::vector&lt;uint8_t&gt; get_raw_data() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keyword">const</span> uint8_t *get_data() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordtype">int</span> _width;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordtype">int</span> _height;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keywordtype">bool</span> _useMipmaps;       <span class="comment">// Currently unused</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        std::vector&lt;uint8_t&gt; _data;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        ImageFormat _format;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keywordtype">int</span> get_channel_count() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordtype">int</span> get_index(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    };</div>
 </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>} <span class="comment">// namespace LilyPad</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>} <span class="comment">// namespace LilyPad</span></div>
 <div class="ttc" id="aclassLilyPad_1_1File_html"><div class="ttname"><a href="classLilyPad_1_1File.html">LilyPad::File</a></div><div class="ttdef"><b>Definition</b> file.hpp:9</div></div>
 <div class="ttc" id="aclassLilyPad_1_1Image_html"><div class="ttname"><a href="classLilyPad_1_1Image.html">LilyPad::Image</a></div><div class="ttdef"><b>Definition</b> image.hpp:20</div></div>
+<div class="ttc" id="aclassLilyPad_1_1Image_html_a35328406d50a7e77d9fe0c66188cae53"><div class="ttname"><a href="classLilyPad_1_1Image.html#a35328406d50a7e77d9fe0c66188cae53">LilyPad::Image::get_size</a></div><div class="ttdeci">Vector2i get_size() const</div><div class="ttdef"><b>Definition</b> image.cpp:80</div></div>
+<div class="ttc" id="aclassLilyPad_1_1Image_html_aa709e0b3231b8fedd8f3d2a7d300b229"><div class="ttname"><a href="classLilyPad_1_1Image.html#aa709e0b3231b8fedd8f3d2a7d300b229">LilyPad::Image::get_width</a></div><div class="ttdeci">int get_width() const</div><div class="ttdef"><b>Definition</b> image.cpp:76</div></div>
+<div class="ttc" id="aclassLilyPad_1_1Image_html_ab0997e0b6194727157542e3bd60c5eb8"><div class="ttname"><a href="classLilyPad_1_1Image.html#ab0997e0b6194727157542e3bd60c5eb8">LilyPad::Image::set_pixel</a></div><div class="ttdeci">void set_pixel(int x_index, int y_index, const Color &amp;data)</div><div class="ttdoc">Sets the color of a specific pixel in the image.</div><div class="ttdef"><b>Definition</b> image.cpp:10</div></div>
+<div class="ttc" id="aclassLilyPad_1_1Image_html_ada1ac383bca74fd272a9ddc84b7e5322"><div class="ttname"><a href="classLilyPad_1_1Image.html#ada1ac383bca74fd272a9ddc84b7e5322">LilyPad::Image::get_height</a></div><div class="ttdeci">int get_height() const</div><div class="ttdef"><b>Definition</b> image.cpp:78</div></div>
 <div class="ttc" id="astructLilyPad_1_1Color_html"><div class="ttname"><a href="structLilyPad_1_1Color.html">LilyPad::Color</a></div><div class="ttdef"><b>Definition</b> color.hpp:6</div></div>
 <div class="ttc" id="astructLilyPad_1_1Vector2i_html"><div class="ttname"><a href="structLilyPad_1_1Vector2i.html">LilyPad::Vector2i</a></div><div class="ttdef"><b>Definition</b> vector2i.hpp:8</div></div>
 </div><!-- fragment --></div><!-- contents -->

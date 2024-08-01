@@ -9,9 +9,8 @@ Inheritance diagram for Lily\+Pad\+::Camera3D\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classLilyPad_1_1Camera3D_a754e8eb2bb3a43e1565ac85b63aed483}\label{classLilyPad_1_1Camera3D_a754e8eb2bb3a43e1565ac85b63aed483} 
-void {\bfseries look\+\_\+at} (const \mbox{\hyperlink{structLilyPad_1_1Vector3}{Position3}} \&point)
-\item 
+void \mbox{\hyperlink{classLilyPad_1_1Camera3D_a754e8eb2bb3a43e1565ac85b63aed483}{look\+\_\+at}} (const \mbox{\hyperlink{structLilyPad_1_1Vector3}{Position3}} \&point)
+\begin{DoxyCompactList}\small\item\em Sets the camera\textquotesingle{}s view matrix to look at a specified point. \end{DoxyCompactList}\item 
 \Hypertarget{classLilyPad_1_1Camera3D_aa5fc4db78262afb0160f0193fd77ac44}\label{classLilyPad_1_1Camera3D_aa5fc4db78262afb0160f0193fd77ac44} 
 glm\+::mat4 {\bfseries get\+\_\+view} () const
 \item 
@@ -84,6 +83,32 @@ glm\+::vec3 {\bfseries position}
 glm\+::vec3 {\bfseries absolute\+Position}
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classLilyPad_1_1Camera3D_a754e8eb2bb3a43e1565ac85b63aed483}\label{classLilyPad_1_1Camera3D_a754e8eb2bb3a43e1565ac85b63aed483} 
+\index{LilyPad::Camera3D@{LilyPad::Camera3D}!look\_at@{look\_at}}
+\index{look\_at@{look\_at}!LilyPad::Camera3D@{LilyPad::Camera3D}}
+\doxysubsubsection{\texorpdfstring{look\_at()}{look\_at()}}
+{\footnotesize\ttfamily void Lily\+Pad\+::\+Camera3\+D\+::look\+\_\+at (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structLilyPad_1_1Vector3}{Position3}} \&}]{point }\end{DoxyParamCaption})}
+
+
+
+Sets the camera\textquotesingle{}s view matrix to look at a specified point. 
+
+This function updates the camera\textquotesingle{}s view matrix to orient the camera such that it looks at the given point in 3D space. The view matrix is calculated based on the camera\textquotesingle{}s current position and the specified point, while maintaining the camera\textquotesingle{}s up direction as defined by {\ttfamily world\+Up}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & The target position in 3D space that the camera should look at.\\
+\hline
+\end{DoxyParams}
+Example usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Position3\ targetPoint\ =\ \{1.0f,\ 2.0f,\ 3.0f\};}
+\DoxyCodeLine{camera.look\_at(targetPoint);}
+
+\end{DoxyCode}
+ 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

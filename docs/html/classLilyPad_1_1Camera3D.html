@@ -93,8 +93,8 @@ Inheritance diagram for LilyPad::Camera3D:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a754e8eb2bb3a43e1565ac85b63aed483" id="r_a754e8eb2bb3a43e1565ac85b63aed483"><td class="memItemLeft" align="right" valign="top"><a id="a754e8eb2bb3a43e1565ac85b63aed483" name="a754e8eb2bb3a43e1565ac85b63aed483"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>look_at</b> (const <a class="el" href="structLilyPad_1_1Vector3.html">Position3</a> &amp;point)</td></tr>
+<tr class="memitem:a754e8eb2bb3a43e1565ac85b63aed483" id="r_a754e8eb2bb3a43e1565ac85b63aed483"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLilyPad_1_1Camera3D.html#a754e8eb2bb3a43e1565ac85b63aed483">look_at</a> (const <a class="el" href="structLilyPad_1_1Vector3.html">Position3</a> &amp;point)</td></tr>
+<tr class="memdesc:a754e8eb2bb3a43e1565ac85b63aed483"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the camera's view matrix to look at a specified point.  <br /></td></tr>
 <tr class="separator:a754e8eb2bb3a43e1565ac85b63aed483"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5fc4db78262afb0160f0193fd77ac44" id="r_aa5fc4db78262afb0160f0193fd77ac44"><td class="memItemLeft" align="right" valign="top"><a id="aa5fc4db78262afb0160f0193fd77ac44" name="aa5fc4db78262afb0160f0193fd77ac44"></a>
 glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><b>get_view</b> () const</td></tr>
@@ -175,6 +175,37 @@ glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><b>position</b></td
 glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><b>absolutePosition</b></td></tr>
 <tr class="separator:a7f2156dab1e45ef3cd6fd35a70837a7b inherit pub_attribs_classLilyPad_1_1Node3D"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a754e8eb2bb3a43e1565ac85b63aed483" name="a754e8eb2bb3a43e1565ac85b63aed483"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a754e8eb2bb3a43e1565ac85b63aed483">&#9670;&#160;</a></span>look_at()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LilyPad::Camera3D::look_at </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structLilyPad_1_1Vector3.html">Position3</a> &amp;&#160;</td>
+          <td class="paramname"><em>point</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the camera's view matrix to look at a specified point. </p>
+<p>This function updates the camera's view matrix to orient the camera such that it looks at the given point in 3D space. The view matrix is calculated based on the camera's current position and the specified point, while maintaining the camera's up direction as defined by <code>worldUp</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td>The target position in 3D space that the camera should look at.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Example usage: </p><div class="fragment"><div class="line"><a class="code hl_struct" href="structLilyPad_1_1Vector3.html">Position3</a> targetPoint = {1.0f, 2.0f, 3.0f};</div>
+<div class="line">camera.look_at(targetPoint);</div>
+<div class="ttc" id="astructLilyPad_1_1Vector3_html"><div class="ttname"><a href="structLilyPad_1_1Vector3.html">LilyPad::Vector3</a></div><div class="ttdef"><b>Definition</b> vector3.hpp:9</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>LilyPadEngine/src/LilyPad/scene/nodes/3d/<a class="el" href="camera__3d_8hpp_source.html">camera_3d.hpp</a></li>
 <li>LilyPadEngine/src/LilyPad/scene/nodes/3d/<b>camera_3d.cpp</b></li>

@@ -9,18 +9,10 @@ namespace LilyPad
 	class Label : public Widget
 	{
 	public:
-		Label()
-		{
-			FT_Library ft;
-			// if (FT_Init_FreeType(&ft))
-			// {
-			// }
+		Label();
+		Label(const std::string &text);
 
-			FT_Face face;
-			// if (FT_New_Face(ft, "fonts/arial.ttf", 0, &face))
-			// {
-			// }
-		}
+		std::string text;
 
 	private:
 	};

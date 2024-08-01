@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include "LilyPad/debug/logging.hpp"
+
 namespace LilyPad
 {
 	class Node
@@ -11,7 +12,7 @@ namespace LilyPad
 	public:
 		Node();
 		explicit Node(const std::string &name);
-		virtual  ~Node();
+		virtual ~Node();
 
 		virtual void _ready();
 		virtual void _process(double delta);

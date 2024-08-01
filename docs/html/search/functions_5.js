@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['set_5fattributes_0',['set_attributes',['../classLilyPad_1_1Vertices.html#a46f893f3f46aeca04e2ca208aeae8374',1,'LilyPad::Vertices']]],
-  ['set_5flog_5ffile_1',['set_log_file',['../classLilyPad_1_1Logger.html#ab53a3ed1219690f2a9370f8304858aef',1,'LilyPad::Logger']]],
-  ['set_5flog_5flevel_2',['set_log_level',['../classLilyPad_1_1Logger.html#a62135d1966e7b4040d24db6db2df3752',1,'LilyPad::Logger']]],
-  ['set_5ftitle_3',['set_title',['../classLilyPad_1_1Window.html#a7ce0b73751a0cff970141cb52f0602dd',1,'LilyPad::Window']]]
+  ['read_5ffile_0',['read_file',['../classLilyPad_1_1File.html#abdf6730144ed402662c0df7850dadf8c',1,'LilyPad::File::read_file(const std::string &amp;path)'],['../classLilyPad_1_1File.html#a3b927c752c37d0002b2dbba02e035bbf',1,'LilyPad::File::read_file() const']]],
+  ['reload_1',['reload',['../classLilyPad_1_1ShaderProgram.html#a47103e80645b80914cc3078ef7c61e09',1,'LilyPad::ShaderProgram']]]
 ];

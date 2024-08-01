@@ -9,27 +9,27 @@ namespace LilyPad
 
 	void Image::set_pixel(int x_index, int y_index, const Color &data)
 	{
-		uint32_t offset = y_index * _width + x_index;
+		uint32_t offset = get_index(x_index, y_index);
 
 		switch (_format)
 		{
-		case ImageFormat::FORMAT_R8:
+		case FORMAT_R8:
 			_data[offset] = static_cast<uint8_t>(data.r * 255);
 			break;
-		case ImageFormat::FORMAT_RG8:
-			_data[offset * 2] = static_cast<uint8_t>(data.r * 255);
-			_data[offset * 2 + 1] = static_cast<uint8_t>(data.g * 255);
-			break;
-		case ImageFormat::FORMAT_RGB8:
-			_data[offset * 3] = static_cast<uint8_t>(data.r * 255);
-			_data[offset * 3 + 1] = static_cast<uint8_t>(data.g * 255);
-			_data[offset * 3 + 2] = static_cast<uint8_t>(data.b * 255);
-			break;
-		case ImageFormat::FORMAT_RGBA8:
+		case FORMAT_RG8:
 			_data[offset] = static_cast<uint8_t>(data.r * 255);
-			_data[offset * 4 + 1] = static_cast<uint8_t>(data.g * 255);
-			_data[offset * 4 + 2] = static_cast<uint8_t>(data.b * 255);
-			_data[offset * 4 + 3] = static_cast<uint8_t>(data.a * 255);
+			_data[offset + 1] = static_cast<uint8_t>(data.g * 255);
+			break;
+		case FORMAT_RGB8:
+			_data[offset] = static_cast<uint8_t>(data.r * 255);
+			_data[offset + 1] = static_cast<uint8_t>(data.g * 255);
+			_data[offset + 2] = static_cast<uint8_t>(data.b * 255);
+			break;
+		case FORMAT_RGBA8:
+			_data[offset] = static_cast<uint8_t>(data.r * 255);
+			_data[offset + 1] = static_cast<uint8_t>(data.g * 255);
+			_data[offset + 2] = static_cast<uint8_t>(data.b * 255);
+			_data[offset + 3] = static_cast<uint8_t>(data.a * 255);
 			break;
 
 		default:
@@ -57,13 +57,13 @@ namespace LilyPad
 	{
 		switch (_format)
 		{
-		case ImageFormat::FORMAT_R8:
+		case FORMAT_R8:
 			return 1;
-		case ImageFormat::FORMAT_RG8:
+		case FORMAT_RG8:
 			return 2;
-		case ImageFormat::FORMAT_RGB8:
+		case FORMAT_RGB8:
 			return 3;
-		case ImageFormat::FORMAT_RGBA8:
+		case FORMAT_RGBA8:
 			return 4;
 		default:
 			break;

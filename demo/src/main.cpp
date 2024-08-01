@@ -14,6 +14,7 @@
 #include "LilyPad/renderer/OpenGL/texture.hpp"
 #include "LilyPad/renderer/OpenGL/vertex.hpp"
 #include "LilyPad/renderer/OpenGL/window.hpp"
+#include "LilyPad/scene/nodes/2d/sprite_2d.hpp"
 #include "LilyPad/scene/nodes/ui/label.hpp"
 #include "camera.hpp"
 #include "generation.hpp"
@@ -30,7 +31,7 @@ float lastX = SCR_WIDTH / 2.0f;
 float lastY = SCR_HEIGHT / 2.0f;
 bool firstMouse = true;
 
-double delta = 0.0; // Time between current frame and last frame
+double delta = 0.0;		// Time between current frame and last frame
 float lastFrame = 0.0f; // Time of last frame
 ShaderProgram ourShader("/home/marcus/dev/LilyPadEngine/demo/rsc/shaders/", "Vertex.glsl", "Fragment.glsl");
 auto camera = std::make_shared<Camera>();
@@ -39,16 +40,17 @@ Label label;
 int main()
 {
 	FPS fps;
-	Image image;
+	Sprite2D sprite;
+	sprite.position = {0, 10};
 
-	std::vector<uint8_t> pixels(500 * 500 * 4);
+	std::vector<uint8_t> pixels(500 * 500 * 2);
 	const float GRID_SIZE = 400;
 
 	for (int i = 0; i < 500; i++)
 	{
 		for (int j = 0; j < 500; j++)
 		{
-			int index = (j * 500 + i) * 4;
+			int index = (j * 500 + i) * 2;
 			float val = 0.0f;
 
 			float freq = 1.0f;
@@ -72,12 +74,11 @@ int main()
 			uint8_t color = (uint8_t)((val + 1.0f) * 0.5f * 255);
 			pixels[index] = color;
 			pixels[index + 1] = color;
-			pixels[index + 2] = color;
 			pixels[index + 3] = 255;
 		}
 	}
 
-	image.set_data(500, 500, false, ImageFormat::FORMAT_RGBA8, pixels);
+	sprite.image.set_data(500, 500, false, ImageFormat::FORMAT_RG8, pixels);
 	// stbi_write_png("output.png", 500, 500, 4, pixels.data(), 500 * 4);
 	camera->_ready();
 	camera->set_name("camera");
@@ -126,7 +127,7 @@ int main()
 
 	Texture texture(relativePath + "/rsc/textures/");
 	texture.id = texture.generate_texture("frog.png");
-	texture.id = texture.load_data(image);
+	texture.id = texture.load_data(sprite.image);
 
 	ourShader.use();
 	ourShader.set_uniform("uTexture", texture.id);
@@ -157,19 +158,24 @@ int main()
 			glm::perspective(glm::radians(camera->zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
 
 		ourShader.use();
-		camera->look_at({0, 0, 0});
-		ourShader.set_uniform("uView", {camera->viewMatrix});
+		ourShader.set_uniform("uView", {camera->get_view()});
 		ourShader.set_uniform("uProjection", projection);
 
 		bind.bind_vertex_array();
 		for (int i = 0; i < 1; i++)
 		{
 			glm::mat4 model = glm::mat4(1.0f);
-			model = glm::translate(model, glm::vec3(cubePositions[i].x, cubePositions[i].y, cubePositions[i].z));
+			model = glm::translate(model, glm::vec3(sprite.position.x, sprite.position.y, 0));
 			ourShader.set_uniform("uModel", model);
 
 			glDrawArrays(GL_TRIANGLES, 0, 6);
 		}
+
+		glm::mat4 model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0, 0, 0));
+		ourShader.set_uniform("uModel", model);
+
+		glDrawArrays(GL_TRIANGLES, 0, 6);
 
 		delta = fps.get_delta();
 		fps.update();

@@ -23,5 +23,4 @@ namespace LilyPad
 
 		float get_area() const;
 	};
-
 } // namespace LilyPad

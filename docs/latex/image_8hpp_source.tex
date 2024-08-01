@@ -12,7 +12,7 @@
 \DoxyCodeLine{00008\ }
 \DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }LilyPad}
 \DoxyCodeLine{00010\ \{}
-\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{enum\ class}\ ImageFormat}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{enum}\ ImageFormat}
 \DoxyCodeLine{00012\ \ \ \ \ \{}
 \DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ FORMAT\_R8,}
 \DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ FORMAT\_RG8,}
@@ -27,29 +27,32 @@
 \DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classLilyPad_1_1Image}{\string~Image}}();}
 \DoxyCodeLine{00024\ }
 \DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_data(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{bool}\ useMipmaps,\ ImageFormat\ format,\ \textcolor{keyword}{const}\ std::vector<uint8\_t>\ \&data);}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_pixel(\textcolor{keywordtype}{int}\ x\_index,\ \textcolor{keywordtype}{int}\ y\_index,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structLilyPad_1_1Color}{Color}}\ \&data);}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ load(\textcolor{keyword}{const}\ std::string\ \&path);}
-\DoxyCodeLine{00028\ }
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ get\_width()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ get\_height()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structLilyPad_1_1Vector2i}{Vector2i}}\ get\_size()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ ImageFormat\ get\_format()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_format(\textcolor{keyword}{const}\ ImageFormat\ \&format);}
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ std::vector<uint8\_t>\ get\_raw\_data()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ *get\_data()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLilyPad_1_1Image_ab0997e0b6194727157542e3bd60c5eb8}{set\_pixel}}(\textcolor{keywordtype}{int}\ x\_index,\ \textcolor{keywordtype}{int}\ y\_index,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structLilyPad_1_1Color}{Color}}\ \&data);}
 \DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_width;}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_height;}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_useMipmaps;}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ std::vector<uint8\_t>\ \_data;}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ ImageFormat\ \_format;}
-\DoxyCodeLine{00045\ }
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ get\_channel\_count()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ get\_index(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00048\ \ \ \ \ \};}
-\DoxyCodeLine{00049\ \}\ \textcolor{comment}{//\ namespace\ LilyPad}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classLilyPad_1_1Image_aa709e0b3231b8fedd8f3d2a7d300b229}{get\_width}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classLilyPad_1_1Image_ada1ac383bca74fd272a9ddc84b7e5322}{get\_height}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structLilyPad_1_1Vector2i}{Vector2i}}\ \mbox{\hyperlink{classLilyPad_1_1Image_a35328406d50a7e77d9fe0c66188cae53}{get\_size}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ ImageFormat\ get\_format()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_format(\textcolor{keyword}{const}\ ImageFormat\ \&format);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ std::vector<uint8\_t>\ get\_raw\_data()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ *get\_data()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_width;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_height;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_useMipmaps;\ \ \ \ \ \ \ \textcolor{comment}{//\ Currently\ unused}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ std::vector<uint8\_t>\ \_data;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ ImageFormat\ \_format;}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ get\_channel\_count()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ get\_index(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00080\ \ \ \ \ \};}
+\DoxyCodeLine{00081\ \}\ \textcolor{comment}{//\ namespace\ LilyPad}}
 
 \end{DoxyCode}

@@ -90,8 +90,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a47603fc2d6684ee372710de39d155ff6" id="r_a47603fc2d6684ee372710de39d155ff6"><td class="memItemLeft" align="right" valign="top"><a id="a47603fc2d6684ee372710de39d155ff6" name="a47603fc2d6684ee372710de39d155ff6"></a>
 std::vector&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>get_data</b> (int vertex_index, int array_index)</td></tr>
 <tr class="separator:a47603fc2d6684ee372710de39d155ff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42a410e0e849cc6a759dd5de3d7fa40d" id="r_a42a410e0e849cc6a759dd5de3d7fa40d"><td class="memItemLeft" align="right" valign="top"><a id="a42a410e0e849cc6a759dd5de3d7fa40d" name="a42a410e0e849cc6a759dd5de3d7fa40d"></a>
-std::vector&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>get_data</b> ()</td></tr>
+<tr class="memitem:a42a410e0e849cc6a759dd5de3d7fa40d" id="r_a42a410e0e849cc6a759dd5de3d7fa40d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLilyPad_1_1Vertices.html#a42a410e0e849cc6a759dd5de3d7fa40d">get_data</a> ()</td></tr>
+<tr class="memdesc:a42a410e0e849cc6a759dd5de3d7fa40d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the data from all <a class="el" href="classLilyPad_1_1Vertices.html">Vertices</a> in a single 1-dimensional array. It retains the original order of the elements.  <br /></td></tr>
 <tr class="separator:a42a410e0e849cc6a759dd5de3d7fa40d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03a64af0bbe7c6552748f0157eadc46c" id="r_a03a64af0bbe7c6552748f0157eadc46c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLilyPad_1_1Vertices.html#a03a64af0bbe7c6552748f0157eadc46c">bind_buffer</a> (const unsigned int &amp;VBO)</td></tr>
 <tr class="memdesc:a03a64af0bbe7c6552748f0157eadc46c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds a buffer and uploads vertex data to it for OpenGL rendering.  <br /></td></tr>
@@ -140,19 +140,49 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>Binds a buffer and uploads vertex data to it for OpenGL rendering. </p>
-<p>This function binds a given <a class="el" href="structLilyPad_1_1Vertex.html">Vertex</a> Buffer Object (VBO) and uploads the vertex data to it. It uses <code>glBindBuffer</code> to bind the buffer and <code>glBufferData</code> to create and initialize the buffer's data store. The function assumes that <code>get_data()</code> returns a vector of vertex data that needs to be uploaded to the GPU.</p>
+<p>This function binds a given <a class="el" href="structLilyPad_1_1Vertex.html">Vertex</a> Buffer Object (VBO) and uploads the vertex data to it. It uses <code>glBindBuffer</code> to bind the buffer and <code>glBufferData</code> to create and initialize the buffer's data store. The function assumes that <code><a class="el" href="classLilyPad_1_1Vertices.html#a42a410e0e849cc6a759dd5de3d7fa40d" title="Gets the data from all Vertices in a single 1-dimensional array. It retains the original order of the...">get_data()</a></code> returns a vector of vertex data that needs to be uploaded to the GPU.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">VBO</td><td>A constant reference to an unsigned int representing the <a class="el" href="structLilyPad_1_1Vertex.html">Vertex</a> Buffer Object ID.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>Ensure that <code>get_data()</code> returns the appropriate vertex data before calling this function.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Ensure that <code><a class="el" href="classLilyPad_1_1Vertices.html#a42a410e0e849cc6a759dd5de3d7fa40d" title="Gets the data from all Vertices in a single 1-dimensional array. It retains the original order of the...">get_data()</a></code> returns the appropriate vertex data before calling this function.</dd></dl>
 <p>Example usage: </p><div class="fragment"><div class="line"><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> VBO;</div>
 <div class="line">glGenBuffers(1, &amp;VBO);</div>
 <div class="line"><a class="code hl_function" href="classLilyPad_1_1Vertices.html#a03a64af0bbe7c6552748f0157eadc46c">bind_buffer</a>(VBO);</div>
-<div class="ttc" id="aclassLilyPad_1_1Vertices_html_a03a64af0bbe7c6552748f0157eadc46c"><div class="ttname"><a href="classLilyPad_1_1Vertices.html#a03a64af0bbe7c6552748f0157eadc46c">LilyPad::Vertices::bind_buffer</a></div><div class="ttdeci">void bind_buffer(const unsigned int &amp;VBO)</div><div class="ttdoc">Binds a buffer and uploads vertex data to it for OpenGL rendering.</div><div class="ttdef"><b>Definition</b> vertex.hpp:89</div></div>
+<div class="ttc" id="aclassLilyPad_1_1Vertices_html_a03a64af0bbe7c6552748f0157eadc46c"><div class="ttname"><a href="classLilyPad_1_1Vertices.html#a03a64af0bbe7c6552748f0157eadc46c">LilyPad::Vertices::bind_buffer</a></div><div class="ttdeci">void bind_buffer(const unsigned int &amp;VBO)</div><div class="ttdoc">Binds a buffer and uploads vertex data to it for OpenGL rendering.</div><div class="ttdef"><b>Definition</b> vertex.hpp:107</div></div>
 </div><!-- fragment --> 
+</div>
+</div>
+<a id="a42a410e0e849cc6a759dd5de3d7fa40d" name="a42a410e0e849cc6a759dd5de3d7fa40d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42a410e0e849cc6a759dd5de3d7fa40d">&#9670;&#160;</a></span>get_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; T &gt; <a class="el" href="classLilyPad_1_1Vertices.html">LilyPad::Vertices</a>&lt; T &gt;::get_data </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the data from all <a class="el" href="classLilyPad_1_1Vertices.html">Vertices</a> in a single 1-dimensional array. It retains the original order of the elements. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;T&gt; Array containing data from all <a class="el" href="classLilyPad_1_1Vertices.html">Vertices</a>. </dd></dl>
+
 </div>
 </div>
 <a id="a46f893f3f46aeca04e2ca208aeae8374" name="a46f893f3f46aeca04e2ca208aeae8374"></a>
@@ -193,7 +223,7 @@ template&lt;typename T &gt; </div>
 <div class="line">Bind bind;</div>
 <div class="line">bind.bind_vertices(vertices); <span class="comment">// Data must be binded before setting the attributes.</span></div>
 <div class="line">vertices.set_attributes();</div>
-<div class="ttc" id="aclassLilyPad_1_1Vertices_html"><div class="ttname"><a href="classLilyPad_1_1Vertices.html">LilyPad::Vertices</a></div><div class="ttdef"><b>Definition</b> vertex.hpp:41</div></div>
+<div class="ttc" id="aclassLilyPad_1_1Vertices_html"><div class="ttname"><a href="classLilyPad_1_1Vertices.html">LilyPad::Vertices</a></div><div class="ttdef"><b>Definition</b> vertex.hpp:53</div></div>
 </div><!-- fragment --> 
 </div>
 </div>

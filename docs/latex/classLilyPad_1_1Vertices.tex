@@ -9,9 +9,8 @@
 \Hypertarget{classLilyPad_1_1Vertices_a47603fc2d6684ee372710de39d155ff6}\label{classLilyPad_1_1Vertices_a47603fc2d6684ee372710de39d155ff6} 
 std\+::vector$<$ T $>$ {\bfseries get\+\_\+data} (int vertex\+\_\+index, int array\+\_\+index)
 \item 
-\Hypertarget{classLilyPad_1_1Vertices_a42a410e0e849cc6a759dd5de3d7fa40d}\label{classLilyPad_1_1Vertices_a42a410e0e849cc6a759dd5de3d7fa40d} 
-std\+::vector$<$ T $>$ {\bfseries get\+\_\+data} ()
-\item 
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classLilyPad_1_1Vertices_a42a410e0e849cc6a759dd5de3d7fa40d}{get\+\_\+data}} ()
+\begin{DoxyCompactList}\small\item\em Gets the data from all \doxylink{classLilyPad_1_1Vertices}{Vertices} in a single 1-\/dimensional array. It retains the original order of the elements. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classLilyPad_1_1Vertices_a03a64af0bbe7c6552748f0157eadc46c}{bind\+\_\+buffer}} (const unsigned int \&VBO)
 \begin{DoxyCompactList}\small\item\em Binds a buffer and uploads vertex data to it for Open\+GL rendering. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classLilyPad_1_1Vertices_a46f893f3f46aeca04e2ca208aeae8374}{set\+\_\+attributes}} ()
@@ -42,7 +41,7 @@ void \mbox{\hyperlink{classLilyPad_1_1Vertices}{Lily\+Pad\+::\+Vertices}}$<$ T $
 
 Binds a buffer and uploads vertex data to it for Open\+GL rendering. 
 
-This function binds a given \doxylink{structLilyPad_1_1Vertex}{Vertex} Buffer Object (VBO) and uploads the vertex data to it. It uses {\ttfamily gl\+Bind\+Buffer} to bind the buffer and {\ttfamily gl\+Buffer\+Data} to create and initialize the buffer\textquotesingle{}s data store. The function assumes that {\ttfamily get\+\_\+data()} returns a vector of vertex data that needs to be uploaded to the GPU.
+This function binds a given \doxylink{structLilyPad_1_1Vertex}{Vertex} Buffer Object (VBO) and uploads the vertex data to it. It uses {\ttfamily gl\+Bind\+Buffer} to bind the buffer and {\ttfamily gl\+Buffer\+Data} to create and initialize the buffer\textquotesingle{}s data store. The function assumes that {\ttfamily \doxylink{classLilyPad_1_1Vertices_a42a410e0e849cc6a759dd5de3d7fa40d}{get\+\_\+data()}} returns a vector of vertex data that needs to be uploaded to the GPU.
 
 
 \begin{DoxyParams}{Parameters}
@@ -50,7 +49,7 @@ This function binds a given \doxylink{structLilyPad_1_1Vertex}{Vertex} Buffer Ob
 \hline
 \end{DoxyParams}
 \begin{DoxyNote}{Note}
-Ensure that {\ttfamily get\+\_\+data()} returns the appropriate vertex data before calling this function.
+Ensure that {\ttfamily \doxylink{classLilyPad_1_1Vertices_a42a410e0e849cc6a759dd5de3d7fa40d}{get\+\_\+data()}} returns the appropriate vertex data before calling this function.
 \end{DoxyNote}
 Example usage\+: 
 \begin{DoxyCode}{0}
@@ -59,7 +58,21 @@ Example usage\+:
 \DoxyCodeLine{\mbox{\hyperlink{classLilyPad_1_1Vertices_a03a64af0bbe7c6552748f0157eadc46c}{bind\_buffer}}(VBO);}
 
 \end{DoxyCode}
- \Hypertarget{classLilyPad_1_1Vertices_a46f893f3f46aeca04e2ca208aeae8374}\label{classLilyPad_1_1Vertices_a46f893f3f46aeca04e2ca208aeae8374} 
+ \Hypertarget{classLilyPad_1_1Vertices_a42a410e0e849cc6a759dd5de3d7fa40d}\label{classLilyPad_1_1Vertices_a42a410e0e849cc6a759dd5de3d7fa40d} 
+\index{LilyPad::Vertices$<$ T $>$@{LilyPad::Vertices$<$ T $>$}!get\_data@{get\_data}}
+\index{get\_data@{get\_data}!LilyPad::Vertices$<$ T $>$@{LilyPad::Vertices$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_data()}{get\_data()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classLilyPad_1_1Vertices}{Lily\+Pad\+::\+Vertices}}$<$ T $>$\+::get\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the data from all \doxylink{classLilyPad_1_1Vertices}{Vertices} in a single 1-\/dimensional array. It retains the original order of the elements. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+T$>$ Array containing data from all \doxylink{classLilyPad_1_1Vertices}{Vertices}. 
+\end{DoxyReturn}
+\Hypertarget{classLilyPad_1_1Vertices_a46f893f3f46aeca04e2ca208aeae8374}\label{classLilyPad_1_1Vertices_a46f893f3f46aeca04e2ca208aeae8374} 
 \index{LilyPad::Vertices$<$ T $>$@{LilyPad::Vertices$<$ T $>$}!set\_attributes@{set\_attributes}}
 \index{set\_attributes@{set\_attributes}!LilyPad::Vertices$<$ T $>$@{LilyPad::Vertices$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{set\_attributes()}{set\_attributes()}}
