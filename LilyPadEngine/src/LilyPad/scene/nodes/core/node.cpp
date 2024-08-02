@@ -9,6 +9,7 @@ namespace LilyPad
 	void Node::_ready() {}
 	void Node::_process(double delta) {}
 	void Node::_process_input() {}
+	void Node::_draw() {}
 
 	void Node::set_name(const std::string &name) { _name = name; }
 	void Node::add_child(std::shared_ptr<Node> child) { _children.push_back(child); }

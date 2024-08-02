@@ -21,7 +21,7 @@ namespace LilyPad
 		[[nodiscard]] bool is_updated() const;
 
 		/**
-		 * @brief Empty implementation that should be overrided to add functionality.
+		 * @brief Empty implementation that should be overrided to add hot-reloading functionality.
 		 */
 		virtual void update();
 

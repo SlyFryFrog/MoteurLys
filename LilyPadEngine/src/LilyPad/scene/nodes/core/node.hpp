@@ -17,6 +17,7 @@ namespace LilyPad
 		virtual void _ready();
 		virtual void _process(double delta);
 		virtual void _process_input();
+		virtual void _draw();
 
 		[[nodiscard]] std::string get_name() const;
 		void set_name(const std::string &name);

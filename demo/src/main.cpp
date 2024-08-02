@@ -2,7 +2,6 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include <memory>
-#include <stb_image_write.h>
 #include "LilyPad/core/io/image.hpp"
 #include "LilyPad/core/io/input.hpp"
 #include "LilyPad/core/math/vector3.hpp"
@@ -17,7 +16,7 @@
 #include "LilyPad/scene/nodes/2d/sprite_2d.hpp"
 #include "LilyPad/scene/nodes/ui/label.hpp"
 #include "camera.hpp"
-#include "generation.hpp"
+#include "level/generation.hpp"
 
 using namespace LilyPad;
 
@@ -79,7 +78,6 @@ int main()
 	}
 
 	sprite.image.set_data(500, 500, false, ImageFormat::FORMAT_RG8, pixels);
-	// stbi_write_png("output.png", 500, 500, 4, pixels.data(), 500 * 4);
 	camera->_ready();
 	camera->set_name("camera");
 	const std::string relativePath = get_root_directory();
@@ -126,7 +124,6 @@ int main()
 	Bind bind;
 
 	Texture texture(relativePath + "/rsc/textures/");
-	texture.id = texture.generate_texture("frog.png");
 	texture.id = texture.load_data(sprite.image);
 
 	ourShader.use();

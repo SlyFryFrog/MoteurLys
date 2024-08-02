@@ -11,6 +11,7 @@ namespace LilyPad
 	public:
 		glm::vec3 position;
 		glm::vec3 absolutePosition;
+		glm::vec3 size;
 
 		Node3D();
 

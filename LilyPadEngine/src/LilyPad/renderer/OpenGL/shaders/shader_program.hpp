@@ -3,6 +3,7 @@
 #include <filesystem>
 #include <glm/glm.hpp>
 #include <string>
+#include <vector>
 #include "LilyPad/core/io/file.hpp"
 
 namespace LilyPad
@@ -22,6 +23,7 @@ namespace LilyPad
 	{
 	public:
 		unsigned int id; // The OpenGL ID of the shader program.
+		std::string name;
 
 		ShaderProgram(const std::string &path, const std::string &vertex, const std::string &fragment);
 		~ShaderProgram();

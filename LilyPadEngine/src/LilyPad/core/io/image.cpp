@@ -31,7 +31,6 @@ namespace LilyPad
 			_data[offset + 2] = static_cast<uint8_t>(data.b * 255);
 			_data[offset + 3] = static_cast<uint8_t>(data.a * 255);
 			break;
-
 		default:
 			break;
 		}

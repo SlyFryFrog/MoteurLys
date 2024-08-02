@@ -9,14 +9,9 @@
 namespace LilyPad
 {
 	Texture::Texture() = default;
-
 	Texture::Texture(const std::string &path) : _path(path) {}
 
-	void Texture::set_path(const std::string &path) { _path = path; }
-
-	std::string Texture::get_path() { return _path; }
-
-	unsigned int Texture::generate_texture(const std::string &file) const
+	unsigned int Texture::load_data(const std::string &file) const
 	{
 		// Ignores unnecessary deletion for empty id
 		if (id)
@@ -75,6 +70,19 @@ namespace LilyPad
 		return texture;
 	}
 
+	void Texture::update()
+	{
+		if (is_updated())
+		{
+			_lastTime = std::filesystem::last_write_time(_path);
+
+			if (_path.c_str())
+			{
+				id = load_data(_path);
+			}
+		}
+	}
+
 	unsigned int Texture::load_data(const Image &image)
 	{
 		// Ignores unnecessary deletion for empty id
@@ -116,7 +124,8 @@ namespace LilyPad
 				break;
 			}
 
-			glTexImage2D(GL_TEXTURE_2D, 0, format, image.get_width(), image.get_height(), 0, format, GL_UNSIGNED_BYTE, image.get_data());
+			glTexImage2D(GL_TEXTURE_2D, 0, format, image.get_width(), image.get_height(), 0, format, GL_UNSIGNED_BYTE,
+						 image.get_data());
 			glGenerateMipmap(GL_TEXTURE_2D);
 			LILYPAD_DEBUG("Successfully loaded texture data at the path.");
 		}

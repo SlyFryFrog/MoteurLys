@@ -10,5 +10,6 @@ namespace LilyPad
 	public:
 		Vector2 position;
 		Vector2 absolutePosition;
+		Vector2 size;
 	};
 } // namespace LilyPad
