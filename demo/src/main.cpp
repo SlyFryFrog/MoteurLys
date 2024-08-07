@@ -38,18 +38,17 @@ Label label;
 
 int main()
 {
-	FPS fps;
 	Sprite2D sprite;
 	sprite.position = {0, 10};
 
-	std::vector<uint8_t> pixels(500 * 500 * 2);
+	std::vector<uint8_t> pixels(500 * 500 * 1);
 	const float GRID_SIZE = 400;
 
 	for (int i = 0; i < 500; i++)
 	{
 		for (int j = 0; j < 500; j++)
 		{
-			int index = (j * 500 + i) * 2;
+			int index = (j * 500 + i) * 1;
 			float val = 0.0f;
 
 			float freq = 1.0f;
@@ -72,12 +71,11 @@ int main()
 
 			uint8_t color = (uint8_t)((val + 1.0f) * 0.5f * 255);
 			pixels[index] = color;
-			pixels[index + 1] = color;
 			pixels[index + 3] = 255;
 		}
 	}
 
-	sprite.image.set_data(500, 500, false, ImageFormat::FORMAT_RG8, pixels);
+	sprite.image.set_data(500, 500, false, ImageFormat::FORMAT_R8, pixels);
 	camera->_ready();
 	camera->set_name("camera");
 	const std::string relativePath = get_root_directory();
@@ -124,6 +122,7 @@ int main()
 	Bind bind;
 
 	Texture texture(relativePath + "/rsc/textures/");
+	// texture.id = texture.load_data("frog.png");
 	texture.id = texture.load_data(sprite.image);
 
 	ourShader.use();
@@ -134,7 +133,7 @@ int main()
 							   {{1.0f, -1.0f, 0.0f}, {1.0f, 0.0f}},
 							   {{-1.0f, 1.0f, 0.0f}, {0.0f, 1.0f}},
 							   {{1.0f, -1.0f, 0.0f}, {1.0f, 0.0f}},
-							   {{1.0f, 1.0f, 0.0f}, {1.0f, 1.0f}}} // top left
+							   {{1.0f, 1.0f, 0.0f}, {1.0f, 1.0f}}}
 	);
 
 	bind.bind_vertices(vertices2);
@@ -142,6 +141,7 @@ int main()
 
 	while (!window.is_done())
 	{
+		LILYPAD_FPS_UPDATE();
 		process_input(window.window);
 
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
@@ -174,8 +174,7 @@ int main()
 
 		glDrawArrays(GL_TRIANGLES, 0, 6);
 
-		delta = fps.get_delta();
-		fps.update();
+		delta = LILYPAD_DELTA();
 
 		glfwSwapBuffers(window.window);
 		glfwPollEvents();

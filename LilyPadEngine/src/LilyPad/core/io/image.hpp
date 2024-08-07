@@ -57,17 +57,20 @@ namespace LilyPad
 		std::vector<uint8_t> get_raw_data() const;
 		const uint8_t *get_data() const;
 
-	private:
-		int _width;
-		int _height;
-		bool _useMipmaps;		// Currently unused
-		std::vector<uint8_t> _data;
-		ImageFormat _format;
+		static int get_channel_count(const ImageFormat &format);
 
 		/**
 		 * @return int Number of channels for the current image format.
 		 */
 		int get_channel_count() const;
+
+	private:
+		int _width;
+		int _height;
+		bool _useMipmaps; // Currently unused
+		std::vector<uint8_t> _data;
+		ImageFormat _format;
+
 
 		/**
 		 * @brief Get the starting index of the pixel segment.

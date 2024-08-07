@@ -43,9 +43,31 @@ namespace LilyPad
 					}
 				}
 			}
+
 			LILYPAD_ERROR("Child with name '", nodeName, "' not found.");
 			return nullptr;
 		}
+
+		std::shared_ptr<Node> get_child(const std::string &nodeName);
+
+		template <typename T>
+		std::shared_ptr<T> get_parent()
+		{
+			auto casted_parent = std::dynamic_pointer_cast<T>(_parent);
+			if (casted_parent)
+			{
+				return casted_parent;
+			}
+			else
+			{
+				LILYPAD_ERROR("Failed to cast parent named '", _parent->_name, "' to type ", typeid(T).name());
+				return nullptr;
+			}
+		}
+
+		std::shared_ptr<Node> get_parent() const;
+
+		void queue_destroy();
 
 	private:
 		std::string _name;

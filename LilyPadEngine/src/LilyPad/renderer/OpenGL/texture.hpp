@@ -12,16 +12,17 @@ namespace LilyPad
 		unsigned int id;
 		Texture();
 		explicit Texture(const std::string &path);
-		[[nodiscard]] unsigned int load_data(const std::string &file) const;
 
 		/**
 		 * @brief Reloads texture from the previously set path.
 		 */
 		void update() override;
 
-		unsigned int load_data(const Image &image);
+		[[nodiscard]] unsigned int load_data(const std::string &file) const;
+
+		[[nodiscard]] unsigned int load_data(const Image &image) const;
 
 	private:
-		std::string _path;
+		[[nodiscard]] unsigned int set_attributes() const;
 	};
 } // namespace LilyPad

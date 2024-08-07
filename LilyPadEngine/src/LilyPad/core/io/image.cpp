@@ -54,7 +54,12 @@ namespace LilyPad
 
 	int Image::get_channel_count() const
 	{
-		switch (_format)
+		return get_channel_count(_format);
+	}
+
+	int Image::get_channel_count(const ImageFormat &format)
+	{
+		switch (format)
 		{
 		case FORMAT_R8:
 			return 1;
