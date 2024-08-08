@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include "LilyPad/debug/logging.hpp"
+#include "LilyPad/core/input/input.hpp"
 
 namespace LilyPad
 {
@@ -16,7 +17,7 @@ namespace LilyPad
 
 		virtual void _ready();
 		virtual void _process(double delta);
-		virtual void _process_input();
+		virtual void _process_input(const Input &events);
 		virtual void _draw();
 
 		[[nodiscard]] std::string get_name() const;

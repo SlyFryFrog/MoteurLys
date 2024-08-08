@@ -1,5 +1,7 @@
 #include "LilyPad/renderer/OpenGL/window.hpp"
 
+#include "LilyPad/core/input/input.hpp"
+#include "LilyPad/core/input/keyboard.hpp"
 #include "LilyPad/debug/logging.hpp"
 
 namespace LilyPad
@@ -11,24 +13,42 @@ namespace LilyPad
 
 	void Window::process_input(GLFWwindow *window, const int key, const int scancode, const int action, const int mods)
 	{
-		auto *windowInstance = static_cast<Window *>(glfwGetWindowUserPointer(window));
+		Input *inputs = Input::get_singleton();
+		Window *windowInstance = static_cast<Window *>(glfwGetWindowUserPointer(window));
+		Key keyCode = convert_code(key);
+		Key modifier;
+		KeyPosition position = KeyPosition::UNKNOWN;
 
-		if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+		// Gets modifiers and position
+		if (key == GLFW_KEY_LEFT_SHIFT && action == GLFW_PRESS)
 		{
-			glfwSetWindowShouldClose(window, true);
+			modifier = Key::SHIFT;
+			position = KeyPosition::LEFT;
 		}
-		else if (key == GLFW_KEY_F3 && action == GLFW_PRESS)
+		else if (key == GLFW_KEY_RIGHT_SHIFT && action == GLFW_PRESS)
 		{
-			// Changes how models are rendered
-			windowInstance->_isPolygonMode = !windowInstance->_isPolygonMode;
-			if (windowInstance->_isPolygonMode)
-			{
-				glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-			}
-			else
-			{
-				glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-			}
+			modifier = Key::SHIFT;
+			position = KeyPosition::RIGHT;
+		}
+		else if (key == GLFW_KEY_LEFT_ALT && action == GLFW_PRESS)
+		{
+			modifier = Key::ALT;
+			position = KeyPosition::LEFT;
+		}
+		else if (key == GLFW_KEY_RIGHT_ALT && action == GLFW_PRESS)
+		{
+			modifier = Key::ALT;
+			position = KeyPosition::RIGHT;
+		}
+
+		if (action == GLFW_PRESS && action != GLFW_REPEAT)
+		{
+			inputs->add_key_event(InputHandler(keyCode, position));
+		}
+
+		if (action == GLFW_RELEASE && action != GLFW_REPEAT)
+		{
+			inputs->remove_key_event(keyCode);
 		}
 	}
 

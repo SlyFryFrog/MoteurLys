@@ -33,7 +33,7 @@ namespace LilyPad
 		 *
 		 * @return double Time between frames in terms of seconds.
 		 */
-		double get_delta();
+		double get_delta() const;
 
 	private:
 		FPS();

@@ -6,14 +6,14 @@
 namespace LilyPad
 {
 	FPS *FPS::_singleton = nullptr;
-	
+
 	void FPS::update()
 	{
 		lastFrameTime = currentFrameTime;
 		currentFrameTime = glfwGetTime();
 	}
 
-	double FPS::get_delta() { return (currentFrameTime - lastFrameTime); }
+	double FPS::get_delta() const { return (currentFrameTime - lastFrameTime); }
 
 	FPS *FPS::get_singleton()
 	{
@@ -21,6 +21,7 @@ namespace LilyPad
 		{
 			_singleton = new FPS();
 		}
+
 		return _singleton;
 	}
 
@@ -30,8 +31,5 @@ namespace LilyPad
 		currentFrameTime = lastFrameTime;
 	}
 
-	FPS::~FPS()
-	{
-		delete _singleton;
-	}
+	FPS::~FPS() { delete _singleton; }
 } // namespace LilyPad

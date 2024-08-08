@@ -8,7 +8,7 @@ namespace LilyPad
 
 	void Node::_ready() {}
 	void Node::_process(double delta) {}
-	void Node::_process_input() {}
+	void Node::_process_input(const Input &events) {}
 	void Node::_draw() {}
 
 	void Node::set_name(const std::string &name) { _name = name; }

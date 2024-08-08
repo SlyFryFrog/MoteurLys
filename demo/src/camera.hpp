@@ -7,7 +7,7 @@ class Camera : public Camera3D
 public:
     void _ready() override;
     void _process(double delta) override;
-    void _process_input() override;
+    void _process_input(const Input &events) override;
 private:
     float _velocity;
 };

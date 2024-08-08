@@ -14,4 +14,10 @@ void Camera::_ready()
 
 void Camera::_process(double delta) {}
 
-void Camera::_process_input() {}
+void Camera::_process_input(const Input &events) 
+{
+	for (auto event : events.get_keys_pressed())
+	{
+		
+	}
+}

@@ -66,6 +66,4 @@ namespace LilyPad
 
 		static void process_input(GLFWwindow *window, int key, int scancode, int action, int mods);
 	};
-
-	typedef GLFWwindow InputEvent;
 } // namespace LilyPad

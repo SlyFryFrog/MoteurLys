@@ -2,8 +2,8 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include <memory>
+#include "LilyPad/core/input/input.hpp"
 #include "LilyPad/core/io/image.hpp"
-#include "LilyPad/core/io/input.hpp"
 #include "LilyPad/core/math/vector3.hpp"
 #include "LilyPad/core/utils/paths.hpp"
 #include "LilyPad/debug/fps.hpp"
@@ -133,8 +133,7 @@ int main()
 							   {{1.0f, -1.0f, 0.0f}, {1.0f, 0.0f}},
 							   {{-1.0f, 1.0f, 0.0f}, {0.0f, 1.0f}},
 							   {{1.0f, -1.0f, 0.0f}, {1.0f, 0.0f}},
-							   {{1.0f, 1.0f, 0.0f}, {1.0f, 1.0f}}}
-	);
+							   {{1.0f, 1.0f, 0.0f}, {1.0f, 1.0f}}});
 
 	bind.bind_vertices(vertices2);
 	vertices.set_attributes();
@@ -221,3 +220,21 @@ void process_input(GLFWwindow *window)
 		ourShader.reload();
 	camera->update_vectors();
 }
+
+// if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
+// {
+// 	glfwSetWindowShouldClose(window, true);
+// }
+// else if (key == GLFW_KEY_F3 && action == GLFW_PRESS)
+// {
+// 	// Changes how models are rendered
+// 	windowInstance->_isPolygonMode = !windowInstance->_isPolygonMode;
+// 	if (windowInstance->_isPolygonMode)
+// 	{
+// 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+// 	}
+// 	else
+// 	{
+// 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+// 	}
+// }
