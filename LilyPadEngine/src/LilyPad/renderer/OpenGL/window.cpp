@@ -13,11 +13,12 @@ namespace LilyPad
 
 	void Window::process_input(GLFWwindow *window, const int key, const int scancode, const int action, const int mods)
 	{
-		Input *inputs = Input::get_singleton();
 		Window *windowInstance = static_cast<Window *>(glfwGetWindowUserPointer(window));
+		Input *inputs = Input::get_singleton();
 		Key keyCode = convert_code(key);
 		Key modifier;
 		KeyPosition position = KeyPosition::UNKNOWN;
+		bool isRegistered = false;
 
 		// Gets modifiers and position
 		if (key == GLFW_KEY_LEFT_SHIFT && action == GLFW_PRESS)
@@ -41,14 +42,28 @@ namespace LilyPad
 			position = KeyPosition::RIGHT;
 		}
 
-		if (action == GLFW_PRESS && action != GLFW_REPEAT)
+		for (auto &event : inputs->get_keys_events())
 		{
-			inputs->add_key_event(InputHandler(keyCode, position));
+			if (keyCode != event.get_key())
+				continue;
+
+			isRegistered = true;
+
+			if (action == GLFW_PRESS)
+				event.set_pressed(true);
+			else if (action == GLFW_RELEASE)
+				event.set_pressed(false);
 		}
 
-		if (action == GLFW_RELEASE && action != GLFW_REPEAT)
+		if (!isRegistered)
 		{
-			inputs->remove_key_event(keyCode);
+			inputs->add_key_event(keyCode);
+		}
+		else
+		{
+			*inputs->get_event(keyCode);
+			if (Input::is_released(keyCode))
+				inputs->remove_key_event(*inputs->get_event(keyCode));
 		}
 	}
 

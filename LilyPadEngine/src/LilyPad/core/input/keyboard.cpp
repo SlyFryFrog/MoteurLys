@@ -65,6 +65,8 @@ namespace LilyPad
 			case GLFW_KEY_LEFT_ALT:
 			case GLFW_KEY_RIGHT_ALT:
                 return Key::ALT;
+			case 0x0100:
+				return Key::ESCAPE;
 			default:
 				return Key::EMPTY; // Handle unexpected unique values
 			}

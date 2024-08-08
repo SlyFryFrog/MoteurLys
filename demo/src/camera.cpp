@@ -1,5 +1,7 @@
 #include "camera.hpp"
 
+#include "LilyPad/debug/logging.hpp"
+
 void Camera::_ready()
 {
 	position = {0.0f, 0.0f, 10.0f};
@@ -12,12 +14,20 @@ void Camera::_ready()
 	update_vectors();
 }
 
-void Camera::_process(double delta) {}
-
-void Camera::_process_input(const Input &events) 
+void Camera::_process(double delta)
 {
-	for (auto event : events.get_keys_pressed())
-	{
-		
-	}
+	float speed = 10.0f * (float)delta;
+
+	if (Input::is_pressed(Key::W))
+		position += speed * front;
+	if (Input::is_pressed(Key::S))
+		position -= speed * front;
+	if (Input::is_pressed(Key::A))
+		position -= speed * right;
+	if (Input::is_pressed(Key::D))
+		position += speed * right;
+
+	update_vectors();
 }
+
+void Camera::_process_input(const InputHandler &event) {}

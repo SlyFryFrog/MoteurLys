@@ -21,8 +21,6 @@
 using namespace LilyPad;
 
 void mouse_callback(GLFWwindow *window, double xpos, double ypos);
-void process_input(GLFWwindow *window);
-void framebuffer_size_callback(GLFWwindow *window, int width, int height);
 
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
@@ -38,6 +36,7 @@ Label label;
 
 int main()
 {
+	Input *inputs = Input::get_singleton();
 	Sprite2D sprite;
 	sprite.position = {0, 10};
 
@@ -141,7 +140,7 @@ int main()
 	while (!window.is_done())
 	{
 		LILYPAD_FPS_UPDATE();
-		process_input(window.window);
+		delta = LILYPAD_DELTA();
 
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -173,7 +172,12 @@ int main()
 
 		glDrawArrays(GL_TRIANGLES, 0, 6);
 
-		delta = LILYPAD_DELTA();
+
+		for (auto &event : inputs->get_keys_events())
+		{
+			camera->_process_input(event);
+		}
+		camera->_process(delta);
 
 		glfwSwapBuffers(window.window);
 		glfwPollEvents();
@@ -202,23 +206,6 @@ void mouse_callback(GLFWwindow *window, double xposIn, double yposIn)
 	lastY = ypos;
 
 	camera->process_mouse_movement(xOffset, yOffset);
-}
-
-void process_input(GLFWwindow *window)
-{
-	float cameraSpeed = 10.0f * (float)delta;
-
-	if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-		camera->position += cameraSpeed * camera->front;
-	if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-		camera->position -= cameraSpeed * camera->front;
-	if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-		camera->position -= cameraSpeed * camera->right;
-	if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-		camera->position += cameraSpeed * camera->right;
-	if (glfwGetKey(window, GLFW_KEY_R) == GLFW_PRESS)
-		ourShader.reload();
-	camera->update_vectors();
 }
 
 // if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)

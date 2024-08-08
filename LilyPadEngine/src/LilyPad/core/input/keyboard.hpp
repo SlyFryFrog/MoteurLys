@@ -51,7 +51,7 @@ namespace LilyPad
 		X = 0x0058,
 		Y = 0x0059,
 		Z = 0x005A,
-		ESCAPE = UNIQUE | 0x0001,
+		ESCAPE = UNIQUE,
 		F1 = UNIQUE | 0x0022,
 		F2 = UNIQUE | 0x0023,
 		F3 = UNIQUE | 0x0024,
@@ -89,6 +89,14 @@ namespace LilyPad
         LEFT,
         RIGHT
     };
+
+	enum class KeyAction 
+	{
+		PRESS,
+		JUST_PRESSED,
+		RELEASE,
+		JUST_RELEASED
+	};
 
 	Key convert_code(unsigned int code);
 } // namespace LilyPad

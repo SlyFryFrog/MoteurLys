@@ -13,6 +13,8 @@ namespace LilyPad
 		bool is_pressed() const;
 		bool is_released() const;
 
+		void set_pressed(bool pressed);
+
 		Key get_key() const;
 		
 		bool operator==(const InputHandler &other) const 
@@ -21,9 +23,11 @@ namespace LilyPad
 		}
 
 	protected:
-		bool _pressed = false;
+		KeyAction _action;
 		Key _key;
 		KeyPosition _position;
+		
+		bool _pressed;
 
 	private:
 	};
