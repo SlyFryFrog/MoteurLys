@@ -9,6 +9,22 @@ namespace LilyPad
 	{
 		EMPTY,
 		UNIQUE = (1 << 8),
+		SPACE = 0x0020,
+		EXCLAM = 0x0021,
+		QUOTEDBL = 0x0022,
+		NUMBERSIGN = 0x0023,
+		DOLLAR = 0x0024,
+		PERCENT = 0x0025,
+		AMPERSAND = 0x0026,
+		APOSTROPHE = 0x0027,
+		PARENLEFT = 0x0028,
+		PARENRIGHT = 0x0029,
+		ASTERISK = 0x002A,
+		PLUS = 0x002B,
+		COMMA = 0x002C,
+		MINUS = 0x002D,
+		PERIOD = 0x002E,
+		SLASH = 0x002F,
 		KEY_0 = 0x0030,
 		KEY_1 = 0x0031,
 		KEY_2 = 0x0032,
@@ -25,6 +41,7 @@ namespace LilyPad
 		EQUAL = 0x003D,
 		GREATER = 0x003E,
 		QUESTION = 0x003F,
+		AT = 0x0040,
 		A = 0x0041,
 		B = 0x0042,
 		C = 0x0043,
@@ -52,6 +69,9 @@ namespace LilyPad
 		Y = 0x0059,
 		Z = 0x005A,
 		ESCAPE = UNIQUE,
+		ENTER = UNIQUE | 0x0001,
+		CONTROL = UNIQUE | 0x0002,
+		SUPER = UNIQUE | 0x0003,
 		F1 = UNIQUE | 0x0022,
 		F2 = UNIQUE | 0x0023,
 		F3 = UNIQUE | 0x0024,
@@ -77,25 +97,33 @@ namespace LilyPad
 		F23 = UNIQUE | 0x0038,
 		F24 = UNIQUE | 0x0039,
 		F25 = UNIQUE | 0x003A,
-        
-		MASK = (1 << 16),
+		KEY_PAD_0 = UNIQUE | 0x0040,
+		KEY_PAD_1 = UNIQUE | 0x0041,
+		KEY_PAD_2 = UNIQUE | 0x0042,
+		KEY_PAD_3 = UNIQUE | 0x0043,
+		KEY_PAD_4 = UNIQUE | 0x0044,
+		KEY_PAD_5 = UNIQUE | 0x0045,
+		KEY_PAD_6 = UNIQUE | 0x0046,
+		KEY_PAD_7 = UNIQUE | 0x0047,
+		KEY_PAD_8 = UNIQUE | 0x0048,
+		KEY_PAD_9 = UNIQUE | 0x0049,
+
+		MASK = (1 << 10),
 		SHIFT = MASK | 0x0001,
 		ALT = MASK | 0x0002
 	};
 
-    enum class KeyPosition : unsigned int
-    {
-        UNKNOWN,
-        LEFT,
-        RIGHT
-    };
-
-	enum class KeyAction 
+	enum class KeyPosition : unsigned int
 	{
-		PRESS,
-		JUST_PRESSED,
+		UNKNOWN,
+		LEFT,
+		RIGHT
+	};
+
+	enum class KeyAction
+	{
 		RELEASE,
-		JUST_RELEASED
+		PRESS
 	};
 
 	Key convert_code(unsigned int code);

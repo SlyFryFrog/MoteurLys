@@ -12,7 +12,12 @@ namespace LilyPad
 
 		bool is_pressed() const;
 		bool is_released() const;
-
+		bool is_repeat() const;
+		
+		void set_repeat(bool repeat);
+		KeyAction get_action() const;
+		void set_action(KeyAction action);
+		
 		void set_pressed(bool pressed);
 
 		Key get_key() const;
@@ -26,8 +31,8 @@ namespace LilyPad
 		KeyAction _action;
 		Key _key;
 		KeyPosition _position;
-		
-		bool _pressed;
+		bool _repeat = false;
+		bool _pressed = true;
 
 	private:
 	};

@@ -10,4 +10,6 @@ public:
     void _process_input(const InputHandler &event) override;
 private:
     float _velocity;
+	bool drawLines = false;
+
 };

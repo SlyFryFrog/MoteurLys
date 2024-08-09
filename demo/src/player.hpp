@@ -6,6 +6,6 @@ using namespace LilyPad;
 
 class Player : public Sprite2D
 {
-    public:
-    void _process_input(const InputHandler &event) override;
+public:
+	void _process_input(const InputHandler &event) override;
 };

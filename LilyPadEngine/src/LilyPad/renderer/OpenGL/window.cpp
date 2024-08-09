@@ -13,34 +13,11 @@ namespace LilyPad
 
 	void Window::process_input(GLFWwindow *window, const int key, const int scancode, const int action, const int mods)
 	{
-		Window *windowInstance = static_cast<Window *>(glfwGetWindowUserPointer(window));
+		const auto *windowInstance = static_cast<Window *>(glfwGetWindowUserPointer(window));
 		Input *inputs = Input::get_singleton();
 		Key keyCode = convert_code(key);
-		Key modifier;
-		KeyPosition position = KeyPosition::UNKNOWN;
+		auto position = KeyPosition::UNKNOWN;
 		bool isRegistered = false;
-
-		// Gets modifiers and position
-		if (key == GLFW_KEY_LEFT_SHIFT && action == GLFW_PRESS)
-		{
-			modifier = Key::SHIFT;
-			position = KeyPosition::LEFT;
-		}
-		else if (key == GLFW_KEY_RIGHT_SHIFT && action == GLFW_PRESS)
-		{
-			modifier = Key::SHIFT;
-			position = KeyPosition::RIGHT;
-		}
-		else if (key == GLFW_KEY_LEFT_ALT && action == GLFW_PRESS)
-		{
-			modifier = Key::ALT;
-			position = KeyPosition::LEFT;
-		}
-		else if (key == GLFW_KEY_RIGHT_ALT && action == GLFW_PRESS)
-		{
-			modifier = Key::ALT;
-			position = KeyPosition::RIGHT;
-		}
 
 		for (auto &event : inputs->get_keys_events())
 		{
@@ -49,10 +26,11 @@ namespace LilyPad
 
 			isRegistered = true;
 
-			if (action == GLFW_PRESS)
-				event.set_pressed(true);
-			else if (action == GLFW_RELEASE)
-				event.set_pressed(false);
+
+			if (event.is_pressed())
+			{
+				event.set_repeat(true);
+			}
 		}
 
 		if (!isRegistered)
@@ -61,8 +39,7 @@ namespace LilyPad
 		}
 		else
 		{
-			*inputs->get_event(keyCode);
-			if (Input::is_released(keyCode))
+			if (action == GLFW_RELEASE)
 				inputs->remove_key_event(*inputs->get_event(keyCode));
 		}
 	}
@@ -124,11 +101,13 @@ namespace LilyPad
 
 		// Sets key callback function
 		glfwSetKeyCallback(window, process_input);
+		glfwSetInputMode(window, GLFW_STICKY_KEYS, GLFW_FALSE);
+		glfwMakeContextCurrent(window);
 	}
 
 	bool Window::is_done() const { return glfwWindowShouldClose(window); }
 
-	void Window::set_dimensions(int width, int height)
+	void Window::set_dimensions(const int width, const int height)
 	{
 		_width = width;
 		_height = height;

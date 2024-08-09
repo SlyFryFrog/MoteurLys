@@ -139,11 +139,13 @@ int main()
 
 	while (!window.is_done())
 	{
+		glfwPollEvents();
+		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
 		LILYPAD_FPS_UPDATE();
 		delta = LILYPAD_DELTA();
 
-		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		// bind textures on corresponding texture units
 		glActiveTexture(GL_TEXTURE0);
@@ -175,12 +177,15 @@ int main()
 
 		for (auto &event : inputs->get_keys_events())
 		{
-			camera->_process_input(event);
+			if (event.is_pressed())
+			{
+				camera->_process_input(event);
+				event.set_repeat(true);
+			}
 		}
 		camera->_process(delta);
 
 		glfwSwapBuffers(window.window);
-		glfwPollEvents();
 	}
 
 	glfwTerminate();
@@ -189,8 +194,8 @@ int main()
 
 void mouse_callback(GLFWwindow *window, double xposIn, double yposIn)
 {
-	float xpos = static_cast<float>(xposIn);
-	float ypos = static_cast<float>(yposIn);
+	const auto xpos = static_cast<float>(xposIn);
+	const auto ypos = static_cast<float>(yposIn);
 
 	if (firstMouse)
 	{

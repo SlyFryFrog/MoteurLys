@@ -18,7 +18,7 @@ namespace LilyPad
 		return _singleton;
 	}
 
-	bool Input::is_pressed(Key key)
+	bool Input::is_pressed(const Key key)
 	{
 		for (const auto &event : get_singleton()->_events)
 		{
@@ -38,12 +38,12 @@ namespace LilyPad
 		_events.erase(std::remove(_events.begin(), _events.end(), event), _events.end());
 	}
 
-	std::shared_ptr<InputHandler> Input::get_event(Key key) const
+	InputHandler *Input::get_event(const Key key)
 	{
 		for (auto &event : _events)
 		{
 			if (event.get_key() == key)
-				return std::make_shared<InputHandler>(event);
+				return &event;
 		}
 
 		return nullptr;

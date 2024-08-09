@@ -2,77 +2,8 @@
 
 namespace LilyPad
 {
-	Key convert_code(unsigned int code)
+	Key convert_code(const unsigned int code)
 	{
-		// Handle special cases for unique keycodes
-		if (code >= static_cast<unsigned int>(Key::UNIQUE))
-		{
-			switch (code & ~static_cast<unsigned int>(Key::UNIQUE))
-			{
-			case 0x0022:
-				return Key::F1;
-			case 0x0023:
-				return Key::F2;
-			case 0x0024:
-				return Key::F3;
-			case 0x0025:
-				return Key::F4;
-			case 0x0026:
-				return Key::F5;
-			case 0x0027:
-				return Key::F6;
-			case 0x0028:
-				return Key::F7;
-			case 0x0029:
-				return Key::F8;
-			case 0x002A:
-				return Key::F9;
-			case 0x002B:
-				return Key::F10;
-			case 0x002C:
-				return Key::F11;
-			case 0x002D:
-				return Key::F12;
-			case 0x002E:
-				return Key::F13;
-			case 0x002F:
-				return Key::F14;
-			case 0x0030:
-				return Key::F15;
-			case 0x0031:
-				return Key::F16;
-			case 0x0032:
-				return Key::F17;
-			case 0x0033:
-				return Key::F18;
-			case 0x0034:
-				return Key::F19;
-			case 0x0035:
-				return Key::F20;
-			case 0x0036:
-				return Key::F21;
-			case 0x0037:
-				return Key::F22;
-			case 0x0038:
-				return Key::F23;
-			case 0x0039:
-				return Key::F24;
-			case 0x003A:
-				return Key::F25;
-			case GLFW_KEY_LEFT_SHIFT:
-			case GLFW_KEY_RIGHT_SHIFT:
-				return Key::SHIFT;
-			case GLFW_KEY_LEFT_ALT:
-			case GLFW_KEY_RIGHT_ALT:
-                return Key::ALT;
-			case 0x0100:
-				return Key::ESCAPE;
-			default:
-				return Key::EMPTY; // Handle unexpected unique values
-			}
-		}
-
-		// Handle regular keys
 		switch (code)
 		{
 		case 0x0030:
@@ -107,6 +38,8 @@ namespace LilyPad
 			return Key::GREATER;
 		case 0x003F:
 			return Key::QUESTION;
+		case 0x0040:
+			return Key::AT;
 		case 0x0041:
 			return Key::A;
 		case 0x0042:
@@ -159,8 +92,102 @@ namespace LilyPad
 			return Key::Y;
 		case 0x005A:
 			return Key::Z;
+		case GLFW_KEY_F1:
+			return Key::F1;
+		case GLFW_KEY_F2:
+			return Key::F2;
+		case GLFW_KEY_F3:
+			return Key::F3;
+		case GLFW_KEY_F4:
+			return Key::F4;
+		case GLFW_KEY_F5:
+			return Key::F5;
+		case GLFW_KEY_F6:
+			return Key::F6;
+		case GLFW_KEY_F7:
+			return Key::F7;
+		case GLFW_KEY_F8:
+			return Key::F8;
+		case GLFW_KEY_F9:
+			return Key::F9;
+		case GLFW_KEY_F10:
+			return Key::F10;
+		case GLFW_KEY_F11:
+			return Key::F11;
+		case GLFW_KEY_F12:
+			return Key::F12;
+		case GLFW_KEY_F13:
+			return Key::F13;
+		case GLFW_KEY_F14:
+			return Key::F14;
+		case GLFW_KEY_F15:
+			return Key::F15;
+		case GLFW_KEY_F16:
+			return Key::F16;
+		case GLFW_KEY_F17:
+			return Key::F17;
+		case GLFW_KEY_F18:
+			return Key::F18;
+		case GLFW_KEY_F19:
+			return Key::F19;
+		case GLFW_KEY_F20:
+			return Key::F20;
+		case GLFW_KEY_F21:
+			return Key::F21;
+		case GLFW_KEY_F22:
+			return Key::F22;
+		case GLFW_KEY_F23:
+			return Key::F23;
+		case GLFW_KEY_F24:
+			return Key::F24;
+		case GLFW_KEY_F25:
+			return Key::F25;
+		case GLFW_KEY_LEFT_SHIFT:
+		case GLFW_KEY_RIGHT_SHIFT:
+			return Key::SHIFT;
+		case GLFW_KEY_LEFT_ALT:
+		case GLFW_KEY_RIGHT_ALT:
+			return Key::ALT;
+		case GLFW_KEY_LEFT_CONTROL:
+		case GLFW_KEY_RIGHT_CONTROL:
+			return Key::CONTROL;
+		case GLFW_KEY_LEFT_SUPER:
+		case GLFW_KEY_RIGHT_SUPER:
+			return Key::SUPER;
+		case GLFW_KEY_ESCAPE:
+			return Key::ESCAPE;
+		case GLFW_KEY_ENTER:
+			return Key::ENTER;
+		case GLFW_KEY_KP_0:
+			return Key::KEY_PAD_0;
+		case GLFW_KEY_KP_1:
+			return Key::KEY_PAD_1;
+		case GLFW_KEY_KP_2:
+			return Key::KEY_PAD_2;
+		case GLFW_KEY_KP_3:
+			return Key::KEY_PAD_3;
+		case GLFW_KEY_KP_4:
+			return Key::KEY_PAD_4;
+		case GLFW_KEY_KP_5:
+			return Key::KEY_PAD_5;
+		case GLFW_KEY_KP_6:
+			return Key::KEY_PAD_6;
+		case GLFW_KEY_KP_7:
+			return Key::KEY_PAD_7;
+		case GLFW_KEY_KP_8:
+			return Key::KEY_PAD_8;
+		case GLFW_KEY_KP_9:
+			return Key::KEY_PAD_9;
+		case GLFW_KEY_KP_DECIMAL:
+		case GLFW_KEY_KP_DIVIDE:
+		case GLFW_KEY_KP_MULTIPLY:
+		case GLFW_KEY_KP_SUBTRACT:
+		case GLFW_KEY_KP_ADD:
+		case GLFW_KEY_KP_ENTER:
+		case GLFW_KEY_KP_EQUAL:
+		case GLFW_KEY_MENU:
 		default:
-			return Key::EMPTY; // Handle unexpected values
+			return Key::EMPTY; // Handle unexpected unique values
 		}
 	}
 } // namespace LilyPad

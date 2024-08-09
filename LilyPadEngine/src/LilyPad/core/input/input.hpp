@@ -22,7 +22,7 @@ namespace LilyPad
 		void add_key_event(const InputHandler &event);
 		void remove_key_event(const InputHandler &event);
 
-		std::shared_ptr<InputHandler> get_event(Key key) const;
+		InputHandler *get_event(Key key);
 
 	private:
 		Input();

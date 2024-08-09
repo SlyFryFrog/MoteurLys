@@ -1,6 +1,7 @@
 #include "camera.hpp"
 
 #include "LilyPad/debug/logging.hpp"
+#include "LilyPad/renderer/OpenGL/utils/debug.hpp"
 
 void Camera::_ready()
 {
@@ -30,4 +31,15 @@ void Camera::_process(double delta)
 	update_vectors();
 }
 
-void Camera::_process_input(const InputHandler &event) {}
+void Camera::_process_input(const InputHandler &event)
+{
+	if (event.get_key() == Key::F3 && event.is_pressed() && !event.is_repeat())
+	{
+		if (drawLines)
+			draw_fill();
+		else
+			draw_lines();
+		
+		drawLines = !drawLines;
+	}
+}
