@@ -56,6 +56,14 @@ namespace LilyPad
 
 		void set_dimensions(int width, int height);
 
+		void poll_events();
+
+		void close();
+
+		void swap_frame_buffer();
+
+		static void terminate();
+
 	private:
 		bool _isPolygonMode; // Boolean to either enable or disable polygon rendering
 		int _width;			 // Window width
@@ -64,6 +72,20 @@ namespace LilyPad
 
 		static void frame_buffer_callback(GLFWwindow *window, int width, int height);
 
+		/**
+		 * @brief Processes any input events and will add and remove them to the Input queue.
+		 *
+		 * This method only performs processing of events. This includes adding and removing said events.
+		 *
+		 * This does not process repeat events!
+		 * This is done outside the function as this is not called per-frame.
+		 *
+		 * @param window 	Instance of the window for which input is being processed.
+		 * @param key		Identifying id for the key being pressed.
+		 * @param scancode
+		 * @param action
+		 * @param mods
+		 */
 		static void process_input(GLFWwindow *window, int key, int scancode, int action, int mods);
 	};
 } // namespace LilyPad

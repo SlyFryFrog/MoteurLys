@@ -6,7 +6,7 @@
 namespace LilyPad
 {
 	std::string LogColors::DEFAULT = "\033[39m";		// Default
-	std::string LogColors::DEBUG = "\033[30m";			// Gray
+	std::string LogColors::DEBUG = "\033[39m";			// Gray
 	std::string LogColors::INFO = "\033[39m";			// Default
 	std::string LogColors::WARNING = "\033[33m";		// Yellow
 	std::string LogColors::ERROR = "\033[38;5;208m";	// Orange

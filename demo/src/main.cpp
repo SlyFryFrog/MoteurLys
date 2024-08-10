@@ -21,7 +21,7 @@
 using namespace LilyPad;
 
 void mouse_callback(GLFWwindow *window, double xpos, double ypos);
-
+void process_input();
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 float lastX = SCR_WIDTH / 2.0f;
@@ -33,10 +33,10 @@ float lastFrame = 0.0f; // Time of last frame
 ShaderProgram ourShader("/home/marcus/dev/LilyPadEngine/demo/rsc/shaders/", "Vertex.glsl", "Fragment.glsl");
 auto camera = std::make_shared<Camera>();
 Label label;
+Input *inputs = Input::get_singleton();
 
 int main()
 {
-	Input *inputs = Input::get_singleton();
 	Sprite2D sprite;
 	sprite.position = {0, 10};
 
@@ -139,13 +139,11 @@ int main()
 
 	while (!window.is_done())
 	{
-		glfwPollEvents();
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		LILYPAD_FPS_UPDATE();
 		delta = LILYPAD_DELTA();
-
 
 		// bind textures on corresponding texture units
 		glActiveTexture(GL_TEXTURE0);
@@ -175,21 +173,40 @@ int main()
 		glDrawArrays(GL_TRIANGLES, 0, 6);
 
 
-		for (auto &event : inputs->get_keys_events())
-		{
-			if (event.is_pressed())
-			{
-				camera->_process_input(event);
-				event.set_repeat(true);
-			}
-		}
+		process_input();
 		camera->_process(delta);
 
-		glfwSwapBuffers(window.window);
+		window.poll_events();
+		window.swap_frame_buffer();
 	}
 
-	glfwTerminate();
+	Window::terminate();
+
 	return 0;
+}
+
+void process_input()
+{
+	std::vector<InputHandler> queueForRemoval;
+
+	// Processes each event and modifies their repeat status
+	for (auto &event : inputs->get_keys_events())
+	{
+		camera->_process_input(event);
+
+		if (event.is_just_pressed())
+			event.set_repeat(true);
+		else if (event.is_just_released())
+			event.set_repeat(true);
+		else if (event.is_released())
+			queueForRemoval.push_back(event);
+	}
+
+	// Removes each event that has been released for more than a frame
+	for (auto &event : queueForRemoval)
+	{
+		inputs->remove_key_event(event);
+	}
 }
 
 void mouse_callback(GLFWwindow *window, double xposIn, double yposIn)
@@ -212,21 +229,3 @@ void mouse_callback(GLFWwindow *window, double xposIn, double yposIn)
 
 	camera->process_mouse_movement(xOffset, yOffset);
 }
-
-// if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
-// {
-// 	glfwSetWindowShouldClose(window, true);
-// }
-// else if (key == GLFW_KEY_F3 && action == GLFW_PRESS)
-// {
-// 	// Changes how models are rendered
-// 	windowInstance->_isPolygonMode = !windowInstance->_isPolygonMode;
-// 	if (windowInstance->_isPolygonMode)
-// 	{
-// 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-// 	}
-// 	else
-// 	{
-// 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-// 	}
-// }

@@ -20,16 +20,56 @@ namespace LilyPad
 
 	bool Input::is_pressed(const Key key)
 	{
-		for (const auto &event : get_singleton()->_events)
+		for (auto &event : Input::get_singleton()->get_keys_events())
 		{
 			if (event.get_key() == key)
+			{
 				return event.is_pressed();
+			}
 		}
 
 		return false;
 	}
 
-	bool Input::is_released(Key key) { return !is_pressed(key); }
+	bool Input::is_released(Key key)
+	{
+		for (auto &event : Input::get_singleton()->get_keys_events())
+		{
+			if (event.get_key() == key)
+			{
+				return event.is_released();	
+			}
+		}
+
+		// Base case where button isn't in inputs vector
+		return true;
+	}
+
+	bool Input::is_just_pressed(Key key)
+	{
+		for (auto &event : Input::get_singleton()->get_keys_events())
+		{
+			if (event.get_key() == key)
+			{
+				return event.is_just_pressed();
+			}
+		}
+
+		return false;
+	}
+
+	bool Input::is_just_released(Key key)
+	{
+		for (auto &event : Input::get_singleton()->get_keys_events())
+		{
+			if (event.get_key() == key)
+			{
+				return event.is_just_released();
+			}
+		}
+
+		return false;
+	}
 
 	void Input::add_key_event(const InputHandler &event) { _events.push_back(event); }
 

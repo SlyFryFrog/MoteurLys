@@ -15,9 +15,7 @@ The LilyPad engine is developed using C++23 with support for both Clang and GCC.
 ## Linux
 
 ```
-sudo apt update
-sudo apt-get install libgl1-mesa-dev libglew-dev libglfw3-dev
-sudo apt-get install libfreetype6-dev
+sudo ./scripts/linux.sh
 ```
 
 ## Windows

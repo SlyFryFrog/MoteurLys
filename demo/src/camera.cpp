@@ -39,7 +39,7 @@ void Camera::_process_input(const InputHandler &event)
 			draw_fill();
 		else
 			draw_lines();
-		
+
 		drawLines = !drawLines;
 	}
 }

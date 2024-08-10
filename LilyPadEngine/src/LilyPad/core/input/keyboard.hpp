@@ -119,12 +119,6 @@ namespace LilyPad
 		LEFT,
 		RIGHT
 	};
-
-	enum class KeyAction
-	{
-		RELEASE,
-		PRESS
-	};
-
+	
 	Key convert_code(unsigned int code);
 } // namespace LilyPad

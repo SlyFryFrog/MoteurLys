@@ -23,14 +23,7 @@ namespace LilyPad
 		{
 			if (keyCode != event.get_key())
 				continue;
-
 			isRegistered = true;
-
-
-			if (event.is_pressed())
-			{
-				event.set_repeat(true);
-			}
 		}
 
 		if (!isRegistered)
@@ -40,7 +33,10 @@ namespace LilyPad
 		else
 		{
 			if (action == GLFW_RELEASE)
-				inputs->remove_key_event(*inputs->get_event(keyCode));
+			{
+				inputs->get_event(keyCode)->set_pressed(false);
+				inputs->get_event(keyCode)->set_repeat(false);
+			}
 		}
 	}
 
@@ -106,6 +102,14 @@ namespace LilyPad
 	}
 
 	bool Window::is_done() const { return glfwWindowShouldClose(window); }
+
+	void Window::poll_events() { glfwPollEvents(); }
+
+	void Window::close() { glfwSetWindowShouldClose(window, true); }
+
+	void Window::swap_frame_buffer() { glfwSwapBuffers(window); }
+
+	void Window::terminate() { glfwTerminate(); }
 
 	void Window::set_dimensions(const int width, const int height)
 	{

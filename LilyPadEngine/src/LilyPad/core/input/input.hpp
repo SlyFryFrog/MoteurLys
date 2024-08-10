@@ -17,6 +17,8 @@ namespace LilyPad
 
 		static bool is_pressed(Key key);
 		static bool is_released(Key key);
+		static bool is_just_pressed(Key key);
+		static bool is_just_released(Key key);
 
 		std::vector<InputHandler> &get_keys_events();
 		void add_key_event(const InputHandler &event);

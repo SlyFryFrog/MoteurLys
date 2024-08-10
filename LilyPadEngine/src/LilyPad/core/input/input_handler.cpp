@@ -8,13 +8,14 @@ namespace LilyPad
 	bool InputHandler::is_pressed() const { return _pressed; }
 	bool InputHandler::is_released() const { return !_pressed; }
 	bool InputHandler::is_repeat() const { return _repeat; }
+	
+	bool InputHandler::is_just_pressed() const { return _pressed && !_repeat; }
+	bool InputHandler::is_just_released() const { return !_pressed && !_repeat; }
+	
 	void InputHandler::set_repeat(bool repeat)
 	{
 		_repeat = repeat;
 	}
-
-	KeyAction InputHandler::get_action() const { return _action; }
-	void InputHandler::set_action(KeyAction action) { _action = action; }
 
 	void InputHandler::set_pressed(const bool pressed) { _pressed = pressed; }
 

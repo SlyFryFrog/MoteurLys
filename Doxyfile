@@ -642,37 +642,7 @@ HIDE_SCOPE_NAMES       = NO
 # append additional text to a page's title, such as Class Reference. If set to
 # YES the compound reference will be hidden.
 # The default value is: NO.
-
-HIDE_COMPOUND_REFERENCE= NO
-
-# If the SHOW_HEADERFILE tag is set to YES then the documentation for a class
-# will show which file needs to be included to use the class.
-# The default value is: YES.
-
-SHOW_HEADERFILE        = YES
-
-# If the SHOW_INCLUDE_FILES tag is set to YES then doxygen will put a list of
-# the files that are included by a file in the documentation of that file.
-# The default value is: YES.
-
-SHOW_INCLUDE_FILES     = YES
-
-# If the SHOW_GROUPED_MEMB_INC tag is set to YES then Doxygen will add for each
-# grouped member an include statement to the documentation, telling the reader
-# which file to include in order to use the member.
-# The default value is: NO.
-
-SHOW_GROUPED_MEMB_INC  = NO
-
-# If the FORCE_LOCAL_INCLUDES tag is set to YES then doxygen will list include
-# files with double quotes in the documentation rather than with sharp brackets.
-# The default value is: NO.
-
-FORCE_LOCAL_INCLUDES   = NO
-
-# If the INLINE_INFO tag is set to YES then a tag [inline] is inserted in the
-# documentation for inline members.
-# The default value is: YES.
+sudo apt-get install libgl1-mesa-dev libglew-dev libglfw3-dev
 
 INLINE_INFO            = YES
 
@@ -1016,45 +986,7 @@ FILE_PATTERNS          = *.c \
                          *.inc \
                          *.m \
                          *.markdown \
-                         *.md \
-                         *.mm \
-                         *.dox \
-                         *.py \
-                         *.pyw \
-                         *.f90 \
-                         *.f95 \
-                         *.f03 \
-                         *.f08 \
-                         *.f18 \
-                         *.f \
-                         *.for \
-                         *.vhd \
-                         *.vhdl \
-                         *.ucf \
-                         *.qsf \
-                         *.ice
-
-# The RECURSIVE tag can be used to specify whether or not subdirectories should
-# be searched for input files as well.
-# The default value is: NO.
-
-RECURSIVE              = YES
-
-# The EXCLUDE tag can be used to specify files and/or directories that should be
-# excluded from the INPUT source files. This way you can easily exclude a
-# subdirectory from a directory tree whose root is specified with the INPUT tag.
-#
-# Note that relative paths are relative to the directory from which doxygen is
-# run.
-
-EXCLUDE                =
-
-# The EXCLUDE_SYMLINKS tag can be used to select whether or not files or
-# directories that are symbolic links (a Unix file system feature) are excluded
-# from the input.
-# The default value is: NO.
-
-EXCLUDE_SYMLINKS       = NO
+                 sudo apt-get install libgl1-mesa-dev libglew-dev libglfw3-dev
 
 # If the value of the INPUT tag contains directories, you can use the
 # EXCLUDE_PATTERNS tag to specify one or more wildcard patterns to exclude
@@ -2504,51 +2436,7 @@ EXTERNAL_PAGES         = YES
 # If set to YES the inheritance and collaboration graphs will hide inheritance
 # and usage relations if the target is undocumented or is not a class.
 # The default value is: YES.
-
-HIDE_UNDOC_RELATIONS   = YES
-
-# If you set the HAVE_DOT tag to YES then doxygen will assume the dot tool is
-# available from the path. This tool is part of Graphviz (see:
-# https://www.graphviz.org/), a graph visualization toolkit from AT&T and Lucent
-# Bell Labs. The other options in this section have no effect if this option is
-# set to NO
-# The default value is: YES.
-
-HAVE_DOT               = NO
-
-# The DOT_NUM_THREADS specifies the number of dot invocations doxygen is allowed
-# to run in parallel. When set to 0 doxygen will base this on the number of
-# processors available in the system. You can set it explicitly to a value
-# larger than 0 to get control over the balance between CPU load and processing
-# speed.
-# Minimum value: 0, maximum value: 32, default value: 0.
-# This tag requires that the tag HAVE_DOT is set to YES.
-
-DOT_NUM_THREADS        = 0
-
-# DOT_COMMON_ATTR is common attributes for nodes, edges and labels of
-# subgraphs. When you want a differently looking font in the dot files that
-# doxygen generates you can specify fontname, fontcolor and fontsize attributes.
-# For details please see <a href=https://graphviz.org/doc/info/attrs.html>Node,
-# Edge and Graph Attributes specification</a> You need to make sure dot is able
-# to find the font, which can be done by putting it in a standard location or by
-# setting the DOTFONTPATH environment variable or by setting DOT_FONTPATH to the
-# directory containing the font. Default graphviz fontsize is 14.
-# The default value is: fontname=Helvetica,fontsize=10.
-# This tag requires that the tag HAVE_DOT is set to YES.
-
-DOT_COMMON_ATTR        = "fontname=Helvetica,fontsize=10"
-
-# DOT_EDGE_ATTR is concatenated with DOT_COMMON_ATTR. For elegant style you can
-# add 'arrowhead=open, arrowtail=open, arrowsize=0.5'. <a
-# href=https://graphviz.org/doc/info/arrows.html>Complete documentation about
-# arrows shapes.</a>
-# The default value is: labelfontname=Helvetica,labelfontsize=10.
-# This tag requires that the tag HAVE_DOT is set to YES.
-
-DOT_EDGE_ATTR          = "labelfontname=Helvetica,labelfontsize=10"
-
-# DOT_NODE_ATTR is concatenated with DOT_COMMON_ATTR. For view without boxes
+sudo apt-get install libgl1-mesa-dev libglew-dev libglfw3-dev
 # around nodes set 'shape=plain' or 'shape=plaintext' <a
 # href=https://www.graphviz.org/doc/info/shapes.html>Shapes specification</a>
 # The default value is: shape=box,height=0.2,width=0.4.
