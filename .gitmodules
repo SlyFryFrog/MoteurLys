@@ -7,3 +7,6 @@
 [submodule "LilyPadEngine/vendor/glm"]
 	path = LilyPadEngine/vendor/glm
 	url = https://github.com/g-truc/glm
+[submodule "LilyPadEngine/vendor/imgui"]
+	path = LilyPadEngine/vendor/imgui
+	url = https://github.com/ocornut/imgui

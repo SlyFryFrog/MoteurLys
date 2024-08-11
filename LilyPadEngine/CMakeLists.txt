@@ -5,18 +5,19 @@ set(CMAKE_CXX_STANDARD_REQUIRED YES)
 
 option(RUN_TESTS "Build tests" OFF)
 
-function (LinkDependencies Target)
-    target_link_libraries(${Target} 
-        PRIVATE
-            glm::glm
-            OpenGL::GL
-            stb_image
-            GLEW::GLEW
-            glfw
-            Jolt
-            ${FREETYPE_LIBRARIES}
-    )
-endfunction()
+set(VENDOR_PATH ${CMAKE_CURRENT_SOURCE_DIR}/vendor)
+set(IMGUI_PATH ${VENDOR_PATH}/imgui)
+
+# Add ImGui source files
+set(IMGUI_SRC
+    ${IMGUI_PATH}/imgui.cpp
+    ${IMGUI_PATH}/imgui_draw.cpp
+    ${IMGUI_PATH}/imgui_demo.cpp
+    ${IMGUI_PATH}/imgui_tables.cpp
+    ${IMGUI_PATH}/imgui_widgets.cpp
+    ${IMGUI_PATH}/backends/imgui_impl_glfw.cpp
+    ${IMGUI_PATH}/backends/imgui_impl_opengl3.cpp
+)
 
 # Set STATIC for Windows only
 if (WIN32)
@@ -29,13 +30,26 @@ if(CMAKE_COMPILER_IS_GNUCXX)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-inline -O1")
 endif()
 
+
+function(LinkDependencies Target)
+    target_link_libraries(${Target} 
+        PRIVATE
+            glm::glm
+            OpenGL::GL
+            stb_image
+            GLEW::GLEW
+            glfw
+            Jolt
+            ${FREETYPE_LIBRARIES}
+        PUBLIC
+            imgui
+    )
+endfunction()
+
+
 # Add all cpp and hpp files to the library
 file(GLOB_RECURSE SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp)
 file(GLOB_RECURSE HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/src/*.hpp)
-
-foreach(TEXTURE_FILE ${TEXTURE_FILES})
-    file(COPY ${TEXTURE_FILE} DESTINATION ${CMAKE_BINARY_DIR}/rsc/textures)
-endforeach()
 
 if (WIN32)
     add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/vendor/glfw)
@@ -54,14 +68,18 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/vendor/JoltPhysics/Jolt)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/vendor/JoltPhysics/Jolt/Core)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/vendor/JoltPhysics/ThirdParty)
 
-add_library(LilyPadEngine ${LIBRARY_TYPE} ${SOURCES} )
-add_library(stb_image ${LIBRARY_TYPE} "vendor/stb_image.cpp" "vendor/stb_image.cpp")
+
+add_library(LilyPadEngine ${LIBRARY_TYPE} ${SOURCES})
+add_library(stb_image ${LIBRARY_TYPE} ${VENDOR_PATH}/stb_image.cpp)
+add_library(imgui ${LIBRARY_TYPE} ${IMGUI_SRC})
+target_include_directories(imgui PUBLIC ${IMGUI_PATH} ${IMGUI_PATH}/backends)
+
 
 target_include_directories(
     LilyPadEngine
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/src
-        ${CMAKE_CURRENT_SOURCE_DIR}/vendor
+        ${VENDOR_PATH}
         ${FREETYPE_INCLUDE_DIRS}
 )
 
