@@ -178,6 +178,8 @@ namespace LilyPad
 			return Key::KEY_PAD_8;
 		case GLFW_KEY_KP_9:
 			return Key::KEY_PAD_9;
+		case GLFW_KEY_SPACE:
+			return Key::SPACE;
 		case GLFW_KEY_KP_DECIMAL:
 		case GLFW_KEY_KP_DIVIDE:
 		case GLFW_KEY_KP_MULTIPLY:

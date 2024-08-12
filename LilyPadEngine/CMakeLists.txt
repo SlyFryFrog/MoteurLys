@@ -35,13 +35,13 @@ function(LinkDependencies Target)
     target_link_libraries(${Target} 
         PRIVATE
             glm::glm
-            OpenGL::GL
             stb_image
             GLEW::GLEW
             glfw
             Jolt
             ${FREETYPE_LIBRARIES}
         PUBLIC
+            OpenGL::GL
             imgui
     )
 endfunction()

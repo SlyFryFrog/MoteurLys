@@ -74,7 +74,7 @@ int main()
 		}
 	}
 
-	sprite.image.set_data(500, 500, false, ImageFormat::FORMAT_R8, pixels);
+	sprite.image.set_data(500, 500, false, ImageFormat::R8, pixels);
 	camera->_ready();
 	camera->set_name("camera");
 	const std::string relativePath = get_root_directory();

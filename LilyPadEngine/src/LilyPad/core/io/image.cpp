@@ -13,19 +13,19 @@ namespace LilyPad
 
 		switch (_format)
 		{
-		case FORMAT_R8:
+		case ImageFormat::R8:
 			_data[offset] = static_cast<uint8_t>(data.r * 255);
 			break;
-		case FORMAT_RG8:
+		case ImageFormat::RG8:
 			_data[offset] = static_cast<uint8_t>(data.r * 255);
 			_data[offset + 1] = static_cast<uint8_t>(data.g * 255);
 			break;
-		case FORMAT_RGB8:
+		case ImageFormat::RGB8:
 			_data[offset] = static_cast<uint8_t>(data.r * 255);
 			_data[offset + 1] = static_cast<uint8_t>(data.g * 255);
 			_data[offset + 2] = static_cast<uint8_t>(data.b * 255);
 			break;
-		case FORMAT_RGBA8:
+		case ImageFormat::RGBA8:
 			_data[offset] = static_cast<uint8_t>(data.r * 255);
 			_data[offset + 1] = static_cast<uint8_t>(data.g * 255);
 			_data[offset + 2] = static_cast<uint8_t>(data.b * 255);
@@ -61,13 +61,13 @@ namespace LilyPad
 	{
 		switch (format)
 		{
-		case FORMAT_R8:
+		case ImageFormat::R8:
 			return 1;
-		case FORMAT_RG8:
+		case ImageFormat::RG8:
 			return 2;
-		case FORMAT_RGB8:
+		case ImageFormat::RGB8:
 			return 3;
-		case FORMAT_RGBA8:
+		case ImageFormat::RGBA8:
 			return 4;
 		default:
 			break;

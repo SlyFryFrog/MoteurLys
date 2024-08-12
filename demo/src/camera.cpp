@@ -27,6 +27,10 @@ void Camera::_process(double delta)
 		position -= speed * right;
 	if (Input::is_pressed(Key::D))
 		position += speed * right;
+	if (Input::is_pressed(Key::SPACE))
+		position.y += speed;
+	if (Input::is_pressed(Key::SHIFT))
+		position.y -= speed;
 
 	update_vectors();
 }

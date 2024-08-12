@@ -8,12 +8,12 @@
 
 namespace LilyPad
 {
-	enum ImageFormat
+	enum class ImageFormat
 	{
-		FORMAT_R8,
-		FORMAT_RG8,
-		FORMAT_RGB8,
-		FORMAT_RGBA8
+		R8,
+		RG8,
+		RGB8,
+		RGBA8
 	};
 
 	class Image : public File

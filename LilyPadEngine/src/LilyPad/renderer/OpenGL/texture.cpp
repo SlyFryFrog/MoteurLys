@@ -82,16 +82,16 @@ namespace LilyPad
 			GLint format;
 			switch (image.get_format())
 			{
-			case ImageFormat::FORMAT_R8:
+			case ImageFormat::R8:
 				format = GL_RED;
 				break;
-			case ImageFormat::FORMAT_RG8:
+			case ImageFormat::RG8:
 				format = GL_RG;
 				break;
-			case ImageFormat::FORMAT_RGB8:
+			case ImageFormat::RGB8:
 				format = GL_RGB;
 				break;
-			case ImageFormat::FORMAT_RGBA8:
+			case ImageFormat::RGBA8:
 				format = GL_RGBA;
 				break;
 			default:
