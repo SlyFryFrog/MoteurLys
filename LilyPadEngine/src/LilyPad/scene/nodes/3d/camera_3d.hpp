@@ -1,6 +1,7 @@
 #pragma once
 
 #include <glm/glm.hpp>
+#include "LilyPad/core/math/matrix4.hpp"
 #include "LilyPad/core/math/vector3.hpp"
 #include "LilyPad/scene/nodes/3d/node_3d.hpp"
 
@@ -13,10 +14,10 @@ namespace LilyPad
 		float pitch;
 		float mouseSensitivity;
 		bool constrainPitch;
-		glm::vec3 up{};
-		glm::vec3 front;
-		glm::vec3 right{};
-		glm::vec3 worldUp;
+		Vector3 up{};
+		Vector3 front;
+		Vector3 right{};
+		Vector3 worldUp;
 		glm::mat4 viewMatrix{};
 		float zoom;
 

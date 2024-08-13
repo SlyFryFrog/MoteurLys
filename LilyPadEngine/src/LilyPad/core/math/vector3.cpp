@@ -11,7 +11,7 @@ namespace LilyPad
 
 	Vector3 Vector3::cross(const Vector3 &vector_a, const Vector3 &vector_b)
 	{
-		return {vector_a.z * vector_b.z - vector_a.z * vector_b.y, vector_a.z * vector_a.x - vector_a.x * vector_b.z,
+		return {vector_a.y * vector_b.z - vector_a.z * vector_b.y, vector_a.z * vector_b.x - vector_a.x * vector_b.z,
 				vector_a.x * vector_b.y - vector_a.y * vector_b.x};
 	}
 
@@ -20,12 +20,13 @@ namespace LilyPad
 	Vector3 Vector3::normalize() const
 	{
 		fp_type length = std::sqrt(x * x + y * y + z * z);
+		if (length == 0)
+			return {0, 0, 0}; // Handle zero length to avoid division by zero
 		return {x / length, y / length, z / length};
-	}	
-	
-	Vector3 Vector3::normalize(const Vector3 &vector)
+	}
+
+	Vector3 Vector3::normalize(const Vector3 &p_vector)
 	{
-		fp_type length = std::sqrt(vector.x * vector.x + vector.y * vector.y + vector.z * vector.z);
-		return {vector.x / length, vector.y / length, vector.z / length};
+		return p_vector.normalize();
 	}
 } // namespace LilyPad

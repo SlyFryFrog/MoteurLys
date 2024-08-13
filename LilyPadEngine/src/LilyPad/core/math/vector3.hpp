@@ -17,7 +17,6 @@ namespace LilyPad
 
 		[[nodiscard]] Vector3 cross(const Vector3 &other) const;
 		static Vector3 cross(const Vector3 &vector_a, const Vector3 &vector_b);
-		static Vector3 normalize(const Vector3 &vector);
 
 		[[nodiscard]] fp_type dot(const Vector3 &other) const;
 
@@ -79,6 +78,7 @@ namespace LilyPad
 		}
 
 		[[nodiscard]] Vector3 normalize() const;
+		[[nodiscard]] static Vector3 normalize(const Vector3 &p_vector);
 	};
 
 	typedef Vector3 Position3;

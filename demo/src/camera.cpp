@@ -20,13 +20,13 @@ void Camera::_process(double delta)
 	float speed = 10.0f * (float)delta;
 
 	if (Input::is_pressed(Key::W))
-		position += speed * front;
+		position += speed * Vector3(front.x, 0.0f, front.z);
 	if (Input::is_pressed(Key::S))
-		position -= speed * front;
+		position -= speed * Vector3(front.x, 0.0f, front.z);
 	if (Input::is_pressed(Key::A))
-		position -= speed * right;
+		position -= speed * Vector3(right.x, 0.0f, right.z);
 	if (Input::is_pressed(Key::D))
-		position += speed * right;
+		position += speed * Vector3(right.x, 0.0f, right.z);
 	if (Input::is_pressed(Key::SPACE))
 		position.y += speed;
 	if (Input::is_pressed(Key::SHIFT))

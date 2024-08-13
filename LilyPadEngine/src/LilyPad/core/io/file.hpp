@@ -10,7 +10,7 @@ namespace LilyPad
 	public:
 		File();
 		virtual ~File();
-		explicit File(const std::string &path);
+		File(const std::string &path);
 
 		/**
 		 * @brief Checks if that last write time has changed since the last check.

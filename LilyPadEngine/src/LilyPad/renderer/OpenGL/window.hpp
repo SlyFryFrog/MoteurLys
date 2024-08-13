@@ -60,6 +60,13 @@ namespace LilyPad
 
 		void close();
 
+		/**
+		 * @brief Closes the window and its context without calling any registered callbacks.
+		 *
+		 * @note Since this destroys the window without any callbacks, this should only be done on the main thread.
+		 */
+		void force_close();
+
 		void swap_frame_buffer();
 
 		static void terminate();

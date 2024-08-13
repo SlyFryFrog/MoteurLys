@@ -6,6 +6,7 @@
 #include <iostream>
 #include <sstream>
 #include "LilyPad/debug/logging.hpp"
+#include "LilyPad/core/math/generic.hpp"
 
 namespace LilyPad
 {
@@ -126,6 +127,11 @@ namespace LilyPad
 	void ShaderProgram::set_uniform(const std::string &name, const glm::mat4 &trans) const
 	{
 		glUniformMatrix4fv(glGetUniformLocation(id, name.c_str()), 1, GL_FALSE, glm::value_ptr(trans));
+	}
+
+	void ShaderProgram::set_uniform(const std::string &name, const Matrix4 &trans) const
+	{
+		glUniformMatrix4fv(glGetUniformLocation(id, name.c_str()), 1, GL_FALSE, LilyMath::value_ptr(trans));
 	}
 
 	void ShaderProgram::reload()

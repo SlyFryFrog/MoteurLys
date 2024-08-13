@@ -1,6 +1,7 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include <iostream>
 #include <memory>
 #include "LilyPad/core/input/input.hpp"
 #include "LilyPad/core/io/image.hpp"
@@ -34,20 +35,30 @@ ShaderProgram ourShader("/home/marcus/dev/LilyPadEngine/demo/rsc/shaders/", "Ver
 auto camera = std::make_shared<Camera>();
 Label label;
 Input *inputs = Input::get_singleton();
-
+void printMatrix(const Matrix4 &mat)
+{
+	for (int i = 0; i < 4; ++i)
+	{
+		for (int j = 0; j < 4; ++j)
+		{
+			std::cout << mat[i][j] << " ";
+		}
+		std::cout << std::endl;
+	}
+}
 int main()
 {
 	Sprite2D sprite;
 	sprite.position = {0, 10};
 
-	std::vector<uint8_t> pixels(500 * 500 * 1);
+	std::vector<uint8_t> pixels(1000 * 1000 * 1);
 	const float GRID_SIZE = 400;
 
-	for (int i = 0; i < 500; i++)
+	for (int i = 0; i < 1000; i++)
 	{
-		for (int j = 0; j < 500; j++)
+		for (int j = 0; j < 1000; j++)
 		{
-			int index = (j * 500 + i) * 1;
+			int index = (j * 1000 + i) * 1;
 			float val = 0.0f;
 
 			float freq = 1.0f;
@@ -74,7 +85,8 @@ int main()
 		}
 	}
 
-	sprite.image.set_data(500, 500, false, ImageFormat::R8, pixels);
+	sprite.image.set_data(1000, 1000, false, ImageFormat::R8, pixels);
+
 	camera->_ready();
 	camera->set_name("camera");
 	const std::string relativePath = get_root_directory();

@@ -11,7 +11,7 @@ namespace LilyPad
 	public:
 		unsigned int id;
 		Texture();
-		explicit Texture(const std::string &path);
+		Texture(const std::string &path);
 
 		/**
 		 * @brief Reloads texture from the previously set path.

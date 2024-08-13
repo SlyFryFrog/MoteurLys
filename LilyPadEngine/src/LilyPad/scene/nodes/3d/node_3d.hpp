@@ -9,9 +9,9 @@ namespace LilyPad
 	class Node3D : public Node
 	{
 	public:
-		glm::vec3 position;
-		glm::vec3 absolutePosition;
-		glm::vec3 size;
+		Vector3 position;
+		Vector3 absolutePosition;
+		Vector3 size;
 
 		Node3D();
 

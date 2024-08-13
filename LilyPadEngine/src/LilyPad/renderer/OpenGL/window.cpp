@@ -107,6 +107,8 @@ namespace LilyPad
 
 	void Window::close() { glfwSetWindowShouldClose(window, true); }
 
+	void Window::force_close() { glfwDestroyWindow(window); }
+
 	void Window::swap_frame_buffer() { glfwSwapBuffers(window); }
 
 	void Window::terminate() { glfwTerminate(); }
