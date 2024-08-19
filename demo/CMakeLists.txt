@@ -26,7 +26,7 @@ find_package(GLEW REQUIRED)
 find_package(glfw3 REQUIRED)
 
 target_link_libraries(Demo PRIVATE
-    LilyPadEngine
+    MoteurLys
     glfw
     OpenGL::GL
     GLEW::GLEW

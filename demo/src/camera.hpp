@@ -1,6 +1,6 @@
-#include <lily.hpp>
+#include <lys.hpp>
 
-using namespace LilyPad;
+using namespace Lys;
 
 class Camera : public Camera3D
 {

@@ -2,12 +2,12 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include <iostream>
-#include <lily.hpp>
+#include <lys.hpp>
 #include <memory>
 #include "camera.hpp"
 #include "level/generation.hpp"
 
-using namespace LilyPad;
+using namespace Lys;
 
 void mouse_callback(GLFWwindow *window, double xpos, double ypos);
 void process_input();
@@ -19,7 +19,7 @@ bool firstMouse = true;
 
 double delta = 0.0;		// Time between current frame and last frame
 float lastFrame = 0.0f; // Time of last frame
-ShaderProgram ourShader("/home/marcus/dev/LilyPadEngine/demo/rsc/shaders/", "Vertex.glsl", "Fragment.glsl");
+ShaderProgram ourShader("/home/marcus/dev/MoteurLys/demo/rsc/shaders/", "Vertex.glsl", "Fragment.glsl");
 auto camera = std::make_shared<Camera>();
 Label label;
 Input *inputs = Input::get_singleton();
@@ -142,8 +142,8 @@ int main()
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		LILYPAD_FPS_UPDATE();
-		delta = LILYPAD_DELTA();
+		LYS_FPS_UPDATE();
+		delta = LYS_DELTA();
 
 		// bind textures on corresponding texture units
 		glActiveTexture(GL_TEXTURE0);

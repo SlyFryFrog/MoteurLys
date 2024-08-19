@@ -1,8 +1,8 @@
 #pragma once
 
-#include "LilyPad/scene/nodes/2d/sprite_2d.hpp"
+#include "Lys/scene/nodes/2d/sprite_2d.hpp"
 
-using namespace LilyPad;
+using namespace Lys;
 
 class Player : public Sprite2D
 {

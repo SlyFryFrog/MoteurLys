@@ -1,8 +1,8 @@
 #pragma once
 
-#include "LilyPad/core/math/vector2.hpp"
+#include <lys.hpp>
 
-using namespace LilyPad;
+using namespace Lys;
 
 Vector2 random_gradient(int xCoord, int yCoord);
 float dot_grid_gradient(int gridX, int gridY, float pointX, float pointY);

@@ -1,9 +1,9 @@
-[submodule "LilyPad/vendor/glm"]
-	path = LilyPad/vendor/glm
-	url = https://github.com/g-truc/glm
-[submodule "LilyPad/vendor/JoltPhysics"]
-	path = LilyPad/vendor/JoltPhysics
-	url = https://github.com/jrouwe/JoltPhysics
-[submodule "LilyPad/vendor/imgui"]
-	path = LilyPad/vendor/imgui
+[submodule "vendor/imgui"]
+	path = vendor/imgui
 	url = https://github.com/ocornut/imgui
+[submodule "vendor/JoltPhysics"]
+	path = vendor/JoltPhysics
+	url = https://github.com/jrouwe/JoltPhysics
+[submodule "vendor/glm"]
+	path = vendor/glm
+	url = https://github.com/g-truc/glm

@@ -2,7 +2,7 @@
 
 #include <cmath>
 
-using namespace LilyPad;
+using namespace Lys;
 
 Vector2 random_gradient(const int xCoord, const int yCoord)
 {
