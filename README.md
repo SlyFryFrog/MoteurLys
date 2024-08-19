@@ -10,6 +10,8 @@ The LilyPad engine is developed using C++23 with support for both Clang and GCC.
 
 - -D_FORCE_INLINE_
 
+- -D_NDEBUG
+
 # Setup
 
 ## Linux
@@ -35,3 +37,7 @@ sudo ./scripts/linux.sh
 |       Image loading       |              [stb_image](https://github.com/nothings/stb) (MIT)               |
 |        Mathematics        |                  [GLM](https://github.com/g-truc/glm) (MIT)                   |
 |           Fonts           |    [FreeType](https://download.savannah.gnu.org/releases/freetype/) (FTL)     |
+
+
+https://github.com/jrouwe/JoltPhysics
+https://github.com/ocornut/imgui

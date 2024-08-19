@@ -1,4 +1,4 @@
-#include "LilyPad/scene/nodes/3d/camera_3d.hpp"
+#include <lily.hpp>
 
 using namespace LilyPad;
 

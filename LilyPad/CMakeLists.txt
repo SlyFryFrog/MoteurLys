@@ -3,7 +3,7 @@ project(LilyPadEngine)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED YES)
 
-option(RUN_TESTS "Build tests" OFF)
+option(RUN_TESTS "Build tests" ON)
 
 set(VENDOR_PATH ${CMAKE_CURRENT_SOURCE_DIR}/vendor)
 set(IMGUI_PATH ${VENDOR_PATH}/imgui)
@@ -34,9 +34,9 @@ endif()
 function(LinkDependencies Target)
     target_link_libraries(${Target} 
         PRIVATE
-            glm::glm
             stb_image
             GLEW::GLEW
+            glm::glm
             glfw
             Jolt
             ${FREETYPE_LIBRARIES}
@@ -64,9 +64,11 @@ add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/vendor/glm)
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/vendor/JoltPhysics/Build)
 
 # Include directories for Jolt
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/vendor/JoltPhysics/Jolt)
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/vendor/JoltPhysics/Jolt/Core)
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/vendor/JoltPhysics/ThirdParty)
+include_directories(
+    ${CMAKE_CURRENT_SOURCE_DIR}/vendor/JoltPhysics/Jolt
+    ${CMAKE_CURRENT_SOURCE_DIR}/vendor/JoltPhysics/Jolt/Core
+    ${CMAKE_CURRENT_SOURCE_DIR}/vendor/JoltPhysics/ThirdParty
+)
 
 
 add_library(LilyPadEngine ${LIBRARY_TYPE} ${SOURCES})

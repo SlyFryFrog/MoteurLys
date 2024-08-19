@@ -5,6 +5,9 @@
 
 namespace LilyPad
 {
+	/**
+	 * @brief Collection of keys supported by the engine.
+	 */
 	enum class Key : unsigned int
 	{
 		EMPTY,
@@ -119,6 +122,6 @@ namespace LilyPad
 		LEFT,
 		RIGHT
 	};
-	
+
 	Key convert_code(unsigned int code);
 } // namespace LilyPad

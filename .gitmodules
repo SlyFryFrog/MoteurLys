@@ -1,12 +1,9 @@
-[submodule "LilyPadEngine/vendor/JoltPhysics"]
-	path = LilyPadEngine/vendor/JoltPhysics
-	url = https://github.com/jrouwe/JoltPhysics
-[submodule "LilyPadEngine/vendor/glfw"]
-	path = LilyPadEngine/vendor/glfw
-	url = https://github.com/glfw/glfw
-[submodule "LilyPadEngine/vendor/glm"]
-	path = LilyPadEngine/vendor/glm
+[submodule "LilyPad/vendor/glm"]
+	path = LilyPad/vendor/glm
 	url = https://github.com/g-truc/glm
-[submodule "LilyPadEngine/vendor/imgui"]
-	path = LilyPadEngine/vendor/imgui
+[submodule "LilyPad/vendor/JoltPhysics"]
+	path = LilyPad/vendor/JoltPhysics
+	url = https://github.com/jrouwe/JoltPhysics
+[submodule "LilyPad/vendor/imgui"]
+	path = LilyPad/vendor/imgui
 	url = https://github.com/ocornut/imgui

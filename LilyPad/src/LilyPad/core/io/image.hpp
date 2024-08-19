@@ -71,7 +71,6 @@ namespace LilyPad
 		std::vector<uint8_t> _data;
 		ImageFormat _format;
 
-
 		/**
 		 * @brief Get the starting index of the pixel segment.
 		 *

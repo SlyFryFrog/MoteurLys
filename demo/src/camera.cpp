@@ -1,8 +1,5 @@
 #include "camera.hpp"
 
-#include "LilyPad/debug/logging.hpp"
-#include "LilyPad/renderer/OpenGL/utils/debug.hpp"
-
 void Camera::_ready()
 {
 	position = {0.0f, 0.0f, 10.0f};
