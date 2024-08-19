@@ -4,6 +4,7 @@
 #if defined(__GNUC__) // GNU compiler
 #define _ALWAYS_INLINE_ __attribute__((always_inline)) inline
 #elif defined(_MSC_VER) // MSVC compiler
+#warning The engine was not tested using the MSVC compiler and may not work correctly or at all.
 #define _ALWAYS_INLINE_ __forceinline
 #else // Clang compiler
 #define _ALWAYS_INLINE_ inline

@@ -1,6 +1,6 @@
 # Project Description
 
-The LilyPad engine is developed using C++23 with support for both Clang and GCC. Additionally, the project only supports OpenGL 3.3 or higher.
+The Lys engine is developed using C++23 with support for both Clang and GCC. Additionally, the project only supports OpenGL 3.3 or higher.
 
 # CMake Flags and Options
 
@@ -21,6 +21,8 @@ sudo ./scripts/linux.sh
 ```
 
 ## Windows
+
+While Windows support is constantly being worked on, it is not the main focus and thus may not work.
 
 # Development
 

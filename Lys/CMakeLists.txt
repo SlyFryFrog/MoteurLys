@@ -3,8 +3,6 @@ project(MoteurLys)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED YES)
 
-option(RUN_TESTS "Build tests" ON)
-
 set(VENDOR_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../vendor)
 set(IMGUI_PATH ${VENDOR_PATH}/imgui)
 
@@ -89,7 +87,5 @@ LinkDependencies(MoteurLys)
 
 if (${RUN_TESTS})
     message("RUN_TESTS enabled")
-    enable_testing()
-    include(CTest)
     add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/tests)
 endif()

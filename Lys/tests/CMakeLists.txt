@@ -1,4 +1,4 @@
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/vendor/googletest-1.14.0)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../../vendor/googletest ${CMAKE_BINARY_DIR}/vendor/googletest)
 file(GLOB_RECURSE TESTS ${CMAKE_CURRENT_SOURCE_DIR}/Lys/*.cpp)
 
 # Adds test or each file
