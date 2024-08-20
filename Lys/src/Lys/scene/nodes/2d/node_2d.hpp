@@ -11,5 +11,6 @@ namespace Lys
 		Vector2 position;
 		Vector2 absolutePosition;
 		Vector2 size;
+		Vector2 anchor;
 	};
 } // namespace Lys

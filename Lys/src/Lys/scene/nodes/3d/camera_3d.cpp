@@ -14,25 +14,19 @@ namespace Lys
 
 	void Camera3D::look_at(const Position3 &point)
 	{
-        // Assuming you have the following member variables:
-        // - Position3 position;  // Camera position in world space
-        // - Vector3 forward;     // Forward vector (where the camera is looking at)
-        // - Vector3 up;          // Up vector (camera's up direction)
-        // - Vector3 right;       // Right vector (perpendicular to forward and up)
-        
-        // Step 1: Calculate the new forward vector (pointing from the camera's position to the target point)
-        front = (point - position).normalize();
-        
-        // Step 2: Recalculate the right vector
-        // Usually, the world up vector is (0, 1, 0), but this can change based on your coordinate system.
-        const Vector3 world_up(0, 1, 0);
-        right = world_up.cross(front).normalize();
 
-        // Step 3: Recalculate the up vector
-        up = front.cross(right).normalize();
+		// Step 1: Calculate the new forward vector (pointing from the camera's position to the target point)
+		front = (point - position).normalize();
 
-        // Optionally, update the view matrix if your Camera3D class uses one
-        //viewMatrix = Matrix4::look_at(position, point, up);
+		// Step 2: Recalculate the right vector
+		const Vector3 world_up(0, 1, 0);
+		right = world_up.cross(front).normalize();
+
+		// Step 3: Recalculate the up vector
+		up = front.cross(right).normalize();
+
+		// Updates view matrix with the new data
+		update_view();
 	}
 
 	glm::mat4 Camera3D::get_view() const

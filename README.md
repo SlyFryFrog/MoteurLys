@@ -10,8 +10,6 @@ The Lys engine is developed using C++23 with support for both Clang and GCC. Add
 
 - -D_FORCE_INLINE_
 
-- -D_NDEBUG
-
 # Setup
 
 ## Linux

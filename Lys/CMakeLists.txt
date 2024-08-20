@@ -38,8 +38,8 @@ function(LinkDependencies Target)
             glfw
             Jolt
             ${FREETYPE_LIBRARIES}
-        PUBLIC
             OpenGL::GL
+        PUBLIC
             imgui
     )
 endfunction()

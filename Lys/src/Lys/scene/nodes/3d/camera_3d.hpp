@@ -14,9 +14,9 @@ namespace Lys
 		float pitch;
 		float mouseSensitivity;
 		bool constrainPitch;
-		Vector3 up{};
-		Vector3 front;
-		Vector3 right{};
+		Vector3 up{};	 // Up vector (camera's up direction)
+		Vector3 front;	 // Forward vector (where the camera is looking at)
+		Vector3 right{}; // Right vector (perpendicular to forward and up)
 		Vector3 worldUp;
 		glm::mat4 viewMatrix{};
 		float zoom;
