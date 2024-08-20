@@ -86,31 +86,6 @@ namespace Lys
 		}
 
 		/**
-		 * @brief Binds a buffer and uploads vertex data to it for OpenGL rendering.
-		 *
-		 * This function binds a given Vertex Buffer Object (VBO) and uploads the vertex data to it.
-		 * It uses `glBindBuffer` to bind the buffer and `glBufferData` to create and initialize the buffer's data
-		 * store. The function assumes that `get_data()` returns a vector of vertex data that needs to be uploaded to
-		 * the GPU.
-		 *
-		 * @param VBO A constant reference to an unsigned int representing the Vertex Buffer Object ID.
-		 *
-		 * @note Ensure that `get_data()` returns the appropriate vertex data before calling this function.
-		 *
-		 * Example usage:
-		 * @code
-		 * unsigned int VBO;
-		 * glGenBuffers(1, &VBO);
-		 * bind_buffer(VBO);
-		 * @endcode
-		 */
-		void bind_buffer(const unsigned int &VBO)
-		{
-			glBindBuffer(GL_ARRAY_BUFFER, VBO);
-			glBufferData(GL_ARRAY_BUFFER, get_data().size() * sizeof(float), get_data().data(), GL_STATIC_DRAW);
-		}
-
-		/**
 		 * @brief Sets the vertex attribute pointers for OpenGL rendering.
 		 *
 		 * This function iterates over the vertex data and sets up the vertex attribute pointers.
@@ -123,14 +98,6 @@ namespace Lys
 		 *
 		 * @note This function assumes that the VAO (Vertex Array Object) has been bound before
 		 * calling it, and unbinds the VAO at the end.
-		 *
-		 * Example usage:
-		 * @code
-		 * Vertices<float> vertices({{{-1.0f, 1.0f, 0.0f}, {0.0f, 1.0f}}});
-		 * Bind bind;
-		 * bind.bind_vertices(vertices); // Data must be binded before setting the attributes.
-		 * vertices.set_attributes();
-		 * @endcode
 		 */
 		void set_attributes()
 		{

@@ -1,6 +1,12 @@
 #pragma once
 
-#include <GL/glew.h> // Needs to be included before GLFW
+#ifdef OpenGL
+#include <GL/glew.h>
+#include "Lys/renderer/OpenGL/opengl.hpp"
+#elif Vulkan
+#error Vulkan is not yet supported.
+#endif
+
 #include <GLFW/glfw3.h>
 #include <string>
 
@@ -11,7 +17,11 @@ namespace Lys
 	 */
 	class Window
 	{
+
 	public:
+#ifdef OpenGL
+		static RendererGL renderer;
+#endif
 		GLFWwindow *window;
 
 		Window();

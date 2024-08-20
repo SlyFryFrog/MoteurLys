@@ -118,10 +118,11 @@ int main()
 							   {1.3f, -2.0f, -2.5f},   {1.5f, 2.0f, -2.5f},	 {1.5f, 0.2f, -1.5f},
 							   {-1.3f, 1.0f, -1.5f}};
 
-	Bind bind;
+	VertexArray vao;
+	VertexBuffer vbo;
 
 	Texture texture(relativePath + "/rsc/textures/");
-	// texture.id = texture.load_data("frog.png");
+
 	texture.id = texture.load_data(sprite.image);
 
 	ourShader.use();
@@ -134,7 +135,8 @@ int main()
 							   {{1.0f, -1.0f, 0.0f}, {1.0f, 0.0f}},
 							   {{1.0f, 1.0f, 0.0f}, {1.0f, 1.0f}}});
 
-	bind.bind_vertices(vertices2);
+	vao.bind();
+	vbo.set_data(vertices);
 	vertices.set_attributes();
 
 	while (!window.is_done())
@@ -156,14 +158,15 @@ int main()
 		ourShader.set_uniform("uView", {camera->get_view()});
 		ourShader.set_uniform("uProjection", projection);
 
-		bind.bind_vertex_array();
-		for (int i = 0; i < 1; i++)
+		vao.bind();
+
+		for (int i = 0; i < 10; i++)
 		{
 			glm::mat4 model = glm::mat4(1.0f);
-			model = glm::translate(model, glm::vec3(sprite.position.x, sprite.position.y, 0));
+			model = glm::translate(model, glm::vec3(cubePositions[i]));
 			ourShader.set_uniform("uModel", model);
 
-			glDrawArrays(GL_TRIANGLES, 0, 6);
+			glDrawArrays(GL_TRIANGLES, 0, 36);
 		}
 
 		glm::mat4 model = glm::mat4(1.0f);
@@ -178,6 +181,7 @@ int main()
 
 		window.poll_events();
 		window.swap_frame_buffer();
+		vao.unbind();
 	}
 
 	Window::terminate();

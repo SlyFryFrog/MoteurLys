@@ -1,4 +1,4 @@
-#include "Lys/renderer/OpenGL/window.hpp"
+#include "window.hpp"
 
 #include "Lys/core/input/input.hpp"
 #include "Lys/core/input/keyboard.hpp"
@@ -6,9 +6,13 @@
 
 namespace Lys
 {
+	#ifdef OpenGL
+	RendererGL Window::renderer;
+	#endif
+	
 	void Window::frame_buffer_callback(GLFWwindow *window, const int width, const int height)
 	{
-		glViewport(0, 0, width, height);
+		renderer.update_viewport(width, height);
 	}
 
 	void Window::process_input(GLFWwindow *window, const int key, const int scancode, const int action, const int mods)
@@ -72,33 +76,17 @@ namespace Lys
 		// Makes the current window context
 		glfwMakeContextCurrent(window);
 
-		// Initializes GLEW
-		GLenum init = glewInit();
-		if (init != GLEW_OK)
-		{
-			LYS_CRITICAL("GLEW failed to initialize correctly.", glGetError());
-		}
-
-		// (x, y) coords of corner, (length, width) of window
-		glViewport(0, 0, _width, _height);
-		glfwSetFramebufferSizeCallback(window, frame_buffer_callback);
-
-		LYS_INFO("Renderer: ", glGetString(GL_RENDERER));
-		LYS_INFO("OpenGL version: ", glGetString(GL_VERSION));
-
-		int numAttributes;
-		glGetIntegerv(GL_MAX_VERTEX_ATTRIBS, &numAttributes);
-		LYS_INFO("Maximum number of vertex attributes supported: ", numAttributes);
+		renderer.init();
 
 		// Associates window user pointer with current instance
 		glfwSetWindowUserPointer(window, this);
-
 		glfwSetFramebufferSizeCallback(window, frame_buffer_callback);
-
-		// Sets key callback function
 		glfwSetKeyCallback(window, process_input);
 		glfwSetInputMode(window, GLFW_STICKY_KEYS, GLFW_FALSE);
 		glfwMakeContextCurrent(window);
+		glfwSetFramebufferSizeCallback(window, frame_buffer_callback);
+
+		frame_buffer_callback(window, _width, _height);
 	}
 
 	bool Window::is_done() const { return glfwWindowShouldClose(window); }

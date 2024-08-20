@@ -24,11 +24,15 @@
 
 // Renderer
 
-#include "Lys/renderer/OpenGL/binding/bind.hpp"
+#include "Lys/renderer/core/renderer.hpp"
+#include "Lys/renderer/core/window.hpp"
+
+#ifdef OpenGL
+#include "Lys/renderer/OpenGL/binding/vertex_array.hpp"
+#include "Lys/renderer/OpenGL/binding/vertex_buffer.hpp"
 #include "Lys/renderer/OpenGL/shaders/shader_program.hpp"
 #include "Lys/renderer/OpenGL/texture.hpp"
-#include "Lys/renderer/OpenGL/vertex.hpp"
-#include "Lys/renderer/OpenGL/window.hpp"
 #include "Lys/renderer/OpenGL/utils/debug.hpp"
-
+#include "Lys/renderer/OpenGL/vertex.hpp"
+#endif
 // End renderer

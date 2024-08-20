@@ -1,7 +1,7 @@
 #include <imgui.h>
 #include <imgui_impl_glfw.h>
 #include <imgui_impl_opengl3.h>
-#include "Lys/renderer/OpenGL/window.hpp"
+#include "Lys/renderer/core/window.hpp"
 
 using namespace Lys;
 
