@@ -10,3 +10,6 @@
 [submodule "vendor/googletest"]
 	path = vendor/googletest
 	url = https://github.com/google/googletest
+[submodule "vendor/OpenUSD"]
+	path = vendor/OpenUSD
+	url = https://github.com/PixarAnimationStudios/OpenUSD.git

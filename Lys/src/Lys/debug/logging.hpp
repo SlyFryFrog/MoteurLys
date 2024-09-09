@@ -5,6 +5,7 @@
 #include <print>
 #include <sstream>
 #include <string>
+#include <memory>
 
 #define LYS_DEBUG(...) Lys::Logger::get_singleton()->log(Lys::LogLevel::DEBUG, __VA_ARGS__)
 #define LYS_INFO(...) Lys::Logger::get_singleton()->log(Lys::LogLevel::INFO, __VA_ARGS__)
@@ -76,15 +77,15 @@ namespace Lys
 
 			if (_showLogs)
 				print_log(level, logMessage);
-			if (_writeLogs)
+			if (_writeLogs && _logFile)
 			{
 				std::lock_guard<std::mutex> guard(_logMutex);
-				std::ofstream fileStream(_file, std::ios::app); // Sets mode to append
+				std::ofstream fileStream(_logFile->data(), std::ios::app); // Sets mode to append
 
 				if (fileStream.is_open())
 					fileStream << logMessage << std::endl;
 				else
-					std::println("Unable to open the log file at ", _file);
+					std::println("Unable to open the log file at ", _logFile->data());
 			}
 		}
 
@@ -161,8 +162,9 @@ namespace Lys
 		bool _writeLogs;
 		bool _showTimestamp;
 		std::mutex _logMutex;
-		std::string _file;
+		std::shared_ptr<std::string>(_logFile);
 		std::string *_timeFormat;
+		std::unique_ptr<std::string>(_configFile);
 		LogLevel _minLogLevel;
 	};
 } // namespace Lys

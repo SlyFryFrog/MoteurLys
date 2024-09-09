@@ -9,14 +9,6 @@ namespace Lys
 {
 	FPS *FPS::_singleton = nullptr;
 
-	void FPS::update()
-	{
-		lastFrameTime = currentFrameTime;
-		currentFrameTime = glfwGetTime();
-	}
-
-	double FPS::get_delta() const { return (currentFrameTime - lastFrameTime); }
-
 	FPS *FPS::get_singleton()
 	{
 		if (!_singleton)
@@ -26,6 +18,14 @@ namespace Lys
 
 		return _singleton;
 	}
+
+	void FPS::update()
+	{
+		lastFrameTime = currentFrameTime;
+		currentFrameTime = glfwGetTime();
+	}
+
+	double FPS::get_delta() const { return (currentFrameTime - lastFrameTime); }
 
 	FPS::FPS() : frameRate(0.0)
 	{

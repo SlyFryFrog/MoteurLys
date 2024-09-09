@@ -9,13 +9,10 @@
 
 using namespace Lys;
 
-void mouse_callback(GLFWwindow *window, double xpos, double ypos);
-void process_input();
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 float lastX = SCR_WIDTH / 2.0f;
 float lastY = SCR_HEIGHT / 2.0f;
-bool firstMouse = true;
 
 double delta = 0.0;		// Time between current frame and last frame
 float lastFrame = 0.0f; // Time of last frame
@@ -78,13 +75,6 @@ int main()
 	camera->_ready();
 	camera->set_name("camera");
 	const std::string relativePath = get_root_directory();
-	Window window = Window(SCR_WIDTH, SCR_HEIGHT);
-	window.set_title("Demo");
-	window.initialize();
-
-	glfwSetInputMode(window.window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-	glfwSetCursorPosCallback(window.window, mouse_callback);
-	glEnable(GL_DEPTH_TEST);
 
 	ourShader.create_shader_program();
 
@@ -176,7 +166,6 @@ int main()
 		glDrawArrays(GL_TRIANGLES, 0, 6);
 
 
-		process_input();
 		camera->_process(delta);
 
 		window.poll_events();
@@ -187,49 +176,4 @@ int main()
 	Window::terminate();
 
 	return 0;
-}
-
-void process_input()
-{
-	std::vector<InputHandler> queueForRemoval;
-
-	// Processes each event and modifies their repeat status
-	for (auto &event : inputs->get_keys_events())
-	{
-		camera->_process_input(event);
-
-		if (event.is_just_pressed())
-			event.set_repeat(true);
-		else if (event.is_just_released())
-			event.set_repeat(true);
-		else if (event.is_released())
-			queueForRemoval.push_back(event);
-	}
-
-	// Removes each event that has been released for more than a frame
-	for (auto &event : queueForRemoval)
-	{
-		inputs->remove_key_event(event);
-	}
-}
-
-void mouse_callback(GLFWwindow *window, double xposIn, double yposIn)
-{
-	const auto xpos = static_cast<float>(xposIn);
-	const auto ypos = static_cast<float>(yposIn);
-
-	if (firstMouse)
-	{
-		lastX = xpos;
-		lastY = ypos;
-		firstMouse = false;
-	}
-
-	float xOffset = xpos - lastX;
-	float yOffset = lastY - ypos; // reversed since y-coordinates go from bottom to top
-
-	lastX = xpos;
-	lastY = ypos;
-
-	camera->process_mouse_movement(xOffset, yOffset);
 }

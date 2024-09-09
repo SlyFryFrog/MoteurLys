@@ -16,31 +16,47 @@ void Camera::_process(double delta)
 {
 	float speed = 10.0f * (float)delta;
 
-	if (Input::is_pressed(Key::W))
+	if (InputManager::is_pressed(Key::W))
 		position += speed * Vector3(front.x, 0.0f, front.z);
-	if (Input::is_pressed(Key::S))
-		position -= speed * Vector3(front.x, 0.0f, front.z);
-	if (Input::is_pressed(Key::A))
-		position -= speed * Vector3(right.x, 0.0f, right.z);
-	if (Input::is_pressed(Key::D))
-		position += speed * Vector3(right.x, 0.0f, right.z);
-	if (Input::is_pressed(Key::SPACE))
-		position.y += speed;
-	if (Input::is_pressed(Key::SHIFT))
-		position.y -= speed;
+	// if (Input::is_pressed(Key::S))
+	// 	position -= speed * Vector3(front.x, 0.0f, front.z);
+	// if (Input::is_pressed(Key::A))
+	// 	position -= speed * Vector3(right.x, 0.0f, right.z);
+	// if (Input::is_pressed(Key::D))
+	// 	position += speed * Vector3(right.x, 0.0f, right.z);
+	// if (Input::is_pressed(Key::SPACE))
+	// 	position.y += speed;
+	// if (Input::is_pressed(Key::SHIFT))
+	// 	position.y -= speed;
 
 	update_vectors();
 }
 
-void Camera::_process_input(const InputHandler &event)
+void Camera::_process_input(const InputEventCore &event)
 {
-	if (event.get_key() == Key::F3 && event.is_pressed() && !event.is_repeat())
+	if (const MouseMotionEvent *motionEvent = dynamic_cast<const MouseMotionEvent *>(&event))
 	{
-		if (drawLines)
-			draw_fill();
-		else
-			draw_lines();
 
-		drawLines = !drawLines;
 	}
+	// if (const InputKeyEvent *keyEvent = dynamic_cast<const InputKeyEvent *>(&event))
+	// {
+	// 	if (keyEvent->get_key() == Key::F3 && keyEvent->is_pressed() && !keyEvent->is_repeat())
+	// 	{
+	// 		if (drawLines)
+	// 			draw_fill();
+	// 		else
+	// 			draw_lines();
+
+	// 		drawLines = !drawLines;
+	// 	}
+	// 	if (event.is_just_pressed() && event.get_key() == Key::ESCAPE)
+	// 	{
+	// 		Window::terminate();
+	// 	}
+	// }
+
+	// if (const InputMouseEvent *mouseEvent = dynamic_cast<const InputMouseEvent *>(&event))
+	// {
+		
+	// }
 }

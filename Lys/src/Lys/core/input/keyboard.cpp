@@ -188,6 +188,12 @@ namespace Lys
 		case GLFW_KEY_KP_ENTER:
 		case GLFW_KEY_KP_EQUAL:
 		case GLFW_KEY_MENU:
+		case GLFW_MOUSE_BUTTON_LEFT:
+			return Key::MOUSE_BUTTON_LEFT;
+		case GLFW_MOUSE_BUTTON_RIGHT:
+			return Key::MOUSE_BUTTON_RIGHT;
+		case GLFW_MOUSE_BUTTON_MIDDLE:
+			return Key::MOUSE_BUTTON_MIDDLE;
 		default:
 			return Key::EMPTY; // Handle unexpected unique values
 		}

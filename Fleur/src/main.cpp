@@ -17,7 +17,7 @@ int main()
 	// Initialize ImGui
 	ImGui::CreateContext();
 	ImGuiIO &io = ImGui::GetIO();
-	ImGui_ImplGlfw_InitForOpenGL(window.window, true);
+	ImGui_ImplGlfw_InitForOpenGL(window.get_window(), true);
 	ImGui_ImplOpenGL3_Init("#version 460");
 
 	// Main loop

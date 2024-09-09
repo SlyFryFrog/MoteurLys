@@ -1,14 +1,12 @@
 #pragma once
 
-#ifdef OpenGL
+#ifdef OPENGL
 #include <GL/glew.h>
-#include "Lys/renderer/OpenGL/opengl.hpp"
-#elif Vulkan
-#error Vulkan is not yet supported.
 #endif
 
 #include <GLFW/glfw3.h>
 #include <string>
+#include "Lys/core/math/vector2.hpp"
 
 namespace Lys
 {
@@ -17,13 +15,10 @@ namespace Lys
 	 */
 	class Window
 	{
+		GLFWwindow *_window;
+		static bool _glfwInitialized;
 
 	public:
-#ifdef OpenGL
-		static RendererGL renderer;
-#endif
-		GLFWwindow *window;
-
 		Window();
 
 		/**
@@ -64,11 +59,20 @@ namespace Lys
 		 */
 		[[nodiscard]] bool is_done() const;
 
+		/**
+		 * @brief Sets the width and height of the window instance.
+		 *
+		 * @param width New window width.
+		 * @param height New window height.
+		 */
 		void set_dimensions(int width, int height);
 
 		void poll_events();
 
-		void close();
+		/**
+		 * @brief Closes the window instance while not terminating the underlying library.
+		 */
+		void close() const;
 
 		/**
 		 * @brief Closes the window and its context without calling any registered callbacks.
@@ -77,32 +81,26 @@ namespace Lys
 		 */
 		void force_close();
 
+		/**
+		 * @brief Swaps the front and back frame buffers.
+		 */
 		void swap_frame_buffer();
 
+		/**
+		 * @brief Terminates GLFW (closes all window instances).
+		 */
 		static void terminate();
 
+		GLFWwindow *get_window() const;
+
+		static Point2 get_mouse_position();
+
 	private:
-		bool _isPolygonMode; // Boolean to either enable or disable polygon rendering
+		static bool _isPolygonMode; // Boolean to either enable or disable polygon rendering
 		int _width;			 // Window width
 		int _height;		 // Window height
 		std::string _title;
 
 		static void frame_buffer_callback(GLFWwindow *window, int width, int height);
-
-		/**
-		 * @brief Processes any input events and will add and remove them to the Input queue.
-		 *
-		 * This method only performs processing of events. This includes adding and removing said events.
-		 *
-		 * This does not process repeat events!
-		 * This is done outside the function as this is not called per-frame.
-		 *
-		 * @param window 	Instance of the window for which input is being processed.
-		 * @param key		Identifying id for the key being pressed.
-		 * @param scancode
-		 * @param action
-		 * @param mods
-		 */
-		static void process_input(GLFWwindow *window, int key, int scancode, int action, int mods);
 	};
 } // namespace Lys

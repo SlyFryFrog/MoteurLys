@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 #include "Lys/debug/logging.hpp"
-#include "Lys/core/input/input.hpp"
+#include "Lys/core/input/input_events.hpp"
 
 namespace Lys
 {
@@ -17,8 +17,9 @@ namespace Lys
 
 		virtual void _ready();
 		virtual void _process(double delta);
-		virtual void _process_input(const InputHandler &event);
+		virtual void _process_input(const InputEventCore &event);
 		virtual void _draw();
+		virtual void _process_mouse_input(const InputEventCore &event);
 
 		[[nodiscard]] std::string get_name() const;
 		void set_name(const std::string &name);
@@ -69,6 +70,14 @@ namespace Lys
 		std::shared_ptr<Node> get_parent() const;
 
 		void queue_destroy();
+
+		void update();
+
+		void init();
+
+	private:
+		void call_update_methods(Node &node);
+		void process_input(Node &node);
 
 	private:
 		std::string _name;

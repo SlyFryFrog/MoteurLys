@@ -1,6 +1,6 @@
 #pragma once
 
-#ifdef OpenGL
+#ifdef OPENGL
 #include <GL/glew.h>
 #endif
 #include <GLFW/glfw3.h>
@@ -113,6 +113,10 @@ namespace Lys
 		KEY_PAD_8 = UNIQUE | 0x0048,
 		KEY_PAD_9 = UNIQUE | 0x0049,
 
+		MOUSE_BUTTON_LEFT = GLFW_MOUSE_BUTTON_LEFT,
+		MOUSE_BUTTON_RIGHT = GLFW_MOUSE_BUTTON_RIGHT,
+		MOUSE_BUTTON_MIDDLE = GLFW_MOUSE_BUTTON_MIDDLE,
+
 		MASK = (1 << 10),
 		SHIFT = MASK | 0x0001,
 		ALT = MASK | 0x0002
@@ -123,6 +127,12 @@ namespace Lys
 		UNKNOWN,
 		LEFT,
 		RIGHT
+	};
+
+	enum class MouseButton
+	{
+		LEFT_CLICK,
+		RIGHT_CLICK
 	};
 
 	Key convert_code(unsigned int code);

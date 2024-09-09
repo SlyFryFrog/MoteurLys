@@ -9,3 +9,5 @@ fi
 apt-get update -y && apt-get upgrade -y
 apt-get install -y libgl1-mesa-dev libglew-dev libglfw3-dev \
                    libfreetype6-dev
+
+git submodule update --init --recursive
