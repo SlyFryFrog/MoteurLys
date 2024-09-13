@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Lys/core/math/vector2.hpp"
 #include "Lys/core/math/rect2.hpp"
+#include "Lys/core/math/vector2.hpp"
 
 namespace Lys
 {

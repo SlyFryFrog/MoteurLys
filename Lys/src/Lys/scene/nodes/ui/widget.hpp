@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Lys/scene/nodes/core/node.hpp"
 #include "Lys/core/math/vector2.hpp"
+#include "Lys/scene/nodes/core/node.hpp"
 
 namespace Lys
 {
@@ -12,6 +12,7 @@ namespace Lys
 
 		Vector2 position;
 		Vector2 absolutePosition;
+
 	private:
 	};
 } // namespace Lys

@@ -5,8 +5,8 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <iostream>
 #include <sstream>
-#include "Lys/debug/logging.hpp"
 #include "Lys/core/math/generic.hpp"
+#include "Lys/debug/logging.hpp"
 
 namespace Lys
 {
@@ -57,7 +57,7 @@ namespace Lys
 			{
 				glGetShaderInfoLog(shader, 1024, nullptr, infoLog);
 				LYS_ERROR("ERROR::SHADER_COMPILATION_ERROR of type: ", type, "\n", infoLog,
-							  "-- --------------------------------------------------- --");
+						  "-- --------------------------------------------------- --");
 			}
 		}
 		else
@@ -67,7 +67,7 @@ namespace Lys
 			{
 				glGetProgramInfoLog(shader, 1024, nullptr, infoLog);
 				LYS_ERROR("ERROR::PROGRAM_LINKING_ERROR of type: ", type, "\n", infoLog,
-							  "-- --------------------------------------------------- --");
+						  "-- --------------------------------------------------- --");
 			}
 		}
 

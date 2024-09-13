@@ -1,8 +1,8 @@
 #include "application.hpp"
 
+#include "Lys/core/input/input_manager.hpp"
 #include "Lys/debug/fps.hpp"
 #include "Lys/renderer/core/renderer.hpp"
-#include "Lys/core/input/input_manager.hpp"
 
 namespace Lys
 {
@@ -25,8 +25,9 @@ namespace Lys
 			Renderer::get_singleton()->clear();
 			LYS_FPS_UPDATE();
 
-			if (!_isMinimized)
+			if (_isMinimized)
 			{
+				continue;
 			}
 
 			process_input();
@@ -40,6 +41,7 @@ namespace Lys
 	{
 		_window = new Window(500, 500, name);
 		_window->initialize();
+		InputManager::get_singleton();
 
 		return _isRunning;
 	}
@@ -50,8 +52,5 @@ namespace Lys
 
 	void Application::process_input() {}
 
-	Window *Application::get_window() const
-	{
-		return _window;
-	}
+	Window *Application::get_window() const { return _window; }
 } // namespace Lys

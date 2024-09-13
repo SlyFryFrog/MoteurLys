@@ -2,5 +2,5 @@
 
 namespace Lys
 {
-    Node3D::Node3D() = default;
+	Node3D::Node3D() = default;
 } // namespace Lys

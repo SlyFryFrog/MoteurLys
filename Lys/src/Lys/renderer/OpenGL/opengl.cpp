@@ -16,7 +16,7 @@ namespace Lys
 		{
 			LYS_CRITICAL("GLEW failed to initialize correctly.", glGetError());
 		}
-		
+
 		glEnable(GL_DEPTH_TEST);
 
 		LYS_INFO("Renderer: ", glGetString(GL_RENDERER));

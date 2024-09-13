@@ -26,7 +26,7 @@ namespace Lys
 
 	fp_type Vector2::dot_product(const Vector2 &p_vec1, const Vector2 &p_vec2, const fp_type &theta)
 	{
-		return (fp_type) (std::abs(p_vec1.magnitude()) * std::abs(p_vec2.magnitude()) * std::cos(theta));
+		return (fp_type)(std::abs(p_vec1.magnitude()) * std::abs(p_vec2.magnitude()) * std::cos(theta));
 	}
 
 	Vector2 Vector2::normalized() const

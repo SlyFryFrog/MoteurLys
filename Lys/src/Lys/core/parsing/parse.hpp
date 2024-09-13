@@ -27,7 +27,7 @@ namespace Lys
 		std::vector<int> normals;
 	};
 
-    Vertices<float> vertices;
+	Vertices<float> vertices;
 
 	// void loadOBJ(const std::string &filename)
 	// {

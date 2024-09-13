@@ -5,13 +5,13 @@
 
 namespace Lys
 {
-	std::string LogColors::DEFAULT = "\033[39m";		// Default
-	std::string LogColors::DEBUG = "\033[39m";			// Gray
-	std::string LogColors::INFO = "\033[39m";			// Default
-	std::string LogColors::WARNING = "\033[33m";		// Yellow
-	std::string LogColors::ERROR = "\033[38;5;208m";	// Orange
-	std::string LogColors::CRITICAL = "\033[31m";		// Red
-	Logger *Logger::_singleton = nullptr; // Definition with initialization
+	std::string LogColors::DEFAULT = "\033[39m";	 // Default
+	std::string LogColors::DEBUG = "\033[39m";		 // Gray
+	std::string LogColors::INFO = "\033[39m";		 // Default
+	std::string LogColors::WARNING = "\033[33m";	 // Yellow
+	std::string LogColors::ERROR = "\033[38;5;208m"; // Orange
+	std::string LogColors::CRITICAL = "\033[31m";	 // Red
+	Logger *Logger::_singleton = nullptr;			 // Definition with initialization
 
 	Logger::Logger() :
 		_logFile(nullptr), _showLogs(true), _writeLogs(false), _showTimestamp(true), _minLogLevel(LogLevel::DEBUG),

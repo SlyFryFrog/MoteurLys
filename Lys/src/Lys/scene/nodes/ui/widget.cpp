@@ -2,5 +2,5 @@
 
 namespace Lys
 {
-    Widget::Widget() = default;    
+	Widget::Widget() = default;
 } // namespace Lys

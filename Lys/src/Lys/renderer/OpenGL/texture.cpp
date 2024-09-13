@@ -63,7 +63,7 @@ namespace Lys
 		else
 		{
 			LYS_ERROR("Failed to load texture data at the path ", _path, file,
-						  ". Make sure the file format is supported or is in the appropriate location.");
+					  ". Make sure the file format is supported or is in the appropriate location.");
 		}
 
 		stbi_image_free(data);

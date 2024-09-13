@@ -4,7 +4,7 @@
 
 /**
  * @brief Returns the current delta in seconds.
- * 
+ *
  * @return delta Delta time in seconds.
  */
 #define LYS_DELTA() Lys::FPS::get_singleton()->get_delta();

@@ -36,7 +36,6 @@ void Camera::_process_input(const InputEventCore &event)
 {
 	if (const MouseMotionEvent *motionEvent = dynamic_cast<const MouseMotionEvent *>(&event))
 	{
-
 	}
 	// if (const InputKeyEvent *keyEvent = dynamic_cast<const InputKeyEvent *>(&event))
 	// {
@@ -57,6 +56,6 @@ void Camera::_process_input(const InputEventCore &event)
 
 	// if (const InputMouseEvent *mouseEvent = dynamic_cast<const InputMouseEvent *>(&event))
 	// {
-		
+
 	// }
 }

@@ -52,10 +52,7 @@ namespace Lys
 		_data = data;
 	}
 
-	int Image::get_channel_count() const
-	{
-		return get_channel_count(_format);
-	}
+	int Image::get_channel_count() const { return get_channel_count(_format); }
 
 	int Image::get_channel_count(const ImageFormat &format)
 	{

@@ -70,8 +70,7 @@ namespace Lys
 		}
 	}
 
-	void Node::process_input(Node &node)
-	{
+	void Node::process_input(Node &node) {
 		// std::vector<InputEventCore> queueForRemoval;
 
 		// // Processes each event and modifies their repeat status

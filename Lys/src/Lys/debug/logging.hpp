@@ -1,11 +1,11 @@
 #pragma once
 
 #include <fstream>
+#include <memory>
 #include <mutex>
 #include <print>
 #include <sstream>
 #include <string>
-#include <memory>
 
 #define LYS_DEBUG(...) Lys::Logger::get_singleton()->log(Lys::LogLevel::DEBUG, __VA_ARGS__)
 #define LYS_INFO(...) Lys::Logger::get_singleton()->log(Lys::LogLevel::INFO, __VA_ARGS__)

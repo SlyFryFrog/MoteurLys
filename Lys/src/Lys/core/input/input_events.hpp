@@ -13,7 +13,6 @@ namespace Lys
 	public:
 		InputEventCore() = default;
 		virtual ~InputEventCore() = default;
-
 	private:
 	};
 

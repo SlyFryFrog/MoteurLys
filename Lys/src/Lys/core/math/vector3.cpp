@@ -25,8 +25,5 @@ namespace Lys
 		return {x / length, y / length, z / length};
 	}
 
-	Vector3 Vector3::normalize(const Vector3 &p_vector)
-	{
-		return p_vector.normalize();
-	}
+	Vector3 Vector3::normalize(const Vector3 &p_vector) { return p_vector.normalize(); }
 } // namespace Lys

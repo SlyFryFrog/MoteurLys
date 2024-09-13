@@ -13,10 +13,7 @@ namespace Lys
 	}
 
 	InputManager::InputManager() = default;
-	InputManager::~InputManager()
-	{
-		delete _singleton;
-	}
+	InputManager::~InputManager() { delete _singleton; }
 
 	std::vector<InputEventCore> InputManager::get_events() const { return _events; }
 
@@ -43,16 +40,24 @@ namespace Lys
 
 		if (!isRegistered)
 		{
-			_singleton->add_key_event(keyCode);
+			InputKeyEvent event(keyCode);
+			_singleton->add_key_event(event);
 		}
-		// else
-		// {
-		// 	if (action == GLFW_RELEASE)
-		// 	{
-		// 		_singleton->get_event(keyCode)->set_pressed(false);
-		// 		_singleton->get_event(keyCode)->set_repeat(false);
-		// 	}
-		// }
+		else
+		{
+			if (action == GLFW_RELEASE)
+			{
+				for (auto &event : _singleton->get_events())
+				{
+					if (const InputKeyEvent *keyEvent = dynamic_cast<const InputKeyEvent *>(&event))
+					{
+					}
+					else if (const InputMouseEvent *mouseEvent = dynamic_cast<const InputMouseEvent *>(&event))
+					{
+					}
+				}
+			}
+		}
 	}
 
 	void InputManager::_process_mouse_callback(GLFWwindow *window, double xposIn, double yposIn)

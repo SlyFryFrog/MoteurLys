@@ -69,5 +69,6 @@ namespace Lys
 		}
 
 		_FORCE_INLINE_ bool operator<=>(const Vector2 &other) const = default;
-	}; typedef Vector2 Point2;
+	};
+	typedef Vector2 Point2;
 } // namespace Lys

@@ -3,8 +3,8 @@
 #include <memory>
 #include <string>
 #include <vector>
-#include "Lys/debug/logging.hpp"
 #include "Lys/core/input/input_events.hpp"
+#include "Lys/debug/logging.hpp"
 
 namespace Lys
 {

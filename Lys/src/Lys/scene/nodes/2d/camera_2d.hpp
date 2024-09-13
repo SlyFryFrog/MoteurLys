@@ -2,8 +2,7 @@
 
 namespace Lys
 {
-    class Camera2D
-    {
-
-    };
+	class Camera2D
+	{
+	};
 } // namespace Lys

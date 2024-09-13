@@ -97,8 +97,8 @@ namespace Lys
 
 	private:
 		static bool _isPolygonMode; // Boolean to either enable or disable polygon rendering
-		int _width;			 // Window width
-		int _height;		 // Window height
+		int _width;					// Window width
+		int _height;				// Window height
 		std::string _title;
 
 		static void frame_buffer_callback(GLFWwindow *window, int width, int height);

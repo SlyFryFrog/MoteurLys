@@ -2,6 +2,6 @@
 
 namespace Lys
 {
-    void draw_lines();
-    void draw_fill();
+	void draw_lines();
+	void draw_fill();
 } // namespace Lys

@@ -7,7 +7,7 @@ namespace Lys
 		template <typename T>
 		const float *value_ptr(const T &object)
 		{
-            return static_cast<const float*>(object);
+			return static_cast<const float *>(object);
 		}
 	} // namespace LysMath
 } // namespace Lys

@@ -3,10 +3,7 @@
 namespace Lys
 {
 	InputKeyEvent::InputKeyEvent(Key key) : _key(key) {}
-	Key InputKeyEvent::get_key() const
-	{
-		return _key;
-	}
+	Key InputKeyEvent::get_key() const { return _key; }
 
 	MouseMotionEvent::MouseMotionEvent(float x, float y) : _xPos(x), _yPos(y) {}
 

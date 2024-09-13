@@ -4,14 +4,14 @@
 
 #include "Lys/renderer/core/window.hpp"
 
-int main(int argc, char** argv);
+int main(int argc, char **argv);
 
 namespace Lys
 {
 	class Application
 	{
 		static Application *_singleton;
-		friend int ::main(int argc, char** argv);
+		friend int ::main(int argc, char **argv);
 
 	public:
 		std::string name;
