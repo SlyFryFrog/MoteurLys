@@ -22,7 +22,8 @@ namespace Lys
 		Image();
 		~Image();
 
-		void set_data(int width, int height, bool useMipmaps, ImageFormat format, const std::vector<uint8_t> &data);
+		void set_data(int width, int height, bool useMipmaps, ImageFormat format,
+					  const std::vector<uint8_t> &data);
 
 		/**
 		 * @brief Sets the color of a specific pixel in the image.
@@ -47,7 +48,8 @@ namespace Lys
 		int get_height() const;
 
 		/**
-		 * @return Vector2i Returns the size of the image as a Vector2 integer in the form (width, height).
+		 * @return Vector2i Returns the size of the image as a Vector2 integer in the form (width,
+		 * height).
 		 */
 		Vector2i get_size() const;
 

@@ -11,7 +11,9 @@ namespace Lys
 	Application *Application::get_singleton()
 	{
 		if (!_singleton)
+		{
 			_singleton = new Application();
+		}
 
 		return _singleton;
 	}

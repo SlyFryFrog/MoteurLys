@@ -29,16 +29,16 @@ namespace Lys
 		 * @brief Returns the contents of the given file. Will always catch errors.
 		 *
 		 * @param path Path to the file being read. Should be absolute.
-		 * @return std::string Contents of the file being read. If unable to read the requested file, will return an
-		 * empty string.
+		 * @return std::string Contents of the file being read. If unable to read the requested
+		 * file, will return an empty string.
 		 */
 		static std::string read_file(const std::string &path);
 
 		/**
 		 * @brief Returns the contents of the previously set file path. Will always catch errors.
 		 *
-		 * @return std::string Contents of the file being read. If unable to read the requested file, will return an
-		 * empty string.
+		 * @return std::string Contents of the file being read. If unable to read the requested
+		 * file, will return an empty string.
 		 */
 		[[nodiscard]] std::string read_file() const;
 

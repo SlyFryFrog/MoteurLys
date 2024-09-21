@@ -62,8 +62,8 @@ namespace Lys
 		}
 
 		/**
-		 * @brief Gets the data from all Vertices in a single 1-dimensional array. It retains the original order of the
-		 * elements.
+		 * @brief Gets the data from all Vertices in a single 1-dimensional array. It retains the
+		 * original order of the elements.
 		 *
 		 * @return std::vector<T> Array containing data from all Vertices.
 		 */
@@ -90,9 +90,9 @@ namespace Lys
 		 *
 		 * This function iterates over the vertex data and sets up the vertex attribute pointers.
 		 * It uses `glVertexAttribPointer` to specify the location and data format of the array of
-		 * generic vertex attributes and enables the attribute array with `glEnableVertexAttribArray`.
-		 * The function assumes that `vertices` is a properly populated vector of vertex data where
-		 * each vertex has the same structure.
+		 * generic vertex attributes and enables the attribute array with
+		 * `glEnableVertexAttribArray`. The function assumes that `vertices` is a properly populated
+		 * vector of vertex data where each vertex has the same structure.
 		 *
 		 * @tparam T The data type of the vertex attributes (e.g. float or double).
 		 *
@@ -107,8 +107,9 @@ namespace Lys
 				GLint size = vertices[0].data[i].size();
 
 				// index; size; type of data as GLType; normalized; stride; pointer
-				glVertexAttribPointer(i, size, GLType<T>::value, GL_FALSE, vertices[0].size() * sizeof(T),
-									  static_cast<void *>(reinterpret_cast<char *>(offset * sizeof(T))));
+				glVertexAttribPointer(
+					i, size, GLType<T>::value, GL_FALSE, vertices[0].size() * sizeof(T),
+					static_cast<void *>(reinterpret_cast<char *>(offset * sizeof(T))));
 				glEnableVertexAttribArray(i);
 				offset += size; // Shifts starting point for next data
 			}
@@ -122,17 +123,23 @@ namespace Lys
 			for (size_t i = 0; i < obj.vertices.size(); ++i)
 			{
 				if (i > 0)
+				{
 					os << ", ";
+				}
 				os << "{";
 				for (size_t j = 0; j < obj.vertices[i].data.size(); ++j)
 				{
 					if (j > 0)
+					{
 						os << ", ";
+					}
 					os << "[";
 					for (size_t k = 0; k < obj.vertices[i].data[j].size(); ++k)
 					{
 						if (k > 0)
+						{
 							os << ", ";
+						}
 						os << obj.vertices[i].data[j][k];
 					}
 					os << "]";

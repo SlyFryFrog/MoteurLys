@@ -5,7 +5,8 @@
 
 namespace Lys
 {
-	Vector2 Vector2::clamp(const fp_type min_x, const fp_type max_x, const fp_type min_y, const fp_type max_y)
+	Vector2 Vector2::clamp(const fp_type min_x, const fp_type max_x, const fp_type min_y,
+						   const fp_type max_y)
 	{
 		x = std::clamp(x, min_x, max_x);
 		y = std::clamp(y, min_y, max_y);
@@ -26,7 +27,8 @@ namespace Lys
 
 	fp_type Vector2::dot_product(const Vector2 &p_vec1, const Vector2 &p_vec2, const fp_type &theta)
 	{
-		return (fp_type)(std::abs(p_vec1.magnitude()) * std::abs(p_vec2.magnitude()) * std::cos(theta));
+		return (fp_type)(std::abs(p_vec1.magnitude()) * std::abs(p_vec2.magnitude()) *
+						 std::cos(theta));
 	}
 
 	Vector2 Vector2::normalized() const

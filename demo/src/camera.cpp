@@ -17,7 +17,9 @@ void Camera::_process(double delta)
 	float speed = 10.0f * (float)delta;
 
 	if (InputManager::is_pressed(Key::W))
+	{
 		position += speed * Vector3(front.x, 0.0f, front.z);
+	}
 	// if (Input::is_pressed(Key::S))
 	// 	position -= speed * Vector3(front.x, 0.0f, front.z);
 	// if (Input::is_pressed(Key::A))

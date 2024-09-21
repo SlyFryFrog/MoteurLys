@@ -17,7 +17,9 @@ namespace Lys
 	Renderer *Renderer::get_singleton()
 	{
 		if (!_singleton)
+		{
 			_singleton = new Renderer();
+		}
 
 		return _singleton;
 	}
@@ -26,5 +28,8 @@ namespace Lys
 
 	void Renderer::clear() { _renderer->clear(); }
 
-	void Renderer::update_viewport(const int width, const int height) { _renderer->update_viewport(width, height); }
+	void Renderer::update_viewport(const int width, const int height)
+	{
+		_renderer->update_viewport(width, height);
+	}
 } // namespace Lys

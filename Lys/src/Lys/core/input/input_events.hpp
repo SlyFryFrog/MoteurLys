@@ -13,6 +13,7 @@ namespace Lys
 	public:
 		InputEventCore() = default;
 		virtual ~InputEventCore() = default;
+
 	private:
 	};
 
@@ -41,7 +42,10 @@ namespace Lys
 
 		void reset();
 
-		bool operator==(const InputKeyEvent &other) const { return _key == other._key && _position == other._position; }
+		bool operator==(const InputKeyEvent &other) const
+		{
+			return _key == other._key && _position == other._position;
+		}
 	};
 
 
@@ -62,7 +66,8 @@ namespace Lys
 
 	public:
 		/**
-		 * @brief Updates last mouse position and the displacement between the current and last positions.
+		 * @brief Updates last mouse position and the displacement between the current and last
+		 * positions.
 		 */
 		void update();
 

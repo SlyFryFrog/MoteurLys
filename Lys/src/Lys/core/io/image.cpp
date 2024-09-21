@@ -36,7 +36,8 @@ namespace Lys
 		}
 	}
 
-	void Image::set_data(int width, int height, bool useMipmaps, ImageFormat format, const std::vector<uint8_t> &data)
+	void Image::set_data(int width, int height, bool useMipmaps, ImageFormat format,
+						 const std::vector<uint8_t> &data)
 	{
 		_width = width;
 		_height = height;
@@ -46,7 +47,8 @@ namespace Lys
 		int expected_size = width * height * get_channel_count();
 		if (data.size() != expected_size)
 		{
-			LYS_ERROR("Data size does not match the expected size for the given dimensions and format.");
+			LYS_ERROR(
+				"Data size does not match the expected size for the given dimensions and format.");
 			return;
 		}
 		_data = data;

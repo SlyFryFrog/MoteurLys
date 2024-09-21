@@ -4,7 +4,10 @@
 
 namespace Lys
 {
-	Rect2::Rect2(const Vector2 &p_size, const Point2 &p_position) : size(p_size), position(p_position) {}
+	Rect2::Rect2(const Vector2 &p_size, const Point2 &p_position) :
+		size(p_size), position(p_position)
+	{
+	}
 
 	void Rect2::set_position(const Point2 &p_position) { position = p_position; }
 

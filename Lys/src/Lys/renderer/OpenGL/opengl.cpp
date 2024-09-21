@@ -27,7 +27,10 @@ namespace Lys
 		LYS_INFO("Maximum number of vertex attributes supported: ", numAttributes);
 	}
 
-	void RendererGL::update_viewport(const int width, const int height) const { glViewport(0, 0, width, height); }
+	void RendererGL::update_viewport(const int width, const int height) const
+	{
+		glViewport(0, 0, width, height);
+	}
 
 	void RendererGL::clear() const
 	{

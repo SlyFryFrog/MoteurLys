@@ -27,8 +27,9 @@ namespace Lys
 		 * @brief Sets the camera's view matrix to look at a specified point.
 		 *
 		 * This function updates the camera's view matrix to orient the camera such that it looks at
-		 * the given point in 3D space. The view matrix is calculated based on the camera's current position
-		 * and the specified point, while maintaining the camera's up direction as defined by `worldUp`.
+		 * the given point in 3D space. The view matrix is calculated based on the camera's current
+		 * position and the specified point, while maintaining the camera's up direction as defined
+		 * by `worldUp`.
 		 *
 		 * @param point The target position in 3D space that the camera should look at.
 		 *

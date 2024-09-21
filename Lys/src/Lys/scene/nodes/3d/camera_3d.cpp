@@ -6,8 +6,8 @@
 namespace Lys
 {
 	Camera3D::Camera3D() :
-		yaw(-90.0f), pitch(0.0f), mouseSensitivity(0.1f), constrainPitch(true), front(0.0f, 0.0f, -1.0f),
-		worldUp(0.0f, 1.0f, 0.0f), zoom(45.0f)
+		yaw(-90.0f), pitch(0.0f), mouseSensitivity(0.1f), constrainPitch(true),
+		front(0.0f, 0.0f, -1.0f), worldUp(0.0f, 1.0f, 0.0f), zoom(45.0f)
 	{
 		update_vectors();
 	}
@@ -15,7 +15,8 @@ namespace Lys
 	void Camera3D::look_at(const Position3 &point)
 	{
 
-		// Step 1: Calculate the new forward vector (pointing from the camera's position to the target point)
+		// Step 1: Calculate the new forward vector (pointing from the camera's position to the
+		// target point)
 		front = (point - position).normalize();
 
 		// Step 2: Recalculate the right vector
@@ -38,9 +39,9 @@ namespace Lys
 
 	void Camera3D::update_view()
 	{
-		viewMatrix =
-			glm::lookAt(static_cast<glm::vec3>(position),
-						static_cast<glm::vec3>(position) + static_cast<glm::vec3>(front), static_cast<glm::vec3>(up));
+		viewMatrix = glm::lookAt(static_cast<glm::vec3>(position),
+								 static_cast<glm::vec3>(position) + static_cast<glm::vec3>(front),
+								 static_cast<glm::vec3>(up));
 	}
 
 	void Camera3D::update_vectors()
@@ -66,9 +67,13 @@ namespace Lys
 		if (constrainPitch)
 		{
 			if (pitch > 89.0f)
+			{
 				pitch = 89.0f;
+			}
 			if (pitch < -89.0f)
+			{
 				pitch = -89.0f;
+			}
 		}
 
 		update_vectors();

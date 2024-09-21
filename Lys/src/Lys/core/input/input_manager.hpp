@@ -35,7 +35,8 @@ namespace Lys
 		/**
 		 * @brief Processes any input events and will add and remove them to the Input queue.
 		 *
-		 * This method only performs processing of events. This includes adding and removing said events.
+		 * This method only performs processing of events. This includes adding and removing said
+		 * events.
 		 *
 		 * This does not process repeat events!
 		 * This is done outside the function as this is not called per-frame.
@@ -46,8 +47,8 @@ namespace Lys
 		 * @param action
 		 * @param mods
 		 */
-		static void _process_input_callback(GLFWwindow *window, const int key, const int scancode, const int action,
-											const int mods);
+		static void _process_input_callback(GLFWwindow *window, const int key, const int scancode,
+											const int action, const int mods);
 		static void _process_mouse_callback(GLFWwindow *window, double xposIn, double yposIn);
 		static bool is_pressed(const Key &key);
 

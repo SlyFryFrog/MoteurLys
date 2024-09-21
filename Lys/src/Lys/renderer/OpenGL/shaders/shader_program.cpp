@@ -10,7 +10,10 @@
 
 namespace Lys
 {
-	Shader::Shader(const std::string &path, unsigned int type) : File(path) { _shaderCode = read_file(); }
+	Shader::Shader(const std::string &path, unsigned int type) : File(path)
+	{
+		_shaderCode = read_file();
+	}
 
 	void Shader::update()
 	{
@@ -38,8 +41,10 @@ namespace Lys
 		return shaderID;
 	}
 
-	ShaderProgram::ShaderProgram(const std::string &path, const std::string &vertex, const std::string &fragment) :
-		_path(path), _vShader(path + vertex, GL_VERTEX_SHADER), _fShader(path + fragment, GL_FRAGMENT_SHADER)
+	ShaderProgram::ShaderProgram(const std::string &path, const std::string &vertex,
+								 const std::string &fragment) :
+		_path(path), _vShader(path + vertex, GL_VERTEX_SHADER),
+		_fShader(path + fragment, GL_FRAGMENT_SHADER)
 	{
 	}
 
@@ -77,7 +82,9 @@ namespace Lys
 	void ShaderProgram::create_shader_program()
 	{
 		if (id)
+		{
 			glDeleteProgram(id);
+		}
 		id = glCreateProgram();
 		const unsigned int vertex = compile_shader(_vShader.read_file(), GL_VERTEX_SHADER);
 		LYS_DEBUG("Finished compiling vertex shader.");
@@ -121,17 +128,20 @@ namespace Lys
 
 	void ShaderProgram::set_uniform(const std::string &name, const glm::mat3 &trans) const
 	{
-		glUniformMatrix3fv(glGetUniformLocation(id, name.c_str()), 1, GL_FALSE, glm::value_ptr(trans));
+		glUniformMatrix3fv(glGetUniformLocation(id, name.c_str()), 1, GL_FALSE,
+						   glm::value_ptr(trans));
 	}
 
 	void ShaderProgram::set_uniform(const std::string &name, const glm::mat4 &trans) const
 	{
-		glUniformMatrix4fv(glGetUniformLocation(id, name.c_str()), 1, GL_FALSE, glm::value_ptr(trans));
+		glUniformMatrix4fv(glGetUniformLocation(id, name.c_str()), 1, GL_FALSE,
+						   glm::value_ptr(trans));
 	}
 
 	void ShaderProgram::set_uniform(const std::string &name, const Matrix4 &trans) const
 	{
-		glUniformMatrix4fv(glGetUniformLocation(id, name.c_str()), 1, GL_FALSE, LysMath::value_ptr(trans));
+		glUniformMatrix4fv(glGetUniformLocation(id, name.c_str()), 1, GL_FALSE,
+						   LysMath::value_ptr(trans));
 	}
 
 	void ShaderProgram::reload()

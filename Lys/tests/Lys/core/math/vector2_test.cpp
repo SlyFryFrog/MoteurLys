@@ -105,7 +105,8 @@ TEST(Vector2_Test, NormalizeVector)
 
 	vector_a = Vector2(10, 15);
 
-	ASSERT_EQ(vector_a.normalized(), Vector2(10 / std::sqrt(10 * 10 + 15 * 15), 15 / std::sqrt(10 * 10 + 15 * 15)));
+	ASSERT_EQ(vector_a.normalized(),
+			  Vector2(10 / std::sqrt(10 * 10 + 15 * 15), 15 / std::sqrt(10 * 10 + 15 * 15)));
 
 	vector_a = Vector2(0, 1);
 

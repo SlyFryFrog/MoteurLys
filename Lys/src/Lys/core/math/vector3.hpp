@@ -20,23 +20,50 @@ namespace Lys
 
 		[[nodiscard]] fp_type dot(const Vector3 &other) const;
 
-		_FORCE_INLINE_ Vector3 operator+(const fp_type scalar) const { return {x + scalar, y + scalar, z + scalar}; }
+		_FORCE_INLINE_ Vector3 operator+(const fp_type scalar) const
+		{
+			return {x + scalar, y + scalar, z + scalar};
+		}
 
-		_FORCE_INLINE_ Vector3 operator-(const fp_type scalar) const { return {x - scalar, y - scalar, z - scalar}; }
+		_FORCE_INLINE_ Vector3 operator-(const fp_type scalar) const
+		{
+			return {x - scalar, y - scalar, z - scalar};
+		}
 
-		_FORCE_INLINE_ Vector3 operator*(const fp_type scalar) const { return {x * scalar, y * scalar, z * scalar}; }
+		_FORCE_INLINE_ Vector3 operator*(const fp_type scalar) const
+		{
+			return {x * scalar, y * scalar, z * scalar};
+		}
 
-		_FORCE_INLINE_ Vector3 operator/(const fp_type scalar) const { return {x / scalar, y / scalar, z / scalar}; }
+		_FORCE_INLINE_ Vector3 operator/(const fp_type scalar) const
+		{
+			return {x / scalar, y / scalar, z / scalar};
+		}
 
-		_FORCE_INLINE_ Vector3 operator+=(const fp_type scalar) const { return {x + scalar, y + scalar, z + scalar}; }
+		_FORCE_INLINE_ Vector3 operator+=(const fp_type scalar) const
+		{
+			return {x + scalar, y + scalar, z + scalar};
+		}
 
-		_FORCE_INLINE_ Vector3 operator+(const Vector3 &other) const { return {x + other.x, y + other.y, z + other.z}; }
+		_FORCE_INLINE_ Vector3 operator+(const Vector3 &other) const
+		{
+			return {x + other.x, y + other.y, z + other.z};
+		}
 
-		_FORCE_INLINE_ Vector3 operator-(const Vector3 &other) const { return {x - other.x, y - other.y, z - other.z}; }
+		_FORCE_INLINE_ Vector3 operator-(const Vector3 &other) const
+		{
+			return {x - other.x, y - other.y, z - other.z};
+		}
 
-		_FORCE_INLINE_ Vector3 operator*(const Vector3 &other) const { return {x * other.x, y * other.y, z * other.z}; }
+		_FORCE_INLINE_ Vector3 operator*(const Vector3 &other) const
+		{
+			return {x * other.x, y * other.y, z * other.z};
+		}
 
-		_FORCE_INLINE_ Vector3 operator/(const Vector3 &other) const { return {x / other.x, y / other.y, z / other.z}; }
+		_FORCE_INLINE_ Vector3 operator/(const Vector3 &other) const
+		{
+			return {x / other.x, y / other.y, z / other.z};
+		}
 
 		_FORCE_INLINE_ void operator+=(const Vector3 &other)
 		{

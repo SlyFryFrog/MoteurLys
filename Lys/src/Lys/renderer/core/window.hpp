@@ -46,8 +46,8 @@ namespace Lys
 		void set_title(const std::string &title);
 
 		/**
-		 * @brief Sets up GLFW, creates a window, sets OpenGL context parameters, initializes GLEW, sets viewport, and
-		 * registers callback functions.
+		 * @brief Sets up GLFW, creates a window, sets OpenGL context parameters, initializes GLEW,
+		 * sets viewport, and registers callback functions.
 		 */
 		void initialize();
 
@@ -77,7 +77,8 @@ namespace Lys
 		/**
 		 * @brief Closes the window and its context without calling any registered callbacks.
 		 *
-		 * @note Since this destroys the window without any callbacks, this should only be done on the main thread.
+		 * @note Since this destroys the window without any callbacks, this should only be done on
+		 * the main thread.
 		 */
 		void force_close();
 

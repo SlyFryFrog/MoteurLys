@@ -18,7 +18,10 @@ namespace Lys
 
 	Window::Window() : _width(0), _height(0), _window(nullptr) {}
 
-	Window::Window(const int width, const int height) : _width(width), _height(height), _window(nullptr) {}
+	Window::Window(const int width, const int height) :
+		_width(width), _height(height), _window(nullptr)
+	{
+	}
 
 	Window::Window(const int width, const int height, const std::string &title) :
 		_width(width), _height(height), _title(title), _window(nullptr)
@@ -64,7 +67,9 @@ namespace Lys
 	bool Window::is_done() const
 	{
 		if (!_glfwInitialized)
+		{
 			return true;
+		}
 
 		return glfwWindowShouldClose(_window);
 	}

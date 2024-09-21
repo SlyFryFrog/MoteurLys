@@ -13,8 +13,12 @@ namespace Lys
 		Matrix4()
 		{
 			for (int i = 0; i < 4; ++i)
+			{
 				for (int j = 0; j < 4; ++j)
+				{
 					data[i][j] = (i == j) ? 1.0f : 0.0f;
+				}
+			}
 		}
 
 		static Matrix4 look_at(const Vector3 &position, const Vector3 &point, const Vector3 &up);

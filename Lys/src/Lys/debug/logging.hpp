@@ -25,8 +25,8 @@ namespace Lys
 	};
 
 	/**
-	 * @brief Arbitrary colors for displaying different levels of logs. Can be changed to any other color in the form of
-	 * ANSI Color Escape.
+	 * @brief Arbitrary colors for displaying different levels of logs. Can be changed to any other
+	 * color in the form of ANSI Color Escape.
 	 */
 	struct LogColors
 	{
@@ -61,31 +61,45 @@ namespace Lys
 		{
 			// Ignores any logging lower than the minimum
 			if (level < _minLogLevel || (_writeLogs && _showLogs))
+			{
 				return;
+			}
 
-			std::stringstream logStream; // Writes all logs to stream before outputting to console/file
+			std::stringstream
+				logStream; // Writes all logs to stream before outputting to console/file
 
 			// Adds timestamp next to the log type and message if enabled
 			if (_timeFormat && _showTimestamp)
-				logStream << "[" << get_log_type(level) << "] " << get_formatted_time(_timeFormat) << " : ";
+			{
+				logStream << "[" << get_log_type(level) << "] " << get_formatted_time(_timeFormat)
+						  << " : ";
+			}
 			else
+			{
 				logStream << "[" << get_log_type(level) << "] : ";
+			}
 
 			append_to_stream(logStream, args...);
 
 			const std::string logMessage = logStream.str();
 
 			if (_showLogs)
+			{
 				print_log(level, logMessage);
+			}
 			if (_writeLogs && _logFile)
 			{
 				std::lock_guard<std::mutex> guard(_logMutex);
 				std::ofstream fileStream(_logFile->data(), std::ios::app); // Sets mode to append
 
 				if (fileStream.is_open())
+				{
 					fileStream << logMessage << std::endl;
+				}
 				else
+				{
 					std::println("Unable to open the log file at ", _logFile->data());
+				}
 			}
 		}
 
@@ -132,8 +146,8 @@ namespace Lys
 		/**
 		 * @brief Recursively appends multiple arguments to a stringstream.
 		 *
-		 * This function appends multiple arguments to the provided stringstream by recursively appending each argument
-		 * in the parameter pack.
+		 * This function appends multiple arguments to the provided stringstream by recursively
+		 * appending each argument in the parameter pack.
 		 *
 		 * @tparam Arg The type of the argument to be appended.
 		 * @tparam Args The types of remaining arguments.

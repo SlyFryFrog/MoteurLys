@@ -14,8 +14,9 @@ namespace Lys
 	Logger *Logger::_singleton = nullptr;			 // Definition with initialization
 
 	Logger::Logger() :
-		_logFile(nullptr), _showLogs(true), _writeLogs(false), _showTimestamp(true), _minLogLevel(LogLevel::DEBUG),
-		_timeFormat(new std::string("%H:%M:%S")), _configFile(nullptr)
+		_logFile(nullptr), _showLogs(true), _writeLogs(false), _showTimestamp(true),
+		_minLogLevel(LogLevel::DEBUG), _timeFormat(new std::string("%H:%M:%S")),
+		_configFile(nullptr)
 	{
 		_singleton = this;
 	}
@@ -64,7 +65,10 @@ namespace Lys
 		return _singleton;
 	}
 
-	void Logger::set_log_file(const std::string &file) { _logFile = std::make_unique<std::string>(file); }
+	void Logger::set_log_file(const std::string &file)
+	{
+		_logFile = std::make_unique<std::string>(file);
+	}
 
 	const char *Logger::get_log_type(const LogLevel &level)
 	{

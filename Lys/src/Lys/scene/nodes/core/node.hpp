@@ -40,7 +40,8 @@ namespace Lys
 					}
 					else
 					{
-						LYS_ERROR("Failed to cast child named '", nodeName, "' to type ", typeid(T).name());
+						LYS_ERROR("Failed to cast child named '", nodeName, "' to type ",
+								  typeid(T).name());
 						return nullptr;
 					}
 				}
@@ -62,7 +63,8 @@ namespace Lys
 			}
 			else
 			{
-				LYS_ERROR("Failed to cast parent named '", _parent->_name, "' to type ", typeid(T).name());
+				LYS_ERROR("Failed to cast parent named '", _parent->_name, "' to type ",
+						  typeid(T).name());
 				return nullptr;
 			}
 		}

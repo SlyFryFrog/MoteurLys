@@ -29,8 +29,10 @@ namespace Lys
 		unsigned int texture = set_attributes();
 
 		int width, height, numColorChannel;
-		stbi_set_flip_vertically_on_load(true); // tell stb_image.h to flip loaded texture's on the y-axis.
-		unsigned char *data = stbi_load((_path + file).c_str(), &width, &height, &numColorChannel, 0);
+		stbi_set_flip_vertically_on_load(
+			true); // tell stb_image.h to flip loaded texture's on the y-axis.
+		unsigned char *data =
+			stbi_load((_path + file).c_str(), &width, &height, &numColorChannel, 0);
 
 		if (data)
 		{
@@ -56,14 +58,16 @@ namespace Lys
 				break;
 			}
 
-			glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
+			glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE,
+						 data);
 			glGenerateMipmap(GL_TEXTURE_2D);
 			LYS_DEBUG("Successfully loaded texture data at the path ", _path, file, ".");
 		}
 		else
 		{
-			LYS_ERROR("Failed to load texture data at the path ", _path, file,
-					  ". Make sure the file format is supported or is in the appropriate location.");
+			LYS_ERROR(
+				"Failed to load texture data at the path ", _path, file,
+				". Make sure the file format is supported or is in the appropriate location.");
 		}
 
 		stbi_image_free(data);
@@ -100,8 +104,8 @@ namespace Lys
 				break;
 			}
 
-			glTexImage2D(GL_TEXTURE_2D, 0, format, image.get_width(), image.get_height(), 0, format, GL_UNSIGNED_BYTE,
-						 image.get_data());
+			glTexImage2D(GL_TEXTURE_2D, 0, format, image.get_width(), image.get_height(), 0, format,
+						 GL_UNSIGNED_BYTE, image.get_data());
 			glGenerateMipmap(GL_TEXTURE_2D);
 			LYS_DEBUG("Successfully loaded texture data at the path.");
 		}
@@ -117,7 +121,9 @@ namespace Lys
 	{
 		// Ignores unnecessary deletion for empty id
 		if (id)
+		{
 			glDeleteTextures(1, &id);
+		}
 
 		unsigned int texture;
 		glGenTextures(1, &texture);

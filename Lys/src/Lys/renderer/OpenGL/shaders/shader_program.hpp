@@ -26,11 +26,13 @@ namespace Lys
 		unsigned int id; // The OpenGL ID of the shader program.
 		std::string name;
 
-		ShaderProgram(const std::string &path, const std::string &vertex, const std::string &fragment);
+		ShaderProgram(const std::string &path, const std::string &vertex,
+					  const std::string &fragment);
 		~ShaderProgram();
 
 		/**
-		 * @brief Creates and links the shader program from the previously loaded vertex and fragment shaders.
+		 * @brief Creates and links the shader program from the previously loaded vertex and
+		 * fragment shaders.
 		 */
 		void create_shader_program();
 
@@ -49,7 +51,8 @@ namespace Lys
 		void set_uniform(const std::string &name, const Matrix4 &trans) const;
 
 		/**
-		 * @brief If the last write time has changed, it gets and applies the new shader code to the program.
+		 * @brief If the last write time has changed, it gets and applies the new shader code to the
+		 * program.
 		 */
 		void reload();
 
