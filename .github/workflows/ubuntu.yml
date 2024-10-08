@@ -23,7 +23,7 @@ jobs:
     - name: Install dependencies
       run: |
         cd scripts
-        ./linux.sh
+        sudo ./linux.sh
         cd ..
 
     - name: Configure CMake
