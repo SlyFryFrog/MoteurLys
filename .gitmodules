@@ -15,4 +15,4 @@
 	url = https://github.com/PixarAnimationStudios/OpenUSD.git
 [submodule "vendor/CodePingouin"]
 	path = vendor/CodePingouin
-	url = git@github.com:SlyFryFrog/CodePingouin.git
+	url = https://github.com/SlyFryFrog/CodePingouin.git
