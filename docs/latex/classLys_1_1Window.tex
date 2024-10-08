@@ -1,0 +1,161 @@
+\doxysection{Lys\+::Window Class Reference}
+\hypertarget{classLys_1_1Window}{}\label{classLys_1_1Window}\index{Lys::Window@{Lys::Window}}
+
+
+Main window for rendering.  
+
+
+
+
+{\ttfamily \#include $<$window.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLys_1_1Window_a14e725055618a303d5dcb1a9ba58573a}{Window}} (int width, int height)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classLys_1_1Window}{Window} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLys_1_1Window_a799061b195121bc2e3dd4b420dca6734}{Window}} (int width, int height, const std\+::string \&title)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classLys_1_1Window}{Window} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLys_1_1Window_a7764be032f9576e0179cd48c436af99f}{set\+\_\+title}} (const std\+::string \&title)
+\begin{DoxyCompactList}\small\item\em Set the title of the window. \end{DoxyCompactList}\item 
+\Hypertarget{classLys_1_1Window_a0848ce9957b0d7276d84371fc37fd59b}\label{classLys_1_1Window_a0848ce9957b0d7276d84371fc37fd59b} 
+void {\bfseries initialize} ()
+\begin{DoxyCompactList}\small\item\em Sets up GLFW, creates a window, sets Open\+GL context parameters, initializes GLEW, sets viewport, and registers callback functions. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classLys_1_1Window_a7aba109d47c4441be8ca39365e401222}{is\+\_\+done}} () const
+\begin{DoxyCompactList}\small\item\em Returns the status of the window\textquotesingle{}s completion status. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLys_1_1Window_a0d77edee025a9108fb1416b1880312c5}{set\+\_\+dimensions}} (int width, int height)
+\begin{DoxyCompactList}\small\item\em Sets the width and height of the window instance. \end{DoxyCompactList}\item 
+\Hypertarget{classLys_1_1Window_a693ba21e58d5b9c52aef48f9cdbfae7d}\label{classLys_1_1Window_a693ba21e58d5b9c52aef48f9cdbfae7d} 
+void {\bfseries poll\+\_\+events} ()
+\item 
+\Hypertarget{classLys_1_1Window_abbd8aa7a6978d0d0f4f54e36cc097079}\label{classLys_1_1Window_abbd8aa7a6978d0d0f4f54e36cc097079} 
+void {\bfseries close} () const
+\begin{DoxyCompactList}\small\item\em Closes the window instance while not terminating the underlying library. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLys_1_1Window_a109385d71aadc3d594131ca1dca8c3a9}{force\+\_\+close}} ()
+\begin{DoxyCompactList}\small\item\em Closes the window and its context without calling any registered callbacks. \end{DoxyCompactList}\item 
+\Hypertarget{classLys_1_1Window_a9c137da1846c1ff2e53942915b0c9f6d}\label{classLys_1_1Window_a9c137da1846c1ff2e53942915b0c9f6d} 
+void {\bfseries swap\+\_\+frame\+\_\+buffer} ()
+\begin{DoxyCompactList}\small\item\em Swaps the front and back frame buffers. \end{DoxyCompactList}\item 
+\Hypertarget{classLys_1_1Window_acea9f715aab50c43a4cbef6a4547b0aa}\label{classLys_1_1Window_acea9f715aab50c43a4cbef6a4547b0aa} 
+GLFWwindow \texorpdfstring{$\ast$}{*} {\bfseries get\+\_\+window} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classLys_1_1Window_adde68a2dd718317373c9a6c7dc345917}\label{classLys_1_1Window_adde68a2dd718317373c9a6c7dc345917} 
+static void {\bfseries terminate} ()
+\begin{DoxyCompactList}\small\item\em Terminates GLFW (closes all window instances). \end{DoxyCompactList}\item 
+\Hypertarget{classLys_1_1Window_aa67ed003cad0cc23d910fea22ea86856}\label{classLys_1_1Window_aa67ed003cad0cc23d910fea22ea86856} 
+static \mbox{\hyperlink{structLys_1_1Vector2}{Point2}} {\bfseries get\+\_\+mouse\+\_\+position} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main window for rendering. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classLys_1_1Window_a14e725055618a303d5dcb1a9ba58573a}\label{classLys_1_1Window_a14e725055618a303d5dcb1a9ba58573a} 
+\index{Lys::Window@{Lys::Window}!Window@{Window}}
+\index{Window@{Window}!Lys::Window@{Lys::Window}}
+\doxysubsubsection{\texorpdfstring{Window()}{Window()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Lys\+::\+Window\+::\+Window (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
+
+
+
+Construct a new \doxylink{classLys_1_1Window}{Window} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & Width of the window. \\
+\hline
+{\em height} & Height of the window. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classLys_1_1Window_a799061b195121bc2e3dd4b420dca6734}\label{classLys_1_1Window_a799061b195121bc2e3dd4b420dca6734} 
+\index{Lys::Window@{Lys::Window}!Window@{Window}}
+\index{Window@{Window}!Lys::Window@{Lys::Window}}
+\doxysubsubsection{\texorpdfstring{Window()}{Window()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Lys\+::\+Window\+::\+Window (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height,  }\item[{const std\+::string \&}]{title }\end{DoxyParamCaption})}
+
+
+
+Construct a new \doxylink{classLys_1_1Window}{Window} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & Width of the window. \\
+\hline
+{\em height} & Height of the window. \\
+\hline
+{\em title} & Title of the window. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classLys_1_1Window_a109385d71aadc3d594131ca1dca8c3a9}\label{classLys_1_1Window_a109385d71aadc3d594131ca1dca8c3a9} 
+\index{Lys::Window@{Lys::Window}!force\_close@{force\_close}}
+\index{force\_close@{force\_close}!Lys::Window@{Lys::Window}}
+\doxysubsubsection{\texorpdfstring{force\_close()}{force\_close()}}
+{\footnotesize\ttfamily void Lys\+::\+Window\+::force\+\_\+close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Closes the window and its context without calling any registered callbacks. 
+
+\begin{DoxyNote}{Note}
+Since this destroys the window without any callbacks, this should only be done on the main thread. 
+\end{DoxyNote}
+\Hypertarget{classLys_1_1Window_a7aba109d47c4441be8ca39365e401222}\label{classLys_1_1Window_a7aba109d47c4441be8ca39365e401222} 
+\index{Lys::Window@{Lys::Window}!is\_done@{is\_done}}
+\index{is\_done@{is\_done}!Lys::Window@{Lys::Window}}
+\doxysubsubsection{\texorpdfstring{is\_done()}{is\_done()}}
+{\footnotesize\ttfamily bool Lys\+::\+Window\+::is\+\_\+done (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the status of the window\textquotesingle{}s completion status. 
+
+\begin{DoxyReturn}{Returns}
+true GLFW window is done and should be closed. 
+
+false GLFW window is not done and should not be closed. 
+\end{DoxyReturn}
+\Hypertarget{classLys_1_1Window_a0d77edee025a9108fb1416b1880312c5}\label{classLys_1_1Window_a0d77edee025a9108fb1416b1880312c5} 
+\index{Lys::Window@{Lys::Window}!set\_dimensions@{set\_dimensions}}
+\index{set\_dimensions@{set\_dimensions}!Lys::Window@{Lys::Window}}
+\doxysubsubsection{\texorpdfstring{set\_dimensions()}{set\_dimensions()}}
+{\footnotesize\ttfamily void Lys\+::\+Window\+::set\+\_\+dimensions (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
+
+
+
+Sets the width and height of the window instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & New window width. \\
+\hline
+{\em height} & New window height. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classLys_1_1Window_a7764be032f9576e0179cd48c436af99f}\label{classLys_1_1Window_a7764be032f9576e0179cd48c436af99f} 
+\index{Lys::Window@{Lys::Window}!set\_title@{set\_title}}
+\index{set\_title@{set\_title}!Lys::Window@{Lys::Window}}
+\doxysubsubsection{\texorpdfstring{set\_title()}{set\_title()}}
+{\footnotesize\ttfamily void Lys\+::\+Window\+::set\+\_\+title (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{title }\end{DoxyParamCaption})}
+
+
+
+Set the title of the window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & New title. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Lys/renderer/core/window.\+hpp\item 
+Lys/renderer/core/window.\+cpp\end{DoxyCompactItemize}

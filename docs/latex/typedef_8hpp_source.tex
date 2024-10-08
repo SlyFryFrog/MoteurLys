@@ -1,5 +1,5 @@
 \doxysection{typedef.\+hpp}
-\hypertarget{typedef_8hpp_source}{}\label{typedef_8hpp_source}\index{LilyPadEngine/src/LilyPad/core/utils/typedef.hpp@{LilyPadEngine/src/LilyPad/core/utils/typedef.hpp}}
+\hypertarget{typedef_8hpp_source}{}\label{typedef_8hpp_source}\index{Lys/core/utils/typedef.hpp@{Lys/core/utils/typedef.hpp}}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
@@ -8,27 +8,28 @@
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#if\ defined(\_\_GNUC\_\_)\ }\textcolor{comment}{//\ GNU\ compiler}}
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ \_ALWAYS\_INLINE\_\ \_\_attribute\_\_((always\_inline))\ inline}}
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#elif\ defined(\_MSC\_VER)\ }\textcolor{comment}{//\ MSVC\ compiler}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ \_ALWAYS\_INLINE\_\ \_\_forceinline}}
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#else\ }\textcolor{comment}{//\ Clang\ compiler}}
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ \_ALWAYS\_INLINE\_\ inline}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#warning\ The\ engine\ was\ not\ tested\ using\ the\ MSVC\ compiler\ and\ may\ not\ work\ correctly\ or\ at\ all.}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ \_ALWAYS\_INLINE\_\ \_\_forceinline}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#else\ }\textcolor{comment}{//\ Clang\ compiler}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ \_ALWAYS\_INLINE\_\ inline}}
 \DoxyCodeLine{00011\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00012\ }
-\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ \_FORCE\_INLINE\_}}
-\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifdef\ DEV\_ENABLED}}
-\DoxyCodeLine{00015\ \textcolor{comment}{//\ Optimizes\ for\ development\ builds}}
-\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ \_FORCE\_INLINR\_\ inline}}
-\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#else}}
-\DoxyCodeLine{00018\ \textcolor{comment}{//\ Optimizes\ for\ release}}
-\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ \_FORCE\_INLINE\_\ \_ALWAYS\_INLINE\_}}
-\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifndef\ \_FORCE\_INLINE\_}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifdef\ DEV\_ENABLED}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ Optimizes\ for\ development\ builds}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ \_FORCE\_INLINR\_\ inline}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ Optimizes\ for\ release}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ \_FORCE\_INLINE\_\ \_ALWAYS\_INLINE\_}}
 \DoxyCodeLine{00021\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ \textcolor{comment}{//\ Decide\ precision\ between\ float\ and\ double}}
-\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#ifdef\ USE\_DOUBLE}}
-\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ fp\_type\ double}}
-\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#else}}
-\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ fp\_type\ float}}
-\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{comment}{//\ Decide\ precision\ between\ float\ and\ double}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#ifdef\ USE\_DOUBLE}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ fp\_type\ double}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ fp\_type\ float}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

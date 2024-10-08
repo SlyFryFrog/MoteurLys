@@ -1,0 +1,98 @@
+\doxysection{parse.\+hpp}
+\hypertarget{parse_8hpp_source}{}\label{parse_8hpp_source}\index{Lys/core/parsing/parse.hpp@{Lys/core/parsing/parse.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}Lys/renderer/OpenGL/vertex.hpp"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }Lys}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLys_1_1TexCoord}{TexCoord}}}
+\DoxyCodeLine{00014\ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ u,\ v;}
+\DoxyCodeLine{00016\ \ \ \ \ \};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLys_1_1Normal}{Normal}}}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ nx,\ ny,\ nz;}
+\DoxyCodeLine{00021\ \ \ \ \ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLys_1_1Face}{Face}}}
+\DoxyCodeLine{00024\ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ std::vector<int>\ vertices;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ std::vector<int>\ texCoords;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ std::vector<int>\ normals;}
+\DoxyCodeLine{00028\ \ \ \ \ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{classLys_1_1Vertices}{Vertices<float>}}\ vertices;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{//\ void\ loadOBJ(const\ std::string\ \&filename)}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//\ \{}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ \ std::ifstream\ file(filename);}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ \ if\ (!file.is\_open())}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{//\ \ \{}}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ std::cerr\ <<\ "{}Could\ not\ open\ the\ file:\ "{}\ <<\ filename\ <<\ std::endl;}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ return;}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//\ \ \}}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{//\ \ std::string\ line;}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//\ \ while\ (std::getline(file,\ line))}}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{//\ \ \{}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ std::istringstream\ iss(line);}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ std::string\ prefix;}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ iss\ >>\ prefix;}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ if\ (prefix\ ==\ "{}v"{})}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \{}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ iss\ >>\ vertex.x\ >>\ vertex.y\ >>\ vertex.z;}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ vertices.vertices.push\_back(vertex);}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \}}}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ else\ if\ (prefix\ ==\ "{}vt"{})}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \{}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ TexCoord\ texCoord;}}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ iss\ >>\ texCoord.u\ >>\ texCoord.v;}}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ texCoords.push\_back(texCoord);}}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \}}}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ else\ if\ (prefix\ ==\ "{}vn"{})}}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \{}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ Normal\ normal;}}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ iss\ >>\ normal.nx\ >>\ normal.ny\ >>\ normal.nz;}}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ normals.push\_back(normal);}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \}}}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ else\ if\ (prefix\ ==\ "{}f"{})}}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \{}}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ Face\ face;}}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ std::string\ vertexData;}}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ while\ (iss\ >>\ vertexData)}}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ std::istringstream\ vertexStream(vertexData);}}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ vertexIndex,\ texCoordIndex,\ normalIndex;}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ Parse\ the\ face\ indices\ (v/vt/vn)}}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ std::getline(vertexStream,\ vertexIndex,\ '/');}}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ std::getline(vertexStream,\ texCoordIndex,\ '/');}}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ std::getline(vertexStream,\ normalIndex,\ '/');}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ Convert\ strings\ to\ integer\ indices}}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ face.vertices.push\_back(std::stoi(vertexIndex)\ -\/\ 1);\ //\ OBJ\ indices\ are\ 1-\/based}}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (!texCoordIndex.empty())}}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ face.texCoords.push\_back(std::stoi(texCoordIndex)\ -\/\ 1);}}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (!normalIndex.empty())}}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ face.normals.push\_back(std::stoi(normalIndex)\ -\/\ 1);}}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ faces.push\_back(face);}}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \}}}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{comment}{//\ \ \}}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{comment}{//\ \ file.close();}}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{00092\ \}\ \textcolor{comment}{//\ namespace\ Lys}}
+
+\end{DoxyCode}

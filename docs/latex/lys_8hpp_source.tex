@@ -1,0 +1,46 @@
+\doxysection{lys.\+hpp}
+\hypertarget{lys_8hpp_source}{}\label{lys_8hpp_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ For\ use\ by\ Lys\ applications}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Lys/debug/fps.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Lys/debug/logging.hpp"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Lys/core/utils/constants.hpp"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}Lys/core/utils/paths.hpp"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}Lys/scene/nodes/2d/camera\_2d.hpp"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}Lys/scene/nodes/2d/node\_2d.hpp"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}Lys/scene/nodes/2d/sprite\_2d.hpp"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}Lys/scene/nodes/3d/camera\_3d.hpp"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}Lys/scene/nodes/3d/node\_3d.hpp"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}Lys/scene/nodes/core/node.hpp"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}Lys/scene/nodes/ui/label.hpp"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}Lys/scene/nodes/ui/widget.hpp"{}}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}Lys/core/input/input\_events.hpp"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}Lys/core/input/input\_manager.hpp"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}Lys/core/io/image.hpp"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}Lys/core/math/vector3.hpp"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}Lys/core/utils/paths.hpp"{}}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{comment}{//\ Renderer}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}Lys/renderer/core/renderer.hpp"{}}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}Lys/renderer/core/window.hpp"{}}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#ifdef\ OPENGL}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}Lys/renderer/OpenGL/binding/vertex\_array.hpp"{}}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}Lys/renderer/OpenGL/binding/vertex\_buffer.hpp"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}Lys/renderer/OpenGL/shaders/shader\_program.hpp"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}Lys/renderer/OpenGL/texture.hpp"{}}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}Lys/renderer/OpenGL/utils/debug.hpp"{}}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ "{}Lys/renderer/OpenGL/vertex.hpp"{}}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#elif\ VULKAN}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#error\ Vulkan\ is\ not\ yet\ supported,\ please\ use\ the\ flag\ -\/DOPENGL.}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00041\ \textcolor{comment}{//\ End\ renderer}}
+
+\end{DoxyCode}

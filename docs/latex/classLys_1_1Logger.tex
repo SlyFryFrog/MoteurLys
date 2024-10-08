@@ -1,0 +1,81 @@
+\doxysection{Lys\+::Logger Class Reference}
+\hypertarget{classLys_1_1Logger}{}\label{classLys_1_1Logger}\index{Lys::Logger@{Lys::Logger}}
+
+
+Class for recording events to console and a file.  
+
+
+
+
+{\ttfamily \#include $<$logging.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classLys_1_1Logger_a853fd58fe0388d376b0be7c2510b5df9}\label{classLys_1_1Logger_a853fd58fe0388d376b0be7c2510b5df9} 
+{\footnotesize template$<$typename... Args$>$ }\\void {\bfseries log} (const Log\+Level \&level, Args... args)
+\item 
+void \mbox{\hyperlink{classLys_1_1Logger_ab720c39533678bd96805a933da6122f7}{set\+\_\+log\+\_\+file}} (const std\+::string \&file)
+\begin{DoxyCompactList}\small\item\em Set the log file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLys_1_1Logger_ae6240bfcb0c6d976df2aa283e9d19b4a}{set\+\_\+log\+\_\+level}} (const Log\+Level \&level)
+\begin{DoxyCompactList}\small\item\em Set the minimum log level to be recorded; defaults to DEBUG. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classLys_1_1Logger}{Logger}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classLys_1_1Logger_ac70e1c857ac6090b0d532589b3db6e43}{get\+\_\+singleton}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current instance of the \doxylink{classLys_1_1Logger}{Logger}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for recording events to console and a file. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classLys_1_1Logger_ac70e1c857ac6090b0d532589b3db6e43}\label{classLys_1_1Logger_ac70e1c857ac6090b0d532589b3db6e43} 
+\index{Lys::Logger@{Lys::Logger}!get\_singleton@{get\_singleton}}
+\index{get\_singleton@{get\_singleton}!Lys::Logger@{Lys::Logger}}
+\doxysubsubsection{\texorpdfstring{get\_singleton()}{get\_singleton()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLys_1_1Logger}{Logger}} \texorpdfstring{$\ast$}{*} Lys\+::\+Logger\+::get\+\_\+singleton (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the current instance of the \doxylink{classLys_1_1Logger}{Logger}. 
+
+\begin{DoxyReturn}{Returns}
+Logger\texorpdfstring{$\ast$}{*} Pointer to the \doxylink{classLys_1_1Logger}{Logger} instance. 
+\end{DoxyReturn}
+\Hypertarget{classLys_1_1Logger_ab720c39533678bd96805a933da6122f7}\label{classLys_1_1Logger_ab720c39533678bd96805a933da6122f7} 
+\index{Lys::Logger@{Lys::Logger}!set\_log\_file@{set\_log\_file}}
+\index{set\_log\_file@{set\_log\_file}!Lys::Logger@{Lys::Logger}}
+\doxysubsubsection{\texorpdfstring{set\_log\_file()}{set\_log\_file()}}
+{\footnotesize\ttfamily void Lys\+::\+Logger\+::set\+\_\+log\+\_\+file (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file }\end{DoxyParamCaption})}
+
+
+
+Set the log file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & Relative path to the file. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classLys_1_1Logger_ae6240bfcb0c6d976df2aa283e9d19b4a}\label{classLys_1_1Logger_ae6240bfcb0c6d976df2aa283e9d19b4a} 
+\index{Lys::Logger@{Lys::Logger}!set\_log\_level@{set\_log\_level}}
+\index{set\_log\_level@{set\_log\_level}!Lys::Logger@{Lys::Logger}}
+\doxysubsubsection{\texorpdfstring{set\_log\_level()}{set\_log\_level()}}
+{\footnotesize\ttfamily void Lys\+::\+Logger\+::set\+\_\+log\+\_\+level (\begin{DoxyParamCaption}\item[{const Log\+Level \&}]{level }\end{DoxyParamCaption})}
+
+
+
+Set the minimum log level to be recorded; defaults to DEBUG. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & Minimum log level to be recorded. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Lys/debug/logging.\+hpp\item 
+Lys/debug/logging.\+cpp\end{DoxyCompactItemize}

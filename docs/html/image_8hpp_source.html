@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>LilyPad Engine: LilyPadEngine/src/LilyPad/core/io/image.hpp Source File</title>
+<title>Lys Engine: Lys/core/io/image.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">LilyPad Engine
+   <div id="projectname">Lys Engine
    </div>
   </td>
  </tr>
@@ -74,7 +74,7 @@ $(document).ready(function() { init_codefold(0); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_3c5389748b25a6b7c9362f5601110205.html">LilyPadEngine</a></li><li class="navelem"><a class="el" href="dir_10cfea2e0be28772c92dcb6e13e8f80f.html">src</a></li><li class="navelem"><a class="el" href="dir_ba530f060a686c81d7df5307861b7647.html">LilyPad</a></li><li class="navelem"><a class="el" href="dir_1fe1bb1b9d9d08779302d71a17436fdd.html">core</a></li><li class="navelem"><a class="el" href="dir_4fea9f06a422cb78352270ea2efb669b.html">io</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_ba16e2f0563332b365aad57128fbde3e.html">Lys</a></li><li class="navelem"><a class="el" href="dir_fd6b30a8bcdc1be077432d23a69362da.html">core</a></li><li class="navelem"><a class="el" href="dir_f8e7a8dbd3706b2453ee3092a0e8c107.html">io</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -85,64 +85,68 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;LilyPad/core/io/file.hpp&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;LilyPad/core/math/color.hpp&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;LilyPad/core/math/vector2i.hpp&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;Lys/core/io/file.hpp&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;Lys/core/math/color.hpp&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;Lys/core/math/vector2i.hpp&quot;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span>LilyPad</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span>Lys</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">enum</span> ImageFormat</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">enum class</span> ImageFormat</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        FORMAT_R8,</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        FORMAT_RG8,</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        FORMAT_RGB8,</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        FORMAT_RGBA8</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        R8,</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        RG8,</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        RGB8,</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        RGBA8</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    };</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classLilyPad_1_1Image.html">   19</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classLilyPad_1_1Image.html">Image</a> : <span class="keyword">public</span> <a class="code hl_class" href="classLilyPad_1_1File.html">File</a></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classLys_1_1Image.html">   19</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classLys_1_1Image.html">Image</a> : <span class="keyword">public</span> <a class="code hl_class" href="classLys_1_1File.html">File</a></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    {</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <a class="code hl_class" href="classLilyPad_1_1Image.html">Image</a>();</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <a class="code hl_class" href="classLilyPad_1_1Image.html">~Image</a>();</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <a class="code hl_class" href="classLys_1_1Image.html">Image</a>();</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <a class="code hl_class" href="classLys_1_1Image.html">~Image</a>();</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordtype">void</span> set_data(<span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height, <span class="keywordtype">bool</span> useMipmaps, ImageFormat format, <span class="keyword">const</span> std::vector&lt;uint8_t&gt; &amp;data);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classLilyPad_1_1Image.html#ab0997e0b6194727157542e3bd60c5eb8">set_pixel</a>(<span class="keywordtype">int</span> x_index, <span class="keywordtype">int</span> y_index, <span class="keyword">const</span> <a class="code hl_struct" href="structLilyPad_1_1Color.html">Color</a> &amp;data);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordtype">int</span> <a class="code hl_function" href="classLilyPad_1_1Image.html#aa709e0b3231b8fedd8f3d2a7d300b229">get_width</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordtype">int</span> <a class="code hl_function" href="classLilyPad_1_1Image.html#ada1ac383bca74fd272a9ddc84b7e5322">get_height</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <a class="code hl_struct" href="structLilyPad_1_1Vector2i.html">Vector2i</a> <a class="code hl_function" href="classLilyPad_1_1Image.html#a35328406d50a7e77d9fe0c66188cae53">get_size</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        ImageFormat get_format() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keywordtype">void</span> set_format(<span class="keyword">const</span> ImageFormat &amp;format);</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        std::vector&lt;uint8_t&gt; get_raw_data() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keyword">const</span> uint8_t *get_data() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordtype">int</span> _width;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordtype">int</span> _height;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keywordtype">bool</span> _useMipmaps;       <span class="comment">// Currently unused</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        std::vector&lt;uint8_t&gt; _data;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        ImageFormat _format;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keywordtype">int</span> get_channel_count() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordtype">int</span> get_index(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    };</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordtype">void</span> set_data(<span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height, <span class="keywordtype">bool</span> useMipmaps, ImageFormat format,</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                      <span class="keyword">const</span> std::vector&lt;uint8_t&gt; &amp;data);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classLys_1_1Image.html#a919386952478cd46f261e4225fe9c210">set_pixel</a>(<span class="keywordtype">int</span> x_index, <span class="keywordtype">int</span> y_index, <span class="keyword">const</span> <a class="code hl_struct" href="structLys_1_1Color.html">Color</a> &amp;data);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordtype">int</span> <a class="code hl_function" href="classLys_1_1Image.html#a0247cf40f35df59429187adc6f3f30ad">get_width</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordtype">int</span> <a class="code hl_function" href="classLys_1_1Image.html#af0d59b4802ed79336438fb14a049e1e1">get_height</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <a class="code hl_struct" href="structLys_1_1Vector2i.html">Vector2i</a> <a class="code hl_function" href="classLys_1_1Image.html#a2187cc91885c95a12a06eacfc8b04f28">get_size</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        ImageFormat get_format() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keywordtype">void</span> set_format(<span class="keyword">const</span> ImageFormat &amp;format);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        std::vector&lt;uint8_t&gt; get_raw_data() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keyword">const</span> uint8_t *get_data() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classLys_1_1Image.html#a8dc394e48439368eaa31a4c2fca4dfd8">get_channel_count</a>(<span class="keyword">const</span> ImageFormat &amp;format);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordtype">int</span> <a class="code hl_function" href="classLys_1_1Image.html#a8dc394e48439368eaa31a4c2fca4dfd8">get_channel_count</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keywordtype">int</span> _width;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordtype">int</span> _height;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keywordtype">bool</span> _useMipmaps; <span class="comment">// Currently unused</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        std::vector&lt;uint8_t&gt; _data;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        ImageFormat _format;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keywordtype">int</span> get_index(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    };</div>
 </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>} <span class="comment">// namespace LilyPad</span></div>
-<div class="ttc" id="aclassLilyPad_1_1File_html"><div class="ttname"><a href="classLilyPad_1_1File.html">LilyPad::File</a></div><div class="ttdef"><b>Definition</b> file.hpp:9</div></div>
-<div class="ttc" id="aclassLilyPad_1_1Image_html"><div class="ttname"><a href="classLilyPad_1_1Image.html">LilyPad::Image</a></div><div class="ttdef"><b>Definition</b> image.hpp:20</div></div>
-<div class="ttc" id="aclassLilyPad_1_1Image_html_a35328406d50a7e77d9fe0c66188cae53"><div class="ttname"><a href="classLilyPad_1_1Image.html#a35328406d50a7e77d9fe0c66188cae53">LilyPad::Image::get_size</a></div><div class="ttdeci">Vector2i get_size() const</div><div class="ttdef"><b>Definition</b> image.cpp:80</div></div>
-<div class="ttc" id="aclassLilyPad_1_1Image_html_aa709e0b3231b8fedd8f3d2a7d300b229"><div class="ttname"><a href="classLilyPad_1_1Image.html#aa709e0b3231b8fedd8f3d2a7d300b229">LilyPad::Image::get_width</a></div><div class="ttdeci">int get_width() const</div><div class="ttdef"><b>Definition</b> image.cpp:76</div></div>
-<div class="ttc" id="aclassLilyPad_1_1Image_html_ab0997e0b6194727157542e3bd60c5eb8"><div class="ttname"><a href="classLilyPad_1_1Image.html#ab0997e0b6194727157542e3bd60c5eb8">LilyPad::Image::set_pixel</a></div><div class="ttdeci">void set_pixel(int x_index, int y_index, const Color &amp;data)</div><div class="ttdoc">Sets the color of a specific pixel in the image.</div><div class="ttdef"><b>Definition</b> image.cpp:10</div></div>
-<div class="ttc" id="aclassLilyPad_1_1Image_html_ada1ac383bca74fd272a9ddc84b7e5322"><div class="ttname"><a href="classLilyPad_1_1Image.html#ada1ac383bca74fd272a9ddc84b7e5322">LilyPad::Image::get_height</a></div><div class="ttdeci">int get_height() const</div><div class="ttdef"><b>Definition</b> image.cpp:78</div></div>
-<div class="ttc" id="astructLilyPad_1_1Color_html"><div class="ttname"><a href="structLilyPad_1_1Color.html">LilyPad::Color</a></div><div class="ttdef"><b>Definition</b> color.hpp:6</div></div>
-<div class="ttc" id="astructLilyPad_1_1Vector2i_html"><div class="ttname"><a href="structLilyPad_1_1Vector2i.html">LilyPad::Vector2i</a></div><div class="ttdef"><b>Definition</b> vector2i.hpp:8</div></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>} <span class="comment">// namespace Lys</span></div>
+<div class="ttc" id="aclassLys_1_1File_html"><div class="ttname"><a href="classLys_1_1File.html">Lys::File</a></div><div class="ttdef"><b>Definition</b> file.hpp:9</div></div>
+<div class="ttc" id="aclassLys_1_1Image_html"><div class="ttname"><a href="classLys_1_1Image.html">Lys::Image</a></div><div class="ttdef"><b>Definition</b> image.hpp:20</div></div>
+<div class="ttc" id="aclassLys_1_1Image_html_a0247cf40f35df59429187adc6f3f30ad"><div class="ttname"><a href="classLys_1_1Image.html#a0247cf40f35df59429187adc6f3f30ad">Lys::Image::get_width</a></div><div class="ttdeci">int get_width() const</div><div class="ttdef"><b>Definition</b> image.cpp:79</div></div>
+<div class="ttc" id="aclassLys_1_1Image_html_a2187cc91885c95a12a06eacfc8b04f28"><div class="ttname"><a href="classLys_1_1Image.html#a2187cc91885c95a12a06eacfc8b04f28">Lys::Image::get_size</a></div><div class="ttdeci">Vector2i get_size() const</div><div class="ttdef"><b>Definition</b> image.cpp:83</div></div>
+<div class="ttc" id="aclassLys_1_1Image_html_a8dc394e48439368eaa31a4c2fca4dfd8"><div class="ttname"><a href="classLys_1_1Image.html#a8dc394e48439368eaa31a4c2fca4dfd8">Lys::Image::get_channel_count</a></div><div class="ttdeci">int get_channel_count() const</div><div class="ttdef"><b>Definition</b> image.cpp:57</div></div>
+<div class="ttc" id="aclassLys_1_1Image_html_a919386952478cd46f261e4225fe9c210"><div class="ttname"><a href="classLys_1_1Image.html#a919386952478cd46f261e4225fe9c210">Lys::Image::set_pixel</a></div><div class="ttdeci">void set_pixel(int x_index, int y_index, const Color &amp;data)</div><div class="ttdoc">Sets the color of a specific pixel in the image.</div><div class="ttdef"><b>Definition</b> image.cpp:10</div></div>
+<div class="ttc" id="aclassLys_1_1Image_html_af0d59b4802ed79336438fb14a049e1e1"><div class="ttname"><a href="classLys_1_1Image.html#af0d59b4802ed79336438fb14a049e1e1">Lys::Image::get_height</a></div><div class="ttdeci">int get_height() const</div><div class="ttdef"><b>Definition</b> image.cpp:81</div></div>
+<div class="ttc" id="astructLys_1_1Color_html"><div class="ttname"><a href="structLys_1_1Color.html">Lys::Color</a></div><div class="ttdef"><b>Definition</b> color.hpp:6</div></div>
+<div class="ttc" id="astructLys_1_1Vector2i_html"><div class="ttname"><a href="structLys_1_1Vector2i.html">Lys::Vector2i</a></div><div class="ttdef"><b>Definition</b> vector2i.hpp:8</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

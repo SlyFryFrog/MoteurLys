@@ -1,0 +1,13 @@
+digraph "Lys::File::read_file"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="Lys::File::read_file",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Returns the contents of the given file. Will always catch errors."];
+  Node1 -> Node2 [id="edge3_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Lys::ShaderProgram\l::create_shader_program",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLys_1_1ShaderProgram.html#aa8abf08be78dd1e2b7a7f84d13c0354a",tooltip="Creates and links the shader program from the previously loaded vertex and fragment shaders."];
+  Node2 -> Node3 [id="edge4_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="Lys::ShaderProgram\l::reload",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLys_1_1ShaderProgram.html#a1c0785240dc969afc065a21b9f777963",tooltip="If the last write time has changed, it gets and applies the new shader code to the program."];
+}

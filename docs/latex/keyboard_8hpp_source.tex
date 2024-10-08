@@ -1,0 +1,142 @@
+\doxysection{keyboard.\+hpp}
+\hypertarget{keyboard_8hpp_source}{}\label{keyboard_8hpp_source}\index{Lys/core/input/keyboard.hpp@{Lys/core/input/keyboard.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#ifdef\ OPENGL}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <GL/glew.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <GLFW/glfw3.h>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }Lys}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{enum\ class}\ Key\ :\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00014\ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ EMPTY,}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ UNIQUE\ =\ (1\ <<\ 8),}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ SPACE\ =\ 0x0020,}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ EXCLAM\ =\ 0x0021,}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ QUOTEDBL\ =\ 0x0022,}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ NUMBERSIGN\ =\ 0x0023,}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ DOLLAR\ =\ 0x0024,}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ PERCENT\ =\ 0x0025,}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ AMPERSAND\ =\ 0x0026,}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ APOSTROPHE\ =\ 0x0027,}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ PARENLEFT\ =\ 0x0028,}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ PARENRIGHT\ =\ 0x0029,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ ASTERISK\ =\ 0x002A,}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ PLUS\ =\ 0x002B,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ COMMA\ =\ 0x002C,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ MINUS\ =\ 0x002D,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ PERIOD\ =\ 0x002E,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ SLASH\ =\ 0x002F,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ KEY\_0\ =\ 0x0030,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ KEY\_1\ =\ 0x0031,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ KEY\_2\ =\ 0x0032,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ KEY\_3\ =\ 0x0033,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ KEY\_4\ =\ 0x0034,}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ KEY\_5\ =\ 0x0035,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ KEY\_6\ =\ 0x0036,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ KEY\_7\ =\ 0x0037,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ KEY\_8\ =\ 0x0038,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ KEY\_9\ =\ 0x0039,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ COLON\ =\ 0x003A,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ SEMICOLON\ =\ 0x003B,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ LESS\ =\ 0x003C,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ EQUAL\ =\ 0x003D,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ GREATER\ =\ 0x003E,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ QUESTION\ =\ 0x003F,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ AT\ =\ 0x0040,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ A\ =\ 0x0041,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ B\ =\ 0x0042,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ C\ =\ 0x0043,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ D\ =\ 0x0044,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ E\ =\ 0x0045,}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ F\ =\ 0x0046,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ G\ =\ 0x0047,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ H\ =\ 0x0048,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ I\ =\ 0x0049,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ J\ =\ 0x004A,}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ K\ =\ 0x004B,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ L\ =\ 0x004C,}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ M\ =\ 0x004D,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ N\ =\ 0x004E,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ O\ =\ 0x004F,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ P\ =\ 0x0050,}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ Q\ =\ 0x0051,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ R\ =\ 0x0052,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ S\ =\ 0x0053,}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ T\ =\ 0x0054,}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ U\ =\ 0x0055,}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ V\ =\ 0x0056,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ W\ =\ 0x0057,}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ X\ =\ 0x0058,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ Y\ =\ 0x0059,}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ Z\ =\ 0x005A,}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ ESCAPE\ =\ UNIQUE,}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ ENTER\ =\ UNIQUE\ |\ 0x0001,}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ CONTROL\ =\ UNIQUE\ |\ 0x0002,}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ SUPER\ =\ UNIQUE\ |\ 0x0003,}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ F1\ =\ UNIQUE\ |\ 0x0022,}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ F2\ =\ UNIQUE\ |\ 0x0023,}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ F3\ =\ UNIQUE\ |\ 0x0024,}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ F4\ =\ UNIQUE\ |\ 0x0025,}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ F5\ =\ UNIQUE\ |\ 0x0026,}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ F6\ =\ UNIQUE\ |\ 0x0027,}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ F7\ =\ UNIQUE\ |\ 0x0028,}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ F8\ =\ UNIQUE\ |\ 0x0029,}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ F9\ =\ UNIQUE\ |\ 0x002A,}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ F10\ =\ UNIQUE\ |\ 0x002B,}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ F11\ =\ UNIQUE\ |\ 0x002C,}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ F12\ =\ UNIQUE\ |\ 0x002D,}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ F13\ =\ UNIQUE\ |\ 0x002E,}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ F14\ =\ UNIQUE\ |\ 0x002F,}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ F15\ =\ UNIQUE\ |\ 0x0030,}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ F16\ =\ UNIQUE\ |\ 0x0031,}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ F17\ =\ UNIQUE\ |\ 0x0032,}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ F18\ =\ UNIQUE\ |\ 0x0033,}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ F19\ =\ UNIQUE\ |\ 0x0034,}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ F20\ =\ UNIQUE\ |\ 0x0035,}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ F21\ =\ UNIQUE\ |\ 0x0036,}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ F22\ =\ UNIQUE\ |\ 0x0037,}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ F23\ =\ UNIQUE\ |\ 0x0038,}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ F24\ =\ UNIQUE\ |\ 0x0039,}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ F25\ =\ UNIQUE\ |\ 0x003A,}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ KEY\_PAD\_0\ =\ UNIQUE\ |\ 0x0040,}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ KEY\_PAD\_1\ =\ UNIQUE\ |\ 0x0041,}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ KEY\_PAD\_2\ =\ UNIQUE\ |\ 0x0042,}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ KEY\_PAD\_3\ =\ UNIQUE\ |\ 0x0043,}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ KEY\_PAD\_4\ =\ UNIQUE\ |\ 0x0044,}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ KEY\_PAD\_5\ =\ UNIQUE\ |\ 0x0045,}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ KEY\_PAD\_6\ =\ UNIQUE\ |\ 0x0046,}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ KEY\_PAD\_7\ =\ UNIQUE\ |\ 0x0047,}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ KEY\_PAD\_8\ =\ UNIQUE\ |\ 0x0048,}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ KEY\_PAD\_9\ =\ UNIQUE\ |\ 0x0049,}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ MOUSE\_BUTTON\_LEFT\ =\ GLFW\_MOUSE\_BUTTON\_LEFT,}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ MOUSE\_BUTTON\_RIGHT\ =\ GLFW\_MOUSE\_BUTTON\_RIGHT,}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ MOUSE\_BUTTON\_MIDDLE\ =\ GLFW\_MOUSE\_BUTTON\_MIDDLE,}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ MASK\ =\ (1\ <<\ 10),}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ SHIFT\ =\ MASK\ |\ 0x0001,}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ ALT\ =\ MASK\ |\ 0x0002}
+\DoxyCodeLine{00123\ \ \ \ \ \};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keyword}{enum\ class}\ KeyPosition\ :\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00126\ \ \ \ \ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ UNKNOWN,}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ LEFT,}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ RIGHT}
+\DoxyCodeLine{00130\ \ \ \ \ \};}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keyword}{enum\ class}\ MouseButton}
+\DoxyCodeLine{00133\ \ \ \ \ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ LEFT\_CLICK,}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ RIGHT\_CLICK}
+\DoxyCodeLine{00136\ \ \ \ \ \};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ Key\ convert\_code(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ code);}
+\DoxyCodeLine{00139\ \}\ \textcolor{comment}{//\ namespace\ Lys}}
+
+\end{DoxyCode}

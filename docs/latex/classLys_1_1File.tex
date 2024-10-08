@@ -1,0 +1,109 @@
+\doxysection{Lys\+::File Class Reference}
+\hypertarget{classLys_1_1File}{}\label{classLys_1_1File}\index{Lys::File@{Lys::File}}
+
+
+Inheritance diagram for Lys\+::File\+:
+% FIG 0
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classLys_1_1File_a10f9ccc093d313277c45c50d3096decb}\label{classLys_1_1File_a10f9ccc093d313277c45c50d3096decb} 
+{\bfseries File} (const std\+::string \&path)
+\item 
+bool \mbox{\hyperlink{classLys_1_1File_ad688a8ade5f981045fb12efed0fe96b8}{is\+\_\+updated}} () const
+\begin{DoxyCompactList}\small\item\em Checks if that last write time has changed since the last check. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classLys_1_1File_a2d0a60f9145c21c6417e41afff7f186e}{update}} ()
+\begin{DoxyCompactList}\small\item\em Empty implementation that should be overrided to add hot-\/reloading functionality. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classLys_1_1File_ac1f709a5d51f01578b8a0749685aab7b}{read\+\_\+file}} () const
+\begin{DoxyCompactList}\small\item\em Returns the contents of the previously set file path. Will always catch errors. \end{DoxyCompactList}\item 
+\Hypertarget{classLys_1_1File_ab52340c58f8465970bf201f773821824}\label{classLys_1_1File_ab52340c58f8465970bf201f773821824} 
+void {\bfseries set\+\_\+path} (const std\+::string \&path)
+\item 
+\Hypertarget{classLys_1_1File_a173d122690b542b10e559599f047455d}\label{classLys_1_1File_a173d122690b542b10e559599f047455d} 
+std\+::string {\bfseries get\+\_\+path} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classLys_1_1File_a2cb2399ca7c6677adb1e25b3231348aa}{read\+\_\+file}} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Returns the contents of the given file. Will always catch errors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classLys_1_1File_a954e25f6312ade80d995fd3e2bafc889}\label{classLys_1_1File_a954e25f6312ade80d995fd3e2bafc889} 
+std\+::filesystem\+::file\+\_\+time\+\_\+type {\bfseries \+\_\+last\+Time}
+\item 
+\Hypertarget{classLys_1_1File_af3e4f9759de63c8f06a38226041292c9}\label{classLys_1_1File_af3e4f9759de63c8f06a38226041292c9} 
+std\+::string {\bfseries \+\_\+path}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classLys_1_1File_ad688a8ade5f981045fb12efed0fe96b8}\label{classLys_1_1File_ad688a8ade5f981045fb12efed0fe96b8} 
+\index{Lys::File@{Lys::File}!is\_updated@{is\_updated}}
+\index{is\_updated@{is\_updated}!Lys::File@{Lys::File}}
+\doxysubsubsection{\texorpdfstring{is\_updated()}{is\_updated()}}
+{\footnotesize\ttfamily bool Lys\+::\+File\+::is\+\_\+updated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks if that last write time has changed since the last check. 
+
+\begin{DoxyReturn}{Returns}
+true if the file has been updated since \+\_\+last\+Time. 
+
+false if the file has not been updated since \+\_\+last\+Time. 
+\end{DoxyReturn}
+\Hypertarget{classLys_1_1File_ac1f709a5d51f01578b8a0749685aab7b}\label{classLys_1_1File_ac1f709a5d51f01578b8a0749685aab7b} 
+\index{Lys::File@{Lys::File}!read\_file@{read\_file}}
+\index{read\_file@{read\_file}!Lys::File@{Lys::File}}
+\doxysubsubsection{\texorpdfstring{read\_file()}{read\_file()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string Lys\+::\+File\+::read\+\_\+file (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the contents of the previously set file path. Will always catch errors. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string Contents of the file being read. If unable to read the requested file, will return an empty string. 
+\end{DoxyReturn}
+\Hypertarget{classLys_1_1File_a2cb2399ca7c6677adb1e25b3231348aa}\label{classLys_1_1File_a2cb2399ca7c6677adb1e25b3231348aa} 
+\index{Lys::File@{Lys::File}!read\_file@{read\_file}}
+\index{read\_file@{read\_file}!Lys::File@{Lys::File}}
+\doxysubsubsection{\texorpdfstring{read\_file()}{read\_file()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::string Lys\+::\+File\+::read\+\_\+file (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the contents of the given file. Will always catch errors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to the file being read. Should be absolute. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string Contents of the file being read. If unable to read the requested file, will return an empty string. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 1
+\Hypertarget{classLys_1_1File_a2d0a60f9145c21c6417e41afff7f186e}\label{classLys_1_1File_a2d0a60f9145c21c6417e41afff7f186e} 
+\index{Lys::File@{Lys::File}!update@{update}}
+\index{update@{update}!Lys::File@{Lys::File}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Lys\+::\+File\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Empty implementation that should be overrided to add hot-\/reloading functionality. 
+
+
+
+Reimplemented in \mbox{\hyperlink{classLys_1_1Shader_abe8e669f9b85886c14da01f4cf1d9d82}{Lys\+::\+Shader}}, and \mbox{\hyperlink{classLys_1_1Texture_a9fd0d241fa4cd3ecbc10db09f5e47654}{Lys\+::\+Texture}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Lys/core/io/file.\+hpp\item 
+Lys/core/io/file.\+cpp\end{DoxyCompactItemize}

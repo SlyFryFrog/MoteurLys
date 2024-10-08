@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['shader_0',['Shader',['../classLilyPad_1_1Shader.html',1,'LilyPad']]],
-  ['shaderprogram_1',['ShaderProgram',['../classLilyPad_1_1ShaderProgram.html',1,'LilyPad']]],
-  ['shape2d_2',['Shape2D',['../classLilyPad_1_1Shape2D.html',1,'LilyPad']]],
-  ['sprite2d_3',['Sprite2D',['../classLilyPad_1_1Sprite2D.html',1,'LilyPad']]]
+  ['rect2_0',['Rect2',['../structLys_1_1Rect2.html',1,'Lys']]],
+  ['renderer_1',['Renderer',['../classLys_1_1Renderer.html',1,'Lys']]],
+  ['renderergl_2',['RendererGL',['../classLys_1_1RendererGL.html',1,'Lys']]]
 ];

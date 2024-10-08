@@ -1,58 +1,61 @@
 \doxysection{image.\+hpp}
-\hypertarget{image_8hpp_source}{}\label{image_8hpp_source}\index{LilyPadEngine/src/LilyPad/core/io/image.hpp@{LilyPadEngine/src/LilyPad/core/io/image.hpp}}
+\hypertarget{image_8hpp_source}{}\label{image_8hpp_source}\index{Lys/core/io/image.hpp@{Lys/core/io/image.hpp}}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
 \DoxyCodeLine{00002\ }
 \DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}LilyPad/core/io/file.hpp"{}}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}LilyPad/core/math/color.hpp"{}}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}LilyPad/core/math/vector2i.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Lys/core/io/file.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Lys/core/math/color.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Lys/core/math/vector2i.hpp"{}}}
 \DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }LilyPad}
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }Lys}
 \DoxyCodeLine{00010\ \{}
-\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{enum}\ ImageFormat}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{enum\ class}\ ImageFormat}
 \DoxyCodeLine{00012\ \ \ \ \ \{}
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ FORMAT\_R8,}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ FORMAT\_RG8,}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ FORMAT\_RGB8,}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ FORMAT\_RGBA8}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ R8,}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ RG8,}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ RGB8,}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ RGBA8}
 \DoxyCodeLine{00017\ \ \ \ \ \};}
 \DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classLilyPad_1_1Image}{Image}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classLilyPad_1_1File}{File}}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classLys_1_1Image}{Image}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classLys_1_1File}{File}}}
 \DoxyCodeLine{00020\ \ \ \ \ \{}
 \DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classLilyPad_1_1Image}{Image}}();}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classLilyPad_1_1Image}{\string~Image}}();}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classLys_1_1Image}{Image}}();}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classLys_1_1Image}{\string~Image}}();}
 \DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_data(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{bool}\ useMipmaps,\ ImageFormat\ format,\ \textcolor{keyword}{const}\ std::vector<uint8\_t>\ \&data);}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLilyPad_1_1Image_ab0997e0b6194727157542e3bd60c5eb8}{set\_pixel}}(\textcolor{keywordtype}{int}\ x\_index,\ \textcolor{keywordtype}{int}\ y\_index,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structLilyPad_1_1Color}{Color}}\ \&data);}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classLilyPad_1_1Image_aa709e0b3231b8fedd8f3d2a7d300b229}{get\_width}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00043\ }
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classLilyPad_1_1Image_ada1ac383bca74fd272a9ddc84b7e5322}{get\_height}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00048\ }
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structLilyPad_1_1Vector2i}{Vector2i}}\ \mbox{\hyperlink{classLilyPad_1_1Image_a35328406d50a7e77d9fe0c66188cae53}{get\_size}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ ImageFormat\ get\_format()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_format(\textcolor{keyword}{const}\ ImageFormat\ \&format);}
-\DoxyCodeLine{00056\ }
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ std::vector<uint8\_t>\ get\_raw\_data()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ *get\_data()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00059\ }
-\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_width;}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_height;}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_useMipmaps;\ \ \ \ \ \ \ \textcolor{comment}{//\ Currently\ unused}}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ std::vector<uint8\_t>\ \_data;}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ ImageFormat\ \_format;}
-\DoxyCodeLine{00066\ }
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ get\_channel\_count()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00071\ }
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ get\_index(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00080\ \ \ \ \ \};}
-\DoxyCodeLine{00081\ \}\ \textcolor{comment}{//\ namespace\ LilyPad}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_data(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{bool}\ useMipmaps,\ ImageFormat\ format,}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<uint8\_t>\ \&data);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLys_1_1Image_a919386952478cd46f261e4225fe9c210}{set\_pixel}}(\textcolor{keywordtype}{int}\ x\_index,\ \textcolor{keywordtype}{int}\ y\_index,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structLys_1_1Color}{Color}}\ \&data);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classLys_1_1Image_a0247cf40f35df59429187adc6f3f30ad}{get\_width}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classLys_1_1Image_af0d59b4802ed79336438fb14a049e1e1}{get\_height}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structLys_1_1Vector2i}{Vector2i}}\ \mbox{\hyperlink{classLys_1_1Image_a2187cc91885c95a12a06eacfc8b04f28}{get\_size}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ ImageFormat\ get\_format()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_format(\textcolor{keyword}{const}\ ImageFormat\ \&format);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ std::vector<uint8\_t>\ get\_raw\_data()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ *get\_data()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classLys_1_1Image_a8dc394e48439368eaa31a4c2fca4dfd8}{get\_channel\_count}}(\textcolor{keyword}{const}\ ImageFormat\ \&format);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classLys_1_1Image_a8dc394e48439368eaa31a4c2fca4dfd8}{get\_channel\_count}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_width;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_height;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_useMipmaps;\ \textcolor{comment}{//\ Currently\ unused}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ std::vector<uint8\_t>\ \_data;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ ImageFormat\ \_format;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ get\_index(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00084\ \ \ \ \ \};}
+\DoxyCodeLine{00085\ \}\ \textcolor{comment}{//\ namespace\ Lys}}
 
 \end{DoxyCode}

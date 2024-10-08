@@ -1,33 +1,25 @@
 \doxysection{label.\+hpp}
-\hypertarget{label_8hpp_source}{}\label{label_8hpp_source}\index{LilyPadEngine/src/LilyPad/scene/nodes/ui/label.hpp@{LilyPadEngine/src/LilyPad/scene/nodes/ui/label.hpp}}
+\hypertarget{label_8hpp_source}{}\label{label_8hpp_source}\index{Lys/scene/nodes/ui/label.hpp@{Lys/scene/nodes/ui/label.hpp}}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
 \DoxyCodeLine{00002\ }
 \DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <ft2build.h>}}
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ FT\_FREETYPE\_H}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}LilyPad/scene/nodes/ui/widget.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Lys/scene/nodes/ui/widget.hpp"{}}}
 \DoxyCodeLine{00006\ }
-\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }LilyPad}
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }Lys}
 \DoxyCodeLine{00008\ \{}
-\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classLilyPad_1_1Label}{Label}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classLilyPad_1_1Widget}{Widget}}}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classLys_1_1Label}{Label}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classLys_1_1Widget}{Widget}}}
 \DoxyCodeLine{00010\ \ \ \ \ \{}
 \DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classLilyPad_1_1Label}{Label}}()}
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ FT\_Library\ ft;}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ (FT\_Init\_FreeType(\&ft))}}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \{}}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \}}}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ FT\_Face\ face;}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ (FT\_New\_Face(ft,\ "{}fonts/arial.ttf"{},\ 0,\ \&face))}}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \{}}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \}}}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00026\ \ \ \ \ \};}
-\DoxyCodeLine{00027\ \}\ \textcolor{comment}{//\ namespace\ LilyPad}}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classLys_1_1Label}{Label}}();}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classLys_1_1Label}{Label}}(\textcolor{keyword}{const}\ std::string\ \&text);}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ std::string\ text;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ \};}
+\DoxyCodeLine{00019\ \}\ \textcolor{comment}{//\ namespace\ Lys}}
 
 \end{DoxyCode}

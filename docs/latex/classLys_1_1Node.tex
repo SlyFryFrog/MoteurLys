@@ -1,0 +1,63 @@
+\doxysection{Lys\+::Node Class Reference}
+\hypertarget{classLys_1_1Node}{}\label{classLys_1_1Node}\index{Lys::Node@{Lys::Node}}
+
+
+Inheritance diagram for Lys\+::Node\+:
+% FIG 0
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classLys_1_1Node_a74f57a95a4238ce48dc66798c3724a71}\label{classLys_1_1Node_a74f57a95a4238ce48dc66798c3724a71} 
+{\bfseries Node} (const std\+::string \&name)
+\item 
+\Hypertarget{classLys_1_1Node_a491f39767cf6ca7e43ff918d6f01d8eb}\label{classLys_1_1Node_a491f39767cf6ca7e43ff918d6f01d8eb} 
+virtual void {\bfseries \+\_\+ready} ()
+\item 
+\Hypertarget{classLys_1_1Node_ab741772d96bd21714172cb21a840196d}\label{classLys_1_1Node_ab741772d96bd21714172cb21a840196d} 
+virtual void {\bfseries \+\_\+process} (double delta)
+\item 
+\Hypertarget{classLys_1_1Node_a80ff5e1e2a69860f192ff2a705629aa5}\label{classLys_1_1Node_a80ff5e1e2a69860f192ff2a705629aa5} 
+virtual void {\bfseries \+\_\+process\+\_\+input} (const \mbox{\hyperlink{classLys_1_1InputEventCore}{Input\+Event\+Core}} \&event)
+\item 
+\Hypertarget{classLys_1_1Node_a2a3ccc17f011e5785c954ee89cb82104}\label{classLys_1_1Node_a2a3ccc17f011e5785c954ee89cb82104} 
+virtual void {\bfseries \+\_\+draw} ()
+\item 
+\Hypertarget{classLys_1_1Node_a0f28d197363f5806b4eb4ab08bb3c41b}\label{classLys_1_1Node_a0f28d197363f5806b4eb4ab08bb3c41b} 
+virtual void {\bfseries \+\_\+process\+\_\+mouse\+\_\+input} (const \mbox{\hyperlink{classLys_1_1InputEventCore}{Input\+Event\+Core}} \&event)
+\item 
+\Hypertarget{classLys_1_1Node_af795ae17b553c8c0fd31aa05461d389f}\label{classLys_1_1Node_af795ae17b553c8c0fd31aa05461d389f} 
+std\+::string {\bfseries get\+\_\+name} () const
+\item 
+\Hypertarget{classLys_1_1Node_aaec1c8568eb631498dd8d49d9484befb}\label{classLys_1_1Node_aaec1c8568eb631498dd8d49d9484befb} 
+void {\bfseries set\+\_\+name} (const std\+::string \&name)
+\item 
+\Hypertarget{classLys_1_1Node_a0042b654f3a03d5cc44b9039fc2da6a5}\label{classLys_1_1Node_a0042b654f3a03d5cc44b9039fc2da6a5} 
+void {\bfseries add\+\_\+child} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classLys_1_1Node}{Node}} $>$ child)
+\item 
+\Hypertarget{classLys_1_1Node_adbd9407f2a3351f4413d65a2e668012c}\label{classLys_1_1Node_adbd9407f2a3351f4413d65a2e668012c} 
+{\footnotesize template$<$typename T $>$ }\\std\+::shared\+\_\+ptr$<$ T $>$ {\bfseries get\+\_\+child} (const std\+::string \&node\+Name)
+\item 
+\Hypertarget{classLys_1_1Node_ad99fe43a536f92d63ec755375bfaae36}\label{classLys_1_1Node_ad99fe43a536f92d63ec755375bfaae36} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classLys_1_1Node}{Node}} $>$ {\bfseries get\+\_\+child} (const std\+::string \&node\+Name)
+\item 
+\Hypertarget{classLys_1_1Node_ad59bc3c989020c9896a306b4c8a320f7}\label{classLys_1_1Node_ad59bc3c989020c9896a306b4c8a320f7} 
+{\footnotesize template$<$typename T $>$ }\\std\+::shared\+\_\+ptr$<$ T $>$ {\bfseries get\+\_\+parent} ()
+\item 
+\Hypertarget{classLys_1_1Node_a6b76ce41825e9dcc6250d17a18870b21}\label{classLys_1_1Node_a6b76ce41825e9dcc6250d17a18870b21} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classLys_1_1Node}{Node}} $>$ {\bfseries get\+\_\+parent} () const
+\item 
+\Hypertarget{classLys_1_1Node_a4fe76b941428edce3817e55e837b9596}\label{classLys_1_1Node_a4fe76b941428edce3817e55e837b9596} 
+void {\bfseries queue\+\_\+destroy} ()
+\item 
+\Hypertarget{classLys_1_1Node_aacc25cfb0b410a7636e3e5319392afa1}\label{classLys_1_1Node_aacc25cfb0b410a7636e3e5319392afa1} 
+void {\bfseries update} ()
+\item 
+\Hypertarget{classLys_1_1Node_ac5d6fdc017e3f9da621ffec7c641d24e}\label{classLys_1_1Node_ac5d6fdc017e3f9da621ffec7c641d24e} 
+void {\bfseries init} ()
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Lys/scene/nodes/core/node.\+hpp\item 
+Lys/scene/nodes/core/node.\+cpp\end{DoxyCompactItemize}

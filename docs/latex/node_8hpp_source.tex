@@ -1,5 +1,5 @@
 \doxysection{node.\+hpp}
-\hypertarget{node_8hpp_source}{}\label{node_8hpp_source}\index{LilyPadEngine/src/LilyPad/scene/nodes/core/node.hpp@{LilyPadEngine/src/LilyPad/scene/nodes/core/node.hpp}}
+\hypertarget{node_8hpp_source}{}\label{node_8hpp_source}\index{Lys/scene/nodes/core/node.hpp@{Lys/scene/nodes/core/node.hpp}}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
@@ -7,54 +7,89 @@
 \DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <memory>}}
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}LilyPad/debug/logging.hpp"{}}}
-\DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }LilyPad}
-\DoxyCodeLine{00009\ \{}
-\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classLilyPad_1_1Node}{Node}}}
-\DoxyCodeLine{00011\ \ \ \ \ \{}
-\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classLilyPad_1_1Node}{Node}}();}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classLilyPad_1_1Node}{Node}}(\textcolor{keyword}{const}\ std::string\ \&name);}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classLilyPad_1_1Node}{\string~Node}}();}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \_ready();}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \_process(\textcolor{keywordtype}{double}\ delta);}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \_process\_input();}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ [[nodiscard]]\ std::string\ get\_name()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_name(\textcolor{keyword}{const}\ std::string\ \&name);}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Lys/core/input/input\_events.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Lys/debug/logging.hpp"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }Lys}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classLys_1_1Node}{Node}}}
+\DoxyCodeLine{00012\ \ \ \ \ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classLys_1_1Node}{Node}}();}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classLys_1_1Node}{Node}}(\textcolor{keyword}{const}\ std::string\ \&name);}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classLys_1_1Node}{\string~Node}}();}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \_ready();}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \_process(\textcolor{keywordtype}{double}\ delta);}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \_process\_input(\textcolor{keyword}{const}\ \mbox{\hyperlink{classLys_1_1InputEventCore}{InputEventCore}}\ \&event);}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \_draw();}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \_process\_mouse\_input(\textcolor{keyword}{const}\ \mbox{\hyperlink{classLys_1_1InputEventCore}{InputEventCore}}\ \&event);}
 \DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ add\_child(std::shared\_ptr<Node>\ child);}
-\DoxyCodeLine{00025\ }
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ std::shared\_ptr<T>\ get\_child(\textcolor{keyword}{const}\ std::string\ \&nodeName)}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&child\ :\ \_children)}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (child-\/>get\_name()\ ==\ nodeName)}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ casted\_child\ =\ std::dynamic\_pointer\_cast<T>(child);}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (casted\_child)}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ casted\_child;}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LILYPAD\_ERROR(\textcolor{stringliteral}{"{}Failed\ to\ cast\ child\ named\ '"{}},\ nodeName,\ \textcolor{stringliteral}{"{}'\ to\ type\ "{}},\ \textcolor{keyword}{typeid}(T).name());}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ LILYPAD\_ERROR(\textcolor{stringliteral}{"{}Child\ with\ name\ '"{}},\ nodeName,\ \textcolor{stringliteral}{"{}'\ not\ found."{}});}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00048\ }
-\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ std::string\ \_name;}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ std::vector<std::shared\_ptr<Node>>\ \_children;}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ std::shared\_ptr<Node>\ \_parent;}
-\DoxyCodeLine{00053\ \ \ \ \ \};}
-\DoxyCodeLine{00054\ \}\ \textcolor{comment}{//\ namespace\ LilyPad}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ [[nodiscard]]\ std::string\ get\_name()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ set\_name(\textcolor{keyword}{const}\ std::string\ \&name);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ add\_child(std::shared\_ptr<Node>\ child);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ std::shared\_ptr<T>\ get\_child(\textcolor{keyword}{const}\ std::string\ \&nodeName)}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&child\ :\ \_children)}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (child-\/>get\_name()\ ==\ nodeName)}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ casted\_child\ =\ std::dynamic\_pointer\_cast<T>(child);}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (casted\_child)}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ casted\_child;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LYS\_ERROR(\textcolor{stringliteral}{"{}Failed\ to\ cast\ child\ named\ '"{}},\ nodeName,\ \textcolor{stringliteral}{"{}'\ to\ type\ "{}},}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typeid}(T).name());}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ LYS\_ERROR(\textcolor{stringliteral}{"{}Child\ with\ name\ '"{}},\ nodeName,\ \textcolor{stringliteral}{"{}'\ not\ found."{}});}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ std::shared\_ptr<Node>\ get\_child(\textcolor{keyword}{const}\ std::string\ \&nodeName);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ std::shared\_ptr<T>\ get\_parent()}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ casted\_parent\ =\ std::dynamic\_pointer\_cast<T>(\_parent);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (casted\_parent)}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ casted\_parent;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LYS\_ERROR(\textcolor{stringliteral}{"{}Failed\ to\ cast\ parent\ named\ '"{}},\ \_parent-\/>\_name,\ \textcolor{stringliteral}{"{}'\ to\ type\ "{}},}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typeid}(T).name());}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ std::shared\_ptr<Node>\ get\_parent()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ queue\_destroy();}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ update();}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ init();}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ call\_update\_methods(\mbox{\hyperlink{classLys_1_1Node}{Node}}\ \&node);}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ process\_input(\mbox{\hyperlink{classLys_1_1Node}{Node}}\ \&node);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ std::string\ \_name;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ std::vector<std::shared\_ptr<Node>>\ \_children;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ std::shared\_ptr<Node>\ \_parent;}
+\DoxyCodeLine{00088\ \ \ \ \ \};}
+\DoxyCodeLine{00089\ \}\ \textcolor{comment}{//\ namespace\ Lys}}
 
 \end{DoxyCode}

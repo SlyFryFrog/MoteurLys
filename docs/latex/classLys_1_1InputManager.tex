@@ -1,0 +1,66 @@
+\doxysection{Lys\+::Input\+Manager Class Reference}
+\hypertarget{classLys_1_1InputManager}{}\label{classLys_1_1InputManager}\index{Lys::InputManager@{Lys::InputManager}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classLys_1_1InputManager_a48450fc5f347e8b21813b122ace68f2a}\label{classLys_1_1InputManager_a48450fc5f347e8b21813b122ace68f2a} 
+std\+::vector$<$ \mbox{\hyperlink{classLys_1_1InputEventCore}{Input\+Event\+Core}} $>$ {\bfseries get\+\_\+events} () const
+\item 
+\Hypertarget{classLys_1_1InputManager_adf6fb0e1fa365d7334b81f745554da02}\label{classLys_1_1InputManager_adf6fb0e1fa365d7334b81f745554da02} 
+void {\bfseries add\+\_\+key\+\_\+event} (const \mbox{\hyperlink{classLys_1_1InputKeyEvent}{Input\+Key\+Event}} \&event)
+\item 
+\Hypertarget{classLys_1_1InputManager_a0a3f83a15949578b770cd86f3135d377}\label{classLys_1_1InputManager_a0a3f83a15949578b770cd86f3135d377} 
+void {\bfseries add\+\_\+mouse\+\_\+event} (const \mbox{\hyperlink{classLys_1_1InputMouseEvent}{Input\+Mouse\+Event}} \&event)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classLys_1_1InputManager_adf9e49d8442830d9a418493e9e1810d9}\label{classLys_1_1InputManager_adf9e49d8442830d9a418493e9e1810d9} 
+static \mbox{\hyperlink{classLys_1_1InputManager}{Input\+Manager}} \texorpdfstring{$\ast$}{*} {\bfseries get\+\_\+singleton} ()
+\item 
+static void \mbox{\hyperlink{classLys_1_1InputManager_a7b2857e1d3216fd8beb0785f77ce35bd}{\+\_\+process\+\_\+input\+\_\+callback}} (GLFWwindow \texorpdfstring{$\ast$}{*}window, const int key, const int scancode, const int action, const int mods)
+\begin{DoxyCompactList}\small\item\em Processes any input events and will add and remove them to the Input queue. \end{DoxyCompactList}\item 
+\Hypertarget{classLys_1_1InputManager_a40eaae50078b0c674588c6f574775778}\label{classLys_1_1InputManager_a40eaae50078b0c674588c6f574775778} 
+static void {\bfseries \+\_\+process\+\_\+mouse\+\_\+callback} (GLFWwindow \texorpdfstring{$\ast$}{*}window, double xpos\+In, double ypos\+In)
+\item 
+\Hypertarget{classLys_1_1InputManager_ab6d5317c36c7bdda14fdec2e42882aa0}\label{classLys_1_1InputManager_ab6d5317c36c7bdda14fdec2e42882aa0} 
+static bool {\bfseries is\+\_\+pressed} (const Key \&key)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classLys_1_1InputManager_a7b2857e1d3216fd8beb0785f77ce35bd}\label{classLys_1_1InputManager_a7b2857e1d3216fd8beb0785f77ce35bd} 
+\index{Lys::InputManager@{Lys::InputManager}!\_process\_input\_callback@{\_process\_input\_callback}}
+\index{\_process\_input\_callback@{\_process\_input\_callback}!Lys::InputManager@{Lys::InputManager}}
+\doxysubsubsection{\texorpdfstring{\_process\_input\_callback()}{\_process\_input\_callback()}}
+{\footnotesize\ttfamily void Lys\+::\+Input\+Manager\+::\+\_\+process\+\_\+input\+\_\+callback (\begin{DoxyParamCaption}\item[{GLFWwindow \texorpdfstring{$\ast$}{*}}]{window,  }\item[{const int}]{key,  }\item[{const int}]{scancode,  }\item[{const int}]{action,  }\item[{const int}]{mods }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Processes any input events and will add and remove them to the Input queue. 
+
+This method only performs processing of events. This includes adding and removing said events.
+
+This does not process repeat events! This is done outside the function as this is not called per-\/frame.
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & Instance of the window for which input is being processed. \\
+\hline
+{\em key} & Identifying id for the key being pressed. \\
+\hline
+{\em scancode} & \\
+\hline
+{\em action} & \\
+\hline
+{\em mods} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+% FIG 0
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Lys/core/input/input\+\_\+manager.\+hpp\item 
+Lys/core/input/input\+\_\+manager.\+cpp\end{DoxyCompactItemize}

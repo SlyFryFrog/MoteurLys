@@ -1,0 +1,53 @@
+\doxysection{Lys\+::Shader\+Program Class Reference}
+\hypertarget{classLys_1_1ShaderProgram}{}\label{classLys_1_1ShaderProgram}\index{Lys::ShaderProgram@{Lys::ShaderProgram}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classLys_1_1ShaderProgram_ae81b7f667ebe4e877d9ce8c78ba39fcf}\label{classLys_1_1ShaderProgram_ae81b7f667ebe4e877d9ce8c78ba39fcf} 
+{\bfseries Shader\+Program} (const std\+::string \&path, const std\+::string \&vertex, const std\+::string \&fragment)
+\item 
+\Hypertarget{classLys_1_1ShaderProgram_aa8abf08be78dd1e2b7a7f84d13c0354a}\label{classLys_1_1ShaderProgram_aa8abf08be78dd1e2b7a7f84d13c0354a} 
+void {\bfseries create\+\_\+shader\+\_\+program} ()
+\begin{DoxyCompactList}\small\item\em Creates and links the shader program from the previously loaded vertex and fragment shaders. \end{DoxyCompactList}\item 
+\Hypertarget{classLys_1_1ShaderProgram_a866d6d785db046fee9f7b43d6ea27aab}\label{classLys_1_1ShaderProgram_a866d6d785db046fee9f7b43d6ea27aab} 
+void {\bfseries use} () const
+\begin{DoxyCompactList}\small\item\em Assigns the shader program to be used by Open\+GL for rendering. \end{DoxyCompactList}\item 
+\Hypertarget{classLys_1_1ShaderProgram_a84490f53b7da6b3995ddbbc25bfc74a8}\label{classLys_1_1ShaderProgram_a84490f53b7da6b3995ddbbc25bfc74a8} 
+int {\bfseries get\+\_\+attribute\+\_\+location} (const std\+::string \&name) const
+\item 
+\Hypertarget{classLys_1_1ShaderProgram_a403b084f722ec895c0f60c87ef808b9e}\label{classLys_1_1ShaderProgram_a403b084f722ec895c0f60c87ef808b9e} 
+void {\bfseries set\+\_\+uniform} (const std\+::string \&name, int value) const
+\item 
+\Hypertarget{classLys_1_1ShaderProgram_ad060a96f1206bc41562223a884d8ee32}\label{classLys_1_1ShaderProgram_ad060a96f1206bc41562223a884d8ee32} 
+void {\bfseries set\+\_\+uniform} (const std\+::string \&name, unsigned int value) const
+\item 
+\Hypertarget{classLys_1_1ShaderProgram_ab254b283b09b7cf342846e97c336d68e}\label{classLys_1_1ShaderProgram_ab254b283b09b7cf342846e97c336d68e} 
+void {\bfseries set\+\_\+uniform} (const std\+::string \&name, float value) const
+\item 
+\Hypertarget{classLys_1_1ShaderProgram_a4d6c7475add13dd6cd58d571b2b5087b}\label{classLys_1_1ShaderProgram_a4d6c7475add13dd6cd58d571b2b5087b} 
+void {\bfseries set\+\_\+uniform} (const std\+::string \&name, const glm\+::mat3 \&trans) const
+\item 
+\Hypertarget{classLys_1_1ShaderProgram_a09f60071fcf13ffa1e1729595246e476}\label{classLys_1_1ShaderProgram_a09f60071fcf13ffa1e1729595246e476} 
+void {\bfseries set\+\_\+uniform} (const std\+::string \&name, const glm\+::mat4 \&trans) const
+\item 
+\Hypertarget{classLys_1_1ShaderProgram_a19606ca6331a43aefe57ec3c6d694d1c}\label{classLys_1_1ShaderProgram_a19606ca6331a43aefe57ec3c6d694d1c} 
+void {\bfseries set\+\_\+uniform} (const std\+::string \&name, const \mbox{\hyperlink{structLys_1_1Matrix4}{Matrix4}} \&trans) const
+\item 
+\Hypertarget{classLys_1_1ShaderProgram_a1c0785240dc969afc065a21b9f777963}\label{classLys_1_1ShaderProgram_a1c0785240dc969afc065a21b9f777963} 
+void {\bfseries reload} ()
+\begin{DoxyCompactList}\small\item\em If the last write time has changed, it gets and applies the new shader code to the program. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classLys_1_1ShaderProgram_aa53c6f2e2362c57839802cf56c740a17}\label{classLys_1_1ShaderProgram_aa53c6f2e2362c57839802cf56c740a17} 
+unsigned int {\bfseries id}
+\item 
+\Hypertarget{classLys_1_1ShaderProgram_a5a83d31c5cc294a449e52074ef5fd15c}\label{classLys_1_1ShaderProgram_a5a83d31c5cc294a449e52074ef5fd15c} 
+std\+::string {\bfseries name}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Lys/renderer/\+Open\+GL/shaders/shader\+\_\+program.\+hpp\item 
+Lys/renderer/\+Open\+GL/shaders/shader\+\_\+program.\+cpp\end{DoxyCompactItemize}

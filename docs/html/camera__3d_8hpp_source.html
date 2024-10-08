@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>LilyPad Engine: LilyPadEngine/src/LilyPad/scene/nodes/3d/camera_3d.hpp Source File</title>
+<title>Lys Engine: Lys/scene/nodes/3d/camera_3d.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">LilyPad Engine
+   <div id="projectname">Lys Engine
    </div>
   </td>
  </tr>
@@ -74,7 +74,7 @@ $(document).ready(function() { init_codefold(0); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_3c5389748b25a6b7c9362f5601110205.html">LilyPadEngine</a></li><li class="navelem"><a class="el" href="dir_10cfea2e0be28772c92dcb6e13e8f80f.html">src</a></li><li class="navelem"><a class="el" href="dir_ba530f060a686c81d7df5307861b7647.html">LilyPad</a></li><li class="navelem"><a class="el" href="dir_6b07183dd139902636007d7757470076.html">scene</a></li><li class="navelem"><a class="el" href="dir_4a69737308428a2189801b4976ee536c.html">nodes</a></li><li class="navelem"><a class="el" href="dir_dfffa02a72a24955bce8dcb06a0aa8d8.html">3d</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_ba16e2f0563332b365aad57128fbde3e.html">Lys</a></li><li class="navelem"><a class="el" href="dir_0daee9eda3ad9668b846a0271e46daf0.html">scene</a></li><li class="navelem"><a class="el" href="dir_cd6a063f1632529db1b701afceed099d.html">nodes</a></li><li class="navelem"><a class="el" href="dir_e1a31d6f577ba7f58353edb48ca092a5.html">3d</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -84,44 +84,45 @@ $(document).ready(function() { init_codefold(0); });
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;glm/glm.hpp&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;LilyPad/core/math/vector3.hpp&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;LilyPad/scene/nodes/3d/node_3d.hpp&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span>LilyPad</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
-<div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="classLilyPad_1_1Camera3D.html">    9</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classLilyPad_1_1Camera3D.html">Camera3D</a> : <span class="keyword">public</span> <a class="code hl_class" href="classLilyPad_1_1Node3D.html">Node3D</a></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keywordtype">float</span> yaw;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="keywordtype">float</span> pitch;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keywordtype">float</span> mouseSensitivity;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keywordtype">bool</span> constrainPitch;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        glm::vec3 up{};</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        glm::vec3 front;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        glm::vec3 right{};</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        glm::vec3 worldUp;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        glm::mat4 viewMatrix{};</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordtype">float</span> zoom;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <a class="code hl_class" href="classLilyPad_1_1Camera3D.html">Camera3D</a>();</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classLilyPad_1_1Camera3D.html#a754e8eb2bb3a43e1565ac85b63aed483">look_at</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structLilyPad_1_1Vector3.html">Position3</a> &amp;point);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        [[nodiscard]] glm::mat4 get_view() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;Lys/core/math/matrix4.hpp&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;Lys/core/math/vector3.hpp&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;Lys/scene/nodes/3d/node_3d.hpp&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span>Lys</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="classLys_1_1Camera3D.html">   10</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classLys_1_1Camera3D.html">Camera3D</a> : <span class="keyword">public</span> <a class="code hl_class" href="classLys_1_1Node3D.html">Node3D</a></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="keywordtype">float</span> yaw;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keywordtype">float</span> pitch;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keywordtype">float</span> mouseSensitivity;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keywordtype">bool</span> constrainPitch;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <a class="code hl_struct" href="structLys_1_1Vector3.html">Vector3</a> up{};    <span class="comment">// Up vector (camera&#39;s up direction)</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <a class="code hl_struct" href="structLys_1_1Vector3.html">Vector3</a> front;   <span class="comment">// Forward vector (where the camera is looking at)</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <a class="code hl_struct" href="structLys_1_1Vector3.html">Vector3</a> right{}; <span class="comment">// Right vector (perpendicular to forward and up)</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <a class="code hl_struct" href="structLys_1_1Vector3.html">Vector3</a> worldUp;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        glm::mat4 viewMatrix{};</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordtype">float</span> zoom;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <a class="code hl_class" href="classLys_1_1Camera3D.html">Camera3D</a>();</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classLys_1_1Camera3D.html#a18cda7a5833c1f7be0d23b3c7c6907d1">look_at</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structLys_1_1Vector3.html">Position3</a> &amp;point);</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordtype">void</span> update_view();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        [[nodiscard]] glm::mat4 get_view() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordtype">void</span> update_vectors();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordtype">void</span> update_view();</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordtype">void</span> process_mouse_movement(<span class="keywordtype">float</span> xOffset, <span class="keywordtype">float</span> yOffset);</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    };</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordtype">void</span> update_vectors();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordtype">void</span> process_mouse_movement(<span class="keywordtype">float</span> xOffset, <span class="keywordtype">float</span> yOffset);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    };</div>
 </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>} <span class="comment">// namespace LilyPad</span></div>
-<div class="ttc" id="aclassLilyPad_1_1Camera3D_html"><div class="ttname"><a href="classLilyPad_1_1Camera3D.html">LilyPad::Camera3D</a></div><div class="ttdef"><b>Definition</b> camera_3d.hpp:10</div></div>
-<div class="ttc" id="aclassLilyPad_1_1Camera3D_html_a754e8eb2bb3a43e1565ac85b63aed483"><div class="ttname"><a href="classLilyPad_1_1Camera3D.html#a754e8eb2bb3a43e1565ac85b63aed483">LilyPad::Camera3D::look_at</a></div><div class="ttdeci">void look_at(const Position3 &amp;point)</div><div class="ttdoc">Sets the camera's view matrix to look at a specified point.</div><div class="ttdef"><b>Definition</b> camera_3d.cpp:15</div></div>
-<div class="ttc" id="aclassLilyPad_1_1Node3D_html"><div class="ttname"><a href="classLilyPad_1_1Node3D.html">LilyPad::Node3D</a></div><div class="ttdef"><b>Definition</b> node_3d.hpp:10</div></div>
-<div class="ttc" id="astructLilyPad_1_1Vector3_html"><div class="ttname"><a href="structLilyPad_1_1Vector3.html">LilyPad::Vector3</a></div><div class="ttdef"><b>Definition</b> vector3.hpp:9</div></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>} <span class="comment">// namespace Lys</span></div>
+<div class="ttc" id="aclassLys_1_1Camera3D_html"><div class="ttname"><a href="classLys_1_1Camera3D.html">Lys::Camera3D</a></div><div class="ttdef"><b>Definition</b> camera_3d.hpp:11</div></div>
+<div class="ttc" id="aclassLys_1_1Camera3D_html_a18cda7a5833c1f7be0d23b3c7c6907d1"><div class="ttname"><a href="classLys_1_1Camera3D.html#a18cda7a5833c1f7be0d23b3c7c6907d1">Lys::Camera3D::look_at</a></div><div class="ttdeci">void look_at(const Position3 &amp;point)</div><div class="ttdoc">Sets the camera's view matrix to look at a specified point.</div><div class="ttdef"><b>Definition</b> camera_3d.cpp:15</div></div>
+<div class="ttc" id="aclassLys_1_1Node3D_html"><div class="ttname"><a href="classLys_1_1Node3D.html">Lys::Node3D</a></div><div class="ttdef"><b>Definition</b> node_3d.hpp:10</div></div>
+<div class="ttc" id="astructLys_1_1Vector3_html"><div class="ttname"><a href="structLys_1_1Vector3.html">Lys::Vector3</a></div><div class="ttdef"><b>Definition</b> vector3.hpp:9</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

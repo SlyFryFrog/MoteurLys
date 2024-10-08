@@ -1,29 +1,38 @@
 \doxysection{fps.\+hpp}
-\hypertarget{fps_8hpp_source}{}\label{fps_8hpp_source}\index{LilyPadEngine/src/LilyPad/debug/fps.hpp@{LilyPadEngine/src/LilyPad/debug/fps.hpp}}
+\hypertarget{fps_8hpp_source}{}\label{fps_8hpp_source}\index{Lys/debug/fps.hpp@{Lys/debug/fps.hpp}}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
 \DoxyCodeLine{00002\ }
 \DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <chrono>}}
 \DoxyCodeLine{00004\ }
-\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }LilyPad}
-\DoxyCodeLine{00006\ \{}
-\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classLilyPad_1_1FPS}{FPS}}}
-\DoxyCodeLine{00008\ \ \ \ \ \{}
-\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classLilyPad_1_1FPS}{FPS}}();}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ LYS\_DELTA()\ Lys::FPS::get\_singleton()-\/>get\_delta();}}
 \DoxyCodeLine{00011\ }
-\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Update\ the\ frame\ rate}}
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ update();}
-\DoxyCodeLine{00014\ }
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classLilyPad_1_1FPS_ac6d3795d2b8ae28c4fba747fcd87eaa4}{get\_delta}}();}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Time\ points\ to\ manage\ timing}}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ lastFrameTime;}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ currentFrameTime;}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ frameRate;}
-\DoxyCodeLine{00027\ \ \ \ \ \};}
-\DoxyCodeLine{00028\ \}\ \textcolor{comment}{//\ namespace\ LilyPad}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ LYS\_FPS\_UPDATE()\ Lys::FPS::get\_singleton()-\/>update();}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }Lys}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classLys_1_1FPS}{FPS}}}
+\DoxyCodeLine{00022\ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classLys_1_1FPS}{FPS}}\ *\_singleton;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classLys_1_1FPS}{FPS}}\ *get\_singleton();}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Update\ the\ frame\ rate}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ update();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classLys_1_1FPS_ad7d0fbd69a30419fba5f181db9d6a90e}{get\_delta}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classLys_1_1FPS}{FPS}}();}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classLys_1_1FPS}{\string~FPS}}();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Time\ points\ to\ manage\ timing}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ lastFrameTime;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ currentFrameTime;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ frameRate;}
+\DoxyCodeLine{00046\ \ \ \ \ \};}
+\DoxyCodeLine{00047\ \}\ \textcolor{comment}{//\ namespace\ Lys}}
 
 \end{DoxyCode}

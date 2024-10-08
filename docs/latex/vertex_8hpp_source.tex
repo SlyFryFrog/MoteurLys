@@ -1,5 +1,5 @@
 \doxysection{vertex.\+hpp}
-\hypertarget{vertex_8hpp_source}{}\label{vertex_8hpp_source}\index{LilyPadEngine/src/LilyPad/renderer/OpenGL/vertex.hpp@{LilyPadEngine/src/LilyPad/renderer/OpenGL/vertex.hpp}}
+\hypertarget{vertex_8hpp_source}{}\label{vertex_8hpp_source}\index{Lys/renderer/OpenGL/vertex.hpp@{Lys/renderer/OpenGL/vertex.hpp}}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
@@ -7,17 +7,17 @@
 \DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <GL/glew.h>}}
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <ostream>}}
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}LilyPad/renderer/OpenGL/utils/gl\_types.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Lys/renderer/OpenGL/utils/gl\_types.hpp"{}}}
 \DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }LilyPad}
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }Lys}
 \DoxyCodeLine{00009\ \{}
 \DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLilyPad_1_1Vertex}{Vertex}}}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLys_1_1Vertex}{Vertex}}}
 \DoxyCodeLine{00012\ \ \ \ \ \{}
 \DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ std::vector<std::vector<T>>\ data;}
 \DoxyCodeLine{00014\ }
 \DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Constructor\ accepting\ an\ initializer\ list\ of\ initializer\ lists}}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structLilyPad_1_1Vertex}{Vertex}}(std::initializer\_list<std::initializer\_list<T>>\ dataPoints)}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structLys_1_1Vertex}{Vertex}}(std::initializer\_list<std::initializer\_list<T>>\ dataPoints)}
 \DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&points\ :\ dataPoints)}
 \DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
@@ -25,40 +25,40 @@
 \DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00023\ }
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ std::vector<T>\ \mbox{\hyperlink{structLilyPad_1_1Vertex_a42c1316ef25e36eb9bbff83b1676e53c}{get\_data}}(\textcolor{keywordtype}{int}\ index)\ \{\ \textcolor{keywordflow}{return}\ data[index];\ \}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ std::vector<T>\ \mbox{\hyperlink{structLys_1_1Vertex_a443b4ee0c551870a8a6961982a26b61d}{get\_data}}(\textcolor{keywordtype}{int}\ index)\ \{\ \textcolor{keywordflow}{return}\ data[index];\ \}}
 \DoxyCodeLine{00031\ }
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLilyPad_1_1Vertex_a58db2fb58c48987d173eab6682c02154}{size}}()}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLys_1_1Vertex_a90ef4aeaac804ac08d31c796e20d9711}{size}}()}
 \DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLilyPad_1_1Vertex_a58db2fb58c48987d173eab6682c02154}{size}}\ =\ 0;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structLys_1_1Vertex_a90ef4aeaac804ac08d31c796e20d9711}{size}}\ =\ 0;}
 \DoxyCodeLine{00040\ }
 \DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&vector\ :\ data)}
 \DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structLilyPad_1_1Vertex_a58db2fb58c48987d173eab6682c02154}{size}}\ +=\ vector.size();}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structLys_1_1Vertex_a90ef4aeaac804ac08d31c796e20d9711}{size}}\ +=\ vector.size();}
 \DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00045\ }
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structLilyPad_1_1Vertex_a58db2fb58c48987d173eab6682c02154}{size}};}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structLys_1_1Vertex_a90ef4aeaac804ac08d31c796e20d9711}{size}};}
 \DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00048\ \ \ \ \ \};}
 \DoxyCodeLine{00049\ }
 \DoxyCodeLine{00050\ }
 \DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classLilyPad_1_1Vertices}{Vertices}}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classLys_1_1Vertices}{Vertices}}}
 \DoxyCodeLine{00053\ \ \ \ \ \{}
 \DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{public}:}
 \DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ std::vector<Vertex<T>>\ vertices;}
 \DoxyCodeLine{00056\ }
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classLilyPad_1_1Vertices}{Vertices}}(std::initializer\_list<\mbox{\hyperlink{structLilyPad_1_1Vertex}{Vertex<T>}}>\ verts)\ :\ vertices(verts)\ \{\}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classLys_1_1Vertices}{Vertices}}(std::initializer\_list<\mbox{\hyperlink{structLys_1_1Vertex}{Vertex<T>}}>\ verts)\ :\ vertices(verts)\ \{\}}
 \DoxyCodeLine{00058\ }
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ std::vector<T>\ \mbox{\hyperlink{classLilyPad_1_1Vertices_a42a410e0e849cc6a759dd5de3d7fa40d}{get\_data}}(\textcolor{keywordtype}{int}\ vertex\_index,\ \textcolor{keywordtype}{int}\ array\_index)}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ std::vector<T>\ \mbox{\hyperlink{classLys_1_1Vertices_a66191ce22f133517c04574bbc73ec330}{get\_data}}(\textcolor{keywordtype}{int}\ vertex\_index,\ \textcolor{keywordtype}{int}\ array\_index)}
 \DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vertices[vertex\_index].get\_data(array\_index);}
 \DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00063\ }
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ std::vector<T>\ \mbox{\hyperlink{classLilyPad_1_1Vertices_a42a410e0e849cc6a759dd5de3d7fa40d}{get\_data}}()}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ std::vector<T>\ \mbox{\hyperlink{classLys_1_1Vertices_a66191ce22f133517c04574bbc73ec330}{get\_data}}()}
 \DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<T>\ data;\ \textcolor{comment}{//\ Converted\ data\ from\ 3D\ array\ to\ 1D\ array}}
 \DoxyCodeLine{00073\ }
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{structLilyPad_1_1Vertex}{Vertex<T>}}\ vertex\ :\ vertices)}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{structLys_1_1Vertex}{Vertex<T>}}\ vertex\ :\ vertices)}
 \DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::vector<T>\ list\ :\ vertex.data)}
 \DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
@@ -72,56 +72,57 @@
 \DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ data;}
 \DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00087\ }
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLilyPad_1_1Vertices_a03a64af0bbe7c6552748f0157eadc46c}{bind\_buffer}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \&VBO)}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ glBindBuffer(GL\_ARRAY\_BUFFER,\ VBO);}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ glBufferData(GL\_ARRAY\_BUFFER,\ \mbox{\hyperlink{classLilyPad_1_1Vertices_a42a410e0e849cc6a759dd5de3d7fa40d}{get\_data}}().size()\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float}),\ \mbox{\hyperlink{classLilyPad_1_1Vertices_a42a410e0e849cc6a759dd5de3d7fa40d}{get\_data}}().data(),\ GL\_STATIC\_DRAW);}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00112\ }
-\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLilyPad_1_1Vertices_a46f893f3f46aeca04e2ca208aeae8374}{set\_attributes}}()}
-\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ offset\ =\ 0;}
-\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ vertices[0].data.size();\ i++)}
-\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GLint\ size\ =\ vertices[0].data[i].size();}
-\DoxyCodeLine{00141\ }
-\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ index;\ size;\ type\ of\ data\ as\ GLType;\ normalized;\ stride;\ pointer}}
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ glVertexAttribPointer(i,\ size,\ \mbox{\hyperlink{structLilyPad_1_1GLType}{GLType<T>::value}},\ GL\_FALSE,\ vertices[0].size()\ *\ \textcolor{keyword}{sizeof}(T),}
-\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{void}\ *\textcolor{keyword}{>}(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}\ *\textcolor{keyword}{>}(offset\ *\ \textcolor{keyword}{sizeof}(T))));}
-\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ glEnableVertexAttribArray(i);}
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ offset\ +=\ size;\ \textcolor{comment}{//\ Shifts\ starting\ point\ for\ next\ data}}
-\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00148\ }
-\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ glBindVertexArray(0);}
-\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00151\ }
-\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\ \&operator<<(std::ostream\ \&os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classLilyPad_1_1Vertices}{Vertices<T>}}\ \&obj)}
-\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}\{"{}};}
-\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ obj.vertices.size();\ ++i)}
-\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ >\ 0)}
-\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{},\ "{}};}
-\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}\{"{}};}
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ obj.vertices[i].data.size();\ ++j)}
-\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (j\ >\ 0)}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{},\ "{}};}
-\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}["{}};}
-\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ k\ =\ 0;\ k\ <\ obj.vertices[i].data[j].size();\ ++k)}
-\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (k\ >\ 0)}
-\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{},\ "{}};}
-\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os\ <<\ obj.vertices[i].data[j][k];}
-\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}]"{}};}
-\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}\}"{}};}
-\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}\}"{}};}
-\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
-\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00178\ \ \ \ \ \};}
-\DoxyCodeLine{00179\ \}\ \textcolor{comment}{//\ namespace\ LilyPad}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLys_1_1Vertices_a2f5b68332f22e395562d656e47b215d0}{set\_attributes}}()}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ offset\ =\ 0;}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ vertices[0].data.size();\ i++)}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GLint\ size\ =\ vertices[0].data[i].size();}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ index;\ size;\ type\ of\ data\ as\ GLType;\ normalized;\ stride;\ pointer}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ glVertexAttribPointer(}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i,\ size,\ \mbox{\hyperlink{structLys_1_1GLType}{GLType<T>::value}},\ GL\_FALSE,\ vertices[0].size()\ *\ \textcolor{keyword}{sizeof}(T),}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{void}\ *\textcolor{keyword}{>}(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}\ *\textcolor{keyword}{>}(offset\ *\ \textcolor{keyword}{sizeof}(T))));}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ glEnableVertexAttribArray(i);}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ offset\ +=\ size;\ \textcolor{comment}{//\ Shifts\ starting\ point\ for\ next\ data}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ glBindVertexArray(0);}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\ \&operator<<(std::ostream\ \&os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classLys_1_1Vertices}{Vertices<T>}}\ \&obj)}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}\{"{}};}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ obj.vertices.size();\ ++i)}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ >\ 0)}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{},\ "{}};}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}\{"{}};}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ obj.vertices[i].data.size();\ ++j)}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (j\ >\ 0)}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{},\ "{}};}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}["{}};}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ k\ =\ 0;\ k\ <\ obj.vertices[i].data[j].size();\ ++k)}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (k\ >\ 0)}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{},\ "{}};}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os\ <<\ obj.vertices[i].data[j][k];}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}\}"{}};}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}\}"{}};}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00152\ \ \ \ \ \};}
+\DoxyCodeLine{00153\ \}\ \textcolor{comment}{//\ namespace\ Lys}}
 
 \end{DoxyCode}

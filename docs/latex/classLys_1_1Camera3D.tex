@@ -1,0 +1,138 @@
+\doxysection{Lys\+::Camera3D Class Reference}
+\hypertarget{classLys_1_1Camera3D}{}\label{classLys_1_1Camera3D}\index{Lys::Camera3D@{Lys::Camera3D}}
+
+
+Inheritance diagram for Lys\+::Camera3D\+:
+% FIG 0
+
+
+Collaboration diagram for Lys\+::Camera3D\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classLys_1_1Camera3D_a18cda7a5833c1f7be0d23b3c7c6907d1}{look\+\_\+at}} (const \mbox{\hyperlink{structLys_1_1Vector3}{Position3}} \&point)
+\begin{DoxyCompactList}\small\item\em Sets the camera\textquotesingle{}s view matrix to look at a specified point. \end{DoxyCompactList}\item 
+\Hypertarget{classLys_1_1Camera3D_a4b8cbd366816dd04eaf6639bdf07c631}\label{classLys_1_1Camera3D_a4b8cbd366816dd04eaf6639bdf07c631} 
+glm\+::mat4 {\bfseries get\+\_\+view} () const
+\item 
+\Hypertarget{classLys_1_1Camera3D_a1518ed58face95cebc53cb4889529f6c}\label{classLys_1_1Camera3D_a1518ed58face95cebc53cb4889529f6c} 
+void {\bfseries update\+\_\+view} ()
+\item 
+\Hypertarget{classLys_1_1Camera3D_ac7d75102f9434db357c9875d97ecd7a4}\label{classLys_1_1Camera3D_ac7d75102f9434db357c9875d97ecd7a4} 
+void {\bfseries update\+\_\+vectors} ()
+\item 
+\Hypertarget{classLys_1_1Camera3D_a821c30ef148d9534b47aa00fe1cb4849}\label{classLys_1_1Camera3D_a821c30ef148d9534b47aa00fe1cb4849} 
+void {\bfseries process\+\_\+mouse\+\_\+movement} (float x\+Offset, float y\+Offset)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classLys_1_1Node}{Lys\+::\+Node}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Node} (const std\+::string \&name)
+\item 
+virtual void {\bfseries \+\_\+ready} ()
+\item 
+virtual void {\bfseries \+\_\+process} (double delta)
+\item 
+virtual void {\bfseries \+\_\+process\+\_\+input} (const \mbox{\hyperlink{classLys_1_1InputEventCore}{Input\+Event\+Core}} \&event)
+\item 
+virtual void {\bfseries \+\_\+draw} ()
+\item 
+virtual void {\bfseries \+\_\+process\+\_\+mouse\+\_\+input} (const \mbox{\hyperlink{classLys_1_1InputEventCore}{Input\+Event\+Core}} \&event)
+\item 
+std\+::string {\bfseries get\+\_\+name} () const
+\item 
+void {\bfseries set\+\_\+name} (const std\+::string \&name)
+\item 
+void {\bfseries add\+\_\+child} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classLys_1_1Node}{Node}} $>$ child)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::shared\+\_\+ptr$<$ T $>$ {\bfseries get\+\_\+child} (const std\+::string \&node\+Name)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classLys_1_1Node}{Node}} $>$ {\bfseries get\+\_\+child} (const std\+::string \&node\+Name)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::shared\+\_\+ptr$<$ T $>$ {\bfseries get\+\_\+parent} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classLys_1_1Node}{Node}} $>$ {\bfseries get\+\_\+parent} () const
+\item 
+void {\bfseries queue\+\_\+destroy} ()
+\item 
+void {\bfseries update} ()
+\item 
+void {\bfseries init} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classLys_1_1Camera3D_aa07a308e6c6b876191d5c6ee7897f6a8}\label{classLys_1_1Camera3D_aa07a308e6c6b876191d5c6ee7897f6a8} 
+float {\bfseries yaw}
+\item 
+\Hypertarget{classLys_1_1Camera3D_a99b485cf6580101a02a7197c659f5ea5}\label{classLys_1_1Camera3D_a99b485cf6580101a02a7197c659f5ea5} 
+float {\bfseries pitch}
+\item 
+\Hypertarget{classLys_1_1Camera3D_a0e03889f1f4dfa536588e33b9a8c13be}\label{classLys_1_1Camera3D_a0e03889f1f4dfa536588e33b9a8c13be} 
+float {\bfseries mouse\+Sensitivity}
+\item 
+\Hypertarget{classLys_1_1Camera3D_a68c3da84b53eb0f7f9d4f02f798a3e64}\label{classLys_1_1Camera3D_a68c3da84b53eb0f7f9d4f02f798a3e64} 
+bool {\bfseries constrain\+Pitch}
+\item 
+\Hypertarget{classLys_1_1Camera3D_a72e5f657037ee1512832252aad895aed}\label{classLys_1_1Camera3D_a72e5f657037ee1512832252aad895aed} 
+\mbox{\hyperlink{structLys_1_1Vector3}{Vector3}} {\bfseries up} \{\}
+\item 
+\Hypertarget{classLys_1_1Camera3D_add104123b5da2e50cfe4515cebb549ed}\label{classLys_1_1Camera3D_add104123b5da2e50cfe4515cebb549ed} 
+\mbox{\hyperlink{structLys_1_1Vector3}{Vector3}} {\bfseries front}
+\item 
+\Hypertarget{classLys_1_1Camera3D_ad19ef7a345acab550815f1e5147f68b2}\label{classLys_1_1Camera3D_ad19ef7a345acab550815f1e5147f68b2} 
+\mbox{\hyperlink{structLys_1_1Vector3}{Vector3}} {\bfseries right} \{\}
+\item 
+\Hypertarget{classLys_1_1Camera3D_aafc325acafd7abead6602491dfffeb6d}\label{classLys_1_1Camera3D_aafc325acafd7abead6602491dfffeb6d} 
+\mbox{\hyperlink{structLys_1_1Vector3}{Vector3}} {\bfseries world\+Up}
+\item 
+\Hypertarget{classLys_1_1Camera3D_a220da1764abb7392e6d770691d1f2bb1}\label{classLys_1_1Camera3D_a220da1764abb7392e6d770691d1f2bb1} 
+glm\+::mat4 {\bfseries view\+Matrix} \{\}
+\item 
+\Hypertarget{classLys_1_1Camera3D_a5c40d3db841a4283acc13664738cc906}\label{classLys_1_1Camera3D_a5c40d3db841a4283acc13664738cc906} 
+float {\bfseries zoom}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classLys_1_1Node3D}{Lys\+::\+Node3D}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structLys_1_1Vector3}{Vector3}} {\bfseries position}
+\item 
+\mbox{\hyperlink{structLys_1_1Vector3}{Vector3}} {\bfseries absolute\+Position}
+\item 
+\mbox{\hyperlink{structLys_1_1Vector3}{Vector3}} {\bfseries size}
+\item 
+\mbox{\hyperlink{structLys_1_1Vector3}{Vector3}} {\bfseries anchor}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classLys_1_1Camera3D_a18cda7a5833c1f7be0d23b3c7c6907d1}\label{classLys_1_1Camera3D_a18cda7a5833c1f7be0d23b3c7c6907d1} 
+\index{Lys::Camera3D@{Lys::Camera3D}!look\_at@{look\_at}}
+\index{look\_at@{look\_at}!Lys::Camera3D@{Lys::Camera3D}}
+\doxysubsubsection{\texorpdfstring{look\_at()}{look\_at()}}
+{\footnotesize\ttfamily void Lys\+::\+Camera3\+D\+::look\+\_\+at (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structLys_1_1Vector3}{Position3}} \&}]{point }\end{DoxyParamCaption})}
+
+
+
+Sets the camera\textquotesingle{}s view matrix to look at a specified point. 
+
+This function updates the camera\textquotesingle{}s view matrix to orient the camera such that it looks at the given point in 3D space. The view matrix is calculated based on the camera\textquotesingle{}s current position and the specified point, while maintaining the camera\textquotesingle{}s up direction as defined by {\ttfamily world\+Up}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & The target position in 3D space that the camera should look at.\\
+\hline
+\end{DoxyParams}
+Example usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Position3\ targetPoint\ =\ \{1.0f,\ 2.0f,\ 3.0f\};}
+\DoxyCodeLine{camera.look\_at(targetPoint);}
+
+\end{DoxyCode}
+ 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Lys/scene/nodes/3d/camera\+\_\+3d.\+hpp\item 
+Lys/scene/nodes/3d/camera\+\_\+3d.\+cpp\end{DoxyCompactItemize}

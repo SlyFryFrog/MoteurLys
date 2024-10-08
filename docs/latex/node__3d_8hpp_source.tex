@@ -1,25 +1,27 @@
 \doxysection{node\+\_\+3d.\+hpp}
-\hypertarget{node__3d_8hpp_source}{}\label{node__3d_8hpp_source}\index{LilyPadEngine/src/LilyPad/scene/nodes/3d/node\_3d.hpp@{LilyPadEngine/src/LilyPad/scene/nodes/3d/node\_3d.hpp}}
+\hypertarget{node__3d_8hpp_source}{}\label{node__3d_8hpp_source}\index{Lys/scene/nodes/3d/node\_3d.hpp@{Lys/scene/nodes/3d/node\_3d.hpp}}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
 \DoxyCodeLine{00002\ }
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}LilyPad/core/math/vector3.hpp"{}}}
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}LilyPad/scene/nodes/core/node.hpp"{}}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <glm/glm.hpp>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <glm/glm.hpp>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Lys/core/math/vector3.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Lys/scene/nodes/core/node.hpp"{}}}
 \DoxyCodeLine{00006\ }
-\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }LilyPad}
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }Lys}
 \DoxyCodeLine{00008\ \{}
-\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classLilyPad_1_1Node3D}{Node3D}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classLilyPad_1_1Node}{Node}}}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classLys_1_1Node3D}{Node3D}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classLys_1_1Node}{Node}}}
 \DoxyCodeLine{00010\ \ \ \ \ \{}
 \DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ glm::vec3\ position;}
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ glm::vec3\ absolutePosition;}
-\DoxyCodeLine{00014\ }
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classLilyPad_1_1Node3D}{Node3D}}();}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structLys_1_1Vector3}{Vector3}}\ position;\ \textcolor{comment}{//\ Camera\ position\ in\ world\ space}}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structLys_1_1Vector3}{Vector3}}\ absolutePosition;}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structLys_1_1Vector3}{Vector3}}\ size;}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structLys_1_1Vector3}{Vector3}}\ anchor;}
 \DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00018\ \ \ \ \ \};}
-\DoxyCodeLine{00019\ \}\ \textcolor{comment}{//\ namespace\ LilyPad}}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classLys_1_1Node3D}{Node3D}}();}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ \ \ \};}
+\DoxyCodeLine{00021\ \}\ \textcolor{comment}{//\ namespace\ Lys}}
 
 \end{DoxyCode}

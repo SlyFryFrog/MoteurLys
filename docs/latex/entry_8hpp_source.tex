@@ -1,0 +1,37 @@
+\doxysection{entry.\+hpp}
+\hypertarget{entry_8hpp_source}{}\label{entry_8hpp_source}\index{Lys/main/entry.hpp@{Lys/main/entry.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#ifdef\ \_\_linux\_\_}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Lys/debug/logging.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Lys/main/application.hpp"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ Defined\ in\ user's\ app}}
+\DoxyCodeLine{00009\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{classLys_1_1Application}{Lys::Application}}\ *Lys::create\_application(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}\ **argv);}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keywordtype}{int}\ main(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}\ **argv)}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{auto}\ app\ =\ Lys::create\_application(argc,\ argv);}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordflow}{if}\ (!app-\/>init())}
+\DoxyCodeLine{00016\ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ LYS\_CRITICAL(\textcolor{stringliteral}{"{}Failed\ to\ initialize\ the\ Lys\ Engine."{}});}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ app-\/>shutdown();}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00020\ \ \ \ \ \}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ app-\/>run();}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{delete}\ app;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00027\ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#error\ Only\ linux\ is\ supported.}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,70 @@
+\doxysection{Lys\+::Vertices\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classLys_1_1Vertices}{}\label{classLys_1_1Vertices}\index{Lys::Vertices$<$ T $>$@{Lys::Vertices$<$ T $>$}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classLys_1_1Vertices_a709a46722378d880cfe079ae5ffd937e}\label{classLys_1_1Vertices_a709a46722378d880cfe079ae5ffd937e} 
+{\bfseries Vertices} (std\+::initializer\+\_\+list$<$ \mbox{\hyperlink{structLys_1_1Vertex}{Vertex}}$<$ T $>$ $>$ verts)
+\item 
+\Hypertarget{classLys_1_1Vertices_a6911890408f5c3cacba2ea9ce08d76cd}\label{classLys_1_1Vertices_a6911890408f5c3cacba2ea9ce08d76cd} 
+std\+::vector$<$ T $>$ {\bfseries get\+\_\+data} (int vertex\+\_\+index, int array\+\_\+index)
+\item 
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classLys_1_1Vertices_a66191ce22f133517c04574bbc73ec330}{get\+\_\+data}} ()
+\begin{DoxyCompactList}\small\item\em Gets the data from all \doxylink{classLys_1_1Vertices}{Vertices} in a single 1-\/dimensional array. It retains the original order of the elements. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLys_1_1Vertices_a2f5b68332f22e395562d656e47b215d0}{set\+\_\+attributes}} ()
+\begin{DoxyCompactList}\small\item\em Sets the vertex attribute pointers for Open\+GL rendering. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classLys_1_1Vertices_ad281ba4db726d90ee674a96e5325ce90}\label{classLys_1_1Vertices_ad281ba4db726d90ee674a96e5325ce90} 
+std\+::vector$<$ \mbox{\hyperlink{structLys_1_1Vertex}{Vertex}}$<$ T $>$ $>$ {\bfseries vertices}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classLys_1_1Vertices_a7b0e4949a964589d775ed7bee8b4caff}\label{classLys_1_1Vertices_a7b0e4949a964589d775ed7bee8b4caff} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&os, const \mbox{\hyperlink{classLys_1_1Vertices}{Vertices}}$<$ T $>$ \&obj)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classLys_1_1Vertices_a66191ce22f133517c04574bbc73ec330}\label{classLys_1_1Vertices_a66191ce22f133517c04574bbc73ec330} 
+\index{Lys::Vertices$<$ T $>$@{Lys::Vertices$<$ T $>$}!get\_data@{get\_data}}
+\index{get\_data@{get\_data}!Lys::Vertices$<$ T $>$@{Lys::Vertices$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_data()}{get\_data()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classLys_1_1Vertices}{Lys\+::\+Vertices}}$<$ T $>$\+::get\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the data from all \doxylink{classLys_1_1Vertices}{Vertices} in a single 1-\/dimensional array. It retains the original order of the elements. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+T$>$ Array containing data from all \doxylink{classLys_1_1Vertices}{Vertices}. 
+\end{DoxyReturn}
+\Hypertarget{classLys_1_1Vertices_a2f5b68332f22e395562d656e47b215d0}\label{classLys_1_1Vertices_a2f5b68332f22e395562d656e47b215d0} 
+\index{Lys::Vertices$<$ T $>$@{Lys::Vertices$<$ T $>$}!set\_attributes@{set\_attributes}}
+\index{set\_attributes@{set\_attributes}!Lys::Vertices$<$ T $>$@{Lys::Vertices$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{set\_attributes()}{set\_attributes()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classLys_1_1Vertices}{Lys\+::\+Vertices}}$<$ T $>$\+::set\+\_\+attributes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the vertex attribute pointers for Open\+GL rendering. 
+
+This function iterates over the vertex data and sets up the vertex attribute pointers. It uses {\ttfamily gl\+Vertex\+Attrib\+Pointer} to specify the location and data format of the array of generic vertex attributes and enables the attribute array with {\ttfamily gl\+Enable\+Vertex\+Attrib\+Array}. The function assumes that {\ttfamily vertices} is a properly populated vector of vertex data where each vertex has the same structure.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The data type of the vertex attributes (e.\+g. float or double).\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyNote}{Note}
+This function assumes that the VAO (\doxylink{structLys_1_1Vertex}{Vertex} Array Object) has been bound before calling it, and unbinds the VAO at the end. 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Lys/renderer/\+Open\+GL/vertex.\+hpp\end{DoxyCompactItemize}

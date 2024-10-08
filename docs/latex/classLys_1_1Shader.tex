@@ -1,0 +1,69 @@
+\doxysection{Lys\+::Shader Class Reference}
+\hypertarget{classLys_1_1Shader}{}\label{classLys_1_1Shader}\index{Lys::Shader@{Lys::Shader}}
+
+
+Inheritance diagram for Lys\+::Shader\+:
+% FIG 0
+
+
+Collaboration diagram for Lys\+::Shader\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classLys_1_1Shader_a8895cc5885ddcc67913870948c9a07fe}\label{classLys_1_1Shader_a8895cc5885ddcc67913870948c9a07fe} 
+{\bfseries Shader} (const std\+::string \&path, unsigned int type)
+\item 
+void \mbox{\hyperlink{classLys_1_1Shader_abe8e669f9b85886c14da01f4cf1d9d82}{update}} () override
+\begin{DoxyCompactList}\small\item\em Empty implementation that should be overrided to add hot-\/reloading functionality. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classLys_1_1File}{Lys\+::\+File}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries File} (const std\+::string \&path)
+\item 
+bool \mbox{\hyperlink{classLys_1_1File_ad688a8ade5f981045fb12efed0fe96b8}{is\+\_\+updated}} () const
+\begin{DoxyCompactList}\small\item\em Checks if that last write time has changed since the last check. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classLys_1_1File_ac1f709a5d51f01578b8a0749685aab7b}{read\+\_\+file}} () const
+\begin{DoxyCompactList}\small\item\em Returns the contents of the previously set file path. Will always catch errors. \end{DoxyCompactList}\item 
+void {\bfseries set\+\_\+path} (const std\+::string \&path)
+\item 
+std\+::string {\bfseries get\+\_\+path} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classLys_1_1File}{Lys\+::\+File}}}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classLys_1_1File_a2cb2399ca7c6677adb1e25b3231348aa}{read\+\_\+file}} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Returns the contents of the given file. Will always catch errors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classLys_1_1File}{Lys\+::\+File}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::filesystem\+::file\+\_\+time\+\_\+type {\bfseries \+\_\+last\+Time}
+\item 
+std\+::string {\bfseries \+\_\+path}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classLys_1_1Shader_abe8e669f9b85886c14da01f4cf1d9d82}\label{classLys_1_1Shader_abe8e669f9b85886c14da01f4cf1d9d82} 
+\index{Lys::Shader@{Lys::Shader}!update@{update}}
+\index{update@{update}!Lys::Shader@{Lys::Shader}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Lys\+::\+Shader\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Empty implementation that should be overrided to add hot-\/reloading functionality. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classLys_1_1File_a2d0a60f9145c21c6417e41afff7f186e}{Lys\+::\+File}}.
+
+Here is the caller graph for this function\+:
+% FIG 2
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Lys/renderer/\+Open\+GL/shaders/shader\+\_\+program.\+hpp\item 
+Lys/renderer/\+Open\+GL/shaders/shader\+\_\+program.\+cpp\end{DoxyCompactItemize}

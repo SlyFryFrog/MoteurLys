@@ -1,118 +1,134 @@
 \doxysection{logging.\+hpp}
-\hypertarget{logging_8hpp_source}{}\label{logging_8hpp_source}\index{LilyPadEngine/src/LilyPad/debug/logging.hpp@{LilyPadEngine/src/LilyPad/debug/logging.hpp}}
+\hypertarget{logging_8hpp_source}{}\label{logging_8hpp_source}\index{Lys/debug/logging.hpp@{Lys/debug/logging.hpp}}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
 \DoxyCodeLine{00002\ }
 \DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <fstream>}}
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <mutex>}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <print>}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <sstream>}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
-\DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ LILYPAD\_DEBUG(...)\ LilyPad::Logger::get\_singleton()-\/>log(LilyPad::LogLevel::DEBUG,\ \_\_VA\_ARGS\_\_)}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ LILYPAD\_INFO(...)\ LilyPad::Logger::get\_singleton()-\/>log(LilyPad::LogLevel::INFO,\ \_\_VA\_ARGS\_\_)}}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ LILYPAD\_WARNING(...)\ LilyPad::Logger::get\_singleton()-\/>log(LilyPad::LogLevel::WARNING,\ \_\_VA\_ARGS\_\_)}}
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ LILYPAD\_ERROR(...)\ LilyPad::Logger::get\_singleton()-\/>log(LilyPad::LogLevel::ERROR,\ \_\_VA\_ARGS\_\_)}}
-\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ LILYPAD\_CRITICAL(...)\ LilyPad::Logger::get\_singleton()-\/>log(LilyPad::LogLevel::CRITICAL,\ \_\_VA\_ARGS\_\_)}}
-\DoxyCodeLine{00014\ }
-\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }LilyPad}
-\DoxyCodeLine{00016\ \{}
-\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{enum\ class}\ LogLevel}
-\DoxyCodeLine{00018\ \ \ \ \ \{}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ DEBUG,}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ INFO,}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ WARNING,}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ ERROR,}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ CRITICAL}
-\DoxyCodeLine{00024\ \ \ \ \ \};}
-\DoxyCodeLine{00025\ }
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLilyPad_1_1LogColors}{LogColors}}}
-\DoxyCodeLine{00031\ \ \ \ \ \{}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::string\ DEFAULT;}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::string\ DEBUG;}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::string\ INFO;}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::string\ WARNING;}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::string\ ERROR;}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::string\ CRITICAL;}
-\DoxyCodeLine{00038\ \ \ \ \ \};}
-\DoxyCodeLine{00039\ }
-\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classLilyPad_1_1Logger}{Logger}}}
-\DoxyCodeLine{00044\ \ \ \ \ \{}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classLilyPad_1_1Logger}{Logger}}\ *\_singleton;}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classLilyPad_1_1Logger}{Logger}}\ *\mbox{\hyperlink{classLilyPad_1_1Logger_a47a1f01494530476536fd701ca32bc71}{get\_singleton}}();}
-\DoxyCodeLine{00054\ }
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Args>}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ log(\textcolor{keyword}{const}\ LogLevel\ \&level,\ Args...\ args)}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Ignores\ any\ logging\ lower\ than\ the\ minimum}}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ <\ \_minLogLevel\ ||\ (\_writeLogs\ \&\&\ \_showLogs))}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00064\ }
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ logStream;\ \textcolor{comment}{//\ Writes\ all\ logs\ to\ stream\ before\ outputting\ to\ console/file}}
-\DoxyCodeLine{00066\ }
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Adds\ timestamp\ next\ to\ the\ log\ type\ and\ message\ if\ enabled}}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_timeFormat\ \&\&\ \_showTimestamp)}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ logStream\ <<\ \textcolor{stringliteral}{"{}["{}}\ <<\ get\_log\_type(level)\ <<\ \textcolor{stringliteral}{"{}]\ "{}}\ <<\ get\_formatted\_time(\_timeFormat)\ <<\ \textcolor{stringliteral}{"{}\ :\ "{}};}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ logStream\ <<\ \textcolor{stringliteral}{"{}["{}}\ <<\ get\_log\_type(level)\ <<\ \textcolor{stringliteral}{"{}]\ :\ "{}};}
-\DoxyCodeLine{00072\ }
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ append\_to\_stream(logStream,\ args...);}
-\DoxyCodeLine{00074\ }
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ logMessage\ =\ logStream.str();}
-\DoxyCodeLine{00076\ }
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_showLogs)}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ print\_log(level,\ logMessage);}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_writeLogs)}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::lock\_guard<std::mutex>\ guard(\_logMutex);}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::ofstream\ fileStream(\_file,\ std::ios::app);\ \textcolor{comment}{//\ Sets\ mode\ to\ append}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <print>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ LYS\_DEBUG(...)\ Lys::Logger::get\_singleton()-\/>log(Lys::LogLevel::DEBUG,\ \_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ LYS\_INFO(...)\ Lys::Logger::get\_singleton()-\/>log(Lys::LogLevel::INFO,\ \_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ LYS\_WARNING(...)\ Lys::Logger::get\_singleton()-\/>log(Lys::LogLevel::WARNING,\ \_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ LYS\_ERROR(...)\ Lys::Logger::get\_singleton()-\/>log(Lys::LogLevel::ERROR,\ \_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ LYS\_CRITICAL(...)\ Lys::Logger::get\_singleton()-\/>log(Lys::LogLevel::CRITICAL,\ \_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }Lys}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{enum\ class}\ LogLevel}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ DEBUG,}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ INFO,}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ WARNING,}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ ERROR,}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ CRITICAL}
+\DoxyCodeLine{00025\ \ \ \ \ \};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structLys_1_1LogColors}{LogColors}}}
+\DoxyCodeLine{00032\ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::string\ DEFAULT;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::string\ DEBUG;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::string\ INFO;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::string\ WARNING;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::string\ ERROR;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::string\ CRITICAL;}
+\DoxyCodeLine{00039\ \ \ \ \ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classLys_1_1Logger}{Logger}}}
+\DoxyCodeLine{00045\ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classLys_1_1Logger}{Logger}}\ *\_singleton;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classLys_1_1Logger}{Logger}}\ *\mbox{\hyperlink{classLys_1_1Logger_ac70e1c857ac6090b0d532589b3db6e43}{get\_singleton}}();}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ log(\textcolor{keyword}{const}\ LogLevel\ \&level,\ Args...\ args)}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Ignores\ any\ logging\ lower\ than\ the\ minimum}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ <\ \_minLogLevel\ ||\ (\_writeLogs\ \&\&\ \_showLogs))}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ logStream;\ \textcolor{comment}{//\ Writes\ all\ logs\ to\ stream\ before\ outputting\ to\ console/file}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Adds\ timestamp\ next\ to\ the\ log\ type\ and\ message\ if\ enabled}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_timeFormat\ \&\&\ \_showTimestamp)}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ logStream\ <<\ \textcolor{stringliteral}{"{}["{}}\ <<\ get\_log\_type(level)\ <<\ \textcolor{stringliteral}{"{}]\ "{}}\ <<\ get\_formatted\_time(\_timeFormat)}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ :\ "{}};}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ logStream\ <<\ \textcolor{stringliteral}{"{}["{}}\ <<\ get\_log\_type(level)\ <<\ \textcolor{stringliteral}{"{}]\ :\ "{}};}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ append\_to\_stream(logStream,\ args...);}
 \DoxyCodeLine{00083\ }
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fileStream.is\_open())}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fileStream\ <<\ logMessage\ <<\ std::endl;}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::println(\textcolor{stringliteral}{"{}Unable\ to\ open\ the\ log\ file\ at\ "{}},\ \_file);}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00090\ }
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLilyPad_1_1Logger_ab53a3ed1219690f2a9370f8304858aef}{set\_log\_file}}(\textcolor{keyword}{const}\ std::string\ \&file);}
-\DoxyCodeLine{00097\ }
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLilyPad_1_1Logger_a62135d1966e7b4040d24db6db2df3752}{set\_log\_level}}(\textcolor{keyword}{const}\ LogLevel\ \&level);}
-\DoxyCodeLine{00104\ }
-\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classLilyPad_1_1Logger}{Logger}}();}
-\DoxyCodeLine{00110\ }
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classLilyPad_1_1Logger}{\string~Logger}}();}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ logMessage\ =\ logStream.str();}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_showLogs)}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ print\_log(level,\ logMessage);}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_writeLogs\ \&\&\ \_logFile)}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::lock\_guard<std::mutex>\ guard(\_logMutex);}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::ofstream\ fileStream(\_logFile-\/>data(),\ std::ios::app);\ \textcolor{comment}{//\ Sets\ mode\ to\ append}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fileStream.is\_open())}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fileStream\ <<\ logMessage\ <<\ std::endl;}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::println(\textcolor{stringliteral}{"{}Unable\ to\ open\ the\ log\ file\ at\ "{}},\ \_logFile-\/>data());}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLys_1_1Logger_ab720c39533678bd96805a933da6122f7}{set\_log\_file}}(\textcolor{keyword}{const}\ std::string\ \&file);}
 \DoxyCodeLine{00112\ }
-\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ print\_log(\textcolor{keyword}{const}\ LogLevel\ \&level,\ \textcolor{keyword}{const}\ std::string\ \&message)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00117\ }
-\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Arg>}
-\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ append\_to\_stream(std::stringstream\ \&stream,\ Arg\ arg)}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ stream\ <<\ arg;}
-\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00130\ }
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Arg,\ \textcolor{keyword}{typename}...\ Args>}
-\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ append\_to\_stream(std::stringstream\ \&stream,\ Arg\ arg,\ Args...\ args)}
-\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ stream\ <<\ arg;}
-\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ append\_to\_stream(stream,\ args...);}
-\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00149\ }
-\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *get\_log\_type(\textcolor{keyword}{const}\ LogLevel\ \&level);}
-\DoxyCodeLine{00157\ }
-\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ std::string\ get\_formatted\_time(\textcolor{keyword}{const}\ std::string\ *timeFormat);}
-\DoxyCodeLine{00159\ }
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_showLogs;}
-\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_writeLogs;}
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_showTimestamp;}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ std::mutex\ \_logMutex;}
-\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ std::string\ \_file;}
-\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ std::string\ *\_timeFormat;}
-\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ LogLevel\ \_minLogLevel;}
-\DoxyCodeLine{00167\ \ \ \ \ \};}
-\DoxyCodeLine{00168\ \}\ \textcolor{comment}{//\ namespace\ LilyPad}}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLys_1_1Logger_ae6240bfcb0c6d976df2aa283e9d19b4a}{set\_log\_level}}(\textcolor{keyword}{const}\ LogLevel\ \&level);}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classLys_1_1Logger}{Logger}}();}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classLys_1_1Logger}{\string~Logger}}();}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ print\_log(\textcolor{keyword}{const}\ LogLevel\ \&level,\ \textcolor{keyword}{const}\ std::string\ \&message)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Arg>}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ append\_to\_stream(std::stringstream\ \&stream,\ Arg\ arg)}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ stream\ <<\ arg;}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Arg,\ \textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ append\_to\_stream(std::stringstream\ \&stream,\ Arg\ arg,\ Args...\ args)}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ stream\ <<\ arg;}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ append\_to\_stream(stream,\ args...);}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *get\_log\_type(\textcolor{keyword}{const}\ LogLevel\ \&level);}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ std::string\ get\_formatted\_time(\textcolor{keyword}{const}\ std::string\ *timeFormat);}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_showLogs;}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_writeLogs;}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_showTimestamp;}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ std::mutex\ \_logMutex;}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ std::shared\_ptr<std::string>(\_logFile);}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ std::string\ *\_timeFormat;}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ std::unique\_ptr<std::string>(\_configFile);}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ LogLevel\ \_minLogLevel;}
+\DoxyCodeLine{00183\ \ \ \ \ \};}
+\DoxyCodeLine{00184\ \}\ \textcolor{comment}{//\ namespace\ Lys}}
 
 \end{DoxyCode}

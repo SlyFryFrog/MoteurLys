@@ -1,0 +1,23 @@
+\doxysection{Lys\+::Abstract\+Renderer Class Reference}
+\hypertarget{classLys_1_1AbstractRenderer}{}\label{classLys_1_1AbstractRenderer}\index{Lys::AbstractRenderer@{Lys::AbstractRenderer}}
+
+
+Inheritance diagram for Lys\+::Abstract\+Renderer\+:
+% FIG 0
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classLys_1_1AbstractRenderer_a5d5f17fa498223671045a73ebf611e55}\label{classLys_1_1AbstractRenderer_a5d5f17fa498223671045a73ebf611e55} 
+virtual void {\bfseries init} ()=0
+\item 
+\Hypertarget{classLys_1_1AbstractRenderer_ab4a5a32303dba5ad40a07e168469f029}\label{classLys_1_1AbstractRenderer_ab4a5a32303dba5ad40a07e168469f029} 
+virtual void {\bfseries update\+\_\+viewport} (const int width, const int height) const =0
+\item 
+\Hypertarget{classLys_1_1AbstractRenderer_af8741e232350aacbe8cd17dbdcff1030}\label{classLys_1_1AbstractRenderer_af8741e232350aacbe8cd17dbdcff1030} 
+virtual void {\bfseries clear} () const =0
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Lys/renderer/core/abstract\+\_\+renderer.\+hpp\end{DoxyCompactItemize}

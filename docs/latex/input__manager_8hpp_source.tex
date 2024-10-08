@@ -1,0 +1,50 @@
+\doxysection{input\+\_\+manager.\+hpp}
+\hypertarget{input__manager_8hpp_source}{}\label{input__manager_8hpp_source}\index{Lys/core/input/input\_manager.hpp@{Lys/core/input/input\_manager.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#ifdef\ OPENGL}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <GL/glew.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <GLFW/glfw3.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}Lys/core/input/input\_events.hpp"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}Lys/core/math/vector2.hpp"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }Lys}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{enum\ class}\ InputType}
+\DoxyCodeLine{00015\ \ \ \ \ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ MOUSE\_BUTTON,}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ MOUSE\_MOVEMENT,}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ KEY\_BUTTON}
+\DoxyCodeLine{00019\ \ \ \ \ \};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classLys_1_1InputManager}{InputManager}}}
+\DoxyCodeLine{00022\ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classLys_1_1InputManager}{InputManager}}\ *\_singleton;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structLys_1_1Vector2}{Vector2}}\ \_mousePosition;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ std::vector<Key>\ \_keysPressed;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ std::vector<InputEventCore>\ \_events;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classLys_1_1InputManager}{InputManager}}\ *get\_singleton();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ std::vector<InputEventCore>\ get\_events()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ add\_key\_event(\textcolor{keyword}{const}\ \mbox{\hyperlink{classLys_1_1InputKeyEvent}{InputKeyEvent}}\ \&event);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ add\_mouse\_event(\textcolor{keyword}{const}\ \mbox{\hyperlink{classLys_1_1InputMouseEvent}{InputMouseEvent}}\ \&event);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLys_1_1InputManager_a7b2857e1d3216fd8beb0785f77ce35bd}{\_process\_input\_callback}}(GLFWwindow\ *window,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ key,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ scancode,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ action,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ mods);}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \_process\_mouse\_callback(GLFWwindow\ *window,\ \textcolor{keywordtype}{double}\ xposIn,\ \textcolor{keywordtype}{double}\ yposIn);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ is\_pressed(\textcolor{keyword}{const}\ Key\ \&key);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classLys_1_1InputManager}{InputManager}}();}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classLys_1_1InputManager}{\string~InputManager}}();}
+\DoxyCodeLine{00058\ \ \ \ \ \};}
+\DoxyCodeLine{00059\ \}\ \textcolor{comment}{//\ namespace\ Lys}}
+
+\end{DoxyCode}

@@ -1,0 +1,67 @@
+\doxysection{Lys\+::Node3D Class Reference}
+\hypertarget{classLys_1_1Node3D}{}\label{classLys_1_1Node3D}\index{Lys::Node3D@{Lys::Node3D}}
+
+
+Inheritance diagram for Lys\+::Node3D\+:
+% FIG 0
+
+
+Collaboration diagram for Lys\+::Node3D\+:
+% FIG 1
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classLys_1_1Node3D_a91a4e7f0598106fb85388b97a966cbf3}\label{classLys_1_1Node3D_a91a4e7f0598106fb85388b97a966cbf3} 
+\mbox{\hyperlink{structLys_1_1Vector3}{Vector3}} {\bfseries position}
+\item 
+\Hypertarget{classLys_1_1Node3D_a3a79a7b060b8658be6944700911c16e9}\label{classLys_1_1Node3D_a3a79a7b060b8658be6944700911c16e9} 
+\mbox{\hyperlink{structLys_1_1Vector3}{Vector3}} {\bfseries absolute\+Position}
+\item 
+\Hypertarget{classLys_1_1Node3D_a31a2b7716a559c8bbe309fa4d820a402}\label{classLys_1_1Node3D_a31a2b7716a559c8bbe309fa4d820a402} 
+\mbox{\hyperlink{structLys_1_1Vector3}{Vector3}} {\bfseries size}
+\item 
+\Hypertarget{classLys_1_1Node3D_a2a9d88f371663e6805f93a8c8061569d}\label{classLys_1_1Node3D_a2a9d88f371663e6805f93a8c8061569d} 
+\mbox{\hyperlink{structLys_1_1Vector3}{Vector3}} {\bfseries anchor}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classLys_1_1Node}{Lys\+::\+Node}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Node} (const std\+::string \&name)
+\item 
+virtual void {\bfseries \+\_\+ready} ()
+\item 
+virtual void {\bfseries \+\_\+process} (double delta)
+\item 
+virtual void {\bfseries \+\_\+process\+\_\+input} (const \mbox{\hyperlink{classLys_1_1InputEventCore}{Input\+Event\+Core}} \&event)
+\item 
+virtual void {\bfseries \+\_\+draw} ()
+\item 
+virtual void {\bfseries \+\_\+process\+\_\+mouse\+\_\+input} (const \mbox{\hyperlink{classLys_1_1InputEventCore}{Input\+Event\+Core}} \&event)
+\item 
+std\+::string {\bfseries get\+\_\+name} () const
+\item 
+void {\bfseries set\+\_\+name} (const std\+::string \&name)
+\item 
+void {\bfseries add\+\_\+child} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classLys_1_1Node}{Node}} $>$ child)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::shared\+\_\+ptr$<$ T $>$ {\bfseries get\+\_\+child} (const std\+::string \&node\+Name)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classLys_1_1Node}{Node}} $>$ {\bfseries get\+\_\+child} (const std\+::string \&node\+Name)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::shared\+\_\+ptr$<$ T $>$ {\bfseries get\+\_\+parent} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classLys_1_1Node}{Node}} $>$ {\bfseries get\+\_\+parent} () const
+\item 
+void {\bfseries queue\+\_\+destroy} ()
+\item 
+void {\bfseries update} ()
+\item 
+void {\bfseries init} ()
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Lys/scene/nodes/3d/node\+\_\+3d.\+hpp\item 
+Lys/scene/nodes/3d/node\+\_\+3d.\+cpp\end{DoxyCompactItemize}

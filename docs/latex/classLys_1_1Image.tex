@@ -1,0 +1,142 @@
+\doxysection{Lys\+::Image Class Reference}
+\hypertarget{classLys_1_1Image}{}\label{classLys_1_1Image}\index{Lys::Image@{Lys::Image}}
+
+
+Inheritance diagram for Lys\+::Image\+:
+% FIG 0
+
+
+Collaboration diagram for Lys\+::Image\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classLys_1_1Image_a572f445bb179a6b7b2256b9c9e9dbcb1}\label{classLys_1_1Image_a572f445bb179a6b7b2256b9c9e9dbcb1} 
+void {\bfseries set\+\_\+data} (int width, int height, bool use\+Mipmaps, Image\+Format format, const std\+::vector$<$ uint8\+\_\+t $>$ \&data)
+\item 
+void \mbox{\hyperlink{classLys_1_1Image_a919386952478cd46f261e4225fe9c210}{set\+\_\+pixel}} (int x\+\_\+index, int y\+\_\+index, const \mbox{\hyperlink{structLys_1_1Color}{Color}} \&data)
+\begin{DoxyCompactList}\small\item\em Sets the color of a specific pixel in the image. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classLys_1_1Image_a0247cf40f35df59429187adc6f3f30ad}{get\+\_\+width}} () const
+\item 
+int \mbox{\hyperlink{classLys_1_1Image_af0d59b4802ed79336438fb14a049e1e1}{get\+\_\+height}} () const
+\item 
+\mbox{\hyperlink{structLys_1_1Vector2i}{Vector2i}} \mbox{\hyperlink{classLys_1_1Image_a2187cc91885c95a12a06eacfc8b04f28}{get\+\_\+size}} () const
+\item 
+\Hypertarget{classLys_1_1Image_adf34c1936aacf9f29fbd3c3a6b801588}\label{classLys_1_1Image_adf34c1936aacf9f29fbd3c3a6b801588} 
+Image\+Format {\bfseries get\+\_\+format} () const
+\item 
+\Hypertarget{classLys_1_1Image_ac44c0615d883c2b2b07d363484dc0887}\label{classLys_1_1Image_ac44c0615d883c2b2b07d363484dc0887} 
+void {\bfseries set\+\_\+format} (const Image\+Format \&format)
+\item 
+\Hypertarget{classLys_1_1Image_a1e96ef1371269d2eb703ac361e4f60d2}\label{classLys_1_1Image_a1e96ef1371269d2eb703ac361e4f60d2} 
+std\+::vector$<$ uint8\+\_\+t $>$ {\bfseries get\+\_\+raw\+\_\+data} () const
+\item 
+\Hypertarget{classLys_1_1Image_a36bbf4de7d95a67b4748d32849cde4ca}\label{classLys_1_1Image_a36bbf4de7d95a67b4748d32849cde4ca} 
+const uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries get\+\_\+data} () const
+\item 
+int \mbox{\hyperlink{classLys_1_1Image_a8dc394e48439368eaa31a4c2fca4dfd8}{get\+\_\+channel\+\_\+count}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classLys_1_1File}{Lys\+::\+File}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries File} (const std\+::string \&path)
+\item 
+bool \mbox{\hyperlink{classLys_1_1File_ad688a8ade5f981045fb12efed0fe96b8}{is\+\_\+updated}} () const
+\begin{DoxyCompactList}\small\item\em Checks if that last write time has changed since the last check. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classLys_1_1File_a2d0a60f9145c21c6417e41afff7f186e}{update}} ()
+\begin{DoxyCompactList}\small\item\em Empty implementation that should be overrided to add hot-\/reloading functionality. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classLys_1_1File_ac1f709a5d51f01578b8a0749685aab7b}{read\+\_\+file}} () const
+\begin{DoxyCompactList}\small\item\em Returns the contents of the previously set file path. Will always catch errors. \end{DoxyCompactList}\item 
+void {\bfseries set\+\_\+path} (const std\+::string \&path)
+\item 
+std\+::string {\bfseries get\+\_\+path} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classLys_1_1Image_a29dd04bbbfdf63431946ca2e85f92fc2}\label{classLys_1_1Image_a29dd04bbbfdf63431946ca2e85f92fc2} 
+static int {\bfseries get\+\_\+channel\+\_\+count} (const Image\+Format \&format)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classLys_1_1File}{Lys\+::\+File}}}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classLys_1_1File_a2cb2399ca7c6677adb1e25b3231348aa}{read\+\_\+file}} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Returns the contents of the given file. Will always catch errors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classLys_1_1File}{Lys\+::\+File}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::filesystem\+::file\+\_\+time\+\_\+type {\bfseries \+\_\+last\+Time}
+\item 
+std\+::string {\bfseries \+\_\+path}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classLys_1_1Image_a8dc394e48439368eaa31a4c2fca4dfd8}\label{classLys_1_1Image_a8dc394e48439368eaa31a4c2fca4dfd8} 
+\index{Lys::Image@{Lys::Image}!get\_channel\_count@{get\_channel\_count}}
+\index{get\_channel\_count@{get\_channel\_count}!Lys::Image@{Lys::Image}}
+\doxysubsubsection{\texorpdfstring{get\_channel\_count()}{get\_channel\_count()}}
+{\footnotesize\ttfamily int Lys\+::\+Image\+::get\+\_\+channel\+\_\+count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+int Number of channels for the current image format. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
+\Hypertarget{classLys_1_1Image_af0d59b4802ed79336438fb14a049e1e1}\label{classLys_1_1Image_af0d59b4802ed79336438fb14a049e1e1} 
+\index{Lys::Image@{Lys::Image}!get\_height@{get\_height}}
+\index{get\_height@{get\_height}!Lys::Image@{Lys::Image}}
+\doxysubsubsection{\texorpdfstring{get\_height()}{get\_height()}}
+{\footnotesize\ttfamily int Lys\+::\+Image\+::get\+\_\+height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+int Height of the image. 
+\end{DoxyReturn}
+\Hypertarget{classLys_1_1Image_a2187cc91885c95a12a06eacfc8b04f28}\label{classLys_1_1Image_a2187cc91885c95a12a06eacfc8b04f28} 
+\index{Lys::Image@{Lys::Image}!get\_size@{get\_size}}
+\index{get\_size@{get\_size}!Lys::Image@{Lys::Image}}
+\doxysubsubsection{\texorpdfstring{get\_size()}{get\_size()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structLys_1_1Vector2i}{Vector2i}} Lys\+::\+Image\+::get\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+\doxylink{structLys_1_1Vector2i}{Vector2i} Returns the size of the image as a \doxylink{structLys_1_1Vector2}{Vector2} integer in the form (width, height). 
+\end{DoxyReturn}
+\Hypertarget{classLys_1_1Image_a0247cf40f35df59429187adc6f3f30ad}\label{classLys_1_1Image_a0247cf40f35df59429187adc6f3f30ad} 
+\index{Lys::Image@{Lys::Image}!get\_width@{get\_width}}
+\index{get\_width@{get\_width}!Lys::Image@{Lys::Image}}
+\doxysubsubsection{\texorpdfstring{get\_width()}{get\_width()}}
+{\footnotesize\ttfamily int Lys\+::\+Image\+::get\+\_\+width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+int Width of the image. 
+\end{DoxyReturn}
+\Hypertarget{classLys_1_1Image_a919386952478cd46f261e4225fe9c210}\label{classLys_1_1Image_a919386952478cd46f261e4225fe9c210} 
+\index{Lys::Image@{Lys::Image}!set\_pixel@{set\_pixel}}
+\index{set\_pixel@{set\_pixel}!Lys::Image@{Lys::Image}}
+\doxysubsubsection{\texorpdfstring{set\_pixel()}{set\_pixel()}}
+{\footnotesize\ttfamily void Lys\+::\+Image\+::set\+\_\+pixel (\begin{DoxyParamCaption}\item[{int}]{x\+\_\+index,  }\item[{int}]{y\+\_\+index,  }\item[{const \mbox{\hyperlink{structLys_1_1Color}{Color}} \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Sets the color of a specific pixel in the image. 
+
+This method updates the color of the pixel at the specified (x, y) coordinates in the image with the provided color data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+\_\+index} & The x-\/coordinate of the pixel to be set. \\
+\hline
+{\em y\+\_\+index} & The y-\/coordinate of the pixel to be set. \\
+\hline
+{\em data} & The color data to set the pixel to. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Lys/core/io/image.\+hpp\item 
+Lys/core/io/image.\+cpp\end{DoxyCompactItemize}
