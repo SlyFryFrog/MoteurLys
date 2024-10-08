@@ -6,7 +6,7 @@ enable_testing()
 include(CTest)
 
 add_definitions(-DOPENGL)
-#add_definitions(-DRUNTESTS)
+add_definitions(-DBUILD_TESTS)
 
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Lys)
 

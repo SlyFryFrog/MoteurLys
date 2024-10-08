@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED YES)
 
 set(VENDOR_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../vendor)
 set(IMGUI_PATH ${VENDOR_PATH}/imgui)
+set(LIBRARY_TYPE "SHARED")
 
 # Add ImGui source files
 set(IMGUI_SRC
@@ -16,13 +17,6 @@ set(IMGUI_SRC
     ${IMGUI_PATH}/backends/imgui_impl_glfw.cpp
     ${IMGUI_PATH}/backends/imgui_impl_opengl3.cpp
 )
-
-# Set STATIC for Windows only
-if (WIN32)
-    set(LIBRARY_TYPE "STATIC")
-else()
-    set(LIBRARY_TYPE "SHARED")
-endif()
 
 if(CMAKE_COMPILER_IS_GNUCXX)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-inline -O1")
@@ -80,7 +74,7 @@ target_include_directories(
 
 LinkDependencies(MoteurLys)
 
-if (${RUN_TESTS})
-    message("RUN_TESTS enabled")
+if (BUILD_TESTS)
+    message("BUILD_TESTS enabled")
     add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/tests)
 endif()
