@@ -7,6 +7,7 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 apt-get update -y && apt-get upgrade -y
+apt-get install -y gcc-14 g++-14
 apt-get install -y libgl1-mesa-dev libglew-dev libglfw3-dev \
                    libfreetype6-dev
 

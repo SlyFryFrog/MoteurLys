@@ -49,17 +49,13 @@ endfunction()
 file(GLOB_RECURSE SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp)
 file(GLOB_RECURSE HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/src/*.hpp)
 
-if (WIN32)
-    add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/vendor/glfw)
-else()
-    find_package(glfw3 REQUIRED)
-endif()
-
+find_package(glfw3 REQUIRED)
 find_package(Freetype REQUIRED)
 find_package(OpenGL REQUIRED)
 find_package(GLEW REQUIRED)
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../vendor/JoltPhysics/Build ${CMAKE_BINARY_DIR}/vendor/JoltPhysics)
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../vendor/glm ${CMAKE_BINARY_DIR}/vendor/glm)
+
+add_subdirectory(${VENDOR_PATH}/JoltPhysics/Build ${CMAKE_BINARY_DIR}/vendor/JoltPhysics)
+add_subdirectory(${VENDOR_PATH}/glm ${CMAKE_BINARY_DIR}/vendor/glm)
 
 # Include directories for Jolt
 include_directories(
@@ -67,7 +63,6 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/vendor/JoltPhysics/Jolt/Core
     ${CMAKE_CURRENT_SOURCE_DIR}/vendor/JoltPhysics/ThirdParty
 )
-
 
 add_library(MoteurLys ${LIBRARY_TYPE} ${SOURCES})
 add_library(stb_image ${LIBRARY_TYPE} ${VENDOR_PATH}/stb_image.cpp)
