@@ -1,0 +1,12 @@
+digraph "Lys/src/Lys/debug"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_fd00c13d999e0e115c2b1b8d68dc9a29 {
+    graph [ bgcolor="#e4f8ee", pencolor="grey50", label="Lys", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_fd00c13d999e0e115c2b1b8d68dc9a29.html",tooltip=""]
+  dir_1cf0665225d8dd33487ada4dc1c7e8f5 [label="debug", fillcolor="#e4f8ee", color="grey25", style="filled,bold", URL="dir_1cf0665225d8dd33487ada4dc1c7e8f5.html",tooltip=""];
+  }
+}

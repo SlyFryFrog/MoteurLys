@@ -20,4 +20,4 @@ virtual void {\bfseries clear} () const =0
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Lys/renderer/core/abstract\+\_\+renderer.\+hpp\end{DoxyCompactItemize}
+Lys/src/\+Lys/renderer/core/abstract\+\_\+renderer.\+hpp\end{DoxyCompactItemize}

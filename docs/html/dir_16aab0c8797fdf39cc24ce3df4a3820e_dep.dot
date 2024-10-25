@@ -1,4 +1,4 @@
-digraph "/home/marcus/dev/MoteurLys/Lys/src"
+digraph "Lys/src"
 {
  // LATEX_PDF_SIZE
   bgcolor="transparent";
@@ -7,6 +7,10 @@ digraph "/home/marcus/dev/MoteurLys/Lys/src"
   compound=true
   subgraph clusterdir_ba16e2f0563332b365aad57128fbde3e {
     graph [ bgcolor="#e4f8ee", pencolor="grey25", label="Lys", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_ba16e2f0563332b365aad57128fbde3e.html",tooltip=""]
-  dir_16aab0c8797fdf39cc24ce3df4a3820e [label="src", fillcolor="#e4f8ee", color="grey25", style="filled,bold", URL="dir_16aab0c8797fdf39cc24ce3df4a3820e.html",tooltip=""];
+  subgraph clusterdir_16aab0c8797fdf39cc24ce3df4a3820e {
+    graph [ bgcolor="#e4f8ee", pencolor="grey25", label="", fontname=Helvetica,fontsize=10 style="filled,bold", URL="dir_16aab0c8797fdf39cc24ce3df4a3820e.html",tooltip=""]
+    dir_16aab0c8797fdf39cc24ce3df4a3820e [shape=plaintext, label="src"];
+  dir_fd00c13d999e0e115c2b1b8d68dc9a29 [label="Lys", fillcolor="#79dead", color="grey25", style="filled", URL="dir_fd00c13d999e0e115c2b1b8d68dc9a29.html",tooltip=""];
+  }
   }
 }

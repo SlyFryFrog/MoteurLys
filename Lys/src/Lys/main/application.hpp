@@ -22,8 +22,17 @@ namespace Lys
 
 		static Application *get_singleton();
 
+		/**
+		 * @brief Initiates the main loop of the engine.
+		 */
 		void run();
 
+		/**
+		 * @brief Initiates the engine and returns whether is suceeded or not.
+		 *
+		 * @return true
+		 * @return false
+		 */
 		bool init();
 
 		bool is_done() const;
@@ -34,6 +43,11 @@ namespace Lys
 
 		void render();
 
+		/**
+		 * @brief Gets the root window instance.
+		 * 
+		 * @return Window*
+		 */
 		Window *get_window() const;
 
 	private:

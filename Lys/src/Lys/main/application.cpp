@@ -22,9 +22,10 @@ namespace Lys
 
 	void Application::run()
 	{
+		Renderer *renderer = Renderer::get_singleton();
 		while (!is_done() && !_window->is_done())
 		{
-			Renderer::get_singleton()->clear();
+			renderer->clear();
 			LYS_FPS_UPDATE();
 
 			if (_isMinimized)

@@ -5,7 +5,6 @@
 #include "Lys/debug/logging.hpp"
 #include "Lys/main/application.hpp"
 
-// Defined in user's app
 extern Lys::Application *Lys::create_application(int argc, char **argv);
 
 int main(int argc, char **argv)
@@ -20,7 +19,7 @@ int main(int argc, char **argv)
 	}
 
 	app->run();
-
+	
 	delete app;
 
 	return 0;
