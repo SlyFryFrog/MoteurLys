@@ -20,6 +20,7 @@
 #include "Lys/core/input/input_events.hpp"
 #include "Lys/core/input/input_manager.hpp"
 #include "Lys/core/io/image.hpp"
+#include "Lys/core/math/vector2.hpp"
 #include "Lys/core/math/vector3.hpp"
 #include "Lys/core/utils/paths.hpp"
 

@@ -5,14 +5,9 @@
 namespace Lys
 {
 	InputManager *InputManager::_singleton = nullptr;
-	InputManager *InputManager::get_singleton()
-	{
-		if (!_singleton)
-		{
-			_singleton = new InputManager();
-		}
-		return _singleton;
-	}
+	InputManager *InputManager::get_singleton() { return _singleton; }
+
+	void InputManager::init() { _singleton = new InputManager(); }
 
 	InputManager::InputManager() = default;
 	InputManager::~InputManager() { delete _singleton; }

@@ -27,6 +27,7 @@ namespace Lys
 
 	public:
 		static InputManager *get_singleton();
+		static void init();
 
 		std::vector<InputEventCore> get_events() const;
 		void add_key_event(const InputKeyEvent &event);

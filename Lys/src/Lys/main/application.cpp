@@ -44,7 +44,8 @@ namespace Lys
 	{
 		_window = new Window(500, 500, name);
 		_window->initialize();
-		InputManager::get_singleton();
+
+		InputManager::init();
 
 		return _isRunning;
 	}

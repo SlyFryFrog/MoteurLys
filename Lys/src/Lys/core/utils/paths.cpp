@@ -2,9 +2,7 @@
 
 #include <filesystem>
 
-#ifdef _WIN32
-#include <windows.h>
-#else
+#ifdef __linux__
 #include <climits>
 #include <unistd.h>
 #endif
@@ -14,11 +12,9 @@ namespace Lys
 	std::string strip_right_of_slash(const std::string &path)
 	{
 		std::string::size_type index;
-#ifdef _WIN32
-		index = path.find_last_of('\\');
-#else
+
 		index = path.find_last_of('/');
-#endif
+
 		return path.substr(0, index);
 	}
 

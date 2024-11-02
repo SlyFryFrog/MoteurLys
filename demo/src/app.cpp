@@ -1,5 +1,6 @@
 #include <Lys/core/utils/paths.hpp>
 #include <Lys/main/entry.hpp>
+#include <Lys/core/utils/paths.hpp>
 
 class DemoApp : public Lys::Application
 {
@@ -21,6 +22,8 @@ Lys::Application *Lys::create_application(int argc, char **argv)
 	DemoApp *app = new DemoApp("Demo App");
 
 	app->workingDir = Lys::get_root_directory();
+
+	LYS_DEBUG(get_exec_path());
 
 	return app;
 }

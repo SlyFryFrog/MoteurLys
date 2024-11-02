@@ -1,0 +1,13 @@
+# Ignores comments
+[scene id=""]
+
+[ext_rsc type="asset" id="" path="rsc/textures/frog.png"]
+[ext_rsc type="script" id="" path="rsc/shaders/Vertex.glsl"]
+[ext_rsc type="script" id="" path="rsc/shaders/Fragment.glsl"]
+
+[node name="character" type="Sprite2D]
+position=(0, 1)
+script=""
+
+[node name="character" type="Sprite2D"]
+position=(-1, 1, 1)

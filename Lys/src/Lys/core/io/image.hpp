@@ -8,6 +8,9 @@
 
 namespace Lys
 {
+	/**
+	 * @brief All currently supported image formats.
+	 */
 	enum class ImageFormat
 	{
 		R8,
@@ -53,6 +56,9 @@ namespace Lys
 		 */
 		Vector2i get_size() const;
 
+		/**
+		 * @return ImageFormat Gets the ImageFormat of the Image instance.
+		 */
 		ImageFormat get_format() const;
 		void set_format(const ImageFormat &format);
 
