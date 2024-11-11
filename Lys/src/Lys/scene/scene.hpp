@@ -9,6 +9,9 @@ namespace Lys
         std::string id;
 
 	public:
+        Scene(const std::string &path);
+        ~Scene();
+
 		void load_lys(const std::string &lys) 
         {
             std::ifstream file(lys);        
@@ -44,6 +47,6 @@ namespace Lys
         
         }
 
-        
+        void generate_id(); 
 	};
 } // namespace Lys
