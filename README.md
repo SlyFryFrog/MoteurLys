@@ -6,11 +6,12 @@ The Lys engine is developed using C++23 with support for both Clang and GCC. Add
 
 - -DUSE_DOUBLE
 
-- -D_ALWAYS_INLINE_
+- -DALWAYS_INLINE
 
-- -D_FORCE_INLINE_
+- -DFORCE_INLINE
 
 - -DVULKAN
+
 - -DOPENGL
 
 # Setup
@@ -23,9 +24,9 @@ The Lys engine is developed using C++23 with support for both Clang and GCC. Add
 sudo ./scripts/linux.sh
 ```
 
-## Windows
+## Other Platforms
 
-While Windows support is constantly being worked on, it is not the main focus and thus may not work.
+Currently no other platforms are supported and will not work at this time.
 
 # Development
 
@@ -36,13 +37,11 @@ While Windows support is constantly being worked on, it is not the main focus an
 # Third-party dependencies
 
 |           Usage           |                                    Library                                    |
-|:-------------------------:|:-----------------------------------------------------------------------------:|
+| :-----------------------: | :---------------------------------------------------------------------------: |
 | Window management & input |                 [GLFW3](https://www.glfw.org/) (ZLib/LibPNG)                  |
 |       OpenGL loader       | [GLEW](https://github.com/nigels-com/glew/tree/master) (Modified BSD License) |
 |       Image loading       |              [stb_image](https://github.com/nothings/stb) (MIT)               |
 |        Mathematics        |                  [GLM](https://github.com/g-truc/glm) (MIT)                   |
 |           Fonts           |    [FreeType](https://download.savannah.gnu.org/releases/freetype/) (FTL)     |
-
-
-https://github.com/jrouwe/JoltPhysics
-https://github.com/ocornut/imgui
+|          Physics          |              [MIT](https://github.com/jrouwe/JoltPhysics) (MIT)               |
+|            GUI            |                 [MIT](https://github.com/ocornut/imgui) (MIT)                 |
