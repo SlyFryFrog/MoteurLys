@@ -30,6 +30,11 @@ sudo ./scripts/linux.sh
 
 Currently no other platforms are supported and will not work at this time.
 
+# Build
+
+`cmake -B build -DCMAKE_C_COMPILER=/usr/bin/gcc-14 -DCMAKE_CXX_COMPILER=/usr/bin/g++-14 -DBUILD_TESTS=ON`
+`make`
+
 # Development
 
 - CMake versions 3.28.3 or higher
