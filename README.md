@@ -1,5 +1,7 @@
 # Project Description
 
+**The project is currently in the midst of moving towards a file-based scene heirarchy, and as such, is not usable until a complete scene-parser is developed!**
+
 The Lys engine is developed using C++23 with support for both Clang and GCC. Additionally, the project only supports OpenGL 3.3 or higher.
 
 # CMake Flags and Options
